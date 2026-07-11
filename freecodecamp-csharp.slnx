@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Repository Files/">
+    <File Path=".gitignore" />
+    <File Path="CSHARP_REVIEW.md" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="workshops/write-your-first-c-sharp-code/write-your-first-c-sharp-code.csproj" />
+</Solution>
