@@ -1,8 +1,13 @@
 <Solution>
+  <Folder Name="/curriculum/" />
+  <Folder Name="/curriculum/write-your-first-code-using-csharp/" />
+  <Folder Name="/curriculum/write-your-first-code-using-csharp/modules/">
+    <Project Path="curriculum/write-your-first-code-using-csharp/modules/store-and-retrieve-data-using-literal-and-variable-values/store-and-retrieve-data-using-literal-and-variable-values.csproj" />
+    <Project Path="curriculum/write-your-first-code-using-csharp/modules/write-your-first-c-sharp-code/write-your-first-c-sharp-code.csproj" />
+  </Folder>
   <Folder Name="/Repository Files/">
     <File Path=".gitignore" />
     <File Path="CSHARP_REVIEW.md" />
     <File Path="README.md" />
   </Folder>
-  <Project Path="workshops/write-your-first-c-sharp-code/write-your-first-c-sharp-code.csproj" />
 </Solution>
