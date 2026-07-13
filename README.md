@@ -35,30 +35,30 @@ The repository follows the major sections shown in the freeCodeCamp curriculum.
 
 ```text
 freecodecamp-csharp/
-â”œâ”€â”€ curriculum/
-â”‚   â”œâ”€â”€ write-your-first-code-using-csharp/
-â”‚   â”‚   â”œâ”€â”€ modules/
-â”‚   â”‚   â”‚   â”œâ”€â”€ first-csharp-code/
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ Program.cs
-â”‚   â”‚   â”‚   â”‚   â””â”€â”€ first-csharp-code.csproj
-â”‚   â”‚   â”‚   â”œâ”€â”€ literals-and-variables/
-â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ Program.cs
-â”‚   â”‚   â”‚   â”‚   â””â”€â”€ literals-and-variables.csproj
-â”‚   â”‚   â”‚   â””â”€â”€ string-formatting/
-â”‚   â”‚   â”‚       â”œâ”€â”€ Program.cs
-â”‚   â”‚   â”‚       â””â”€â”€ string-formatting.csproj
-â”‚   â”‚   â”œâ”€â”€ guided-projects/
-â”‚   â”‚   â””â”€â”€ trophy/
-â”‚   â”œâ”€â”€ create-and-run-simple-csharp-console-applications/
-â”‚   â”œâ”€â”€ add-logic-to-csharp-console-applications/
-â”‚   â”œâ”€â”€ work-with-variable-data-in-csharp-console-applications/
-â”‚   â”œâ”€â”€ create-methods-in-csharp-console-applications/
-â”‚   â”œâ”€â”€ debug-csharp-console-applications/
-â”‚   â””â”€â”€ foundational-csharp-with-microsoft-certification-exam/
-â”œâ”€â”€ CSHARP_REVIEW.md
-â”œâ”€â”€ freecodecamp-csharp.slnx
-â”œâ”€â”€ .gitignore
-â””â”€â”€ README.md
+|-- curriculum/
+|   |-- write-your-first-code-using-csharp/
+|   |   |-- modules/
+|   |   |   |-- first-csharp-code/
+|   |   |   |   |-- Program.cs
+|   |   |   |   `-- first-csharp-code.csproj
+|   |   |   |-- literals-and-variables/
+|   |   |   |   |-- Program.cs
+|   |   |   |   `-- literals-and-variables.csproj
+|   |   |   `-- string-formatting/
+|   |   |       |-- Program.cs
+|   |   |       `-- string-formatting.csproj
+|   |   |-- guided-projects/
+|   |   `-- trophy/
+|   |-- create-and-run-simple-csharp-console-applications/
+|   |-- add-logic-to-csharp-console-applications/
+|   |-- work-with-variable-data-in-csharp-console-applications/
+|   |-- create-methods-in-csharp-console-applications/
+|   |-- debug-csharp-console-applications/
+|   `-- foundational-csharp-with-microsoft-certification-exam/
+|-- CSHARP_REVIEW.md
+|-- freecodecamp-csharp.slnx
+|-- .gitignore
+`-- README.md
 ```
 
 Each major curriculum section may contain:
@@ -358,7 +358,7 @@ Expected output:
 View English output:
     c:\Exercise\ACME\data.txt
 
-ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ Ñ€ÑƒÑÑÐºÐ¸Ð¹ Ð²Ñ‹Ð²Ð¾Ð´:
+Посмотреть русский вывод:
     c:\Exercise\ACME\ru-RU\data.txt
 ```
 
