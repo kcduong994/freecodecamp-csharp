@@ -1,4 +1,4 @@
-# freeCodeCamp C# Learning Repository
+﻿# freeCodeCamp C# Learning Repository
 
 ![C#](https://img.shields.io/badge/C%23-Learning-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
@@ -35,28 +35,30 @@ The repository follows the major sections shown in the freeCodeCamp curriculum.
 
 ```text
 freecodecamp-csharp/
-├── curriculum/
-│   ├── write-your-first-code-using-csharp/
-│   │   ├── modules/
-│   │   │   ├── write-your-first-c-sharp-code/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── write-your-first-c-sharp-code.csproj
-│   │   │   └── store-and-retrieve-data-using-literal-and-variable-values/
-│   │   │       ├── Program.cs
-│   │   │       └── store-and-retrieve-data-using-literal-and-variable-values.csproj
-│   │   ├── guided-projects/
-│   │   └── trophy/
-│   ├── create-and-run-simple-csharp-console-applications/
-│   ├── add-logic-to-csharp-console-applications/
-│   ├── work-with-variable-data-in-csharp-console-applications/
-│   ├── create-methods-in-csharp-console-applications/
-│   ├── debug-csharp-console-applications/
-│   └── foundational-csharp-with-microsoft-certification-exam/
-├── labs/
-├── CSHARP_REVIEW.md
-├── freecodecamp-csharp.slnx
-├── .gitignore
-└── README.md
+â”œâ”€â”€ curriculum/
+â”‚   â”œâ”€â”€ write-your-first-code-using-csharp/
+â”‚   â”‚   â”œâ”€â”€ modules/
+â”‚   â”‚   â”‚   â”œâ”€â”€ first-csharp-code/
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ Program.cs
+â”‚   â”‚   â”‚   â”‚   â””â”€â”€ first-csharp-code.csproj
+â”‚   â”‚   â”‚   â”œâ”€â”€ literals-and-variables/
+â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ Program.cs
+â”‚   â”‚   â”‚   â”‚   â””â”€â”€ literals-and-variables.csproj
+â”‚   â”‚   â”‚   â””â”€â”€ string-formatting/
+â”‚   â”‚   â”‚       â”œâ”€â”€ Program.cs
+â”‚   â”‚   â”‚       â””â”€â”€ string-formatting.csproj
+â”‚   â”‚   â”œâ”€â”€ guided-projects/
+â”‚   â”‚   â””â”€â”€ trophy/
+â”‚   â”œâ”€â”€ create-and-run-simple-csharp-console-applications/
+â”‚   â”œâ”€â”€ add-logic-to-csharp-console-applications/
+â”‚   â”œâ”€â”€ work-with-variable-data-in-csharp-console-applications/
+â”‚   â”œâ”€â”€ create-methods-in-csharp-console-applications/
+â”‚   â”œâ”€â”€ debug-csharp-console-applications/
+â”‚   â””â”€â”€ foundational-csharp-with-microsoft-certification-exam/
+â”œâ”€â”€ CSHARP_REVIEW.md
+â”œâ”€â”€ freecodecamp-csharp.slnx
+â”œâ”€â”€ .gitignore
+â””â”€â”€ README.md
 ```
 
 Each major curriculum section may contain:
@@ -78,17 +80,17 @@ individual project names follow the corresponding module or guided-project title
 Current progress:
 
 ```text
-2 / 7 completed
+3 / 7 completed
 ```
 
 Completed:
 
 - Write Your First C# Code
 - Store and Retrieve Data Using Literal and Variable Values in C#
+- Perform Basic String Formatting in C#
 
 Remaining:
 
-- Perform Basic String Formatting in C#
 - Perform Basic Operations on Numbers in C#
 - Guided Project - Calculate and Print Student Grades
 - Guided Project - Calculate Final GPA
@@ -127,7 +129,7 @@ Status: Not started
 Location:
 
 ```text
-curriculum/write-your-first-code-using-csharp/modules/write-your-first-c-sharp-code/
+curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/
 ```
 
 This module demonstrates the difference between:
@@ -159,7 +161,7 @@ Microsoft Learn confirmed completion of the module and its assessment.
 Location:
 
 ```text
-curriculum/write-your-first-code-using-csharp/modules/store-and-retrieve-data-using-literal-and-variable-values/
+curriculum/write-your-first-code-using-csharp/modules/literals-and-variables/
 ```
 
 This module introduces literal values, variables, foundational data types, and
@@ -238,6 +240,133 @@ Microsoft Learn and freeCodeCamp both show this module as completed.
 
 ---
 
+### Perform Basic String Formatting in C#
+
+Location:
+
+```text
+curriculum/write-your-first-code-using-csharp/modules/string-formatting/
+```
+
+This module introduces the main techniques used to format and combine string
+values in C#.
+
+Topics covered:
+
+- character escape sequences;
+- new-line and tab formatting with `\n` and `\t`;
+- escaped quotation marks with `\"`;
+- escaped backslashes with `\\`;
+- verbatim string literals with `@`;
+- Unicode escape sequences with `\u`;
+- string concatenation with `+`;
+- string interpolation with `$`;
+- combined interpolated verbatim strings with `$@"..."`;
+- formatting output with a limited number of console instructions.
+
+#### Escape Sequences
+
+```csharp
+Console.WriteLine("Hello\nWorld!");
+Console.WriteLine("Hello\tWorld!");
+Console.WriteLine("Hello \"World\"!");
+Console.WriteLine("c:\\source\\repos");
+```
+
+#### Verbatim String Literals
+
+```csharp
+Console.WriteLine(@"c:\source\repos");
+```
+
+The `@` prefix preserves backslashes and whitespace, which is useful for Windows
+file paths and multi-line text.
+
+#### Unicode Escape Sequences
+
+```csharp
+Console.WriteLine("\u3053\u3093\u306B\u3061\u306F World!");
+```
+
+The `\u` sequence followed by four hexadecimal digits represents a UTF-16 code
+unit.
+
+#### String Concatenation
+
+```csharp
+string firstName = "Bob";
+string greeting = "Hello";
+
+Console.WriteLine(greeting + " " + firstName + "!");
+```
+
+#### String Interpolation
+
+```csharp
+string firstName = "Bob";
+
+Console.WriteLine($"Hello {firstName}!");
+```
+
+Interpolation reduces the punctuation required when combining multiple literals
+and variables.
+
+#### Interpolated Verbatim Strings
+
+```csharp
+string projectName = "First-Project";
+
+Console.WriteLine($@"C:\Output\{projectName}\Data");
+```
+
+The `$` prefix enables interpolation, while `@` preserves backslashes.
+
+#### Intentional Compiler Errors
+
+The module includes invalid examples to demonstrate why quotation marks and
+backslashes must be escaped correctly.
+
+| Error | Meaning |
+| --- | --- |
+| `CS1003` | A syntax element such as a comma is expected |
+| `CS0103` | A name does not exist in the current context |
+| `CS1009` | An unrecognized escape sequence was used |
+
+These examples are preserved as comments or review notes so the final project
+continues to build successfully.
+
+#### Module Challenge
+
+```csharp
+string projectName = "ACME";
+string englishLocation = $@"c:\Exercise\{projectName}\data.txt";
+
+string russianMessage =
+    "\u041f\u043e\u0441\u043c\u043e\u0442\u0440\u0435\u0442\u044c " +
+    "\u0440\u0443\u0441\u0441\u043a\u0438\u0439 " +
+    "\u0432\u044b\u0432\u043e\u0434";
+
+string russianLocation = $@"c:\Exercise\{projectName}\ru-RU\data.txt";
+
+Console.WriteLine($"View English output:\n\t{englishLocation}\n");
+Console.WriteLine($"{russianMessage}:\n\t{russianLocation}");
+```
+
+Expected output:
+
+```text
+View English output:
+    c:\Exercise\ACME\data.txt
+
+ÐŸÐ¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ Ñ€ÑƒÑÑÐºÐ¸Ð¹ Ð²Ñ‹Ð²Ð¾Ð´:
+    c:\Exercise\ACME\ru-RU\data.txt
+```
+
+Microsoft Learn confirmed completion of the module and its assessment.
+
+
+---
+
 ## Learning Workflow
 
 The curriculum is completed across two learning platforms:
@@ -267,11 +396,6 @@ this repository.
 The `curriculum` directory mirrors the major freeCodeCamp curriculum sections.
 
 Each section may contain normal modules, guided projects, and trophy evidence.
-
-### Labs
-
-The `labs` directory is reserved for independent exercises completed from
-requirements or problem descriptions outside the guided curriculum modules.
 
 ### Review Notes
 
@@ -317,16 +441,15 @@ with:
 
 | Category | Completed | Status |
 | --- | ---: | --- |
-| Curriculum items | 2 | In progress |
+| Curriculum items | 3 | In progress |
 | Guided projects | 0 | Not started |
-| Labs | 0 | Not started |
 | Trophies | 0 | Not started |
 | Certification exam | 0 | Not started |
 
 Current section progress:
 
 ```text
-Write Your First Code Using C#: 2 / 7
+Write Your First Code Using C#: 3 / 7
 ```
 
 ---
@@ -342,8 +465,9 @@ freecodecamp-csharp.slnx
 Projects currently included after migration:
 
 ```text
-curriculum/write-your-first-code-using-csharp/modules/write-your-first-c-sharp-code/write-your-first-c-sharp-code.csproj
-curriculum/write-your-first-code-using-csharp/modules/store-and-retrieve-data-using-literal-and-variable-values/store-and-retrieve-data-using-literal-and-variable-values.csproj
+curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/first-csharp-code.csproj
+curriculum/write-your-first-code-using-csharp/modules/literals-and-variables/literals-and-variables.csproj
+curriculum/write-your-first-code-using-csharp/modules/string-formatting/string-formatting.csproj
 ```
 
 Build command:
@@ -358,7 +482,7 @@ The full solution build must be verified before each curriculum commit.
 
 ## Next Module
 
-### Perform Basic String Formatting in C#
+### Perform Basic Operations on Numbers in C#
 
 This is the next freeCodeCamp item in the
 **Write Your First Code Using C#** section.
