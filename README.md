@@ -44,9 +44,12 @@ freecodecamp-csharp/
 |   |   |   |-- literals-and-variables/
 |   |   |   |   |-- Program.cs
 |   |   |   |   `-- literals-and-variables.csproj
-|   |   |   `-- string-formatting/
+|   |   |   |-- string-formatting/
+|   |   |   |   |-- Program.cs
+|   |   |   |   `-- string-formatting.csproj
+|   |   |   `-- number-operations/
 |   |   |       |-- Program.cs
-|   |   |       `-- string-formatting.csproj
+|   |   |       `-- number-operations.csproj
 |   |   |-- guided-projects/
 |   |   `-- trophy/
 |   |-- create-and-run-simple-csharp-console-applications/
@@ -80,7 +83,7 @@ individual project names follow the corresponding module or guided-project title
 Current progress:
 
 ```text
-3 / 7 completed
+4 / 7 completed
 ```
 
 Completed:
@@ -88,10 +91,10 @@ Completed:
 - Write Your First C# Code
 - Store and Retrieve Data Using Literal and Variable Values in C#
 - Perform Basic String Formatting in C#
+- Perform Basic Operations on Numbers in C#
 
 Remaining:
 
-- Perform Basic Operations on Numbers in C#
 - Guided Project - Calculate and Print Student Grades
 - Guided Project - Calculate Final GPA
 - Trophy - Write Your First Code Using C#
@@ -367,6 +370,241 @@ Microsoft Learn confirmed completion of the module and its assessment.
 
 ---
 
+### Perform Basic Operations on Numbers in C#
+
+Location:
+
+```text
+curriculum/write-your-first-code-using-csharp/modules/number-operations/
+```
+
+This module introduces arithmetic expressions, numeric division behavior,
+explicit casting, remainder calculations, operator precedence, and concise ways
+to update numeric variables.
+
+Topics covered:
+
+- addition with integer values;
+- string concatenation with numeric values;
+- overloaded behavior of the `+` operator;
+- left-to-right expression evaluation;
+- parentheses and explicit evaluation order;
+- addition, subtraction, multiplication, and division;
+- integer division and truncation toward zero;
+- decimal division using the `m` suffix;
+- implicit numeric conversion;
+- explicit casting from `int` to `decimal`;
+- the remainder operator `%`;
+- divisibility checks;
+- operator precedence;
+- compound assignment operators such as `+=` and `-=`;
+- increment and decrement operators;
+- prefix and postfix increment behavior;
+- numeric formatting with `F1`;
+- Fahrenheit-to-Celsius conversion.
+
+#### Addition and String Concatenation
+
+```csharp
+int firstNumber = 12;
+int secondNumber = 7;
+
+Console.WriteLine(firstNumber + secondNumber);
+```
+
+Expected output:
+
+```text
+19
+```
+
+The `+` operator performs numeric addition when both operands are numeric.
+However, when one operand is a string, the same operator performs string
+concatenation.
+
+```csharp
+string firstName = "Bob";
+int widgetsSold = 7;
+
+Console.WriteLine(firstName + " sold " + widgetsSold + " widgets.");
+```
+
+Expected output:
+
+```text
+Bob sold 7 widgets.
+```
+
+Because operators of equal precedence are evaluated from left to right, the
+following expression concatenates the values as text:
+
+```csharp
+Console.WriteLine(firstName + " sold " + widgetsSold + 7 + " widgets.");
+```
+
+Expected output:
+
+```text
+Bob sold 77 widgets.
+```
+
+Parentheses force the numeric addition to occur first:
+
+```csharp
+Console.WriteLine(firstName + " sold " + (widgetsSold + 7) + " widgets.");
+```
+
+Expected output:
+
+```text
+Bob sold 14 widgets.
+```
+
+#### Integer and Decimal Division
+
+```csharp
+int integerQuotient = 7 / 5;
+decimal decimalQuotient = 7.0m / 5;
+
+Console.WriteLine(integerQuotient);
+Console.WriteLine(decimalQuotient);
+```
+
+Expected output:
+
+```text
+1
+1.4
+```
+
+When both operands are `int`, C# performs integer division and discards the
+fractional part. To preserve the decimal result, at least one operand must use a
+floating-point type such as `decimal`.
+
+The `m` suffix marks a numeric literal as `decimal`.
+
+#### Explicit Casting
+
+```csharp
+int dividend = 7;
+int divisor = 5;
+
+decimal quotient = (decimal)dividend / divisor;
+
+Console.WriteLine(quotient);
+```
+
+Expected output:
+
+```text
+1.4
+```
+
+Casting one operand to `decimal` causes the other integer operand to be
+implicitly converted for the division operation.
+
+#### Remainder Operator
+
+```csharp
+Console.WriteLine(200 % 5);
+Console.WriteLine(7 % 5);
+```
+
+Expected output:
+
+```text
+0
+2
+```
+
+The `%` operator returns the remainder after division. A remainder of zero means
+that the dividend is evenly divisible by the divisor.
+
+#### Operator Precedence
+
+```csharp
+int valueWithoutParentheses = 3 + 4 * 5;
+int valueWithParentheses = (3 + 4) * 5;
+
+Console.WriteLine(valueWithoutParentheses);
+Console.WriteLine(valueWithParentheses);
+```
+
+Expected output:
+
+```text
+23
+35
+```
+
+Multiplication is evaluated before addition unless parentheses explicitly change
+the order.
+
+#### Increment and Decrement
+
+```csharp
+int counter = 1;
+
+counter++;
+Console.WriteLine(counter);
+
+counter--;
+Console.WriteLine(counter);
+```
+
+Expected output:
+
+```text
+2
+1
+```
+
+The `++` operator increases a variable by one, while `--` decreases it by one.
+
+Prefix and postfix forms differ when the expression value is used:
+
+```csharp
+int value = 1;
+
+Console.WriteLine(value++);
+Console.WriteLine(value);
+Console.WriteLine(++value);
+```
+
+Expected output:
+
+```text
+1
+2
+3
+```
+
+Postfix increment returns the current value before incrementing. Prefix
+increment updates the variable first and then returns the new value.
+
+#### Module Challenge
+
+```csharp
+int fahrenheit = 94;
+decimal celsius = (fahrenheit - 32) * 5m / 9m;
+
+Console.WriteLine($"The temperature is {celsius:F1} Celsius.");
+```
+
+Expected output:
+
+```text
+The temperature is 34.4 Celsius.
+```
+
+The `F1` format specifier displays exactly one digit after the decimal point.
+
+Intentional invalid examples from the module are preserved as comments or study
+notes so that the final project remains buildable.
+
+Microsoft Learn confirmed completion of the module and its assessment.
+
+
 ## Learning Workflow
 
 The curriculum is completed across two learning platforms:
@@ -441,7 +679,7 @@ with:
 
 | Category | Completed | Status |
 | --- | ---: | --- |
-| Curriculum items | 3 | In progress |
+| Curriculum items | 4 | In progress |
 | Guided projects | 0 | Not started |
 | Trophies | 0 | Not started |
 | Certification exam | 0 | Not started |
@@ -449,7 +687,7 @@ with:
 Current section progress:
 
 ```text
-Write Your First Code Using C#: 3 / 7
+Write Your First Code Using C#: 4 / 7
 ```
 
 ---
@@ -468,6 +706,7 @@ Projects currently included after migration:
 curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/first-csharp-code.csproj
 curriculum/write-your-first-code-using-csharp/modules/literals-and-variables/literals-and-variables.csproj
 curriculum/write-your-first-code-using-csharp/modules/string-formatting/string-formatting.csproj
+curriculum/write-your-first-code-using-csharp/modules/number-operations/number-operations.csproj
 ```
 
 Build command:
@@ -482,13 +721,14 @@ The full solution build must be verified before each curriculum commit.
 
 ## Next Module
 
-### Perform Basic Operations on Numbers in C#
+### Guided Project - Calculate and Print Student Grades
 
 This is the next freeCodeCamp item in the
 **Write Your First Code Using C#** section.
 
-A separate project should only be created after confirming that the module
-contains enough code to provide useful review or portfolio value.
+The guided project will apply the foundational syntax introduced in the first
+four modules, including variables, numeric operations, string formatting, and
+console output.
 
 ---
 

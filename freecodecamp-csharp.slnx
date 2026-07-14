@@ -4,6 +4,7 @@
   <Folder Name="/curriculum/write-your-first-code-using-csharp/modules/">
     <Project Path="curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/first-csharp-code.csproj" />
     <Project Path="curriculum/write-your-first-code-using-csharp/modules/literals-and-variables/literals-and-variables.csproj" />
+    <Project Path="curriculum/write-your-first-code-using-csharp/modules/number-operations/number-operations.csproj" />
     <Project Path="curriculum/write-your-first-code-using-csharp/modules/string-formatting/string-formatting.csproj" />
   </Folder>
   <Folder Name="/Repository Files/">
