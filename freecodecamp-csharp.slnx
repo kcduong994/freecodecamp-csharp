@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/curriculum/" />
   <Folder Name="/curriculum/write-your-first-code-using-csharp/" />
+  <Folder Name="/curriculum/write-your-first-code-using-csharp/guided-projects/">
+    <Project Path="curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-grades/calculate-student-grades.csproj" />
+  </Folder>
   <Folder Name="/curriculum/write-your-first-code-using-csharp/modules/">
     <Project Path="curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/first-csharp-code.csproj" />
     <Project Path="curriculum/write-your-first-code-using-csharp/modules/literals-and-variables/literals-and-variables.csproj" />

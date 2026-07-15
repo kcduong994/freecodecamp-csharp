@@ -51,6 +51,9 @@ freecodecamp-csharp/
 |   |   |       |-- Program.cs
 |   |   |       `-- number-operations.csproj
 |   |   |-- guided-projects/
+|   |   |   `-- calculate-student-grades/
+|   |   |       |-- Program.cs
+|   |   |       `-- calculate-student-grades.csproj
 |   |   `-- trophy/
 |   |-- create-and-run-simple-csharp-console-applications/
 |   |-- add-logic-to-csharp-console-applications/
@@ -83,7 +86,7 @@ individual project names follow the corresponding module or guided-project title
 Current progress:
 
 ```text
-4 / 7 completed
+5 / 7 completed
 ```
 
 Completed:
@@ -92,10 +95,10 @@ Completed:
 - Store and Retrieve Data Using Literal and Variable Values in C#
 - Perform Basic String Formatting in C#
 - Perform Basic Operations on Numbers in C#
+- Guided Project - Calculate and Print Student Grades
 
 Remaining:
 
-- Guided Project - Calculate and Print Student Grades
 - Guided Project - Calculate Final GPA
 - Trophy - Write Your First Code Using C#
 
@@ -604,6 +607,113 @@ notes so that the final project remains buildable.
 
 Microsoft Learn confirmed completion of the module and its assessment.
 
+---
+
+## Completed Guided Projects
+
+### Calculate and Print Student Grades
+
+Location:
+
+```text
+curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-grades/
+```
+
+This guided project applies the foundational C# concepts introduced in the first
+four modules to a small student-grading application.
+
+The application:
+
+- stores five assignment scores for each of four students;
+- calculates the total assignment score for each student;
+- calculates each student's average score;
+- preserves fractional results by casting an integer value to `decimal`;
+- displays student names, numeric grades, and manually assigned letter grades;
+- formats the final report with tab and new-line escape sequences.
+
+#### Input Data
+
+| Student | Assignment scores |
+| --- | --- |
+| Sophia | 93, 87, 98, 95, 100 |
+| Nicolas | 80, 83, 82, 88, 85 |
+| Zahirah | 84, 96, 73, 85, 79 |
+| Jeong | 90, 92, 98, 100, 97 |
+
+#### Calculating Totals
+
+```csharp
+int sophiaSum =
+    sophia1 + sophia2 + sophia3 + sophia4 + sophia5;
+```
+
+The expected totals are:
+
+| Student | Total |
+| --- | ---: |
+| Sophia | 473 |
+| Nicolas | 418 |
+| Zahirah | 417 |
+| Jeong | 477 |
+
+#### Calculating Averages
+
+```csharp
+decimal sophiaScore =
+    (decimal)sophiaSum / currentAssignments;
+```
+
+Casting the sum to `decimal` before division prevents integer division from
+discarding the fractional part.
+
+For example:
+
+```text
+473 / 5 = 94
+(decimal)473 / 5 = 94.6
+```
+
+Only one operand needs to be cast because C# implicitly converts the other
+integer operand for the decimal calculation.
+
+#### Formatting the Report
+
+```csharp
+Console.WriteLine("Student\t\tGrade\n");
+Console.WriteLine($"{sophiaName}:\t\t{sophiaScore}\tA");
+Console.WriteLine($"{nicolasName}:\t{nicolasScore}\tB");
+Console.WriteLine($"{zahirahName}:\t{zahirahScore}\tB");
+Console.WriteLine($"{jeongName}:\t\t{jeongScore}\tA");
+```
+
+Expected output:
+
+```text
+Student         Grade
+
+Sophia:         94.6    A
+Nicolas:        83.6    B
+Zahirah:        83.4    B
+Jeong:          95.4    A
+```
+
+The letter grades are assigned directly in this guided project because
+conditional statements such as `if` and `else` have not yet been introduced.
+
+Key concepts reinforced:
+
+- problem decomposition;
+- variable declaration and initialization;
+- integer and decimal data types;
+- arithmetic expressions;
+- integer division;
+- explicit casting;
+- string interpolation;
+- `\t` and `\n` escape sequences;
+- incremental development and output verification.
+
+Microsoft Learn confirmed completion of the guided project and its assessment.
+
 
 ## Learning Workflow
 
@@ -679,15 +789,15 @@ with:
 
 | Category | Completed | Status |
 | --- | ---: | --- |
-| Curriculum items | 4 | In progress |
-| Guided projects | 0 | Not started |
+| Curriculum items | 5 | In progress |
+| Guided projects | 1 | In progress |
 | Trophies | 0 | Not started |
 | Certification exam | 0 | Not started |
 
 Current section progress:
 
 ```text
-Write Your First Code Using C#: 4 / 7
+Write Your First Code Using C#: 5 / 7
 ```
 
 ---
@@ -707,6 +817,7 @@ curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/first-cs
 curriculum/write-your-first-code-using-csharp/modules/literals-and-variables/literals-and-variables.csproj
 curriculum/write-your-first-code-using-csharp/modules/string-formatting/string-formatting.csproj
 curriculum/write-your-first-code-using-csharp/modules/number-operations/number-operations.csproj
+curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-grades/calculate-student-grades.csproj
 ```
 
 Build command:
@@ -721,13 +832,13 @@ The full solution build must be verified before each curriculum commit.
 
 ## Next Module
 
-### Guided Project - Calculate and Print Student Grades
+### Guided Project - Calculate Final GPA
 
 This is the next freeCodeCamp item in the
 **Write Your First Code Using C#** section.
 
-The guided project will apply the foundational syntax introduced in the first
-four modules, including variables, numeric operations, string formatting, and
+The next guided project will extend the current grading concepts by calculating
+a final GPA from course grades and credit values, then formatting the result for
 console output.
 
 ---
