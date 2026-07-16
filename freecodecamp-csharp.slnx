@@ -2,6 +2,7 @@
   <Folder Name="/curriculum/" />
   <Folder Name="/curriculum/write-your-first-code-using-csharp/" />
   <Folder Name="/curriculum/write-your-first-code-using-csharp/guided-projects/">
+    <Project Path="curriculum/write-your-first-code-using-csharp/guided-projects/calculate-final-gpa/calculate-final-gpa.csproj" />
     <Project Path="curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-grades/calculate-student-grades.csproj" />
   </Folder>
   <Folder Name="/curriculum/write-your-first-code-using-csharp/modules/">
