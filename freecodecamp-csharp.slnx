@@ -1,5 +1,9 @@
 <Solution>
   <Folder Name="/curriculum/" />
+  <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/" />
+  <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/modules/">
+    <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj" />
+  </Folder>
   <Folder Name="/curriculum/write-your-first-code-using-csharp/" />
   <Folder Name="/curriculum/write-your-first-code-using-csharp/guided-projects/">
     <Project Path="curriculum/write-your-first-code-using-csharp/guided-projects/calculate-final-gpa/calculate-final-gpa.csproj" />

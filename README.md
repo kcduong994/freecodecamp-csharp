@@ -5,6 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-1%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-7-2563EB)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -28,14 +29,20 @@ It is maintained as a structured learning curriculum containing:
 Certification status: In progress
 Curriculum sections completed: 1 / 7
 Current section: Create and Run Simple C# Console Applications
+Current section status: In progress
+Latest completed module: Install and Configure Visual Studio Code
+Latest module status: Completed
+Module assessment: Passed
+Achievement: Earned
+Module completion date: July 17, 2026
 Completed section: Write Your First Code Using C#
-Last completed milestone: Verified Trophy
+Projects registered in solution: 7
 ```
 
 | No. | Curriculum section | Progress | Status |
-| ---: | --- | ---: | --- |
+| ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | Not started | Next |
+| 2 | Create and Run Simple C# Console Applications | 1 module completed | In progress |
 | 3 | Add Logic to C# Console Applications | Not started | Pending |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
@@ -78,21 +85,71 @@ This section covers:
 
 ---
 
-## Next Section
+## Current Section
 
 ### 2. Create and Run Simple C# Console Applications
 
 ```text
-Status: Next
-Progress: Not started
+Status: In progress
+Completed modules: 1
+Latest completed module: Install and Configure Visual Studio Code
+Module assessment: Passed
+Achievement: Earned
+Completion date: July 17, 2026
 ```
 
-This section will be documented when study begins. Its source code, notes,
-project structure, build validation, and completion evidence will be maintained
-inside:
+The first module in this section has been completed successfully.
+
+[Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
+
+### Completed Module — Install and Configure Visual Studio Code
+
+This module focuses on the development environment and the basic .NET CLI
+workflow rather than introducing substantial new C# syntax.
+
+Learning outcomes include:
+
+- understanding the role of a programming environment;
+- verifying Visual Studio Code;
+- verifying the installed .NET SDK;
+- understanding the difference between the .NET SDK and .NET Runtime;
+- creating a console application with the .NET CLI;
+- building a C# project;
+- running a C# project;
+- understanding the generated `Program.cs` and `.csproj` files;
+- understanding where compiled binaries are created;
+- adding a project to a solution.
+
+Key commands introduced:
+
+| Command | Purpose |
+| --- | --- |
+| `code --version` | Displays the installed Visual Studio Code version |
+| `dotnet --version` | Displays the active .NET SDK version |
+| `dotnet --list-sdks` | Lists installed .NET SDK versions |
+| `dotnet new console` | Creates a new console application |
+| `dotnet build` | Restores and compiles a project |
+| `dotnet run` | Builds when necessary and runs a project |
+| `dotnet sln list` | Lists projects registered in a solution |
+| `dotnet sln add` | Adds a project to a solution |
+
+Verified local environment:
+
+```text
+Visual Studio Code: 1.129.0
+.NET SDK: 10.0.302
+Operating system: Windows
+Primary repository IDE: Visual Studio
+```
+
+Current project:
 
 ```text
 curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── install-and-configure-visual-studio-code/
+        ├── Program.cs
+        └── install-and-configure-visual-studio-code.csproj
 ```
 
 ---
@@ -110,6 +167,13 @@ freecodecamp-csharp/
 │   │       ├── README.md
 │   │       └── assets/
 │   ├── create-and-run-simple-csharp-console-applications/
+│   │   ├── README.md
+│   │   ├── modules/
+│   │   │   └── install-and-configure-visual-studio-code/
+│   │   │       ├── Program.cs
+│   │   │       └── install-and-configure-visual-studio-code.csproj
+│   │   ├── guided-projects/
+│   │   └── trophy/
 │   ├── add-logic-to-csharp-console-applications/
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
@@ -134,6 +198,7 @@ Each curriculum section may contain:
 ## Development Environment
 
 - Visual Studio
+- Visual Studio Code
 - C#
 - .NET 10
 - Windows
@@ -141,7 +206,8 @@ Each curriculum section may contain:
 - Git
 - GitHub
 
-Visual Studio is the primary development environment for this repository.
+Visual Studio is the primary repository IDE. Visual Studio Code is also used
+when a Microsoft Learn module specifically teaches the VS Code workflow.
 
 ---
 
@@ -151,6 +217,12 @@ Solution file:
 
 ```text
 freecodecamp-csharp.slnx
+```
+
+Projects currently registered:
+
+```text
+7
 ```
 
 List all projects registered in the solution:
@@ -184,9 +256,11 @@ committed.
 
 ---
 
-## Completed Projects
+## Solution Projects
 
-The first completed section currently contributes six executable projects:
+### Completed projects from Section 1
+
+The completed first section contributes six executable projects:
 
 ```text
 curriculum/write-your-first-code-using-csharp/modules/first-csharp-code/first-csharp-code.csproj
@@ -200,6 +274,19 @@ curriculum/write-your-first-code-using-csharp/modules/number-operations/number-o
 curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-grades/calculate-student-grades.csproj
 
 curriculum/write-your-first-code-using-csharp/guided-projects/calculate-final-gpa/calculate-final-gpa.csproj
+```
+
+### Completed module project from Section 2
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj
+```
+
+Run the completed module project from the repository root:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\install-and-configure-visual-studio-code\install-and-configure-visual-studio-code.csproj"
 ```
 
 ---
