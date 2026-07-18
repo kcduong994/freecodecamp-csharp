@@ -3,8 +3,7 @@
 ![C#](https://img.shields.io/badge/C%23-Console_Applications-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Modules](https://img.shields.io/badge/Modules_Completed-1-16A34A)
-![Pending](https://img.shields.io/badge/Local_Verification-1-F59E0B)
+![Modules](https://img.shields.io/badge/Modules_Completed-2-16A34A)
 
 This directory documents the second section of the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -24,18 +23,17 @@ C# console applications with the .NET SDK and development tools.
 ```text
 Section: Create and Run Simple C# Console Applications
 Status: In progress
-Completed modules: 1
-Modules awaiting local verification: 1
-Latest Microsoft Learn module: Call Methods from the .NET Class Library Using C#
+Completed modules: 2
+Latest completed module: Call Methods from the .NET Class Library Using C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest Microsoft Learn completion date: July 18, 2026
+Latest module completion date: July 18, 2026
 ```
 
 | No. | Module | Status |
 | ---: | --- | --- |
 | 1 | Install and Configure Visual Studio Code | Completed |
-| 2 | Call Methods from the .NET Class Library Using C# | Microsoft Learn completed; local verification pending |
+| 2 | Call Methods from the .NET Class Library Using C# | Completed |
 
 A module is marked `Completed` only after its Microsoft Learn units, assessment,
 achievement, local run, project build, and full-solution build have all been
@@ -427,19 +425,18 @@ Completion date: July 17, 2026
 ### Completion Status
 
 ```text
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
-Microsoft Learn completion date: July 18, 2026
-Local project run: Pending verification
-Project build: Pending verification
-Full solution build: Pending verification
-Repository status: Not yet marked Completed
+Local project run: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 18, 2026
 ```
 
-The Microsoft Learn content and assessment for this module have been completed.
-The repository record remains pending until the local project and the complete
-solution produce verified terminal output.
+The Microsoft Learn content, local project, solution registration, and
+full-solution build have been verified for this module.
 
 The official module introduces the .NET Class Library and explains how C#
 applications call reusable methods supplied by .NET.
@@ -768,27 +765,26 @@ The following topics are intentionally deferred to later modules:
 
 ```text
 Module: Call Methods from the .NET Class Library Using C#
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
-Local project: Created
+Local project: Verified
 Project added to solution: Verified
-Local run: Pending verification
-Module build: Pending verification
-Full solution build: Pending verification
-Microsoft Learn completion date: July 18, 2026
+Local run: Verified
+Module build: Verified
+Full solution build: Verified
+Completion date: July 18, 2026
 ```
 
-Once local verification succeeds, update this record, the section-status block,
-the module table, and the completed-module badge before committing.
 
 ---
 
 ## Next Step
 
-Verify the new project locally, register it in the solution when necessary, and
-build the complete solution. The next official curriculum module should not be
-started until the current repository state is green.
+Proceed to the next official module in
+**Create and Run Simple C# Console Applications** while keeping the solution
+green and updating this section README continuously.
 
 
 ---

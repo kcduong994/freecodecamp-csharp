@@ -6,7 +6,6 @@
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-1%2F7-16A34A)
 ![Projects](https://img.shields.io/badge/Solution_Projects-8-2563EB)
-![Pending](https://img.shields.io/badge/Local_Verification-1-F59E0B)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -31,14 +30,12 @@ Certification status: In progress
 Curriculum sections completed: 1 / 7
 Current section: Create and Run Simple C# Console Applications
 Current section status: In progress
-Completed modules in current section: 1
-Modules awaiting local verification: 1
-Latest Microsoft Learn module: Call Methods from the .NET Class Library Using C#
+Completed modules in current section: 2
+Latest completed module: Call Methods from the .NET Class Library Using C#
+Latest module status: Completed
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest Microsoft Learn completion date: July 18, 2026
-Latest fully verified module: Install and Configure Visual Studio Code
-Latest fully verified module completion date: July 17, 2026
+Latest module completion date: July 18, 2026
 Completed section: Write Your First Code Using C#
 Projects currently verified in solution: 8
 ```
@@ -46,7 +43,7 @@ Projects currently verified in solution: 8
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | 1 completed, 1 awaiting local verification | In progress |
+| 2 | Create and Run Simple C# Console Applications | 2 modules completed | In progress |
 | 3 | Add Logic to C# Console Applications | Not started | Pending |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
@@ -99,14 +96,12 @@ This section covers:
 
 ```text
 Status: In progress
-Completed modules: 1
-Modules awaiting local verification: 1
-Latest Microsoft Learn module: Call Methods from the .NET Class Library Using C#
-Latest module assessment: Passed
-Latest achievement: Earned
-Latest Microsoft Learn completion date: July 18, 2026
-Latest fully verified module: Install and Configure Visual Studio Code
-Latest fully verified module completion date: July 17, 2026
+Completed modules: 2
+Latest completed module: Call Methods from the .NET Class Library Using C#
+Latest module status: Completed
+Module assessment: Passed
+Achievement: Earned
+Completion date: July 18, 2026
 ```
 
 [Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
@@ -173,15 +168,15 @@ curriculum/create-and-run-simple-csharp-console-applications/
 ### Module 2 — Call Methods from the .NET Class Library Using C#
 
 ```text
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
-Microsoft Learn completion date: July 18, 2026
-Local project run: Pending verification
+Local project run: Verified
 Project registration in solution: Verified
-Project build: Pending verification
-Full solution build: Pending verification
-Repository status: Not yet marked Completed
+Project build: Verified
+Full solution build: Verified
+Completion date: July 18, 2026
 ```
 
 This module introduces reusable functionality from the .NET Class Library and
@@ -201,7 +196,7 @@ Learning outcomes include:
 - using `Random.Next()`;
 - completing the `Math.Max()` challenge.
 
-Planned project location:
+Project location:
 
 ```text
 curriculum/create-and-run-simple-csharp-console-applications/
@@ -215,9 +210,8 @@ The shorter project and directory name are used for repository convenience. The
 official Microsoft Learn module title remains fully documented in the section
 README.
 
-The project is registered in the solution. The module will be marked `Completed`
-only after the local project run and the full solution build are confirmed by
-terminal output.
+The project runs locally, is registered in the solution, and has been verified
+through the full-solution build.
 
 ---
 
@@ -346,10 +340,12 @@ curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-
 curriculum/write-your-first-code-using-csharp/guided-projects/calculate-final-gpa/calculate-final-gpa.csproj
 ```
 
-### Completed module project from Section 2
+### Completed module projects from Section 2
 
 ```text
 curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj
+
+curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj
 ```
 
 Run the completed module project from the repository root:
@@ -358,22 +354,6 @@ Run the completed module project from the repository root:
 dotnet run --project `
   ".\curriculum\create-and-run-simple-csharp-console-applications\modules\install-and-configure-visual-studio-code\install-and-configure-visual-studio-code.csproj"
 ```
-
-### Registered project awaiting run and build verification
-
-```text
-curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj
-```
-
-Run the pending module project:
-
-```powershell
-dotnet run --project `
-  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\call-methods\call-methods.csproj"
-```
-
-This project will move into the completed-project list after its local run and
-full-solution build are verified.
 
 ---
 
