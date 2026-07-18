@@ -5,7 +5,8 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-1%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-7-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-8-2563EB)
+![Pending](https://img.shields.io/badge/Local_Verification-1-F59E0B)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -30,24 +31,31 @@ Certification status: In progress
 Curriculum sections completed: 1 / 7
 Current section: Create and Run Simple C# Console Applications
 Current section status: In progress
-Latest completed module: Install and Configure Visual Studio Code
-Latest module status: Completed
-Module assessment: Passed
-Achievement: Earned
-Module completion date: July 17, 2026
+Completed modules in current section: 1
+Modules awaiting local verification: 1
+Latest Microsoft Learn module: Call Methods from the .NET Class Library Using C#
+Latest module assessment: Passed
+Latest achievement: Earned
+Latest Microsoft Learn completion date: July 18, 2026
+Latest fully verified module: Install and Configure Visual Studio Code
+Latest fully verified module completion date: July 17, 2026
 Completed section: Write Your First Code Using C#
-Projects registered in solution: 7
+Projects currently verified in solution: 8
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | 1 module completed | In progress |
+| 2 | Create and Run Simple C# Console Applications | 1 completed, 1 awaiting local verification | In progress |
 | 3 | Add Logic to C# Console Applications | Not started | Pending |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending |
+
+A module is marked `Completed` in this repository only after its official units,
+assessment, achievement, local run, project registration, and solution build have
+all been verified.
 
 ---
 
@@ -92,17 +100,25 @@ This section covers:
 ```text
 Status: In progress
 Completed modules: 1
-Latest completed module: Install and Configure Visual Studio Code
+Modules awaiting local verification: 1
+Latest Microsoft Learn module: Call Methods from the .NET Class Library Using C#
+Latest module assessment: Passed
+Latest achievement: Earned
+Latest Microsoft Learn completion date: July 18, 2026
+Latest fully verified module: Install and Configure Visual Studio Code
+Latest fully verified module completion date: July 17, 2026
+```
+
+[Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
+
+### Module 1 — Install and Configure Visual Studio Code
+
+```text
+Status: Completed
 Module assessment: Passed
 Achievement: Earned
 Completion date: July 17, 2026
 ```
-
-The first module in this section has been completed successfully.
-
-[Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
-
-### Completed Module — Install and Configure Visual Studio Code
 
 This module focuses on the development environment and the basic .NET CLI
 workflow rather than introducing substantial new C# syntax.
@@ -142,7 +158,7 @@ Operating system: Windows
 Primary repository IDE: Visual Studio
 ```
 
-Current project:
+Project:
 
 ```text
 curriculum/create-and-run-simple-csharp-console-applications/
@@ -151,6 +167,57 @@ curriculum/create-and-run-simple-csharp-console-applications/
         ├── Program.cs
         └── install-and-configure-visual-studio-code.csproj
 ```
+
+---
+
+### Module 2 — Call Methods from the .NET Class Library Using C#
+
+```text
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Microsoft Learn completion date: July 18, 2026
+Local project run: Pending verification
+Project registration in solution: Verified
+Project build: Pending verification
+Full solution build: Pending verification
+Repository status: Not yet marked Completed
+```
+
+This module introduces reusable functionality from the .NET Class Library and
+explains how C# applications call methods supplied by .NET.
+
+Learning outcomes include:
+
+- understanding the purpose of the .NET Class Library;
+- calling static methods;
+- creating objects and calling instance methods;
+- using the `new` operator;
+- working with return values;
+- distinguishing parameters from arguments;
+- using overloaded methods;
+- inspecting methods with IntelliSense;
+- consulting Microsoft Learn documentation;
+- using `Random.Next()`;
+- completing the `Math.Max()` challenge.
+
+Planned project location:
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── call-methods/
+        ├── Program.cs
+        └── call-methods.csproj
+```
+
+The shorter project and directory name are used for repository convenience. The
+official Microsoft Learn module title remains fully documented in the section
+README.
+
+The project is registered in the solution. The module will be marked `Completed`
+only after the local project run and the full solution build are confirmed by
+terminal output.
 
 ---
 
@@ -169,9 +236,12 @@ freecodecamp-csharp/
 │   ├── create-and-run-simple-csharp-console-applications/
 │   │   ├── README.md
 │   │   ├── modules/
-│   │   │   └── install-and-configure-visual-studio-code/
+│   │   │   ├── install-and-configure-visual-studio-code/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── install-and-configure-visual-studio-code.csproj
+│   │   │   └── call-methods/
 │   │   │       ├── Program.cs
-│   │   │       └── install-and-configure-visual-studio-code.csproj
+│   │   │       └── call-methods.csproj
 │   │   ├── guided-projects/
 │   │   └── trophy/
 │   ├── add-logic-to-csharp-console-applications/
@@ -219,10 +289,10 @@ Solution file:
 freecodecamp-csharp.slnx
 ```
 
-Projects currently registered:
+Projects currently verified as registered:
 
 ```text
-7
+8
 ```
 
 List all projects registered in the solution:
@@ -289,6 +359,22 @@ dotnet run --project `
   ".\curriculum\create-and-run-simple-csharp-console-applications\modules\install-and-configure-visual-studio-code\install-and-configure-visual-studio-code.csproj"
 ```
 
+### Registered project awaiting run and build verification
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj
+```
+
+Run the pending module project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\call-methods\call-methods.csproj"
+```
+
+This project will move into the completed-project list after its local run and
+full-solution build are verified.
+
 ---
 
 ## Review Notes
@@ -314,13 +400,14 @@ A curriculum item is considered complete in this repository only when:
 
 1. the official lesson units have been completed;
 2. the associated assessment has been passed;
-3. the local project runs successfully;
-4. the project is included in the solution when applicable;
-5. the full solution builds without errors;
-6. section documentation has been updated;
-7. progress in this root README has been updated;
-8. relevant evidence has been stored;
-9. the Git diff has been reviewed before commit.
+3. the achievement has been earned when applicable;
+4. the local project runs successfully;
+5. the project is included in the solution when applicable;
+6. the full solution builds without errors;
+7. section documentation has been updated;
+8. progress in this root README has been updated;
+9. relevant evidence has been stored;
+10. the Git diff has been reviewed before commit.
 
 This structure keeps the repository useful for:
 
@@ -338,6 +425,7 @@ This structure keeps the repository useful for:
 
 - [freeCodeCamp — Foundational C# with Microsoft](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 - [Microsoft Learn — Get Started with C#, Part 1](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-1/)
+- [Microsoft Learn — Get Started with C#, Part 2](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-2/)
 
 ---
 

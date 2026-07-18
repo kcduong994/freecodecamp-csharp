@@ -4,6 +4,7 @@
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Modules](https://img.shields.io/badge/Modules_Completed-1-16A34A)
+![Pending](https://img.shields.io/badge/Local_Verification-1-F59E0B)
 
 This directory documents the second section of the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -24,17 +25,21 @@ C# console applications with the .NET SDK and development tools.
 Section: Create and Run Simple C# Console Applications
 Status: In progress
 Completed modules: 1
-Latest completed module: Install and Configure Visual Studio Code
+Modules awaiting local verification: 1
+Latest Microsoft Learn module: Call Methods from the .NET Class Library Using C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 17, 2026
+Latest Microsoft Learn completion date: July 18, 2026
 ```
 
 | No. | Module | Status |
 | ---: | --- | --- |
 | 1 | Install and Configure Visual Studio Code | Completed |
+| 2 | Call Methods from the .NET Class Library Using C# | Microsoft Learn completed; local verification pending |
 
-Additional modules will be added to this table as study continues.
+A module is marked `Completed` only after its Microsoft Learn units, assessment,
+achievement, local run, project build, and full-solution build have all been
+verified.
 
 ---
 
@@ -44,9 +49,12 @@ Additional modules will be added to this table as study continues.
 create-and-run-simple-csharp-console-applications/
 ├── README.md
 ├── modules/
-│   └── install-and-configure-visual-studio-code/
+│   ├── install-and-configure-visual-studio-code/
+│   │   ├── Program.cs
+│   │   └── install-and-configure-visual-studio-code.csproj
+│   └── call-methods/
 │       ├── Program.cs
-│       └── install-and-configure-visual-studio-code.csproj
+│       └── call-methods.csproj
 ├── guided-projects/
 └── trophy/
 ```
@@ -414,15 +422,379 @@ Completion date: July 17, 2026
 
 ---
 
-## Navigation
+## Module 2 — Call Methods from the .NET Class Library Using C#
 
-- [Repository overview](../../README.md)
-- [Previous section — Write Your First Code Using C#](../write-your-first-code-using-csharp/README.md)
-- [C# review notes](../../CSHARP_REVIEW.md)
+### Completion Status
+
+```text
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Microsoft Learn completion date: July 18, 2026
+Local project run: Pending verification
+Project build: Pending verification
+Full solution build: Pending verification
+Repository status: Not yet marked Completed
+```
+
+The Microsoft Learn content and assessment for this module have been completed.
+The repository record remains pending until the local project and the complete
+solution produce verified terminal output.
+
+The official module introduces the .NET Class Library and explains how C#
+applications call reusable methods supplied by .NET.
+
+---
+
+### Learning Objectives
+
+After completing the module, the learner should be able to:
+
+- locate useful classes and methods in the .NET Class Library;
+- call methods by using the member-access and method-invocation operators;
+- distinguish static methods from instance methods;
+- create an object with the `new` operator;
+- store and use method return values;
+- distinguish parameters from arguments;
+- call overloaded methods with different signatures;
+- use IntelliSense and Microsoft Learn documentation to inspect methods;
+- use `Math.Max()` to return the larger of two values.
+
+---
+
+### .NET Class Library
+
+The **.NET Class Library** is a reusable collection of classes, methods, data
+types, and supporting functionality supplied by .NET.
+
+A class groups related members. For example, the `Console` class provides
+methods for console input and output:
+
+```csharp
+Console.WriteLine("Hello, C#!");
+```
+
+The statement contains:
+
+```text
+Console        Class name
+.              Member-access operator
+WriteLine      Method name
+(...)          Method-invocation operator
+"Hello, C#!"   Argument
+```
+
+The library prevents developers from having to implement common functionality
+from scratch.
+
+---
+
+### Static and Instance Methods
+
+A **static method** belongs to its class and can be called directly through the
+class name:
+
+```csharp
+Console.WriteLine("Static method call");
+```
+
+An **instance method** is called through an object created from a class:
+
+```csharp
+Random dice = new();
+int roll = dice.Next(1, 7);
+```
+
+In this example:
+
+- `Random` is the class;
+- `dice` is an object, or instance, of `Random`;
+- `new()` creates the instance;
+- `Next(1, 7)` is an instance-method call;
+- the returned integer is stored in `roll`.
+
+The terms **stateless** and **stateful** are used in the module to explain why
+some methods are called through a class and others through an object. In normal
+C# terminology, the key distinction is between static and instance members.
+
+---
+
+### Return Values and `void`
+
+A method may return a value:
+
+```csharp
+int roll = dice.Next(1, 7);
+```
+
+The returned value can also be used directly:
+
+```csharp
+Console.WriteLine(dice.Next(1, 7));
+```
+
+Some methods return no value. Their return type is `void`.
+
+```csharp
+Console.Clear();
+```
+
+A return value should normally be stored or consumed when it is meaningful to
+the program.
+
+---
+
+### Parameters and Arguments
+
+A **parameter** is a variable declared by the method definition.
+
+An **argument** is the concrete value supplied by the caller.
+
+```csharp
+int roll = dice.Next(1, 7);
+```
+
+For the selected `Random.Next(int minValue, int maxValue)` overload:
+
+- `minValue` and `maxValue` are parameters;
+- `1` and `7` are arguments;
+- the minimum value is inclusive;
+- the maximum value is exclusive.
+
+Therefore, `Next(1, 7)` can produce the integers `1` through `6`.
+
+---
+
+### Method Overloads
+
+An overloaded method has multiple valid signatures. Each overload differs by
+the number or types of its parameters.
+
+Examples of `Random.Next()` overloads:
+
+```csharp
+int anyNonNegativeInteger = dice.Next();
+int belowOneHundredOne = dice.Next(101);
+int betweenFiftyAndOneHundred = dice.Next(50, 101);
+```
+
+Examples of `Console.WriteLine()` overloads:
+
+```csharp
+Console.WriteLine();
+Console.WriteLine(7);
+Console.WriteLine("seven");
+```
+
+IntelliSense displays available overloads, parameter types, and return types
+while code is being written.
+
+---
+
+### Challenge — `Math.Max()`
+
+The module challenge requires finding and calling a method that returns the
+larger of two numbers.
+
+```csharp
+int firstValue = 500;
+int secondValue = 600;
+int largerValue = Math.Max(firstValue, secondValue);
+
+Console.WriteLine(largerValue);
+```
+
+Expected output:
+
+```text
+600
+```
+
+`Math.Max()` is a static method, so no `Math` object needs to be created.
+
+---
+
+### Repository Project
+
+The project for this module uses the shorter directory and project names while
+the official module title remains fully documented here:
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── call-methods/
+        ├── Program.cs
+        └── call-methods.csproj
+```
+
+The project must be registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The project is registered in the solution, and the solution listing confirms
+eight projects.
+
+---
+
+### Module Program
+
+The program contains focused executable examples rather than copying the lesson
+as hundreds of comment lines. It demonstrates:
+
+1. a static method call;
+2. creation of a `Random` instance;
+3. an instance method with a return value;
+4. parameters and arguments;
+5. overloaded methods;
+6. direct use of a return value;
+7. the `Math.Max()` challenge.
+
+Because random-number output changes on each run, only the fixed labels and
+numeric ranges are deterministic.
+
+Possible output:
+
+```text
+=== Static and instance methods ===
+A six-sided die roll: 4
+
+=== Method overloads ===
+Next(): 342585470
+Next(101): 43
+Next(50, 101): 89
+
+=== Directly use a return value ===
+Another six-sided die roll: 2
+
+=== Math.Max challenge ===
+The larger value between 500 and 600 is 600.
+```
+
+The random values will vary, but:
+
+- each six-sided die roll must be between `1` and `6`;
+- `Next(101)` must be between `0` and `100`;
+- `Next(50, 101)` must be between `50` and `100`;
+- the larger challenge value must be `600`.
+
+---
+
+### Build and Run Commands
+
+Run the module project from the repository root:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\call-methods\call-methods.csproj"
+```
+
+Build the module project:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\call-methods\call-methods.csproj"
+```
+
+List all solution projects:
+
+```powershell
+dotnet sln .\freecodecamp-csharp.slnx list
+```
+
+Restore and build the complete solution:
+
+```powershell
+dotnet restore .\freecodecamp-csharp.slnx
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+The module can be marked `Completed` only after the terminal confirms:
+
+```text
+Build succeeded.
+0 Warning(s)
+0 Error(s)
+```
+
+---
+
+### Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| method | `/ˈmeθ.əd/` | “me-thợd” | phương thức |
+| class library | `/klɑːs ˈlaɪ.brər.i/` | “class lai-brờ-ri” | thư viện lớp |
+| instance | `/ˈɪn.stəns/` | “in-stầns” | thể hiện/đối tượng được tạo từ lớp |
+| static | `/ˈstæt.ɪk/` | “sta-tịch” | thành viên thuộc về lớp |
+| parameter | `/pəˈræm.ɪ.tər/` | “pờ-ra-mi-tờ” | biến trong định nghĩa phương thức |
+| argument | `/ˈɑːɡ.jə.mənt/` | “a-giu-mần(t)” | giá trị truyền vào khi gọi phương thức |
+| return value | `/rɪˈtɜːn ˌvæl.juː/` | “ri-tơn va-liu” | giá trị trả về |
+| overload | `/ˈəʊ.və.ləʊd/` | “âu-vờ-lâuđ” | nhiều chữ ký gọi cho cùng tên phương thức |
+| IntelliSense | `/ɪnˈtel.ɪ.sens/` | “in-te-li-sens” | hỗ trợ gợi ý và phân tích mã |
+
+---
+
+### Knowledge Introduced
+
+This module introduces:
+
+- the .NET Class Library;
+- classes, objects, and methods;
+- static and instance method calls;
+- the `new` operator;
+- return values and `void`;
+- parameters and arguments;
+- method overloads;
+- IntelliSense;
+- documentation lookup;
+- `Random.Next()`;
+- `Math.Max()`.
+
+The following topics are intentionally deferred to later modules:
+
+- defining custom methods;
+- defining custom classes;
+- constructor design;
+- fields and properties;
+- dependency injection;
+- automated unit testing;
+- cryptographically secure random-number generation.
+
+---
+
+### Completion Record
+
+```text
+Module: Call Methods from the .NET Class Library Using C#
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Created
+Project added to solution: Verified
+Local run: Pending verification
+Module build: Pending verification
+Full solution build: Pending verification
+Microsoft Learn completion date: July 18, 2026
+```
+
+Once local verification succeeds, update this record, the section-status block,
+the module table, and the completed-module badge before committing.
 
 ---
 
 ## Next Step
 
-The section remains in progress. The next official module will be added after it
-is started on freeCodeCamp and Microsoft Learn.
+Verify the new project locally, register it in the solution when necessary, and
+build the complete solution. The next official curriculum module should not be
+started until the current repository state is green.
+
+
+---
+
+## Navigation
+
+- [Repository overview](../../README.md)
+- [Previous section — Write Your First Code Using C#](../write-your-first-code-using-csharp/README.md)
+- [C# review notes](../../CSHARP_REVIEW.md)
