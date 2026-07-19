@@ -3,7 +3,7 @@
 ![C#](https://img.shields.io/badge/C%23-Console_Applications-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Modules](https://img.shields.io/badge/Modules_Completed-2-16A34A)
+![Modules](https://img.shields.io/badge/Modules_Completed-3-16A34A)
 
 This directory documents the second section of the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -23,17 +23,18 @@ C# console applications with the .NET SDK and development tools.
 ```text
 Section: Create and Run Simple C# Console Applications
 Status: In progress
-Completed modules: 2
-Latest completed module: Call Methods from the .NET Class Library Using C#
+Completed modules: 3
+Latest completed module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 18, 2026
+Latest module completion date: July 19, 2026
 ```
 
 | No. | Module | Status |
 | ---: | --- | --- |
 | 1 | Install and Configure Visual Studio Code | Completed |
 | 2 | Call Methods from the .NET Class Library Using C# | Completed |
+| 3 | Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C# | Completed |
 
 A module is marked `Completed` only after its Microsoft Learn units, assessment,
 achievement, local run, project build, and full-solution build have all been
@@ -50,9 +51,12 @@ create-and-run-simple-csharp-console-applications/
 │   ├── install-and-configure-visual-studio-code/
 │   │   ├── Program.cs
 │   │   └── install-and-configure-visual-studio-code.csproj
-│   └── call-methods/
+│   ├── call-methods/
+│   │   ├── Program.cs
+│   │   └── call-methods.csproj
+│   └── decision-logic/
 │       ├── Program.cs
-│       └── call-methods.csproj
+│       └── decision-logic.csproj
 ├── guided-projects/
 └── trophy/
 ```
@@ -289,7 +293,7 @@ The project was added to:
 freecodecamp-csharp.slnx
 ```
 
-The solution now contains seven registered projects.
+At the time this module was completed, the solution contained seven registered projects.
 
 List the solution projects from the repository root:
 
@@ -630,8 +634,8 @@ The project must be registered in:
 freecodecamp-csharp.slnx
 ```
 
-The project is registered in the solution, and the solution listing confirms
-eight projects.
+The project is registered in the solution. At the time this module was completed,
+the solution contained eight registered projects.
 
 ---
 
@@ -777,6 +781,490 @@ Full solution build: Verified
 Completion date: July 18, 2026
 ```
 
+---
+
+## Module 3 — Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C#
+
+### Completion Status
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 9
+Local project run: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 19, 2026
+```
+
+The official units, assessment, and achievement have been completed. The
+`decision-logic` project has also been created and registered in
+`freecodecamp-csharp.slnx`.
+
+The four `CS0168` warnings in the earlier `literals-and-variables` module have
+been corrected in source code. The repository status remains pending until the
+module project and complete solution are run again successfully.
+
+---
+
+### Latest Validation Status
+
+The previous full-solution build reported four `CS0168` warnings in:
+
+```text
+curriculum/write-your-first-code-using-csharp/
+modules/literals-and-variables/Program.cs
+```
+
+The source correction now assigns and retrieves all four variables:
+
+```text
+userOption
+gameScore
+particlesPerMillion
+processedCustomer
+```
+
+This preserves the original lesson while removing declarations that were never
+used. A fresh build is still required before Module 3 can be marked `Completed`:
+
+```text
+Build succeeded.
+0 Warning(s)
+0 Error(s)
+```
+
+
+### Official Module Structure
+
+The module contains seven units:
+
+1. Introduction
+2. Exercise — Create decision logic with `if` statements
+3. Exercise — Create nested decision logic with `if`, `else if`, and `else`
+4. Exercise — Complete a challenge activity to apply business rules
+5. Review the solution to the apply business rules challenge activity
+6. Module assessment
+7. Summary
+
+The module teaches how to branch a program's execution path by evaluating
+Boolean expressions.
+
+---
+
+### Learning Objectives
+
+After completing the module, the learner should be able to:
+
+- evaluate conditions with `if`, `else if`, and `else`;
+- build Boolean expressions that return `true` or `false`;
+- compare values with equality and relational operators;
+- combine Boolean expressions with logical operators;
+- create mutually exclusive execution branches;
+- nest one code block inside another;
+- order conditions according to business-rule precedence;
+- prevent multiple rewards or messages from being applied incorrectly.
+
+---
+
+### Decision Logic and Branches
+
+Decision logic allows a program to choose which statements should execute.
+Alternative execution paths are commonly called **branches**.
+
+```csharp
+if (total >= 15)
+{
+    Console.WriteLine("You win!");
+}
+```
+
+An `if` statement contains:
+
+```text
+if                  Decision keyword
+(total >= 15)       Boolean expression
+{ ... }             Code block
+```
+
+The code block executes only when the Boolean expression evaluates to `true`.
+
+---
+
+### Boolean Expressions
+
+A Boolean expression produces either `true` or `false`.
+
+```csharp
+string message = "The quick brown fox jumps over the lazy dog.";
+bool containsDog = message.Contains("dog");
+
+Console.WriteLine(containsDog);
+```
+
+A method that returns `bool` can be used directly as a condition:
+
+```csharp
+if (message.Contains("fox"))
+{
+    Console.WriteLine("What does the fox say?");
+}
+```
+
+---
+
+### Comparison Operators
+
+| Operator | Meaning | Example |
+| --- | --- | --- |
+| `==` | equal to | `roll1 == roll2` |
+| `!=` | not equal to | `score != 0` |
+| `>` | greater than | `total > 14` |
+| `<` | less than | `total < 15` |
+| `>=` | greater than or equal to | `total >= 15` |
+| `<=` | less than or equal to | `daysUntilExpiration <= 5` |
+
+`==` tests equality. A single `=` performs assignment.
+
+---
+
+### Logical Operators
+
+The logical OR operator, `||`, returns `true` when at least one condition is
+true:
+
+```csharp
+bool hasDoubles =
+    roll1 == roll2 ||
+    roll2 == roll3 ||
+    roll1 == roll3;
+```
+
+The logical AND operator, `&&`, returns `true` only when both conditions are
+true:
+
+```csharp
+bool hasTriples =
+    roll1 == roll2 &&
+    roll2 == roll3;
+```
+
+---
+
+### Code Blocks and Nesting
+
+A code block is enclosed by braces:
+
+```csharp
+{
+    // Statements belonging to one unit of execution.
+}
+```
+
+A block can contain another block:
+
+```csharp
+if (hasDoubles)
+{
+    if (hasTriples)
+    {
+        Console.WriteLine("You rolled triples!");
+    }
+}
+```
+
+This is called nested decision logic. Nesting is useful when an inner decision
+should be evaluated only after an outer condition succeeds.
+
+---
+
+### Dice Game
+
+The exercise generates three six-sided dice:
+
+```csharp
+Random random = new();
+
+int roll1 = random.Next(1, 7);
+int roll2 = random.Next(1, 7);
+int roll3 = random.Next(1, 7);
+
+int total = roll1 + roll2 + roll3;
+```
+
+`Random.Next(1, 7)` can return `1` through `6` because the minimum is inclusive
+and the maximum is exclusive.
+
+The bonus rules are:
+
+- doubles add two points;
+- triples add six points;
+- doubles and triples bonuses must not stack.
+
+The final repository code evaluates triples before doubles:
+
+```csharp
+if (hasTriples)
+{
+    total += 6;
+}
+else if (hasDoubles)
+{
+    total += 2;
+}
+```
+
+Every triple also satisfies the doubles condition. An `if`/`else if` chain makes
+the two bonus branches mutually exclusive.
+
+---
+
+### `if`, `else if`, and `else`
+
+Two opposite outcomes can be represented by `if` and `else`:
+
+```csharp
+if (total >= 15)
+{
+    Console.WriteLine("You win!");
+}
+else
+{
+    Console.WriteLine("Sorry, you lose.");
+}
+```
+
+Multiple mutually exclusive outcomes use an `if`/`else if`/`else` chain:
+
+```csharp
+if (total >= 16)
+{
+    Console.WriteLine("You win a new car!");
+}
+else if (total >= 10)
+{
+    Console.WriteLine("You win a new laptop!");
+}
+else if (total == 7)
+{
+    Console.WriteLine("You win a trip for two!");
+}
+else
+{
+    Console.WriteLine("You win a kitten!");
+}
+```
+
+Conditions are checked from top to bottom. Only the first matching branch runs,
+so condition order directly affects program behavior.
+
+---
+
+### Subscription-Renewal Challenge
+
+The challenge begins with:
+
+```csharp
+int daysUntilExpiration = random.Next(12);
+```
+
+Possible values are `0` through `11`.
+
+The business-rule precedence is:
+
+1. `0`: subscription expired;
+2. `1`: urgent message and 20% discount;
+3. `2–5`: expiration message and 10% discount;
+4. `6–10`: general renewal reminder;
+5. `11`: display no subscription message.
+
+The conditions must be ordered from the most specific and highest-priority rule
+to the broadest rule:
+
+```csharp
+if (daysUntilExpiration == 0)
+{
+    Console.WriteLine("Your subscription has expired.");
+}
+else if (daysUntilExpiration == 1)
+{
+    Console.WriteLine("Your subscription expires within a day!");
+    Console.WriteLine("Renew now and save 20%!");
+}
+else if (daysUntilExpiration <= 5)
+{
+    Console.WriteLine(
+        $"Your subscription expires in {daysUntilExpiration} days.");
+    Console.WriteLine("Renew now and save 10%!");
+}
+else if (daysUntilExpiration <= 10)
+{
+    Console.WriteLine(
+        "Your subscription will expire soon. Renew now!");
+}
+```
+
+There is intentionally no final `else`. When the value is `11`, the challenge
+requires no subscription message.
+
+---
+
+### Repository Project
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── decision-logic/
+        ├── Program.cs
+        └── decision-logic.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The solution listing confirms nine registered projects.
+
+---
+
+### Module Program
+
+The final `Program.cs` consolidates the completed exercises into two focused
+examples:
+
+1. a dice game demonstrating Boolean expressions, logical operators, bonus
+   precedence, and mutually exclusive prize branches;
+2. a subscription-renewal challenge demonstrating ordered business rules and
+   one-message-only behavior.
+
+Intermediate versions are documented conceptually rather than retained as
+duplicate executable code.
+
+---
+
+### Possible Output
+
+Random values change between runs.
+
+```text
+=== Dice game ===
+Dice roll: 4 + 4 + 2 = 10
+You rolled doubles! +2 bonus to total!
+Your total including the bonus: 12
+You win a new laptop!
+
+Your subscription expires in 4 days.
+Renew now and save 10%!
+```
+
+Valid runs may also produce a triples bonus, another prize, an expired
+subscription, a 20% discount, a general reminder, or no subscription message.
+
+---
+
+### Build and Run Commands
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\decision-logic\decision-logic.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\decision-logic\decision-logic.csproj"
+```
+
+List solution projects:
+
+```powershell
+dotnet sln .\freecodecamp-csharp.slnx list
+```
+
+Restore and build the full solution:
+
+```powershell
+dotnet restore .\freecodecamp-csharp.slnx
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Required result:
+
+```text
+Build succeeded.
+0 Warning(s)
+0 Error(s)
+```
+
+---
+
+### Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| decision logic | `/dɪˈsɪʒ.ən ˈlɒdʒ.ɪk/` | “đi-si-zhần lo-jịch” | logic ra quyết định |
+| branch | `/brɑːntʃ/` | “branch” | nhánh thực thi |
+| Boolean expression | `/ˈbuː.li.ən ɪkˈspreʃ.ən/` | “bu-li-ần ịch-spre-shần” | biểu thức trả về `true` hoặc `false` |
+| condition | `/kənˈdɪʃ.ən/` | “cần-đi-shần” | điều kiện |
+| code block | `/kəʊd blɒk/` | “câud block” | khối lệnh |
+| nested | `/ˈnes.tɪd/` | “nes-tịt” | được lồng bên trong |
+| logical operator | `/ˈlɒdʒ.ɪ.kəl ˈɒp.ər.eɪ.tər/` | “lo-ji-cồ o-pờ-rây-tờ” | toán tử logic |
+| precedence | `/ˈpres.ɪ.dəns/` | “pre-si-đầns” | thứ tự ưu tiên |
+| mutually exclusive | `/ˌmjuː.tʃu.ə.li ɪkˈskluː.sɪv/` | “miu-chu-ờ-li ịch-sclu-siv” | loại trừ lẫn nhau |
+
+---
+
+### Knowledge Introduced
+
+This module introduces:
+
+- decision logic and code branches;
+- Boolean expressions;
+- comparison operators;
+- logical `AND` and logical `OR`;
+- `if`, `else if`, and `else`;
+- nested code blocks;
+- mutually exclusive branches;
+- condition ordering;
+- business-rule precedence;
+- prevention of logic defects.
+
+The following topics are deferred:
+
+- `switch` statements and switch expressions;
+- the conditional operator `?:`;
+- pattern matching;
+- guard clauses in custom methods;
+- automated branch-coverage testing;
+- domain-specific rule engines.
+
+---
+
+### Completion Record
+
+```text
+Module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 9
+Local run: Verified
+Module build: Verified
+Full solution build: Verified
+Completion date: July 19, 2026
+```
 
 ---
 

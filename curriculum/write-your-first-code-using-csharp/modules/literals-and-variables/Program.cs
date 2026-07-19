@@ -112,9 +112,19 @@ bool processedCustomer;
 // -----------------------------------------------------------------------------
 
 customerFirstName = "Bob";
+userOption = 'A';
+gameScore = 100;
+particlesPerMillion = 0.625m;
+processedCustomer = true;
 
-// Assignment stores the value on the right in the variable on the left.
-Console.WriteLine(customerFirstName);
+// Assignment stores a compatible value on the right in the variable on the left.
+// Retrieving every assigned value below keeps each declaration executable and
+// prevents CS0168 warnings for variables that are declared but never used.
+Console.WriteLine($"Customer first name: {customerFirstName}");
+Console.WriteLine($"Selected option: {userOption}");
+Console.WriteLine($"Game score: {gameScore}");
+Console.WriteLine($"Particles per million: {particlesPerMillion}");
+Console.WriteLine($"Customer processed: {processedCustomer}");
 
 // Intentional compiler error from the lesson:
 //

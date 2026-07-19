@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-1%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-8-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-9-2563EB)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -30,20 +30,20 @@ Certification status: In progress
 Curriculum sections completed: 1 / 7
 Current section: Create and Run Simple C# Console Applications
 Current section status: In progress
-Completed modules in current section: 2
-Latest completed module: Call Methods from the .NET Class Library Using C#
+Completed modules in current section: 3
+Latest completed module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
 Latest module status: Completed
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 18, 2026
+Latest module completion date: July 19, 2026
 Completed section: Write Your First Code Using C#
-Projects currently verified in solution: 8
+Projects currently verified in solution: 9
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | 2 modules completed | In progress |
+| 2 | Create and Run Simple C# Console Applications | 3 modules completed | In progress |
 | 3 | Add Logic to C# Console Applications | Not started | Pending |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
@@ -96,12 +96,12 @@ This section covers:
 
 ```text
 Status: In progress
-Completed modules: 2
-Latest completed module: Call Methods from the .NET Class Library Using C#
+Completed modules: 3
+Latest completed module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
 Latest module status: Completed
 Module assessment: Passed
 Achievement: Earned
-Completion date: July 18, 2026
+Completion date: July 19, 2026
 ```
 
 [Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
@@ -215,6 +215,56 @@ through the full-solution build.
 
 ---
 
+### Module 3 — Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C#
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration in solution: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 19, 2026
+```
+
+This module introduces decision-making logic that changes the execution path of
+a C# application by evaluating Boolean expressions.
+
+Learning outcomes include:
+
+- creating branches with `if`, `else if`, and `else`;
+- building Boolean expressions;
+- comparing values with equality and relational operators;
+- combining conditions with logical `AND` (`&&`) and logical `OR` (`||`);
+- nesting code blocks;
+- creating mutually exclusive branches;
+- ordering conditions according to business-rule precedence;
+- preventing overlapping rewards and duplicate messages;
+- applying decision logic to a dice game;
+- implementing a subscription-renewal challenge.
+
+Project location:
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── decision-logic/
+        ├── Program.cs
+        └── decision-logic.csproj
+```
+
+The project has been added to `freecodecamp-csharp.slnx`, bringing the solution
+to nine registered projects.
+
+The earlier `CS0168` warnings were corrected, the module project ran
+successfully, and the complete solution build succeeded.
+
+
+---
+
+
 ## Repository Structure
 
 ```text
@@ -233,9 +283,12 @@ freecodecamp-csharp/
 │   │   │   ├── install-and-configure-visual-studio-code/
 │   │   │   │   ├── Program.cs
 │   │   │   │   └── install-and-configure-visual-studio-code.csproj
-│   │   │   └── call-methods/
+│   │   │   ├── call-methods/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── call-methods.csproj
+│   │   │   └── decision-logic/
 │   │   │       ├── Program.cs
-│   │   │       └── call-methods.csproj
+│   │   │       └── decision-logic.csproj
 │   │   ├── guided-projects/
 │   │   └── trophy/
 │   ├── add-logic-to-csharp-console-applications/
@@ -286,7 +339,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-8
+9
 ```
 
 List all projects registered in the solution:
@@ -346,7 +399,10 @@ curriculum/write-your-first-code-using-csharp/guided-projects/calculate-final-gp
 curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj
 
 curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj
+
+curriculum/create-and-run-simple-csharp-console-applications/modules/decision-logic/decision-logic.csproj
 ```
+
 
 Run the completed module project from the repository root:
 
