@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-1%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-9-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-10-2563EB)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -30,20 +30,20 @@ Certification status: In progress
 Curriculum sections completed: 1 / 7
 Current section: Create and Run Simple C# Console Applications
 Current section status: In progress
-Completed modules in current section: 3
-Latest completed module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
+Completed modules in current section: 4
+Latest completed module: Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#
 Latest module status: Completed
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 19, 2026
+Latest module completion date: July 20, 2026
 Completed section: Write Your First Code Using C#
-Projects currently verified in solution: 9
+Projects currently verified in solution: 10
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | 3 modules completed | In progress |
+| 2 | Create and Run Simple C# Console Applications | 4 modules completed | In progress |
 | 3 | Add Logic to C# Console Applications | Not started | Pending |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
@@ -96,12 +96,12 @@ This section covers:
 
 ```text
 Status: In progress
-Completed modules: 3
-Latest completed module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
+Completed modules: 4
+Latest completed module: Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#
 Latest module status: Completed
 Module assessment: Passed
 Achievement: Earned
-Completion date: July 19, 2026
+Completion date: July 20, 2026
 ```
 
 [Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
@@ -265,6 +265,51 @@ successfully, and the complete solution build succeeded.
 ---
 
 
+
+### Module 4 — Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C#
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration in solution: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 20, 2026
+```
+
+This module introduces arrays and sequence iteration in C#.
+
+Learning outcomes include:
+
+- declaring and initializing arrays;
+- storing related values of the same data type;
+- accessing elements with zero-based indexes;
+- reassigning array elements;
+- using the `Length` property;
+- iterating through arrays with `foreach`;
+- calculating a running total;
+- combining `foreach` with `if`;
+- filtering strings with `String.StartsWith()`.
+
+Project location:
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── arrays-foreach/
+        ├── Program.cs
+        └── arrays-foreach.csproj
+```
+
+The project has been added to `freecodecamp-csharp.slnx`, bringing the solution
+to ten registered projects. The project run and full-solution build have been
+verified successfully.
+
+---
+
 ## Repository Structure
 
 ```text
@@ -286,9 +331,12 @@ freecodecamp-csharp/
 │   │   │   ├── call-methods/
 │   │   │   │   ├── Program.cs
 │   │   │   │   └── call-methods.csproj
-│   │   │   └── decision-logic/
+│   │   │   ├── decision-logic/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── decision-logic.csproj
+│   │   │   └── arrays-foreach/
 │   │   │       ├── Program.cs
-│   │   │       └── decision-logic.csproj
+│   │   │       └── arrays-foreach.csproj
 │   │   ├── guided-projects/
 │   │   └── trophy/
 │   ├── add-logic-to-csharp-console-applications/
@@ -339,7 +387,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-9
+10
 ```
 
 List all projects registered in the solution:
@@ -401,6 +449,8 @@ curriculum/create-and-run-simple-csharp-console-applications/modules/install-and
 curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj
 
 curriculum/create-and-run-simple-csharp-console-applications/modules/decision-logic/decision-logic.csproj
+
+curriculum/create-and-run-simple-csharp-console-applications/modules/arrays-foreach/arrays-foreach.csproj
 ```
 
 

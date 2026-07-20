@@ -2,6 +2,7 @@
   <Folder Name="/curriculum/" />
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/" />
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/modules/">
+    <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/arrays-foreach/arrays-foreach.csproj" />
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj" />
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/decision-logic/decision-logic.csproj" />
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj" />

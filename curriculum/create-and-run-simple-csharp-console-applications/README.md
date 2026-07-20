@@ -3,7 +3,7 @@
 ![C#](https://img.shields.io/badge/C%23-Console_Applications-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Modules](https://img.shields.io/badge/Modules_Completed-3-16A34A)
+![Modules](https://img.shields.io/badge/Modules_Completed-4-16A34A)
 
 This directory documents the second section of the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -23,11 +23,11 @@ C# console applications with the .NET SDK and development tools.
 ```text
 Section: Create and Run Simple C# Console Applications
 Status: In progress
-Completed modules: 3
-Latest completed module: Add Decision Logic to Your Code Using if, else, and else if Statements in C#
+Completed modules: 4
+Latest completed module: Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 19, 2026
+Latest module completion date: July 20, 2026
 ```
 
 | No. | Module | Status |
@@ -35,6 +35,7 @@ Latest module completion date: July 19, 2026
 | 1 | Install and Configure Visual Studio Code | Completed |
 | 2 | Call Methods from the .NET Class Library Using C# | Completed |
 | 3 | Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C# | Completed |
+| 4 | Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C# | Completed |
 
 A module is marked `Completed` only after its Microsoft Learn units, assessment,
 achievement, local run, project build, and full-solution build have all been
@@ -54,9 +55,12 @@ create-and-run-simple-csharp-console-applications/
 │   ├── call-methods/
 │   │   ├── Program.cs
 │   │   └── call-methods.csproj
-│   └── decision-logic/
+│   ├── decision-logic/
+│   │   ├── Program.cs
+│   │   └── decision-logic.csproj
+│   └── arrays-foreach/
 │       ├── Program.cs
-│       └── decision-logic.csproj
+│       └── arrays-foreach.csproj
 ├── guided-projects/
 └── trophy/
 ```
@@ -801,42 +805,10 @@ Full solution build: Verified
 Completion date: July 19, 2026
 ```
 
-The official units, assessment, and achievement have been completed. The
-`decision-logic` project has also been created and registered in
-`freecodecamp-csharp.slnx`.
-
-The four `CS0168` warnings in the earlier `literals-and-variables` module have
-been corrected in source code. The repository status remains pending until the
-module project and complete solution are run again successfully.
+The official units, assessment, achievement, local project, solution
+registration, project run, and complete solution build have all been verified.
 
 ---
-
-### Latest Validation Status
-
-The previous full-solution build reported four `CS0168` warnings in:
-
-```text
-curriculum/write-your-first-code-using-csharp/
-modules/literals-and-variables/Program.cs
-```
-
-The source correction now assigns and retrieves all four variables:
-
-```text
-userOption
-gameScore
-particlesPerMillion
-processedCustomer
-```
-
-This preserves the original lesson while removing declarations that were never
-used. A fresh build is still required before Module 3 can be marked `Completed`:
-
-```text
-Build succeeded.
-0 Warning(s)
-0 Error(s)
-```
 
 
 ### Official Module Structure
@@ -1268,11 +1240,470 @@ Completion date: July 19, 2026
 
 ---
 
+## Module 4 — Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C#
+
+### Completion Status
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 10
+Local project run: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 20, 2026
+```
+
+The official Microsoft Learn units, assessment, achievement, local project,
+solution registration, project run, and complete solution build have all been
+verified.
+
+---
+
+### Official Module Structure
+
+The module contains seven units:
+
+1. Introduction
+2. Exercise — Get started with array basics
+3. Exercise — Implement the `foreach` statement
+4. Exercise — Complete a challenge activity for nested iteration and selection statements
+5. Review the solution for the nested iteration and selection statements challenge activity
+6. Module assessment
+7. Summary
+
+The module focuses on storing related values in arrays and processing every
+element with `foreach`.
+
+---
+
+### Learning Objectives
+
+After completing the module, the learner should be able to:
+
+- create and initialize an array;
+- store multiple related values of one data type;
+- assign values to individual array elements;
+- retrieve values by index;
+- explain zero-based indexing;
+- reassign an existing array element;
+- use the `Length` property;
+- iterate through an array with `foreach`;
+- maintain a running total while iterating;
+- combine `foreach` with an `if` statement;
+- use `String.StartsWith()` to select matching strings.
+
+---
+
+### Arrays
+
+An **array** stores multiple values of the same data type under one variable
+name.
+
+```csharp
+string[] fraudulentOrderIds = ["A123", "B456", "C789"];
+```
+
+In this declaration:
+
+```text
+string      Element data type
+[]          Array type indicator
+fraudulentOrderIds
+            Array variable name
+[ ... ]     Collection expression used to initialize the array
+```
+
+The project uses collection-expression syntax supported by the repository's
+current C# and .NET configuration.
+
+An older array-initialization form is also valid:
+
+```csharp
+string[] fraudulentOrderIds = { "A123", "B456", "C789" };
+```
+
+The repository program uses one consistent modern syntax rather than retaining
+multiple executable versions of the same exercise.
+
+---
+
+### Zero-Based Indexing
+
+Array indexes begin at zero.
+
+```csharp
+Console.WriteLine(fraudulentOrderIds[0]);
+Console.WriteLine(fraudulentOrderIds[1]);
+Console.WriteLine(fraudulentOrderIds[2]);
+```
+
+The relationship between position and index is:
+
+```text
+First element   → index 0
+Second element  → index 1
+Third element   → index 2
+```
+
+For an array containing three elements, valid indexes are `0`, `1`, and `2`.
+
+Attempting to access index `3` would cause an
+`IndexOutOfRangeException` at runtime:
+
+```csharp
+// fraudulentOrderIds[3] = "D000";
+```
+
+The invalid statement is documented but intentionally not executed.
+
+---
+
+### Reading and Reassigning Array Elements
+
+An array element can be read like an individual variable:
+
+```csharp
+Console.WriteLine($"First: {fraudulentOrderIds[0]}");
+```
+
+An existing element can also be reassigned:
+
+```csharp
+fraudulentOrderIds[0] = "F000";
+
+Console.WriteLine($"Reassigned first: {fraudulentOrderIds[0]}");
+```
+
+The replacement value must be compatible with the array's element type.
+
+---
+
+### The `Length` Property
+
+The `Length` property reports the total number of elements in an array:
+
+```csharp
+Console.WriteLine(
+    $"There are {fraudulentOrderIds.Length} fraudulent orders to process.");
+```
+
+For the example array:
+
+```text
+Length: 3
+Last valid index: 2
+```
+
+`Length` is a count and is therefore not zero-based.
+
+---
+
+### The `foreach` Statement
+
+The `foreach` statement processes every element in a sequence.
+
+```csharp
+string[] names = ["Rowena", "Robin", "Bao"];
+
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+```
+
+The statement contains:
+
+```text
+foreach     Iteration keyword
+string      Type of the current element
+name        Temporary iteration variable
+in          Separates the variable from the sequence
+names       Array being traversed
+{ ... }     Code executed once for each element
+```
+
+For an array, `foreach` processes elements in increasing index order, beginning
+with index `0` and ending with index `Length - 1`.
+
+---
+
+### Inventory Running Total
+
+The inventory exercise stores finished-product counts for five bins:
+
+```csharp
+int[] inventory = [200, 450, 700, 175, 250];
+```
+
+Variables that must retain values between iterations are declared before the
+loop:
+
+```csharp
+int sum = 0;
+int bin = 0;
+```
+
+The loop updates the running total and reports each bin:
+
+```csharp
+foreach (int items in inventory)
+{
+    sum += items;
+    bin++;
+
+    Console.WriteLine(
+        $"Bin {bin} = {items} items (Running total: {sum})");
+}
+```
+
+The final total is displayed after iteration finishes:
+
+```csharp
+Console.WriteLine($"We have {sum} items in inventory.");
+```
+
+Expected inventory total:
+
+```text
+1775
+```
+
+---
+
+### Nested Iteration and Selection Challenge
+
+The challenge stores order IDs in an array:
+
+```csharp
+string[] orderIds =
+[
+    "B123",
+    "C234",
+    "A345",
+    "C15",
+    "B177",
+    "G3003",
+    "C235",
+    "B179"
+];
+```
+
+The application must report only IDs that begin with the letter `B`.
+
+```csharp
+foreach (string orderId in orderIds)
+{
+    if (orderId.StartsWith("B"))
+    {
+        Console.WriteLine(orderId);
+    }
+}
+```
+
+This combines two control-flow concepts:
+
+```text
+foreach   Iterates through every order ID
+if        Selects only values satisfying the condition
+```
+
+`StartsWith("B")` returns a Boolean value:
+
+```text
+true      The order ID begins with B
+false     The order ID does not begin with B
+```
+
+Expected challenge output:
+
+```text
+B123
+B177
+B179
+```
+
+---
+
+### Repository Project
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── arrays-foreach/
+        ├── Program.cs
+        └── arrays-foreach.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The solution listing confirms ten registered projects.
+
+---
+
+### Module Program
+
+The final `Program.cs` consolidates the completed exercises into three focused
+sections:
+
+1. array declaration, initialization, indexing, reassignment, and `Length`;
+2. inventory iteration with a bin counter and running total;
+3. order-ID filtering with `foreach`, `if`, and `StartsWith()`.
+
+The source retains explanatory comments but excludes duplicate intermediate
+versions that would cause repeated declarations or compilation errors.
+
+---
+
+### Verified Output
+
+```text
+=== Array basics ===
+First: A123
+Second: B456
+Third: C789
+Reassigned first: F000
+There are 3 fraudulent orders to process.
+
+=== Inventory report with foreach ===
+Bin 1 = 200 items (Running total: 200)
+Bin 2 = 450 items (Running total: 650)
+Bin 3 = 700 items (Running total: 1350)
+Bin 4 = 175 items (Running total: 1525)
+Bin 5 = 250 items (Running total: 1775)
+We have 1775 items in inventory.
+
+=== Orders requiring investigation ===
+B123
+B177
+B179
+```
+
+The terminal output confirms that indexing, reassignment, iteration, accumulation,
+and order filtering behave as intended.
+
+---
+
+### Build and Run Commands
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\arrays-foreach\arrays-foreach.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\arrays-foreach\arrays-foreach.csproj"
+```
+
+List all registered projects:
+
+```powershell
+dotnet sln .\freecodecamp-csharp.slnx list
+```
+
+Restore and build the complete solution:
+
+```powershell
+dotnet restore .\freecodecamp-csharp.slnx
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified result:
+
+```text
+Build succeeded.
+```
+
+The supplied terminal output shows that all ten projects compiled successfully,
+including `arrays-foreach`.
+
+---
+
+### Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| array | `/əˈreɪ/` | “ờ-rây” | mảng |
+| sequence | `/ˈsiː.kwəns/` | “si-quầns” | chuỗi hoặc trình tự dữ liệu |
+| element | `/ˈel.ɪ.mənt/` | “e-li-mần(t)” | phần tử |
+| index | `/ˈɪn.deks/` | “in-đeks” | chỉ số |
+| zero-based | `/ˈzɪə.rəʊ beɪst/` | “zi-râu bâyst” | bắt đầu từ số 0 |
+| iterate | `/ˈɪt.ə.reɪt/` | “i-tờ-râyt” | duyệt lặp |
+| iteration | `/ˌɪt.əˈreɪ.ʃən/` | “i-tờ-rây-shần” | một quá trình hoặc lần lặp |
+| `foreach` statement | `/ˌfɔːr ˈiːtʃ ˈsteɪt.mənt/` | “pho-r ích stâyt-mần(t)” | câu lệnh duyệt từng phần tử |
+| running total | `/ˌrʌn.ɪŋ ˈtəʊ.təl/` | “rân-ning tââu-tồ” | tổng tích lũy |
+| out of range | `/ˌaʊt əv ˈreɪndʒ/` | “ao-tờv râynj” | nằm ngoài phạm vi hợp lệ |
+
+---
+
+### Knowledge Introduced
+
+This module introduces:
+
+- one-dimensional arrays;
+- array declaration and initialization;
+- collection expressions;
+- zero-based indexes;
+- element retrieval and reassignment;
+- the `Length` property;
+- `foreach` iteration;
+- temporary iteration variables;
+- running totals;
+- external loop counters;
+- nested iteration and selection;
+- `String.StartsWith()`.
+
+The following topics are intentionally deferred:
+
+- `for` and `while` loops;
+- modifying a collection during enumeration;
+- multidimensional and jagged arrays;
+- `List<T>` and other generic collections;
+- array sorting and reversing methods;
+- LINQ;
+- custom collection types;
+- performance analysis of collection traversal.
+
+---
+
+### Completion Record
+
+```text
+Module: Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 10
+Local run: Verified
+Module build: Verified
+Full solution build: Verified
+Completion date: July 20, 2026
+```
+
+---
+
 ## Next Step
 
 Proceed to the next official module in
-**Create and Run Simple C# Console Applications** while keeping the solution
-green and updating this section README continuously.
+**Create and Run Simple C# Console Applications** while preserving the existing
+repository structure, keeping the solution green, and updating this section
+README continuously.
 
 
 ---
