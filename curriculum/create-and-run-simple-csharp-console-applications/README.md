@@ -3,7 +3,7 @@
 ![C#](https://img.shields.io/badge/C%23-Console_Applications-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Modules](https://img.shields.io/badge/Modules_Completed-4-16A34A)
+![Modules](https://img.shields.io/badge/Modules_Completed-5-16A34A)
 
 This directory documents the second section of the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -23,11 +23,11 @@ C# console applications with the .NET SDK and development tools.
 ```text
 Section: Create and Run Simple C# Console Applications
 Status: In progress
-Completed modules: 4
-Latest completed module: Store and Iterate Through Sequences of Data Using Arrays and the foreach Statement in C#
+Completed modules: 5
+Latest completed module: Create Readable Code with Conventions, Whitespace, and Comments in C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 20, 2026
+Latest module completion date: July 21, 2026
 ```
 
 | No. | Module | Status |
@@ -36,6 +36,7 @@ Latest module completion date: July 20, 2026
 | 2 | Call Methods from the .NET Class Library Using C# | Completed |
 | 3 | Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C# | Completed |
 | 4 | Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C# | Completed |
+| 5 | Create Readable Code with Conventions, Whitespace, and Comments in C# | Completed |
 
 A module is marked `Completed` only after its Microsoft Learn units, assessment,
 achievement, local run, project build, and full-solution build have all been
@@ -58,9 +59,12 @@ create-and-run-simple-csharp-console-applications/
 │   ├── decision-logic/
 │   │   ├── Program.cs
 │   │   └── decision-logic.csproj
-│   └── arrays-foreach/
+│   ├── arrays-foreach/
+│   │   ├── Program.cs
+│   │   └── arrays-foreach.csproj
+│   └── readable-code/
 │       ├── Program.cs
-│       └── arrays-foreach.csproj
+│       └── readable-code.csproj
 ├── guided-projects/
 └── trophy/
 ```
@@ -1698,9 +1702,559 @@ Completion date: July 20, 2026
 
 ---
 
+
+## Module 5 — Create Readable Code with Conventions, Whitespace, and Comments in C#
+
+### Completion Status
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 11
+Local project run: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 21, 2026
+```
+
+The official Microsoft Learn units, assessment, achievement, local project,
+solution registration, project run, and complete solution build have all been
+verified.
+
+The module focuses on communicating program intent clearly to both the C#
+compiler and other developers by using consistent names, purposeful comments,
+and meaningful whitespace.
+
+---
+
+### Official Module Structure
+
+The module contains eight units:
+
+1. Introduction
+2. Choose variable names that follow rules and conventions
+3. Exercise — Create effective code comments
+4. Exercise — Use whitespace to make code easier to read
+5. Exercise — Complete a challenge activity to improve code readability
+6. Review the solution to the code-readability challenge
+7. Module assessment
+8. Summary
+
+---
+
+### Learning Objectives
+
+After completing the module, the learner should be able to:
+
+- distinguish compiler-enforced identifier rules from community conventions;
+- choose descriptive local-variable names;
+- apply `camelCase` to local variables;
+- avoid abbreviations and unnecessary type prefixes;
+- use single-line and block comments appropriately;
+- temporarily disable code while testing a change;
+- explain higher-level intent without narrating obvious syntax;
+- use blank lines to separate related groups of statements;
+- place braces and indentation consistently;
+- improve poorly formatted code without changing its behavior.
+
+---
+
+### Rules and Conventions
+
+A **rule** is enforced by the C# compiler. Violating a naming rule prevents the
+program from compiling.
+
+A **convention** is an agreed style used by developers to make code consistent
+and easier to understand. Conventions are not always compiler errors, but they
+improve maintainability and collaboration.
+
+Examples of valid local-variable declarations:
+
+```csharp
+char userOption;
+int gameScore;
+float particlesPerMillion;
+bool processedCustomer;
+```
+
+Examples of invalid declarations:
+
+```csharp
+// int 2ndScore;
+// string order-id;
+// decimal total$;
+// int class;
+```
+
+Important identifier rules include:
+
+- names may contain letters, digits, and underscores;
+- a name must begin with a letter or underscore;
+- a name cannot contain characters such as `-`, `#`, or `$`;
+- a name cannot be an unescaped C# keyword;
+- names are case-sensitive.
+
+For example, these are two different identifiers:
+
+```csharp
+string myValue = "First";
+string MyValue = "Second";
+```
+
+Although an identifier may begin with `_`, that style is normally reserved for
+private instance fields rather than local variables.
+
+---
+
+### `camelCase` for Local Variables
+
+Local variables use **camel case**: the first word begins with a lowercase
+letter, and each following word begins with an uppercase letter.
+
+```csharp
+string originalMessage;
+char[] messageCharacters;
+int letterOCount;
+string reversedMessage;
+```
+
+The name should describe the value's purpose and meaning rather than merely its
+data type.
+
+Prefer:
+
+```csharp
+decimal orderAmount;
+bool orderComplete;
+```
+
+Avoid:
+
+```csharp
+decimal odrAmt;
+bool value;
+string strMessage;
+```
+
+The improved names reduce the amount of explanation required elsewhere in the
+program.
+
+---
+
+### Descriptive Names and Intent
+
+A readable name communicates what a value represents and why it exists.
+
+Poorly named version:
+
+```csharp
+string str = "The quick brown fox jumps over the lazy dog.";
+int x = 0;
+string new_message;
+```
+
+Improved version:
+
+```csharp
+string originalMessage = "The quick brown fox jumps over the lazy dog.";
+int letterOCount = 0;
+string reversedMessage;
+```
+
+The final repository program uses `messageCharacters` instead of the more
+general name `message`, because the variable stores an array of individual
+characters.
+
+It also uses `letterOCount` instead of `letterCount`, because the program counts
+one specific character.
+
+---
+
+### Code Comments
+
+A comment is ignored by the compiler and exists for people reading or
+maintaining the source code.
+
+Single-line comments begin with `//`:
+
+```csharp
+// Temporarily disable the old output while testing the revised message.
+```
+
+Block comments begin with `/*` and end with `*/`:
+
+```csharp
+/*
+ * This program reverses a message, counts the number of times
+ * the letter 'o' appears, and prints the results.
+ */
+```
+
+Comments can temporarily prevent executable statements from being compiled:
+
+```csharp
+// int widgetsSold = 7;
+// Console.WriteLine($"{firstName} sold {widgetsSold} widgets.");
+```
+
+This is useful during a short experiment, but obsolete code should be removed
+after the replacement has been verified. Version control preserves previous
+implementations when they are needed later.
+
+---
+
+### High-Quality and Low-Quality Comments
+
+Comments should explain information that the code cannot express clearly by
+itself, such as:
+
+- the higher-level purpose of a block;
+- a business requirement;
+- a non-obvious constraint;
+- the reason for a particular implementation decision;
+- why code is temporarily disabled.
+
+A low-quality comment merely translates a clear line of C# into English:
+
+```csharp
+// Convert the message into a character array.
+char[] messageCharacters = originalMessage.ToCharArray();
+```
+
+The method call and variable name already communicate that operation, so the
+comment adds clutter without adding context.
+
+A useful comment describes the overall goal:
+
+```csharp
+/*
+ * Reverse a message and count occurrences of the target character
+ * so the transformed text and count can be reported together.
+ */
+```
+
+Readable code minimizes comments that explain **what** each line does and
+reserves comments for **why** the code exists or **why** it is implemented in a
+particular way.
+
+---
+
+### Whitespace
+
+In source code, **whitespace** includes:
+
+- spaces;
+- tabs;
+- line breaks;
+- blank lines.
+
+The compiler generally ignores most formatting whitespace, but developers rely
+on it to understand structure and ownership.
+
+Although the following can compile, it is difficult to read:
+
+```csharp
+string firstWord = "Hello"; string lastWord = "World"; Console.WriteLine(firstWord + " " + lastWord);
+```
+
+A readable version separates complete statements:
+
+```csharp
+string firstWord = "Hello";
+string lastWord = "World";
+
+Console.WriteLine($"{firstWord} {lastWord}");
+```
+
+Recommended practices include:
+
+- place each complete statement on its own line;
+- include spaces around assignment and comparison operators;
+- use blank lines between related phases of an algorithm;
+- place opening and closing braces consistently;
+- indent statements inside their owning code block;
+- avoid arbitrary line breaks that obscure a simple expression.
+
+---
+
+### Vertical Grouping
+
+Blank lines can divide a program into conceptual phases.
+
+```csharp
+string originalMessage =
+    "The quick brown fox jumps over the lazy dog.";
+
+char[] messageCharacters = originalMessage.ToCharArray();
+Array.Reverse(messageCharacters);
+
+int letterOCount = 0;
+```
+
+The groups represent:
+
+1. input data;
+2. message transformation;
+3. initialization of the counting state.
+
+Later groups handle iteration, result construction, and output. This structure
+allows the reader to scan the algorithm before examining individual statements.
+
+---
+
+### Braces and Indentation
+
+Braces define code-block ownership, while indentation makes that ownership
+visible.
+
+```csharp
+foreach (char character in messageCharacters)
+{
+    if (character == 'o')
+    {
+        letterOCount++;
+    }
+}
+```
+
+The indentation shows that:
+
+- the `if` statement belongs to the `foreach` block;
+- `letterOCount++` belongs to the `if` block;
+- the count increases only when the current character is `'o'`.
+
+The formatting does not create the ownership—the braces do—but it makes the
+structure immediately understandable.
+
+---
+
+### Code-Readability Challenge
+
+The challenge begins with poorly named and poorly formatted code that:
+
+1. converts a sentence to a character array;
+2. reverses the array;
+3. counts occurrences of the letter `o`;
+4. creates a reversed string;
+5. prints the reversed message and count.
+
+The original style includes unclear names such as:
+
+```csharp
+string str;
+int x;
+string new_message;
+```
+
+It also places the `foreach` and `if` statements on one line and includes
+comments that merely repeat the code.
+
+The repository solution preserves the behavior while improving names, comments,
+spacing, and block formatting.
+
+---
+
+### Repository Project
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── modules/
+    └── readable-code/
+        ├── Program.cs
+        └── readable-code.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The solution listing confirms eleven registered projects.
+
+This section continues to use one central README. The `readable-code` directory
+contains only the source and project files required to build and run the module.
+
+---
+
+### Module Program
+
+The final `Program.cs` is:
+
+```csharp
+/*
+ * This program reverses a message, counts the number of times
+ * the letter 'o' appears, and prints the results to the console.
+ */
+
+string originalMessage = "The quick brown fox jumps over the lazy dog.";
+
+char[] messageCharacters = originalMessage.ToCharArray();
+Array.Reverse(messageCharacters);
+
+int letterOCount = 0;
+
+foreach (char character in messageCharacters)
+{
+    if (character == 'o')
+    {
+        letterOCount++;
+    }
+}
+
+string reversedMessage = new string(messageCharacters);
+
+Console.WriteLine(reversedMessage);
+Console.WriteLine($"'o' appears {letterOCount} times.");
+```
+
+The final program contains:
+
+- a concise higher-level comment;
+- descriptive `camelCase` local-variable names;
+- blank lines separating logical phases;
+- conventional brace placement;
+- clear indentation for nested blocks;
+- no comments that merely repeat self-explanatory statements.
+
+---
+
+### Expected Output
+
+```text
+.god yzal eht revo spmuj xof nworb kciuq ehT
+'o' appears 4 times.
+```
+
+The reversed text is deterministic because the input sentence is fixed.
+
+The count is `4` because the original sentence contains four lowercase `o`
+characters:
+
+```text
+brown
+fox
+over
+dog
+```
+
+---
+
+### Build and Run Commands
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\readable-code\readable-code.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\readable-code\readable-code.csproj"
+```
+
+List all registered projects:
+
+```powershell
+dotnet sln .\freecodecamp-csharp.slnx list
+```
+
+Restore and build the complete solution:
+
+```powershell
+dotnet restore .\freecodecamp-csharp.slnx
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified result:
+
+```text
+Build succeeded.
+```
+
+The supplied terminal output confirms that the full solution compiled
+successfully after `readable-code` was added.
+
+---
+
+### Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| readable code | `/ˈriː.də.bəl kəʊd/` | “ri-đờ-bồ côđ” | mã nguồn dễ đọc |
+| convention | `/kənˈven.ʃən/` | “cần-ven-shần” | quy ước |
+| identifier | `/aɪˈden.tɪ.faɪ.ər/` | “ai-đen-ti-fai-ờ” | tên định danh |
+| camel case | `/ˈkæm.əl keɪs/` | “ca-mồ câys” | kiểu tên bắt đầu bằng chữ thường |
+| descriptive | `/dɪˈskrɪp.tɪv/` | “đi-scrip-tiv” | có tính mô tả |
+| intent | `/ɪnˈtent/` | “in-tent” | ý định, mục đích |
+| comment | `/ˈkɒm.ent/` | “com-men(t)” | chú thích mã nguồn |
+| block comment | `/blɒk ˈkɒm.ent/` | “block com-men(t)” | chú thích nhiều dòng |
+| whitespace | `/ˈwaɪt.speɪs/` | “quai-t-spâys” | khoảng trắng trong mã |
+| indentation | `/ˌɪn.denˈteɪ.ʃən/` | “in-đen-tây-shần” | thụt lề |
+| maintainability | `/meɪnˌteɪ.nəˈbɪl.ə.ti/` | “mâyn-tây-nờ-bi-lờ-ti” | khả năng bảo trì |
+
+---
+
+### Knowledge Introduced
+
+This module introduces:
+
+- compiler-enforced identifier rules;
+- community naming conventions;
+- `camelCase` local variables;
+- descriptive and intention-revealing names;
+- single-line comments;
+- block comments;
+- temporary code commenting;
+- higher-level explanatory comments;
+- horizontal and vertical whitespace;
+- logical grouping of statements;
+- brace placement;
+- indentation and visible ownership;
+- readability-focused refactoring without behavior changes.
+
+The following topics are intentionally deferred:
+
+- naming conventions for classes, methods, properties, fields, and constants;
+- XML documentation comments;
+- `.editorconfig`;
+- Roslyn analyzers;
+- automated code formatting;
+- refactoring tools;
+- code-review standards;
+- architecture-level documentation.
+
+---
+
+### Completion Record
+
+```text
+Module: Create Readable Code with Conventions, Whitespace, and Comments in C#
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 11
+Local run: Verified
+Module build: Verified
+Full solution build: Verified
+Completion date: July 21, 2026
+```
+
+---
+
 ## Next Step
 
-Proceed to the next official module in
+Proceed to the first guided project in
 **Create and Run Simple C# Console Applications** while preserving the existing
 repository structure, keeping the solution green, and updating this section
 README continuously.
