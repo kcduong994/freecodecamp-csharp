@@ -3,7 +3,7 @@
 ![C#](https://img.shields.io/badge/C%23-Console_Applications-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Modules](https://img.shields.io/badge/Modules_Completed-5-16A34A)
+![Modules](https://img.shields.io/badge/Curriculum_Items_Completed-6%2F7-16A34A)
 
 This directory documents the second section of the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -23,11 +23,13 @@ C# console applications with the .NET SDK and development tools.
 ```text
 Section: Create and Run Simple C# Console Applications
 Status: In progress
-Completed modules: 5
-Latest completed module: Create Readable Code with Conventions, Whitespace, and Comments in C#
-Latest module assessment: Passed
+Completed curriculum items: 6 / 7
+Completed instructional modules: 5
+Completed guided projects: 1
+Latest completed item: Guided Project — Develop foreach and if-elseif-else Structures to Process Array Data in C#
+Latest item assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 21, 2026
+Latest completion date: July 22, 2026
 ```
 
 | No. | Module | Status |
@@ -37,10 +39,11 @@ Latest module completion date: July 21, 2026
 | 3 | Add Decision Logic to Your Code Using `if`, `else`, and `else if` Statements in C# | Completed |
 | 4 | Store and Iterate Through Sequences of Data Using Arrays and the `foreach` Statement in C# | Completed |
 | 5 | Create Readable Code with Conventions, Whitespace, and Comments in C# | Completed |
+| 6 | Guided Project — Develop `foreach` and `if-else if-else` Structures to Process Array Data in C# | Completed |
 
-A module is marked `Completed` only after its Microsoft Learn units, assessment,
-achievement, local run, project build, and full-solution build have all been
-verified.
+A curriculum item is marked `Completed` only after its Microsoft Learn units,
+assessment, achievement, local run, project registration, project build, and
+full-solution build have all been verified.
 
 ---
 
@@ -66,6 +69,9 @@ create-and-run-simple-csharp-console-applications/
 │       ├── Program.cs
 │       └── readable-code.csproj
 ├── guided-projects/
+│   └── student-grading-application/
+│       ├── Program.cs
+│       └── student-grading-application.csproj
 └── trophy/
 ```
 
@@ -2252,12 +2258,492 @@ Completion date: July 21, 2026
 
 ---
 
+
+## Guided Project 1 — Develop `foreach` and `if-else if-else` Structures to Process Array Data in C#
+
+### Completion Status
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 12
+Local project run: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 22, 2026
+```
+
+This guided project combines the concepts introduced throughout Section 2 into
+a complete **Student Grading Application**.
+
+The application stores student names and assignment scores in arrays, processes
+the data with nested `foreach` loops, distinguishes exam scores from
+extra-credit scores, calculates numeric grades, assigns letter grades
+automatically, and produces a formatted report.
+
+---
+
+### Project Objectives
+
+The completed application demonstrates how to:
+
+- store student names in a `string[]` array;
+- store each student's assignment scores in an `int[]` array;
+- use an outer `foreach` loop to process every student;
+- use an `if-else if-else` selection structure to select the current student's
+  score array;
+- use an inner `foreach` loop to process every assignment score;
+- maintain counters and running totals;
+- distinguish exam scores from extra-credit scores by array position;
+- apply a 10% weighting factor to extra-credit assignments;
+- calculate a final numeric grade using `decimal`;
+- assign a letter grade with ordered score thresholds;
+- format aligned console output;
+- add additional students with minimal changes to the existing algorithm.
+
+---
+
+### Application Requirements
+
+The grading application follows these rules:
+
+```text
+Regular exam assignments: 5
+Exam score range: 0–100
+Extra-credit weighting: 10% of a regular exam score
+Final numeric grade:
+    (exam score total + weighted extra-credit points)
+    / number of exam assignments
+```
+
+Letter-grade thresholds:
+
+| Numeric grade | Letter grade |
+| ---: | :--- |
+| `97–100` | `A+` |
+| `93–96` | `A` |
+| `90–92` | `A-` |
+| `87–89` | `B+` |
+| `83–86` | `B` |
+| `80–82` | `B-` |
+| `77–79` | `C+` |
+| `73–76` | `C` |
+| `70–72` | `C-` |
+| `67–69` | `D+` |
+| `63–66` | `D` |
+| `60–62` | `D-` |
+| `0–59` | `F` |
+
+Thresholds are evaluated from highest to lowest. The first matching branch
+determines the student's letter grade.
+
+---
+
+### Repository Project
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── guided-projects/
+    └── student-grading-application/
+        ├── Program.cs
+        └── student-grading-application.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The solution listing confirms twelve registered projects.
+
+This section continues to use one central README. The guided-project directory
+contains the executable source and project files without an additional README.
+
+---
+
+### Program Structure
+
+The application follows a clear top-to-bottom workflow:
+
+```text
+Declare grading constants
+        ↓
+Create score arrays
+        ↓
+Create the student-name array
+        ↓
+Print the report header
+        ↓
+Outer foreach: process each student
+        ↓
+Select the current score array
+        ↓
+Inner foreach: process assignment scores
+        ↓
+Calculate numeric grade
+        ↓
+Assign letter grade
+        ↓
+Print one report row
+```
+
+This organization keeps data initialization, processing, decision logic, and
+output responsibilities visually separated.
+
+---
+
+### Student and Score Arrays
+
+The project includes eight students:
+
+```csharp
+string[] studentNames =
+[
+    "Sophia",
+    "Andrew",
+    "Emma",
+    "Logan",
+    "Becky",
+    "Chris",
+    "Eric",
+    "Gregor"
+];
+```
+
+Each score array contains five regular exam scores followed by zero or more
+extra-credit scores:
+
+```csharp
+int[] sophiaScores = [90, 86, 87, 98, 100, 94, 90];
+int[] andrewScores = [92, 89, 81, 96, 90, 89];
+int[] emmaScores = [90, 85, 87, 98, 68, 89, 89, 89];
+int[] loganScores = [90, 95, 87, 88, 96, 96];
+```
+
+Additional score arrays are included for Becky, Chris, Eric, and Gregor.
+
+The first five positions always represent exam assignments. Values after those
+positions are treated as extra-credit assignments.
+
+---
+
+### Outer `foreach` Loop
+
+The outer loop processes one student per iteration:
+
+```csharp
+foreach (string currentStudent in studentNames)
+{
+    // Select scores, calculate grades, and print one report row.
+}
+```
+
+This eliminates repeated calculation blocks for individual students and ensures
+that the same grading algorithm is applied consistently.
+
+---
+
+### Student Score Selection
+
+The current student's score array is selected with an ordered
+`if-else if-else` structure:
+
+```csharp
+if (currentStudent == "Sophia")
+{
+    studentScores = sophiaScores;
+}
+else if (currentStudent == "Andrew")
+{
+    studentScores = andrewScores;
+}
+else
+{
+    continue;
+}
+```
+
+The final `else` prevents an unknown student name from accidentally reusing the
+score array selected during a previous iteration.
+
+This project intentionally uses selection statements because practicing
+`if-else if-else` is one of the guided project's core objectives. More scalable
+data structures such as dictionaries are deferred to later learning.
+
+---
+
+### Inner `foreach` Loop
+
+The inner loop processes every score assigned to the current student:
+
+```csharp
+foreach (int score in studentScores)
+{
+    gradedAssignmentCount++;
+
+    if (gradedAssignmentCount <= examAssignments)
+    {
+        assignmentScoreSum += score;
+    }
+    else
+    {
+        assignmentScoreSum += score / extraCreditDivisor;
+    }
+}
+```
+
+The assignment counter identifies whether the current value is:
+
+- one of the first five exam scores; or
+- an extra-credit score stored after the exams.
+
+Regular exam scores contribute their full value. Extra-credit scores contribute
+10% through integer division, matching the expected Microsoft Learn results.
+
+---
+
+### Numeric Grade Calculation
+
+After all assignments have been processed:
+
+```csharp
+decimal numericGrade =
+    (decimal)assignmentScoreSum / examAssignments;
+```
+
+Casting the numerator to `decimal` preserves the fractional portion of the
+calculation.
+
+The denominator remains the number of regular exam assignments. Extra-credit
+assignments add bonus points but do not increase the number of exams.
+
+---
+
+### Letter-Grade Selection
+
+The application uses an ordered `if-else if-else` chain:
+
+```csharp
+if (numericGrade >= 97)
+{
+    letterGrade = "A+";
+}
+else if (numericGrade >= 93)
+{
+    letterGrade = "A";
+}
+else if (numericGrade >= 90)
+{
+    letterGrade = "A-";
+}
+else
+{
+    letterGrade = "F";
+}
+```
+
+The complete project includes every threshold from `A+` through `F`.
+
+Conditions must be ordered from highest to lowest. For example, a score of
+`98` also satisfies `>= 90`, but the `A+` branch must be selected first.
+
+---
+
+### Formatted Report
+
+The repository implementation uses alignment components in interpolated strings:
+
+```csharp
+Console.WriteLine(
+    $"{"Student",-12}{"Numeric Grade",15}{"Letter Grade",15}");
+
+Console.WriteLine(
+    $"{currentStudent,-12}{numericGrade,15:F1}{letterGrade,15}");
+```
+
+Formatting behavior:
+
+```text
+-12     Left-align in a 12-character field
+15      Right-align in a 15-character field
+F1      Display one digit after the decimal point
+```
+
+This produces stable columns even when student names and grade values have
+different lengths.
+
+---
+
+### Expected Output
+
+```text
+STUDENT GRADING REPORT
+
+Student       Numeric Grade   Letter Grade
+------------------------------------------
+Sophia                 95.8              A
+Andrew                 91.2             A-
+Emma                   90.4             A-
+Logan                  93.0              A
+Becky                  94.8              A
+Chris                  93.4              A
+Eric                   93.4              A
+Gregor                 94.6              A
+```
+
+The report confirms that:
+
+- all students were processed;
+- extra-credit values were weighted;
+- numeric grades retained decimal precision;
+- letter grades were assigned automatically;
+- output columns were aligned.
+
+---
+
+### Readability Improvements
+
+The final repository implementation improves the instructional solution without
+changing the required grading behavior.
+
+Examples include:
+
+- using `const` for fixed grading rules;
+- naming `examAssignments` and `extraCreditDivisor` explicitly;
+- declaring `studentScores` without creating an unused placeholder array;
+- using braces consistently for every branch;
+- resetting counters and totals inside the outer loop;
+- using `continue` for unknown students;
+- writing comments that explain intent and constraints;
+- removing unused `using` directives;
+- formatting output with interpolation alignment rather than tab characters.
+
+These changes preserve the guided project's learning goals while producing code
+that is easier to review and maintain.
+
+---
+
+### Build and Run Commands
+
+Run the guided project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\guided-projects\student-grading-application\student-grading-application.csproj"
+```
+
+Build the guided project:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-and-run-simple-csharp-console-applications\guided-projects\student-grading-application\student-grading-application.csproj"
+```
+
+List registered solution projects:
+
+```powershell
+dotnet sln .\freecodecamp-csharp.slnx list
+```
+
+Restore and build the complete solution:
+
+```powershell
+dotnet restore .\freecodecamp-csharp.slnx
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Required result:
+
+```text
+Build succeeded.
+0 Warning(s)
+0 Error(s)
+```
+
+---
+
+### Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| guided project | `/ˈɡaɪ.dɪd ˈprɒdʒ.ekt/` | “gai-địt pro-jẹkt” | dự án có hướng dẫn |
+| grading application | `/ˈɡreɪ.dɪŋ ˌæp.lɪˈkeɪ.ʃən/` | “grây-đing áp-li-kây-shần” | ứng dụng tính và xếp loại điểm |
+| nested loop | `/ˈnes.tɪd luːp/` | “nes-tịt lu:p” | vòng lặp lồng nhau |
+| outer loop | `/ˈaʊ.tər luːp/` | “ao-tờ lu:p” | vòng lặp bên ngoài |
+| inner loop | `/ˈɪn.ər luːp/` | “in-nờ lu:p” | vòng lặp bên trong |
+| extra credit | `/ˌek.strə ˈkred.ɪt/` | “éc-strờ cre-địt” | điểm cộng |
+| weighting factor | `/ˈweɪ.tɪŋ ˌfæk.tər/` | “quây-ting fac-tờ” | hệ số trọng số |
+| threshold | `/ˈθreʃ.həʊld/` | “thresh-hâu-đ” | ngưỡng |
+| formatted output | `/ˈfɔː.mæt.ɪd ˈaʊt.pʊt/` | “pho-mát-tịt ao-t-put” | đầu ra được định dạng |
+| scalability | `/ˌskeɪ.ləˈbɪl.ə.ti/` | “scây-lờ-bi-lờ-ti” | khả năng mở rộng |
+
+---
+
+### Knowledge Integrated
+
+This guided project integrates:
+
+- array declaration and initialization;
+- collection expressions;
+- nested `foreach` loops;
+- iteration counters;
+- running totals;
+- `if-else if-else` selection;
+- branch ordering;
+- integer and decimal arithmetic;
+- explicit numeric casting;
+- extra-credit weighting;
+- automatic grade classification;
+- interpolated-string alignment;
+- readability conventions;
+- extensible data-processing structure.
+
+The following improvements are intentionally deferred:
+
+- dictionaries for mapping names to score arrays;
+- custom `Student` classes;
+- custom grading methods;
+- enums for letter grades;
+- input validation;
+- file or database persistence;
+- automated unit tests;
+- configurable grading policies;
+- separation into application and domain layers.
+
+---
+
+### Completion Record
+
+```text
+Curriculum item: Guided Project — Develop foreach and if-elseif-else Structures to Process Array Data in C#
+Project: Student Grading Application
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project: Verified
+Project added to solution: Verified
+Solution project count: 12
+Local run: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 22, 2026
+```
+
+---
+
 ## Next Step
 
-Proceed to the first guided project in
-**Create and Run Simple C# Console Applications** while preserving the existing
-repository structure, keeping the solution green, and updating this section
-README continuously.
+Proceed to the final challenge project in
+**Create and Run Simple C# Console Applications**.
+
+Preserve the current repository structure, keep the twelve-project solution
+green, and update both the section README and root README after verification.
 
 
 ---

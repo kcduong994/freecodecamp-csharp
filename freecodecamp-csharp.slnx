@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/curriculum/" />
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/" />
+  <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/guided-projects/">
+    <Project Path="curriculum/create-and-run-simple-csharp-console-applications/guided-projects/student-grading-application/student-grading-application.csproj" />
+  </Folder>
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/modules/">
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/arrays-foreach/arrays-foreach.csproj" />
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/call-methods/call-methods.csproj" />

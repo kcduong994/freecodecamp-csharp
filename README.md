@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-1%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-11-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-12-2563EB)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -30,29 +30,31 @@ Certification status: In progress
 Curriculum sections completed: 1 / 7
 Current section: Create and Run Simple C# Console Applications
 Current section status: In progress
-Completed modules in current section: 5
-Latest completed module: Create Readable Code with Conventions, Whitespace, and Comments in C#
-Latest module status: Completed
-Latest module assessment: Passed
+Completed curriculum items in current section: 6 / 7
+Completed instructional modules in current section: 5
+Completed guided projects in current section: 1
+Latest completed item: Guided Project — Develop foreach and if-elseif-else Structures to Process Array Data in C#
+Latest item status: Completed
+Latest item assessment: Passed
 Latest achievement: Earned
-Latest module completion date: July 21, 2026
+Latest completion date: July 22, 2026
 Completed section: Write Your First Code Using C#
-Projects currently verified in solution: 11
+Projects currently verified in solution: 12
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | 5 modules completed | In progress |
+| 2 | Create and Run Simple C# Console Applications | 6 / 7 curriculum items completed | In progress |
 | 3 | Add Logic to C# Console Applications | Not started | Pending |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending |
 
-A module is marked `Completed` in this repository only after its official units,
-assessment, achievement, local run, project registration, and solution build have
-all been verified.
+A curriculum item is marked `Completed` in this repository only after its official
+units, assessment, achievement, local run, project registration, and full-solution
+build have all been verified.
 
 ---
 
@@ -96,12 +98,14 @@ This section covers:
 
 ```text
 Status: In progress
-Completed modules: 5
-Latest completed module: Create Readable Code with Conventions, Whitespace, and Comments in C#
-Latest module status: Completed
-Module assessment: Passed
+Completed curriculum items: 6 / 7
+Completed instructional modules: 5
+Completed guided projects: 1
+Latest completed item: Guided Project — Develop foreach and if-elseif-else Structures to Process Array Data in C#
+Latest item status: Completed
+Item assessment: Passed
 Achievement: Earned
-Completion date: July 21, 2026
+Completion date: July 22, 2026
 ```
 
 [Open the current section documentation](./curriculum/create-and-run-simple-csharp-console-applications/README.md)
@@ -362,6 +366,113 @@ project ran successfully, and the complete solution build succeeded.
 
 ---
 
+
+### Guided Project 1 — Develop `foreach` and `if-else if-else` Structures to Process Array Data in C#
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration in solution: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 22, 2026
+```
+
+This guided project integrates the concepts introduced throughout the current
+section into a complete **Student Grading Application**.
+
+The application:
+
+- stores student names in a `string[]` array;
+- stores assignment scores in separate `int[]` arrays;
+- uses an outer `foreach` loop to process students;
+- uses `if-else if-else` to select the current student's score array;
+- uses an inner `foreach` loop to process assignment scores;
+- distinguishes regular exams from extra-credit assignments;
+- applies a 10% weighting factor to extra-credit scores;
+- calculates a final numeric grade with `decimal`;
+- assigns a letter grade automatically;
+- writes an aligned grading report to the console;
+- supports additional students with limited changes to the existing structure.
+
+Project rules:
+
+```text
+Regular exam assignments: 5
+Exam score range: 0–100
+Extra-credit weighting: 10%
+Final numeric grade:
+    (exam total + weighted extra-credit points)
+    / number of exam assignments
+```
+
+The grade thresholds are evaluated from highest to lowest:
+
+```text
+97–100  A+
+93–96   A
+90–92   A-
+87–89   B+
+83–86   B
+80–82   B-
+77–79   C+
+73–76   C
+70–72   C-
+67–69   D+
+63–66   D
+60–62   D-
+0–59    F
+```
+
+Project location:
+
+```text
+curriculum/create-and-run-simple-csharp-console-applications/
+└── guided-projects/
+    └── student-grading-application/
+        ├── Program.cs
+        └── student-grading-application.csproj
+```
+
+The repository implementation improves the instructional version by:
+
+- using descriptive variable names;
+- declaring fixed grading rules with `const`;
+- removing unused `using` directives;
+- using braces consistently;
+- preventing unknown students from reusing a previous score array;
+- resetting counters and totals inside the outer loop;
+- formatting stable output columns with interpolated-string alignment;
+- retaining comments that explain purpose and constraints rather than obvious
+  syntax.
+
+Verified output:
+
+```text
+STUDENT GRADING REPORT
+
+Student       Numeric Grade   Letter Grade
+------------------------------------------
+Sophia                 95.8              A
+Andrew                 91.2             A-
+Emma                   90.4             A-
+Logan                  93.0              A
+Becky                  94.8              A
+Chris                  93.4              A
+Eric                   93.4              A
+Gregor                 94.6              A
+```
+
+The project has been added to `freecodecamp-csharp.slnx`, bringing the solution
+to twelve registered projects. The Microsoft Learn assessment was passed, the
+achievement was earned, the local project ran successfully, and the complete
+solution build was verified.
+
+---
+
 ## Repository Structure
 
 ```text
@@ -371,6 +482,9 @@ freecodecamp-csharp/
 │   │   ├── README.md
 │   │   ├── modules/
 │   │   ├── guided-projects/
+│   │   │   └── student-grading-application/
+│   │   │       ├── Program.cs
+│   │   │       └── student-grading-application.csproj
 │   │   └── trophy/
 │   │       ├── README.md
 │   │       └── assets/
@@ -393,6 +507,9 @@ freecodecamp-csharp/
 │   │   │       ├── Program.cs
 │   │   │       └── readable-code.csproj
 │   │   ├── guided-projects/
+│   │   │   └── student-grading-application/
+│   │   │       ├── Program.cs
+│   │   │       └── student-grading-application.csproj
 │   │   └── trophy/
 │   ├── add-logic-to-csharp-console-applications/
 │   ├── work-with-variable-data-in-csharp-console-applications/
@@ -442,7 +559,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-11
+12
 ```
 
 List all projects registered in the solution:
@@ -496,7 +613,7 @@ curriculum/write-your-first-code-using-csharp/guided-projects/calculate-student-
 curriculum/write-your-first-code-using-csharp/guided-projects/calculate-final-gpa/calculate-final-gpa.csproj
 ```
 
-### Completed module projects from Section 2
+### Completed projects from Section 2
 
 ```text
 curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj
@@ -508,14 +625,16 @@ curriculum/create-and-run-simple-csharp-console-applications/modules/decision-lo
 curriculum/create-and-run-simple-csharp-console-applications/modules/arrays-foreach/arrays-foreach.csproj
 
 curriculum/create-and-run-simple-csharp-console-applications/modules/readable-code/readable-code.csproj
+
+curriculum/create-and-run-simple-csharp-console-applications/guided-projects/student-grading-application/student-grading-application.csproj
 ```
 
 
-Run the completed module project from the repository root:
+Run the latest completed guided project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-and-run-simple-csharp-console-applications\modules\readable-code\readable-code.csproj"
+  ".\curriculum\create-and-run-simple-csharp-console-applications\guided-projects\student-grading-application\student-grading-application.csproj"
 ```
 
 ---
