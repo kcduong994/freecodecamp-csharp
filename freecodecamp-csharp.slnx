@@ -1,5 +1,9 @@
 <Solution>
   <Folder Name="/curriculum/" />
+  <Folder Name="/curriculum/add-logic-to-csharp-console-applications/" />
+  <Folder Name="/curriculum/add-logic-to-csharp-console-applications/modules/">
+    <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/evaluate-boolean-expressions/evaluate-boolean-expressions.csproj" />
+  </Folder>
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/" />
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/challenge-projects/">
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/challenge-projects/student-grading-challenge/student-grading-challenge.csproj" />

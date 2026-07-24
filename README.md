@@ -5,7 +5,8 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-13-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-14-2563EB)
+![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
 **Foundational C# with Microsoft Certification** curriculum delivered through
@@ -29,26 +30,27 @@ It is maintained as a structured learning curriculum containing:
 Certification status: In progress
 Curriculum sections completed: 2 / 7
 Current section: Add Logic to C# Console Applications
-Current section status: Not started
-Latest completed section: Create and Run Simple C# Console Applications
-Latest completed section progress: 7 / 7
-Completed instructional modules in latest section: 5
-Completed guided projects in latest section: 1
-Completed challenge projects in latest section: 1
-Latest completed item: Challenge Project — Develop foreach and if-elseif-else Structures to Process Array Data in C#
+Current section status: In progress
+Current section progress: 1 / 7
+Completed instructional modules in current section: 1
+Completed guided projects in current section: 0
+Completed challenge projects in current section: 0
+Latest completed item: Evaluate Boolean Expressions to Make Decisions in C#
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 23, 2026
-Projects currently verified in solution: 13
-Repository validation: Verified
+Latest completion date: July 24, 2026
+Projects currently verified in solution: 14
+Latest module run: Verified
+Latest module build: Verified
+Full solution build: Verified
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | Not started | Pending |
+| 3 | Add Logic to C# Console Applications | 1 / 7 | In progress |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
@@ -593,16 +595,89 @@ expected report and that all thirteen solution projects compiled successfully.
 ### 3. Add Logic to C# Console Applications
 
 ```text
-Status: Not started
-Progress: 0
-Previous section: Create and Run Simple C# Console Applications
-Previous section completion date: July 23, 2026
+Status: In progress
+Progress: 1 / 7
+Completed instructional modules: 1
+Completed guided projects: 0
+Completed challenge projects: 0
+Latest completed module: Evaluate Boolean Expressions to Make Decisions in C#
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration: Verified
+Project build: Verified
+Full solution build: Verified
+Solution project count: 14
+Latest completion date: July 24, 2026
 ```
 
-Section 2 repository validation is complete. Section 3 can begin after the
-verified Section 2 changes are reviewed, committed, and pushed.
+Section 3 develops Boolean evaluation, branching, iteration, and progressively
+more structured control flow in C# console applications.
 
-[Open the Section 3 directory](./curriculum/add-logic-to-csharp-console-applications/)
+[Open the Section 3 documentation](./curriculum/add-logic-to-csharp-console-applications/README.md)
+
+---
+
+
+### Module 1 — Evaluate Boolean Expressions to Make Decisions in C#
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration in solution: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 24, 2026
+```
+
+This module introduces Boolean expressions and demonstrates how `true` and
+`false` results drive decisions in C#.
+
+Learning outcomes include:
+
+- testing equality with `==`;
+- testing inequality with `!=`;
+- comparing numeric values with `>`, `<`, `>=`, and `<=`;
+- normalizing strings with `Trim()` and `ToLower()` before comparison;
+- using `String.Contains()` to return Boolean results;
+- reversing a Boolean value with logical negation `!`;
+- distinguishing the inequality operator `!=` from unary negation `!`;
+- returning one of two values with the conditional operator `?:`;
+- simulating a coin flip with `Random.Next()`;
+- applying nested decision logic to role-based permissions.
+
+Project location:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── modules/
+    └── evaluate-boolean-expressions/
+        ├── Program.cs
+        └── evaluate-boolean-expressions.csproj
+```
+
+The final project preserves the complete instructional sequence while removing
+duplicate declarations, unused directives, incomplete statements, and invalid
+intermediate attempts.
+
+Verified challenge behavior:
+
+```text
+Conditional operator challenge:
+heads
+or
+tails
+
+Role-based access challenge:
+Welcome, Admin user.
+```
+
+The project is registered in `freecodecamp-csharp.slnx`, bringing the solution
+to fourteen projects. The module run, project build, and complete solution build
+all succeeded.
 
 ---
 
@@ -652,6 +727,11 @@ freecodecamp-csharp/
 │   │           ├── freecodecamp-section2-completion.png
 │   │           └── microsoft-learn-section2-achievement.png
 │   ├── add-logic-to-csharp-console-applications/
+│   │   ├── README.md
+│   │   └── modules/
+│   │       └── evaluate-boolean-expressions/
+│   │           ├── Program.cs
+│   │           └── evaluate-boolean-expressions.csproj
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
@@ -700,7 +780,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-13
+14
 ```
 
 List all projects registered in the solution:
@@ -773,11 +853,17 @@ curriculum/create-and-run-simple-csharp-console-applications/challenge-projects/
 ```
 
 
-Run the latest completed challenge project from the repository root:
+### Completed projects from Section 3
+
+```text
+curriculum/add-logic-to-csharp-console-applications/modules/evaluate-boolean-expressions/evaluate-boolean-expressions.csproj
+```
+
+Run the latest completed module from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-and-run-simple-csharp-console-applications\challenge-projects\student-grading-challenge\student-grading-challenge.csproj"
+  ".\curriculumdd-logic-to-csharp-console-applications\modules\evaluate-boolean-expressions\evaluate-boolean-expressions.csproj"
 ```
 
 ---
@@ -831,6 +917,7 @@ This structure keeps the repository useful for:
 - [freeCodeCamp — Foundational C# with Microsoft](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 - [Microsoft Learn — Get Started with C#, Part 1](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-1/)
 - [Microsoft Learn — Get Started with C#, Part 2](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-2/)
+- [Microsoft Learn — Get Started with C#, Part 3](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-3/)
 
 ---
 
