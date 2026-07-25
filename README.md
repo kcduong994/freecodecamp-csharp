@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-14-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-15-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -31,16 +31,16 @@ Certification status: In progress
 Curriculum sections completed: 2 / 7
 Current section: Add Logic to C# Console Applications
 Current section status: In progress
-Current section progress: 1 / 7
-Completed instructional modules in current section: 1
+Current section progress: 2 / 7
+Completed instructional modules in current section: 2
 Completed guided projects in current section: 0
 Completed challenge projects in current section: 0
-Latest completed item: Evaluate Boolean Expressions to Make Decisions in C#
+Latest completed item: Control Variable Scope and Logic Using Code Blocks in C#
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 24, 2026
-Projects currently verified in solution: 14
+Latest completion date: July 25, 2026
+Projects currently verified in solution: 15
 Latest module run: Verified
 Latest module build: Verified
 Full solution build: Verified
@@ -50,7 +50,7 @@ Full solution build: Verified
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | 1 / 7 | In progress |
+| 3 | Add Logic to C# Console Applications | 2 / 7 | In progress |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
@@ -596,19 +596,19 @@ expected report and that all thirteen solution projects compiled successfully.
 
 ```text
 Status: In progress
-Progress: 1 / 7
-Completed instructional modules: 1
+Progress: 2 / 7
+Completed instructional modules: 2
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed module: Evaluate Boolean Expressions to Make Decisions in C#
+Latest completed module: Control Variable Scope and Logic Using Code Blocks in C#
 Module assessment: Passed
 Achievement: Earned
 Local project run: Verified
 Project registration: Verified
 Project build: Verified
 Full solution build: Verified
-Solution project count: 14
-Latest completion date: July 24, 2026
+Solution project count: 15
+Latest completion date: July 25, 2026
 ```
 
 Section 3 develops Boolean evaluation, branching, iteration, and progressively
@@ -681,6 +681,91 @@ all succeeded.
 
 ---
 
+
+### Module 2 — Control Variable Scope and Logic Using Code Blocks in C#
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration in solution: Verified
+Project build: Verified
+Full solution build: Verified
+Completion date: July 25, 2026
+```
+
+This module explains how C# code blocks control execution paths, variable
+visibility, definite assignment, and the readability of conditional logic.
+
+Learning outcomes include:
+
+- defining code blocks with curly braces `{ }`;
+- understanding local variable scope;
+- distinguishing variables declared inside a block from variables declared in
+  the surrounding scope;
+- moving declarations outside a block when values must be reused later;
+- initializing local variables before they are read;
+- recognizing compiler errors `CS0103` and `CS0165`;
+- deciding when braces may technically be omitted from a one-statement `if`;
+- using braces consistently in larger `if-else if-else` structures;
+- improving readability by placing statements on separate lines;
+- preserving values calculated inside a `foreach` loop for later use.
+
+Project location:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── modules/
+    └── code-blocks-variable-scope/
+        ├── Program.cs
+        └── code-blocks-variable-scope.csproj
+```
+
+The final project keeps all instructional examples while moving intentionally
+invalid examples into comments. Independent examples use separate outer blocks,
+which allows local variable names to be reused without duplicate-declaration
+errors.
+
+Verified challenge:
+
+```csharp
+int[] numbers = { 4, 8, 15, 16, 23, 42 };
+int total = 0;
+bool found = false;
+
+foreach (int number in numbers)
+{
+    total += number;
+
+    if (number == 42)
+    {
+        found = true;
+    }
+}
+
+if (found)
+{
+    Console.WriteLine("Set contains 42");
+}
+
+Console.WriteLine($"Total: {total}");
+```
+
+Verified output:
+
+```text
+Set contains 42
+Total: 108
+```
+
+The project is registered in `freecodecamp-csharp.slnx`, bringing the solution
+to fifteen projects. The local run, project build, and complete solution build
+all succeeded.
+
+---
+
 ## Repository Structure
 
 ```text
@@ -729,9 +814,12 @@ freecodecamp-csharp/
 │   ├── add-logic-to-csharp-console-applications/
 │   │   ├── README.md
 │   │   └── modules/
-│   │       └── evaluate-boolean-expressions/
+│   │       ├── evaluate-boolean-expressions/
+│   │       │   ├── Program.cs
+│   │       │   └── evaluate-boolean-expressions.csproj
+│   │       └── code-blocks-variable-scope/
 │   │           ├── Program.cs
-│   │           └── evaluate-boolean-expressions.csproj
+│   │           └── code-blocks-variable-scope.csproj
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
@@ -780,7 +868,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-14
+15
 ```
 
 List all projects registered in the solution:
@@ -857,13 +945,15 @@ curriculum/create-and-run-simple-csharp-console-applications/challenge-projects/
 
 ```text
 curriculum/add-logic-to-csharp-console-applications/modules/evaluate-boolean-expressions/evaluate-boolean-expressions.csproj
+
+curriculum/add-logic-to-csharp-console-applications/modules/code-blocks-variable-scope/code-blocks-variable-scope.csproj
 ```
 
 Run the latest completed module from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculumdd-logic-to-csharp-console-applications\modules\evaluate-boolean-expressions\evaluate-boolean-expressions.csproj"
+  ".\curriculum\dd-logic-to-csharp-console-applications\modules\evaluate-boolean-expressions\evaluate-boolean-expressions.csproj"
 ```
 
 ---
