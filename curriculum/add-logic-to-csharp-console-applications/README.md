@@ -2,9 +2,9 @@
 
 ![C#](https://img.shields.io/badge/C%23-Section_3-512BD4?logo=csharp&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Progress](https://img.shields.io/badge/Curriculum_Items-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-15-2563EB)
-![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
+![Progress](https://img.shields.io/badge/Curriculum_Items-3%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-16-2563EB)
+![Build](https://img.shields.io/badge/Full_Solution_Build-Pending_Reverification-F59E0B)
 
 Section 3 of the **Foundational C# with Microsoft Certification** curriculum.
 
@@ -20,23 +20,26 @@ and a full-solution build.
 ```text
 Section: Add Logic to C# Console Applications
 Status: In progress
-Progress: 2 / 7
-Completed instructional modules: 2
+Curriculum progress: 3 / 7
+Completed instructional modules: 3
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed module: Control Variable Scope and Logic Using Code Blocks in C#
+Latest completed module: Branch the Flow of Code Using the switch-case Construct in C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 25, 2026
-Projects currently verified in solution: 15
-Full solution build: Verified
+Latest completion date: July 26, 2026
+Projects registered in solution: 16
+Latest module local run: Verified
+Project build: Pending final verification
+Full solution build: Pending reverification
 ```
 
 | Curriculum item | Status |
 | --- | --- |
 | Evaluate Boolean Expressions to Make Decisions in C# | Completed |
 | Control Variable Scope and Logic Using Code Blocks in C# | Completed |
-| Remaining Section 3 curriculum items | 5 not started |
+| Branch the Flow of Code Using the switch-case Construct in C# | Learning completed; final build verification pending |
+| Remaining Section 3 curriculum items | 4 not started |
 
 A curriculum item is marked `Completed` only after its Microsoft Learn units,
 assessment, achievement, local run, solution registration, project build, and
@@ -53,9 +56,12 @@ add-logic-to-csharp-console-applications/
 │   ├── evaluate-boolean-expressions/
 │   │   ├── Program.cs
 │   │   └── evaluate-boolean-expressions.csproj
-│   └── code-blocks-variable-scope/
+│   ├── code-blocks-variable-scope/
+│   │   ├── Program.cs
+│   │   └── code-blocks-variable-scope.csproj
+│   └── switch-case-construct/
 │       ├── Program.cs
-│       └── code-blocks-variable-scope.csproj
+│       └── switch-case-construct.csproj
 ├── guided-projects/
 ├── challenge-projects/
 └── trophy/
@@ -757,12 +763,556 @@ Completion date: July 25, 2026
 
 ---
 
+
+# Module 3 — Branch the Flow of Code Using the `switch-case` Construct in C#
+
+## Completion Status
+
+```text
+Learning content: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project added to solution: Verified
+Solution project count: 16
+Project build: Pending final verification
+Full solution build: Pending reverification
+Completion date: July 26, 2026
+```
+
+This module introduces the C# `switch` statement as an alternative to an
+`if-elseif-else` chain when one value must be compared against several known
+matching values.
+
+The final `Program.cs` preserves the module's instructional sequence in three
+runnable examples:
+
+1. matching a fruit name;
+2. assigning an employee title from an employee level;
+3. decoding a product SKU in the module challenge.
+
+Separate methods keep the examples independent, avoid duplicate top-level
+variable declarations, and make the project easier to test and maintain.
+
+---
+
+## Learning Objectives
+
+The completed project demonstrates how to:
+
+- branch execution with a `switch` statement;
+- use a switch expression as the value being evaluated;
+- define matching alternatives with `case` labels;
+- provide a fallback branch with `default`;
+- terminate a switch section with `break`;
+- combine multiple `case` labels into one switch section;
+- recognize that C# does not allow implicit fall-through between non-empty
+  switch sections;
+- decide when `switch` is clearer than `if-elseif-else`;
+- convert an existing `if-elseif-else` chain into equivalent `switch`
+  statements.
+
+---
+
+## Basic `switch` Structure
+
+A switch statement evaluates one expression and selects one matching section:
+
+```csharp
+string fruit = "apple";
+
+switch (fruit)
+{
+    case "apple":
+        Console.WriteLine(
+            "App will display information for apple.");
+        break;
+
+    case "banana":
+        Console.WriteLine(
+            "App will display information for banana.");
+        break;
+
+    case "cherry":
+        Console.WriteLine(
+            "App will display information for cherry.");
+        break;
+
+    default:
+        Console.WriteLine(
+            "The selected fruit is not currently supported.");
+        break;
+}
+```
+
+Execution sequence:
+
+```text
+Evaluate the switch expression
+    ↓
+Compare it with each case label
+    ↓
+Execute the first matching switch section
+    ↓
+Stop that section with break
+    ↓
+Continue after the switch statement
+```
+
+With the current value, the verified output is:
+
+```text
+App will display information for apple.
+```
+
+---
+
+## When to Use `switch`
+
+A `switch` statement is especially suitable when:
+
+- one variable or expression is being evaluated;
+- the possible matching values are known;
+- each match requires only a small branch of code;
+- a long `if-elseif-else` chain would be harder to scan.
+
+Example decision:
+
+```text
+One value + many exact matches → switch
+Different unrelated conditions → if / else if / else
+Range comparisons             → usually if / else if / else
+```
+
+The module uses equality-style matching rather than numeric ranges or multiple
+independent Boolean expressions.
+
+---
+
+## Employee-Level Example
+
+The employee example evaluates one integer value and assigns a title:
+
+```csharp
+switch (employeeLevel)
+{
+    case 100:
+    case 200:
+        title = "Senior Associate";
+        break;
+
+    case 300:
+        title = "Manager";
+        break;
+
+    case 400:
+        title = "Senior Manager";
+        break;
+
+    default:
+        title = "Associate";
+        break;
+}
+```
+
+Multiple labels can share one switch section:
+
+```csharp
+case 100:
+case 200:
+    title = "Senior Associate";
+    break;
+```
+
+Both level `100` and level `200` therefore produce:
+
+```text
+Senior Associate
+```
+
+The final project tests three values:
+
+| Employee level | Selected branch | Result |
+| ---: | --- | --- |
+| `200` | `case 200` | `Senior Associate` |
+| `201` | `default` | `Associate` |
+| `100` | shared `case 100` / `case 200` section | `Senior Associate` |
+
+Verified output:
+
+```text
+Employee: John Smith, Level: 200, Title: Senior Associate
+Employee: John Smith, Level: 201, Title: Associate
+Employee: John Smith, Level: 100, Title: Senior Associate
+```
+
+---
+
+## `case`, `default`, and `break`
+
+### `case`
+
+A `case` label defines a value that may match the switch expression:
+
+```csharp
+case 300:
+    title = "Manager";
+    break;
+```
+
+### `default`
+
+The optional `default` section handles values that do not match any explicit
+`case` label:
+
+```csharp
+default:
+    title = "Associate";
+    break;
+```
+
+Although `default` can appear elsewhere, placing it last usually makes the
+control flow easier to read.
+
+### `break`
+
+`break` terminates the current switch section:
+
+```csharp
+break;
+```
+
+C# does not permit a non-empty switch section to continue implicitly into the
+next non-empty section. Omitting the required terminating statement results in
+a compiler error.
+
+---
+
+## SKU Challenge
+
+`SKU` means **Stock Keeping Unit**.
+
+The challenge uses this format:
+
+```text
+<product number>-<two-letter color code>-<size code>
+```
+
+Current value:
+
+```csharp
+string sku = "01-MN-L";
+```
+
+The string is split into three components:
+
+```csharp
+string[] productParts = sku.Split('-');
+```
+
+Result:
+
+```text
+productParts[0] = "01"
+productParts[1] = "MN"
+productParts[2] = "L"
+```
+
+Each component is decoded by a separate switch statement.
+
+### Product type
+
+```csharp
+switch (productParts[0])
+{
+    case "01":
+        type = "Sweat shirt";
+        break;
+
+    case "02":
+        type = "T-Shirt";
+        break;
+
+    case "03":
+        type = "Sweat pants";
+        break;
+
+    default:
+        type = "Other";
+        break;
+}
+```
+
+### Product color
+
+```csharp
+switch (productParts[1])
+{
+    case "BL":
+        color = "Black";
+        break;
+
+    case "MN":
+        color = "Maroon";
+        break;
+
+    default:
+        color = "White";
+        break;
+}
+```
+
+### Product size
+
+```csharp
+switch (productParts[2])
+{
+    case "S":
+        size = "Small";
+        break;
+
+    case "M":
+        size = "Medium";
+        break;
+
+    case "L":
+        size = "Large";
+        break;
+
+    default:
+        size = "One Size Fits All";
+        break;
+}
+```
+
+Final composition:
+
+```csharp
+Console.WriteLine($"SKU: {sku}");
+Console.WriteLine($"Product: {size} {color} {type}");
+```
+
+Verified output:
+
+```text
+SKU: 01-MN-L
+Product: Large Maroon Sweat shirt
+```
+
+---
+
+## Converting `if-elseif-else` to `switch`
+
+The original challenge contained three `if-elseif-else` chains:
+
+```text
+Product code → type
+Color code   → color
+Size code    → size
+```
+
+Each chain evaluated one array element against several exact string values.
+That structure maps directly to a `switch` statement.
+
+Conceptual conversion:
+
+```csharp
+if (value == "A")
+{
+    // Branch A
+}
+else if (value == "B")
+{
+    // Branch B
+}
+else
+{
+    // Fallback
+}
+```
+
+becomes:
+
+```csharp
+switch (value)
+{
+    case "A":
+        // Branch A
+        break;
+
+    case "B":
+        // Branch B
+        break;
+
+    default:
+        // Fallback
+        break;
+}
+```
+
+The converted code produces the same result while making the list of possible
+matches easier to scan.
+
+---
+
+## Source-Code Organization
+
+The original study notes contained several independent examples with repeated
+variable names. Placing every example directly in one top-level scope would
+cause duplicate local-variable declarations.
+
+The final executable code organizes the module into methods:
+
+```text
+RunFruitExample()
+RunEmployeeLevelExample()
+DisplayEmployeeTitle(...)
+RunSkuChallenge()
+```
+
+This structure provides:
+
+- isolated local scopes;
+- no duplicate top-level declarations;
+- clear example boundaries;
+- reusable employee-title logic;
+- readable console output;
+- easier future testing and maintenance.
+
+The project also documents each method using XML documentation comments and
+adds focused inline comments around the control-flow decisions.
+
+---
+
+## Verified Runtime Output
+
+```text
+BRANCH THE FLOW OF CODE USING SWITCH-CASE
+=========================================
+
+Example 1: Match a fruit name
+-----------------------------
+App will display information for apple.
+
+Example 2: Determine an employee title
+--------------------------------------
+Employee: John Smith, Level: 200, Title: Senior Associate
+Employee: John Smith, Level: 201, Title: Associate
+Employee: John Smith, Level: 100, Title: Senior Associate
+
+Challenge: Decode a product SKU
+-------------------------------
+SKU: 01-MN-L
+Product: Large Maroon Sweat shirt
+```
+
+---
+
+## Build Verification
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\switch-case-construct\switch-case-construct.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\switch-case-construct\switch-case-construct.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Current evidence:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Project registered in solution: Verified
+Solution projects: 16
+Module build: Pending final verification
+Full solution build: Pending reverification
+Verification date: July 26, 2026
+```
+
+After both build commands pass, replace the two pending lines with:
+
+```text
+Module build: Succeeded
+Full solution build: Succeeded
+```
+
+and change the section-level build badge back to:
+
+```markdown
+![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| branch | `/brɑːntʃ/` | “bran-ch” | phân nhánh luồng thực thi |
+| flow | `/fləʊ/` | “flâu” | luồng thực thi |
+| switch statement | `/swɪtʃ ˈsteɪt.mənt/` | “suých stây-t-mần” | câu lệnh lựa chọn nhiều nhánh |
+| switch expression | `/swɪtʃ ɪkˈspreʃ.ən/` | “suých ịch-spre-shần” | giá trị được `switch` đánh giá |
+| case label | `/keɪs ˈleɪ.bəl/` | “kâys lây-bồ” | nhãn biểu diễn một giá trị khớp |
+| switch section | `/swɪtʃ ˈsek.ʃən/` | “suých sék-shần” | phần mã thuộc một hoặc nhiều nhãn |
+| default | `/dɪˈfɔːlt/` | “đi-folt” | nhánh dự phòng |
+| break | `/breɪk/` | “brâyk” | kết thúc switch section hiện tại |
+| pattern match | `/ˈpæt.ən mætʃ/` | “pát-tần mát-ch” | đối sánh mẫu |
+| fall-through | `/ˈfɔːl.θruː/` | “fol-thru” | tiếp tục sang nhánh kế tiếp |
+| Stock Keeping Unit | `/stɒk ˈkiː.pɪŋ ˈjuː.nɪt/` | “stok ki-ping diu-nịt” | mã đơn vị lưu kho |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Branch the Flow of Code Using the switch-case Construct in C#
+Section: Add Logic to C# Console Applications
+Learning status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local run: Verified
+Project registration: Verified
+Project build: Pending final verification
+Full solution build: Pending reverification
+Solution project count: 16
+Completion date: July 26, 2026
+```
+
+---
+
 ## Next Step
 
-Proceed to the next official curriculum item in:
+First, complete the final repository verification for Module 3:
+
+```powershell
+dotnet build `
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\switch-case-construct\switch-case-construct.csproj"
+
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+After both commands pass, mark the pending Module 3 build records as verified and
+restore the green full-solution build badge.
+
+Then proceed to the next official curriculum item in:
 
 **Add Logic to C# Console Applications**
 
 Preserve the repository structure, register each project in
-`freecodecamp-csharp.slnx`, keep the fifteen-project solution green, and update
+`freecodecamp-csharp.slnx`, keep the sixteen-project solution green, and update
 this README after completing the next module.
