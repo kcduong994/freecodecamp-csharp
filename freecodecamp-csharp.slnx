@@ -4,6 +4,7 @@
   <Folder Name="/curriculum/add-logic-to-csharp-console-applications/modules/">
     <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/code-blocks-variable-scope/code-blocks-variable-scope.csproj" />
     <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/evaluate-boolean-expressions/evaluate-boolean-expressions.csproj" />
+    <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/for-statement/for-statement.csproj" />
     <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/switch-case-construct/switch-case-construct.csproj" />
   </Folder>
   <Folder Name="/curriculum/create-and-run-simple-csharp-console-applications/" />

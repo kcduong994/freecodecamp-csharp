@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-16-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-17-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -31,16 +31,16 @@ Certification status: In progress
 Curriculum sections completed: 2 / 7
 Current section: Add Logic to C# Console Applications
 Current section status: In progress
-Current section progress: 3 / 7
-Completed instructional modules in current section: 3
+Current section progress: 4 / 7
+Completed instructional modules in current section: 4
 Completed guided projects in current section: 0
 Completed challenge projects in current section: 0
-Latest completed item: Branch the Flow of Code Using the switch-case Construct in C#
+Latest completed item: Iterate Through a Code Block Using the for Statement in C#
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 26, 2026
-Projects currently verified in solution: 16
+Latest completion date: July 27, 2026
+Projects currently verified in solution: 17
 Latest module run: Verified
 Latest module build: Verified
 Full solution build: Verified
@@ -50,7 +50,7 @@ Full solution build: Verified
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | 3 / 7 | In progress |
+| 3 | Add Logic to C# Console Applications | 4 / 7 | In progress |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
@@ -596,19 +596,19 @@ expected report and that all thirteen solution projects compiled successfully.
 
 ```text
 Status: In progress
-Progress: 3 / 7
-Completed instructional modules: 3
+Progress: 4 / 7
+Completed instructional modules: 4
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed module: Branch the Flow of Code Using the switch-case Construct in C#
+Latest completed module: Iterate Through a Code Block Using the for Statement in C#
 Module assessment: Passed
 Achievement: Earned
 Local project run: Verified
 Project registration: Verified
 Project build: Verified
 Full solution build: Verified
-Solution project count: 16
-Latest completion date: July 26, 2026
+Solution project count: 17
+Latest completion date: July 27, 2026
 ```
 
 Section 3 develops Boolean evaluation, branching, iteration, and progressively
@@ -876,6 +876,154 @@ Verification date: July 26, 2026
 
 ---
 
+
+### Module 4 — Iterate Through a Code Block Using the `for` Statement in C#
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project registration in solution: Verified
+Project build: Verified
+Full solution build: Verified
+Solution project count: 17
+Completion date: July 27, 2026
+```
+
+This module introduces the C# `for` statement for repeating a code block with
+explicit control over the initializer, continuation condition, and iterator.
+
+Learning outcomes include:
+
+- understanding the structure of a `for` statement;
+- identifying the initializer, condition, iterator, and loop body;
+- counting upward and downward;
+- changing the iterator by more than one;
+- terminating a loop early with `break`;
+- traversing arrays by index;
+- iterating through arrays in reverse order;
+- distinguishing `for` from `foreach`;
+- modifying array elements by index;
+- combining `for`, `if`, `%`, and `&&`;
+- implementing the FizzBuzz challenge correctly.
+
+Project location:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── modules/
+    └── for-statement/
+        ├── Program.cs
+        └── for-statement.csproj
+```
+
+The final project preserves seven instructional examples:
+
+1. a basic loop from `0` through `9`;
+2. a countdown from `10` through `0`;
+3. a custom step using `+= 3`;
+4. early termination with `break`;
+5. reverse array traversal;
+6. modifying `"David"` to `"Sammy"` by index;
+7. FizzBuzz from `1` through `100`.
+
+The basic loop demonstrates the three expressions that control iteration:
+
+```csharp
+for (int index = 0; index < 10; index++)
+{
+    Console.WriteLine(index);
+}
+```
+
+The reverse-array example starts at the last valid index:
+
+```csharp
+for (int index = names.Length - 1; index >= 0; index--)
+{
+    Console.WriteLine(names[index]);
+}
+```
+
+The FizzBuzz challenge applies these rules:
+
+```text
+Divisible by both 3 and 5 → FizzBuzz
+Divisible by 3 only       → Fizz
+Divisible by 5 only       → Buzz
+Otherwise                 → print the number
+```
+
+Implementation:
+
+```csharp
+for (int number = 1; number <= 100; number++)
+{
+    if ((number % 3 == 0) && (number % 5 == 0))
+    {
+        Console.WriteLine($"{number} - FizzBuzz");
+    }
+    else if (number % 3 == 0)
+    {
+        Console.WriteLine($"{number} - Fizz");
+    }
+    else if (number % 5 == 0)
+    {
+        Console.WriteLine($"{number} - Buzz");
+    }
+    else
+    {
+        Console.WriteLine(number);
+    }
+}
+```
+
+The combined divisibility condition must be checked first. Otherwise, a value
+such as `15` would match the divisible-by-3 branch before reaching the
+`FizzBuzz` branch.
+
+The final `Program.cs` separates each example into a dedicated method, uses
+descriptive loop-control variables, retains invalid `foreach` reassignment code
+inside comments for reference, and uses XML documentation comments to improve
+reviewability and maintenance.
+
+Verified runtime behavior:
+
+```text
+Basic loop: 0 through 9
+Countdown: 10 through 0
+Custom step: 0, 3, 6, 9
+Break example: 0 through 7
+Reverse array: Michael, David, Eddie, Alex
+Updated array: Alex, Eddie, Sammy, Michael
+FizzBuzz: 1 through 100 with the required labels
+```
+
+Final FizzBuzz lines:
+
+```text
+96 - Fizz
+97
+98
+99 - Fizz
+100 - Buzz
+```
+
+Verification results:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Module build: Succeeded
+Full solution build: Succeeded
+Registered solution projects: 17
+Verification date: July 27, 2026
+```
+
+---
+
 ## Repository Structure
 
 ```text
@@ -930,9 +1078,12 @@ freecodecamp-csharp/
 │   │       ├── code-blocks-variable-scope/
 │   │       │   ├── Program.cs
 │   │       │   └── code-blocks-variable-scope.csproj
-│   │       └── switch-case-construct/
+│   │       ├── switch-case-construct/
+│   │       │   ├── Program.cs
+│   │       │   └── switch-case-construct.csproj
+│   │       └── for-statement/
 │   │           ├── Program.cs
-│   │           └── switch-case-construct.csproj
+│   │           └── for-statement.csproj
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
@@ -981,7 +1132,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-16
+17
 ```
 
 List all projects registered in the solution:
@@ -1062,13 +1213,15 @@ curriculum/add-logic-to-csharp-console-applications/modules/evaluate-boolean-exp
 curriculum/add-logic-to-csharp-console-applications/modules/code-blocks-variable-scope/code-blocks-variable-scope.csproj
 
 curriculum/add-logic-to-csharp-console-applications/modules/switch-case-construct/switch-case-construct.csproj
+
+curriculum/add-logic-to-csharp-console-applications/modules/for-statement/for-statement.csproj
 ```
 
 Run the latest completed module from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\add-logic-to-csharp-console-applications\modules\switch-case-construct\switch-case-construct.csproj"
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\for-statement\for-statement.csproj"
 ```
 
 ---
@@ -1077,20 +1230,20 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest completed module: Branch the Flow of Code Using the switch-case Construct in C#
+Latest completed module: Iterate Through a Code Block Using the for Statement in C#
 Latest module run: Succeeded
 Latest module output: Verified
 Latest module build: Succeeded
 Full solution build: Succeeded
-Registered solution projects: 16
-Verification date: July 26, 2026
+Registered solution projects: 17
+Verification date: July 27, 2026
 ```
 
 The latest terminal verification confirms that:
 
-- `switch-case-construct` compiled successfully;
-- the complete sixteen-project solution compiled successfully;
-- the latest module produced the expected fruit, employee-title, and SKU output;
+- `for-statement` compiled successfully;
+- the complete seventeen-project solution compiled successfully;
+- the latest module produced the expected loop, array, and FizzBuzz output;
 - the repository remained buildable after the new project was registered.
 
 ---

@@ -2,8 +2,8 @@
 
 ![C#](https://img.shields.io/badge/C%23-Section_3-512BD4?logo=csharp&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Progress](https://img.shields.io/badge/Curriculum_Items-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-16-2563EB)
+![Progress](https://img.shields.io/badge/Curriculum_Items-4%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-17-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Pending_Reverification-F59E0B)
 
 Section 3 of the **Foundational C# with Microsoft Certification** curriculum.
@@ -20,17 +20,17 @@ and a full-solution build.
 ```text
 Section: Add Logic to C# Console Applications
 Status: In progress
-Curriculum progress: 3 / 7
-Completed instructional modules: 3
+Curriculum progress: 4 / 7
+Completed instructional modules: 4
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed module: Branch the Flow of Code Using the switch-case Construct in C#
+Latest completed module: Iterate Through a Code Block Using the for Statement in C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 26, 2026
-Projects registered in solution: 16
+Latest completion date: July 27, 2026
+Projects registered in solution: 17
 Latest module local run: Verified
-Project build: Pending final verification
+Latest module build: Verified
 Full solution build: Pending reverification
 ```
 
@@ -38,8 +38,9 @@ Full solution build: Pending reverification
 | --- | --- |
 | Evaluate Boolean Expressions to Make Decisions in C# | Completed |
 | Control Variable Scope and Logic Using Code Blocks in C# | Completed |
-| Branch the Flow of Code Using the switch-case Construct in C# | Learning completed; final build verification pending |
-| Remaining Section 3 curriculum items | 4 not started |
+| Branch the Flow of Code Using the switch-case Construct in C# | Completed |
+| Iterate Through a Code Block Using the for Statement in C# | Learning and module build completed; full-solution reverification pending |
+| Remaining Section 3 curriculum items | 3 not started |
 
 A curriculum item is marked `Completed` only after its Microsoft Learn units,
 assessment, achievement, local run, solution registration, project build, and
@@ -59,9 +60,12 @@ add-logic-to-csharp-console-applications/
 │   ├── code-blocks-variable-scope/
 │   │   ├── Program.cs
 │   │   └── code-blocks-variable-scope.csproj
-│   └── switch-case-construct/
+│   ├── switch-case-construct/
+│   │   ├── Program.cs
+│   │   └── switch-case-construct.csproj
+│   └── for-statement/
 │       ├── Program.cs
-│       └── switch-case-construct.csproj
+│       └── for-statement.csproj
 ├── guided-projects/
 ├── challenge-projects/
 └── trophy/
@@ -769,15 +773,15 @@ Completion date: July 25, 2026
 ## Completion Status
 
 ```text
-Learning content: Completed
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
 Local project run: Verified
 Project added to solution: Verified
 Solution project count: 16
-Project build: Pending final verification
-Full solution build: Pending reverification
+Project build: Verified
+Full solution build: Verified
 Completion date: July 26, 2026
 ```
 
@@ -1231,30 +1235,18 @@ Build the complete solution:
 dotnet build .\freecodecamp-csharp.slnx
 ```
 
-Current evidence:
+Verified results:
 
 ```text
 Module run: Succeeded
 Module output: Verified
 Project registered in solution: Verified
 Solution projects: 16
-Module build: Pending final verification
-Full solution build: Pending reverification
+Module build: Succeeded
+Full solution build: Succeeded
 Verification date: July 26, 2026
 ```
 
-After both build commands pass, replace the two pending lines with:
-
-```text
-Module build: Succeeded
-Full solution build: Succeeded
-```
-
-and change the section-level build badge back to:
-
-```markdown
-![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
-```
 
 ---
 
@@ -1281,38 +1273,552 @@ and change the section-level build badge back to:
 ```text
 Curriculum item: Branch the Flow of Code Using the switch-case Construct in C#
 Section: Add Logic to C# Console Applications
-Learning status: Completed
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
 Local run: Verified
 Project registration: Verified
-Project build: Pending final verification
-Full solution build: Pending reverification
+Project build: Verified
+Full solution build: Verified
 Solution project count: 16
 Completion date: July 26, 2026
 ```
 
 ---
 
-## Next Step
+---
 
-First, complete the final repository verification for Module 3:
+# Module 4 — Iterate Through a Code Block Using the `for` Statement in C#
+
+## Completion Status
+
+```text
+Learning content: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local project run: Verified
+Project added to solution: Verified
+Solution project count: 17
+Project build: Verified
+Full solution build: Pending reverification
+Completion date: July 27, 2026
+```
+
+This module introduces the C# `for` iteration statement and demonstrates how it
+provides explicit control over initialization, continuation, and update rules.
+
+The final `Program.cs` preserves the complete learning sequence in seven
+independent examples:
+
+1. a basic count-up loop;
+2. a countdown loop;
+3. a loop with a custom step;
+4. early termination with `break`;
+5. reverse array traversal;
+6. array modification by index;
+7. the FizzBuzz challenge.
+
+Each example is placed in a dedicated method so that the module remains
+runnable, readable, testable, and maintainable.
+
+---
+
+## Learning Objectives
+
+The completed project demonstrates how to:
+
+- repeat a code block a known number of times;
+- identify the initializer, condition, iterator, and loop body;
+- count upward or downward;
+- change the iterator by more than one;
+- terminate a loop early with `break`;
+- traverse an array by index;
+- iterate through an array in reverse order;
+- distinguish index-based `for` iteration from value-based `foreach` iteration;
+- modify array elements by using their indexes;
+- combine `for`, `if`, `%`, and `&&`;
+- order conditional branches correctly in the FizzBuzz challenge.
+
+---
+
+## Anatomy of a `for` Statement
+
+General syntax:
+
+```csharp
+for (initializer; condition; iterator)
+{
+    // Loop body
+}
+```
+
+Basic example:
+
+```csharp
+for (int index = 0; index < 10; index++)
+{
+    Console.WriteLine(index);
+}
+```
+
+| Part | Example | Purpose |
+| --- | --- | --- |
+| Initializer | `int index = 0` | Creates and initializes the loop-control variable |
+| Condition | `index < 10` | Determines whether another iteration may run |
+| Iterator | `index++` | Updates the loop-control variable after each iteration |
+| Body | `{ ... }` | Contains the statements executed during each iteration |
+
+Execution sequence:
+
+```text
+Run initializer once
+    ↓
+Evaluate condition
+    ├── false → exit the loop
+    └── true
+          ↓
+       Execute loop body
+          ↓
+       Execute iterator
+          ↓
+       Evaluate condition again
+```
+
+Verified values:
+
+```text
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+```
+
+The loop stops when `index` reaches `10`, because `10 < 10` is `false`.
+
+---
+
+## Counting Downward
+
+```csharp
+for (int counter = 10; counter >= 0; counter--)
+{
+    Console.WriteLine(counter);
+}
+```
+
+Configuration:
+
+```text
+Initializer: counter starts at 10
+Condition:   continue while counter is at least 0
+Iterator:    subtract 1 after every iteration
+```
+
+Verified sequence:
+
+```text
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+```
+
+---
+
+## Changing the Iteration Step
+
+```csharp
+for (int counter = 0; counter < 10; counter += 3)
+{
+    Console.WriteLine(counter);
+}
+```
+
+Verified output:
+
+```text
+0
+3
+6
+9
+```
+
+`counter += 3` advances the iterator by three after each iteration.
+
+---
+
+## Stopping a Loop with `break`
+
+```csharp
+for (int counter = 0; counter < 10; counter++)
+{
+    Console.WriteLine(counter);
+
+    if (counter == 7)
+    {
+        break;
+    }
+}
+```
+
+Verified output:
+
+```text
+0
+1
+2
+3
+4
+5
+6
+7
+```
+
+The normal condition would allow values through `9`, but `break` terminates the
+loop immediately after `7` is printed.
+
+---
+
+## Traversing an Array in Reverse
+
+```csharp
+string[] names = { "Alex", "Eddie", "David", "Michael" };
+
+for (int index = names.Length - 1; index >= 0; index--)
+{
+    Console.WriteLine(names[index]);
+}
+```
+
+For this array:
+
+```text
+names.Length = 4
+last valid index = 3
+```
+
+Verified output:
+
+```text
+Michael
+David
+Eddie
+Alex
+```
+
+---
+
+## `for` Compared with `foreach`
+
+`foreach` is concise when each element only needs to be read:
+
+```csharp
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+```
+
+However, the iteration variable cannot be reassigned:
+
+```csharp
+foreach (string name in names)
+{
+    // Invalid:
+    // name = "Sammy";
+}
+```
+
+A `for` statement provides an index, so the array element can be changed:
+
+```csharp
+for (int index = 0; index < names.Length; index++)
+{
+    if (names[index] == "David")
+    {
+        names[index] = "Sammy";
+    }
+}
+```
+
+Verified updated array:
+
+```text
+Alex
+Eddie
+Sammy
+Michael
+```
+
+Practical distinction:
+
+```text
+Read every value simply                 → foreach
+Need the index                          → for
+Need reverse or custom-order traversal  → for
+Need to replace an array element        → for
+```
+
+---
+
+## FizzBuzz Challenge
+
+Rules:
+
+| Condition | Output suffix |
+| --- | --- |
+| Divisible by both `3` and `5` | `FizzBuzz` |
+| Divisible by `3` only | `Fizz` |
+| Divisible by `5` only | `Buzz` |
+| None of the above | No suffix |
+
+Implementation:
+
+```csharp
+for (int number = 1; number <= 100; number++)
+{
+    if ((number % 3 == 0) && (number % 5 == 0))
+    {
+        Console.WriteLine($"{number} - FizzBuzz");
+    }
+    else if (number % 3 == 0)
+    {
+        Console.WriteLine($"{number} - Fizz");
+    }
+    else if (number % 5 == 0)
+    {
+        Console.WriteLine($"{number} - Buzz");
+    }
+    else
+    {
+        Console.WriteLine(number);
+    }
+}
+```
+
+The remainder operator `%` checks whether division leaves a remainder:
+
+```text
+number % divisor == 0
+```
+
+The logical AND operator `&&` requires both divisibility conditions to be true.
+
+Representative output:
+
+```text
+1
+2
+3 - Fizz
+4
+5 - Buzz
+6 - Fizz
+...
+15 - FizzBuzz
+...
+96 - Fizz
+97
+98
+99 - Fizz
+100 - Buzz
+```
+
+---
+
+## Why the Combined Condition Comes First
+
+For `15`:
+
+```text
+15 % 3 == 0 → true
+15 % 5 == 0 → true
+```
+
+If divisibility by `3` were checked first, the program would print only:
+
+```text
+15 - Fizz
+```
+
+Correct branch precedence:
+
+```text
+Divisible by both 3 and 5
+    ↓ otherwise
+Divisible by 3
+    ↓ otherwise
+Divisible by 5
+    ↓ otherwise
+Print the number
+```
+
+---
+
+## Source-Code Organization
+
+The final executable project organizes the module into:
+
+```text
+RunBasicForLoop()
+RunCountdownLoop()
+RunCustomStepLoop()
+RunBreakExample()
+RunReverseArrayExample()
+RunArrayUpdateExample()
+RunFizzBuzzChallenge()
+WriteSectionHeader(...)
+```
+
+This structure provides:
+
+- independent local scopes;
+- descriptive variable names;
+- reusable heading output;
+- consistent braces;
+- XML documentation comments;
+- preservation of intentionally invalid `foreach` code inside comments;
+- easier testing, review, and future maintenance.
+
+---
+
+## Verified Runtime Output
+
+The project run confirms:
+
+```text
+Basic loop: 0 through 9
+Countdown: 10 through 0
+Custom step: 0, 3, 6, 9
+Break example: 0 through 7
+Reverse array: Michael, David, Eddie, Alex
+Updated array: Alex, Eddie, Sammy, Michael
+FizzBuzz: 1 through 100 with the required labels
+```
+
+The final lines are:
+
+```text
+96 - Fizz
+97
+98
+99 - Fizz
+100 - Buzz
+```
+
+---
+
+## Build Verification
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\for-statement\for-statement.csproj"
+```
+
+Build the module:
 
 ```powershell
 dotnet build `
-  ".\curriculum\add-logic-to-csharp-console-applications\modules\switch-case-construct\switch-case-construct.csproj"
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\for-statement\for-statement.csproj"
+```
 
+Build the complete solution:
+
+```powershell
 dotnet build .\freecodecamp-csharp.slnx
 ```
 
-After both commands pass, mark the pending Module 3 build records as verified and
-restore the green full-solution build badge.
+Current verified results:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Project registered in solution: Verified
+Solution projects: 17
+Module build: Succeeded
+Full solution build: Pending reverification
+Verification date: July 27, 2026
+```
+
+The complete seventeen-project solution must still be rebuilt before the
+section-level build badge can return to `Passing`.
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| iterate | `/ˈɪt.ə.reɪt/` | “ít-tờ-râyt” | lặp lại hoặc duyệt qua |
+| iteration | `/ˌɪt.əˈreɪ.ʃən/` | “ít-tờ-rây-shần” | một lần thực hiện vòng lặp |
+| for statement | `/fɔː ˈsteɪt.mənt/` | “fo stây-t-mần” | câu lệnh lặp `for` |
+| initializer | `/ɪˈnɪʃ.əl.aɪ.zər/` | “i-ni-shờ-lai-zờ” | biểu thức khởi tạo |
+| condition | `/kənˈdɪʃ.ən/` | “cần-đi-shần” | điều kiện tiếp tục |
+| iterator | `/ˈɪt.ə.reɪ.tər/` | “ít-tờ-rây-tờ” | biểu thức cập nhật sau mỗi lần lặp |
+| loop body | `/luːp ˈbɒd.i/` | “lúp bo-đi” | khối mã được lặp |
+| increment | `/ˈɪŋ.krə.mənt/` | “in-crờ-mần” | tăng giá trị |
+| decrement | `/ˈdek.rə.mənt/` | “đe-crờ-mần” | giảm giá trị |
+| remainder operator | `/rɪˈmeɪn.dər ˈɒp.ər.eɪ.tər/` | “ri-mây-nđờ op-pờ-rây-tờ” | toán tử lấy số dư `%` |
+| divisible | `/dɪˈvɪz.ə.bəl/` | “đi-vi-zờ-bồ” | chia hết |
+| zero-based index | `/ˈzɪə.rəʊ beɪst ˈɪn.deks/` | “zi-râu bâyst in-đéc” | chỉ số bắt đầu từ `0` |
+| FizzBuzz | `/fɪz bʌz/` | “fiz-bâz” | bài luyện vòng lặp và điều kiện |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Iterate Through a Code Block Using the for Statement in C#
+Section: Add Logic to C# Console Applications
+Learning status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Local run: Verified
+Project registration: Verified
+Project build: Verified
+Full solution build: Pending reverification
+Solution project count: 17
+Completion date: July 27, 2026
+```
+
+---
+
+## Next Step
+
+Complete the final repository verification for Module 4:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+After the complete seventeen-project solution builds successfully:
+
+1. change the section-level build badge to `Full_Solution_Build-Passing`;
+2. change Module 4 `Full solution build` from `Pending reverification` to
+   `Verified`;
+3. update the Module 4 verification record to `Full solution build: Succeeded`.
 
 Then proceed to the next official curriculum item in:
 
 **Add Logic to C# Console Applications**
 
 Preserve the repository structure, register each project in
-`freecodecamp-csharp.slnx`, keep the sixteen-project solution green, and update
-this README after completing the next module.
+`freecodecamp-csharp.slnx`, keep the seventeen-project solution green, and
+update this README after completing the next module.
