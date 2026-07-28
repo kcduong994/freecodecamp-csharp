@@ -2,9 +2,9 @@
 
 ![C#](https://img.shields.io/badge/C%23-Section_3-512BD4?logo=csharp&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Progress](https://img.shields.io/badge/Curriculum_Items-4%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-17-2563EB)
-![Build](https://img.shields.io/badge/Full_Solution_Build-Pending_Reverification-F59E0B)
+![Progress](https://img.shields.io/badge/Curriculum_Items-5%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-18-2563EB)
+![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 Section 3 of the **Foundational C# with Microsoft Certification** curriculum.
 
@@ -20,18 +20,19 @@ and a full-solution build.
 ```text
 Section: Add Logic to C# Console Applications
 Status: In progress
-Curriculum progress: 4 / 7
-Completed instructional modules: 4
+Curriculum progress: 5 / 7
+Completed instructional modules: 5
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed module: Iterate Through a Code Block Using the for Statement in C#
+Latest completed module: Add Looping Logic to Your Code Using the do-while and while Statements in C#
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 27, 2026
-Projects registered in solution: 17
-Latest module local run: Verified
+Latest completion date: July 28, 2026
+Projects registered in solution: 18
+Latest module bootstrap run: Verified
+Latest module final-code run: Verified
 Latest module build: Verified
-Full solution build: Pending reverification
+Full solution build: Verified
 ```
 
 | Curriculum item | Status |
@@ -39,8 +40,9 @@ Full solution build: Pending reverification
 | Evaluate Boolean Expressions to Make Decisions in C# | Completed |
 | Control Variable Scope and Logic Using Code Blocks in C# | Completed |
 | Branch the Flow of Code Using the switch-case Construct in C# | Completed |
-| Iterate Through a Code Block Using the for Statement in C# | Learning and module build completed; full-solution reverification pending |
-| Remaining Section 3 curriculum items | 3 not started |
+| Iterate Through a Code Block Using the for Statement in C# | Completed |
+| Add Looping Logic to Your Code Using the do-while and while Statements in C# | Completed |
+| Remaining Section 3 curriculum items | 2 not started |
 
 A curriculum item is marked `Completed` only after its Microsoft Learn units,
 assessment, achievement, local run, solution registration, project build, and
@@ -63,9 +65,12 @@ add-logic-to-csharp-console-applications/
 │   ├── switch-case-construct/
 │   │   ├── Program.cs
 │   │   └── switch-case-construct.csproj
-│   └── for-statement/
+│   ├── for-statement/
+│   │   ├── Program.cs
+│   │   └── for-statement.csproj
+│   └── do-while-and-while-statements/
 │       ├── Program.cs
-│       └── for-statement.csproj
+│       └── do-while-and-while-statements.csproj
 ├── guided-projects/
 ├── challenge-projects/
 └── trophy/
@@ -1294,7 +1299,7 @@ Completion date: July 26, 2026
 ## Completion Status
 
 ```text
-Learning content: Completed
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
@@ -1302,7 +1307,7 @@ Local project run: Verified
 Project added to solution: Verified
 Solution project count: 17
 Project build: Verified
-Full solution build: Pending reverification
+Full solution build: Verified
 Completion date: July 27, 2026
 ```
 
@@ -1744,7 +1749,7 @@ Build the complete solution:
 dotnet build .\freecodecamp-csharp.slnx
 ```
 
-Current verified results:
+Verified results:
 
 ```text
 Module run: Succeeded
@@ -1752,12 +1757,9 @@ Module output: Verified
 Project registered in solution: Verified
 Solution projects: 17
 Module build: Succeeded
-Full solution build: Pending reverification
+Full solution build: Succeeded
 Verification date: July 27, 2026
 ```
-
-The complete seventeen-project solution must still be rebuilt before the
-section-level build badge can return to `Passing`.
 
 ---
 
@@ -1786,39 +1788,815 @@ section-level build badge can return to `Passing`.
 ```text
 Curriculum item: Iterate Through a Code Block Using the for Statement in C#
 Section: Add Logic to C# Console Applications
-Learning status: Completed
+Status: Completed
 Microsoft Learn units: Completed
 Module assessment: Passed
 Achievement: Earned
 Local run: Verified
 Project registration: Verified
 Project build: Verified
-Full solution build: Pending reverification
+Full solution build: Verified
 Solution project count: 17
 Completion date: July 27, 2026
 ```
 
 ---
 
-## Next Step
+# Module 5 — Add Looping Logic to Your Code Using the `do-while` and `while` Statements in C#
 
-Complete the final repository verification for Module 4:
+## Completion Status
+
+```text
+Learning content: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Project added to solution: Verified
+Solution project count: 18
+Bootstrap project run: Verified
+Final organized Program.cs: Completed
+Final-code run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 6.4 seconds
+Completion date: July 28, 2026
+```
+
+This module extends C# iteration logic beyond `for` and `foreach`. It explains
+how `do-while` and `while` repeat a code block until a Boolean exit condition is
+reached, and how values generated or retrieved inside the loop can determine
+when iteration stops.
+
+The final organized `Program.cs` preserves the complete learning sequence in
+eight independent methods:
+
+```text
+DisplayLoopComparison()
+RunDoWhileRandomExample()
+RunWhileRandomExample()
+RunContinueExample()
+RunBattleChallenge()
+RunIntegerInputChallenge()
+RunRoleInputChallenge()
+RunSentenceProcessingChallenge()
+```
+
+The source is organized this way to avoid duplicate top-level declarations,
+separate interactive challenges from random-number examples, and make each form
+of iteration easier to understand, test, and maintain.
+
+---
+
+## Learning Objectives
+
+The completed learning content demonstrates how to:
+
+- use `do-while` when the loop body must execute at least once;
+- use `while` when the condition must be checked before the loop body;
+- recognize that `do-while` executes one or more times;
+- recognize that `while` executes zero or more times;
+- build loop exit conditions from values produced inside the loop;
+- create an intentional infinite loop and understand why it requires an exit;
+- use `continue` to skip the remainder of the current iteration;
+- distinguish `continue` from `break`;
+- validate nullable console input;
+- convert text input safely with `int.TryParse()`;
+- normalize role input with `Trim()` and case normalization;
+- combine `for` and `while` for string-array processing;
+- use `IndexOf()`, `Remove()`, `Substring()`, and `TrimStart()`;
+- select the appropriate iteration statement for a specific problem.
+
+---
+
+## Comparing the Four Iteration Statements
+
+C# iteration statements differ primarily in how they determine the number of
+iterations and when their conditions are evaluated.
+
+| Statement | Typical use | Minimum executions |
+| --- | --- | ---: |
+| `for` | A known or controlled number of iterations | `0` |
+| `foreach` | Process each element in a collection | `0` |
+| `do-while` | Execute first, then evaluate the condition | `1` |
+| `while` | Evaluate the condition before executing | `0` |
+
+Practical selection guide:
+
+```text
+Known counter or index progression       → for
+Read every item in a collection          → foreach
+Must request/process something once      → do-while
+May not need to execute at all            → while
+```
+
+The important distinction is not only syntax. It is the position of the Boolean
+evaluation relative to the loop body.
+
+---
+
+## `do-while`: Execute Before Evaluating
+
+General syntax:
+
+```csharp
+do
+{
+    // Loop body
+}
+while (condition);
+```
+
+Execution sequence:
+
+```text
+Execute the loop body
+        ↓
+Evaluate the Boolean condition
+    ├── true  → execute the body again
+    └── false → leave the loop
+```
+
+Because the condition is evaluated afterward, the body runs at least once.
+
+A required syntax detail is the semicolon after the condition:
+
+```csharp
+while (condition);
+                 ^
+```
+
+### Infinite-loop form
+
+```csharp
+do
+{
+    // Repeated work
+}
+while (true);
+```
+
+Hard-coding the condition to `true` creates an infinite loop unless a statement
+inside the body can terminate it, such as:
+
+```csharp
+break;
+```
+
+Code placed after a provably infinite loop without an exit becomes unreachable,
+which Visual Studio displays in a faded style and reports with warning
+`CS0162`.
+
+---
+
+## Random-Number `do-while` Example
+
+The first example generates values from `1` through `10` until `7` appears:
+
+```csharp
+Random random = new();
+int current = 0;
+
+do
+{
+    current = random.Next(1, 11);
+    Console.WriteLine(current);
+}
+while (current != 7);
+```
+
+`Random.Next(1, 11)` uses:
+
+```text
+Inclusive lower bound: 1
+Exclusive upper bound: 11
+Possible results: 1 through 10
+```
+
+The continuation rule is:
+
+```text
+current != 7 → true  → repeat
+current != 7 → false → stop
+```
+
+The last displayed random value is therefore always:
+
+```text
+7
+```
+
+The number of iterations is unknown in advance. The loop may stop immediately
+or may require many generated values.
+
+---
+
+## `while`: Evaluate Before Executing
+
+General syntax:
+
+```csharp
+while (condition)
+{
+    // Loop body
+}
+```
+
+Execution sequence:
+
+```text
+Evaluate the Boolean condition
+    ├── false → skip the body
+    └── true
+          ↓
+       Execute the body
+          ↓
+       Evaluate the condition again
+```
+
+The body can execute zero times.
+
+Example:
+
+```csharp
+Random random = new();
+int current = random.Next(1, 11);
+
+while (current >= 3)
+{
+    Console.WriteLine(current);
+    current = random.Next(1, 11);
+}
+
+Console.WriteLine($"Last number: {current}");
+```
+
+Two initial cases are possible:
+
+```text
+current is 1 or 2   → condition is false; body executes zero times
+current is 3 to 10  → body executes and generates another value
+```
+
+The value printed as `Last number` is the value that caused the loop condition
+to become false.
+
+---
+
+## `continue` Compared with `break`
+
+`continue` ends only the current iteration:
+
+```csharp
+if (current >= 8)
+{
+    continue;
+}
+```
+
+Control transfers directly to the next condition evaluation.
+
+`break` ends the entire loop:
+
+```csharp
+if (shouldStop)
+{
+    break;
+}
+```
+
+Comparison:
+
+```text
+continue → skip the remaining code in this iteration
+break    → terminate the complete loop
+```
+
+Example:
+
+```csharp
+do
+{
+    current = random.Next(1, 11);
+
+    if (current >= 8)
+    {
+        continue;
+    }
+
+    Console.WriteLine(current);
+}
+while (current != 7);
+```
+
+Values `8`, `9`, and `10` are not displayed because `continue` skips the
+`Console.WriteLine()` statement. The value `7` is displayed and then ends the
+loop.
+
+---
+
+## Battle Challenge
+
+The role-playing challenge uses these rules:
+
+```text
+Hero health: 10
+Monster health: 10
+Attack damage: 1 through 10
+Hero attacks first
+Monster attacks only if still alive
+Battle continues while both have health above 0
+```
+
+Core implementation:
+
+```csharp
+do
+{
+    int damage = dice.Next(1, 11);
+    monsterHealth -= damage;
+
+    Console.WriteLine(
+        $"Monster was damaged and lost {damage} health " +
+        $"and now has {monsterHealth} health.");
+
+    if (monsterHealth <= 0)
+    {
+        continue;
+    }
+
+    damage = dice.Next(1, 11);
+    heroHealth -= damage;
+
+    Console.WriteLine(
+        $"Hero was damaged and lost {damage} health " +
+        $"and now has {heroHealth} health.");
+}
+while (heroHealth > 0 && monsterHealth > 0);
+```
+
+`do-while` is appropriate because the game rules require the hero to attack
+first. The battle body must therefore execute at least once.
+
+The monster-defeat check appears before the monster attack:
+
+```csharp
+if (monsterHealth <= 0)
+{
+    continue;
+}
+```
+
+This prevents a defeated monster from taking another turn.
+
+Winner selection:
+
+```csharp
+Console.WriteLine(
+    monsterHealth <= 0
+        ? "Hero wins!"
+        : "Monster wins!");
+```
+
+---
+
+## Nullable Console Input
+
+`Console.ReadLine()` returns:
+
+```csharp
+string?
+```
+
+The question mark means that the result may be either:
+
+```text
+A string entered by the user
+null when no input is available
+```
+
+A basic null-checking input loop is:
+
+```csharp
+string? readResult;
+
+do
+{
+    readResult = Console.ReadLine();
+}
+while (readResult == null);
+```
+
+This demonstrates a common use of `do-while`: the program must attempt to read
+input at least once.
+
+---
+
+## Numeric Conversion with `int.TryParse()`
+
+Console input is text. Numeric validation therefore requires conversion.
+
+```csharp
+bool isValidNumber = int.TryParse(
+    readResult,
+    out acceptedValue);
+```
+
+When conversion succeeds:
+
+```text
+Return value: true
+out variable: converted integer
+```
+
+When conversion fails:
+
+```text
+Return value: false
+out variable: 0
+No conversion exception is thrown
+```
+
+This is safer for validation than `int.Parse()` because invalid user input is an
+expected condition rather than an exceptional program failure.
+
+---
+
+## Integer-Input Challenge
+
+Requirement:
+
+```text
+Accept an integer from 5 through 10, inclusive.
+```
+
+Correct range rejection:
+
+```csharp
+if (acceptedValue < 5 || acceptedValue > 10)
+{
+    isValidNumber = false;
+}
+```
+
+Accepted values:
+
+```text
+5, 6, 7, 8, 9, 10
+```
+
+The original learning notes used:
+
+```csharp
+numValue <= 5 || numValue >= 10
+```
+
+That condition would reject both boundary values and accept only `6` through
+`9`. The organized final code uses the inclusive range required by the
+challenge.
+
+Validation sequence:
+
+```text
+Read string input
+        ↓
+TryParse succeeds?
+    ├── no  → print invalid-number message and continue
+    └── yes
+          ↓
+       Value within 5..10?
+          ├── no  → reject and repeat
+          └── yes → leave the loop
+```
+
+Representative interaction:
+
+```text
+Enter an integer value between 5 and 10:
+two
+Sorry, you entered an invalid number. Please try again.
+2
+You entered 2. Please enter a number between 5 and 10.
+7
+Your input value (7) has been accepted.
+```
+
+---
+
+## Role-Input Challenge
+
+Accepted role names:
+
+```text
+Administrator
+Manager
+User
+```
+
+The program ignores leading/trailing whitespace and letter casing:
+
+```csharp
+roleName = (readResult ?? string.Empty).Trim();
+string normalizedRole = roleName.ToLowerInvariant();
+```
+
+Validation:
+
+```csharp
+isValidRole =
+    normalizedRole == "administrator" ||
+    normalizedRole == "manager" ||
+    normalizedRole == "user";
+```
+
+Examples that should be accepted:
+
+```text
+Administrator
+administrator
+   Administrator
+MANAGER
+user
+```
+
+`ToLowerInvariant()` is used because these are fixed program keywords whose
+comparison should not change with the operating system's current culture.
+
+Representative interaction:
+
+```text
+Enter your role name (Administrator, Manager, or User):
+Admin
+The role name that you entered, "Admin", is not valid.
+Enter your role name (Administrator, Manager, or User):
+   Administrator
+Your input value (Administrator) has been accepted.
+```
+
+---
+
+## String-Array Processing Challenge
+
+Input:
+
+```csharp
+string[] myStrings =
+{
+    "I like pizza. I like roast chicken. I like salad",
+    "I like all three of the menu choices"
+};
+```
+
+Required output:
+
+```text
+I like pizza
+I like roast chicken
+I like salad
+I like all three of the menu choices
+```
+
+The outer loop uses `for`:
+
+```csharp
+for (int index = 0; index < myStrings.Length; index++)
+{
+    string myString = myStrings[index];
+}
+```
+
+This creates a modifiable working copy of each array element.
+
+The inner loop uses `while`:
+
+```csharp
+while (periodLocation != -1)
+{
+    // Extract one sentence.
+}
+```
+
+`while` is appropriate because a string may contain no period. In that case,
+`IndexOf(".")` returns `-1`, and the body must execute zero times.
+
+A `do-while` loop would incorrectly force one execution even when no period
+exists.
+
+---
+
+## String-Processing Methods
+
+### `IndexOf()`
+
+```csharp
+int periodLocation = myString.IndexOf(".");
+```
+
+Returns:
+
+```text
+The zero-based location of the first period
+-1 when no period exists
+```
+
+### `Remove()`
+
+```csharp
+string mySentence = myString.Remove(periodLocation);
+```
+
+Returns the text before the period and excludes the period itself.
+
+### `Substring()`
+
+```csharp
+myString = myString.Substring(periodLocation + 1);
+```
+
+Returns the remaining text after the period.
+
+Adding `1` moves the starting position beyond the period character.
+
+### `TrimStart()`
+
+```csharp
+myString = myString.TrimStart();
+```
+
+Removes leading whitespace before the next sentence.
+
+Processing sequence:
+
+```text
+Find the first period
+        ↓
+Extract text before it
+        ↓
+Remove the extracted sentence and period
+        ↓
+Remove leading whitespace
+        ↓
+Search the shortened string again
+```
+
+The final sentence is displayed after no periods remain.
+
+---
+
+## Source-Code Organization and Cleanup
+
+The original study notes contain every instructional step in one top-level
+file. Keeping them unchanged would produce compilation errors because several
+variables are declared repeatedly:
+
+```text
+random
+current
+readResult
+validNumber
+myStrings
+```
+
+The original notes also contain unused `using` directives.
+
+The final organized `Program.cs` resolves this by:
+
+- placing each example in a dedicated method;
+- using descriptive names such as `heroHealth`, `monsterHealth`,
+  `acceptedValue`, and `normalizedRole`;
+- extracting repeated section-heading output into `WriteSectionHeader()`;
+- using XML documentation comments;
+- retaining detailed inline explanations of loop control;
+- removing unused `using` directives;
+- using constants for battle configuration;
+- handling nullable input explicitly;
+- normalizing role text only once;
+- correcting the inclusive numeric range;
+- preventing empty final sentences from being printed.
+
+---
+
+## Build and Runtime Verification
+
+Run the completed module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\do-while-and-while-statements\do-while-and-while-statements.csproj"
+```
+
+Suggested interactive test input:
+
+```text
+two
+2
+7
+Admin
+   Administrator
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\do-while-and-while-statements\do-while-and-while-statements.csproj"
+```
+
+Build the complete solution:
 
 ```powershell
 dotnet build .\freecodecamp-csharp.slnx
 ```
 
-After the complete seventeen-project solution builds successfully:
+Verified results:
 
-1. change the section-level build badge to `Full_Solution_Build-Passing`;
-2. change Module 4 `Full solution build` from `Pending reverification` to
-   `Verified`;
-3. update the Module 4 verification record to `Full solution build: Succeeded`.
+```text
+Microsoft Learn completion: Verified
+Module assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Solution project count: 18
+Bootstrap Hello World run: Succeeded
+Final organized Program.cs: Completed
+Final-code run: Succeeded
+Interactive validation behavior: Verified
+Sentence-processing output: Verified
+Module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 6.4 seconds
+Registered solution projects: 18
+Verification date: July 28, 2026
+```
 
-Then proceed to the next official curriculum item in:
+The completed source ran through all random, battle, numeric-input, role-input,
+and sentence-processing stages. The module project and the complete
+eighteen-project solution then compiled successfully.
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| looping logic | `/ˈluː.pɪŋ ˈlɒdʒ.ɪk/` | “lu-ping lo-jịch” | logic điều khiển sự lặp |
+| do-while statement | `/ˌduː ˈwaɪl ˈsteɪt.mənt/` | “đu-oai-l stây-t-mần” | chạy thân trước, kiểm tra điều kiện sau |
+| while statement | `/waɪl ˈsteɪt.mənt/` | “oai-l stây-t-mần” | kiểm tra điều kiện trước khi chạy |
+| Boolean expression | `/ˈbuː.li.ən ɪkˈspreʃ.ən/` | “bu-li-ần ịch-spre-shần” | biểu thức cho kết quả `true` hoặc `false` |
+| iteration | `/ˌɪt.əˈreɪ.ʃən/` | “ít-tờ-rây-shần” | một lần thực hiện vòng lặp |
+| infinite loop | `/ˈɪn.fɪ.nət luːp/` | “in-fi-nịt lúp” | vòng lặp không có điểm kết thúc |
+| exit condition | `/ˈek.sɪt kənˈdɪʃ.ən/` | “éc-xịt cần-đi-shần” | điều kiện làm vòng lặp dừng |
+| continue | `/kənˈtɪn.juː/` | “cần-tin-diu” | bỏ phần còn lại của lần lặp hiện tại |
+| break | `/breɪk/` | “brâyk” | kết thúc toàn bộ vòng lặp |
+| nullable | `/ˈnʌl.ə.bəl/` | “nâl-lờ-bồ” | kiểu có thể nhận giá trị `null` |
+| parse | `/pɑːz/` | “pa-z” | phân tích và chuyển đổi văn bản |
+| validation | `/ˌvæl.ɪˈdeɪ.ʃən/` | “va-li-đây-shần” | kiểm tra dữ liệu hợp lệ |
+| short-circuit | `/ˌʃɔːt ˈsɜː.kɪt/` | “shot sơ-kịt” | dừng sớm việc xử lý hoặc đánh giá |
+| substring | `/ˈsʌb.strɪŋ/` | “sâb-string” | chuỗi con |
+| role-playing game | `/ˈrəʊl ˌpleɪ.ɪŋ ɡeɪm/` | “râul plây-ing gâym” | trò chơi nhập vai |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Add Looping Logic to Your Code Using the do-while and while Statements in C#
+Section: Add Logic to C# Console Applications
+Learning status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Solution project count: 18
+Bootstrap run: Verified
+Final organized source: Completed
+Final-code run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 6.4 seconds
+Completion date: July 28, 2026
+```
+
+---
+
+## Next Step
+
+Proceed to the next official curriculum item in:
 
 **Add Logic to C# Console Applications**
 
-Preserve the repository structure, register each project in
-`freecodecamp-csharp.slnx`, keep the seventeen-project solution green, and
-update this README after completing the next module.
+Current verified repository baseline:
+
+```text
+Section progress: 5 / 7
+Completed instructional modules: 5
+Registered solution projects: 18
+Latest module run: Verified
+Latest module build: Verified
+Full solution build: Verified
+Latest full solution build time: 6.4 seconds
+Verification date: July 28, 2026
+```
+
+Preserve the repository structure, register each new project in
+`freecodecamp-csharp.slnx`, keep the eighteen-project solution green, and update
+this README after completing the next module.

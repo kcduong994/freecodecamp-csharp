@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-17-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-18-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -31,26 +31,30 @@ Certification status: In progress
 Curriculum sections completed: 2 / 7
 Current section: Add Logic to C# Console Applications
 Current section status: In progress
-Current section progress: 4 / 7
-Completed instructional modules in current section: 4
+Current section progress: 5 / 7
+Completed instructional modules in current section: 5
 Completed guided projects in current section: 0
 Completed challenge projects in current section: 0
-Latest completed item: Iterate Through a Code Block Using the for Statement in C#
+Latest completed item: Add Looping Logic to Your Code Using the do-while and while Statements in C#
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 27, 2026
-Projects currently verified in solution: 17
-Latest module run: Verified
+Latest completion date: July 28, 2026
+Projects currently verified in solution: 18
+Latest module bootstrap run: Verified
+Latest organized source: Completed
+Latest module final-code run: Verified
 Latest module build: Verified
+Latest module build time: 0.9 seconds
 Full solution build: Verified
+Full solution build time: 6.4 seconds
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | 4 / 7 | In progress |
+| 3 | Add Logic to C# Console Applications | 5 / 7 | In progress |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
@@ -596,19 +600,23 @@ expected report and that all thirteen solution projects compiled successfully.
 
 ```text
 Status: In progress
-Progress: 4 / 7
-Completed instructional modules: 4
+Progress: 5 / 7
+Completed instructional modules: 5
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed module: Iterate Through a Code Block Using the for Statement in C#
+Latest completed module: Add Looping Logic to Your Code Using the do-while and while Statements in C#
 Module assessment: Passed
 Achievement: Earned
-Local project run: Verified
 Project registration: Verified
+Solution project count: 18
+Bootstrap project run: Verified
+Final organized Program.cs: Completed
+Final-code run: Verified
 Project build: Verified
+Project build time: 0.9 seconds
 Full solution build: Verified
-Solution project count: 17
-Latest completion date: July 27, 2026
+Full solution build time: 6.4 seconds
+Latest completion date: July 28, 2026
 ```
 
 Section 3 develops Boolean evaluation, branching, iteration, and progressively
@@ -1024,6 +1032,219 @@ Verification date: July 27, 2026
 
 ---
 
+
+### Module 5 — Add Looping Logic to Your Code Using the `do-while` and `while` Statements in C#
+
+```text
+Learning status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Project registration in solution: Verified
+Solution project count: 18
+Bootstrap project run: Verified
+Final organized Program.cs: Completed
+Final-code run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 6.4 seconds
+Completion date: July 28, 2026
+```
+
+This module extends C# iteration beyond `for` and `foreach`. It explains how
+`do-while` and `while` repeat a block until a Boolean exit condition is reached,
+and how values generated or retrieved inside the loop can determine when the
+loop stops.
+
+Learning outcomes include:
+
+- choosing between `for`, `foreach`, `do-while`, and `while`;
+- understanding that `do-while` executes one or more times;
+- understanding that `while` executes zero or more times;
+- evaluating a Boolean condition after or before the loop body;
+- creating and diagnosing an infinite loop;
+- recognizing unreachable code warning `CS0162`;
+- using `continue` to skip the remainder of the current iteration;
+- distinguishing `continue` from `break`;
+- using random values to control an exit condition;
+- validating nullable console input;
+- converting text with `int.TryParse()`;
+- validating numeric ranges and role names;
+- combining `for` and `while` to process strings;
+- using `IndexOf()`, `Remove()`, `Substring()`, and `TrimStart()`.
+
+Project location:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── modules/
+    └── do-while-and-while-statements/
+        ├── Program.cs
+        └── do-while-and-while-statements.csproj
+```
+
+The final organized source contains these independent examples and challenges:
+
+```text
+DisplayLoopComparison()
+RunDoWhileRandomExample()
+RunWhileRandomExample()
+RunContinueExample()
+RunBattleChallenge()
+RunIntegerInputChallenge()
+RunRoleInputChallenge()
+RunSentenceProcessingChallenge()
+```
+
+### `do-while`
+
+A `do-while` statement executes its body before evaluating the continuation
+condition:
+
+```csharp
+do
+{
+    current = random.Next(1, 11);
+    Console.WriteLine(current);
+}
+while (current != 7);
+```
+
+Execution order:
+
+```text
+Execute loop body
+    ↓
+Evaluate Boolean condition
+    ├── true  → repeat
+    └── false → exit
+```
+
+The body therefore executes at least once. The semicolon following the
+condition is required.
+
+### `while`
+
+A `while` statement evaluates its condition before entering the body:
+
+```csharp
+while (current >= 3)
+{
+    Console.WriteLine(current);
+    current = random.Next(1, 11);
+}
+```
+
+Execution order:
+
+```text
+Evaluate Boolean condition
+    ├── false → skip the body
+    └── true  → execute and evaluate again
+```
+
+The body can therefore execute zero times.
+
+### `continue` and `break`
+
+```text
+continue → skip the remaining statements in the current iteration
+break    → terminate the complete loop
+```
+
+The random-number example uses `continue` to prevent `8`, `9`, and `10` from
+being displayed while still allowing the loop to continue until `7` is
+generated.
+
+### Battle challenge
+
+The Hero-versus-Monster challenge applies these rules:
+
+```text
+Hero health: 10
+Monster health: 10
+Attack damage: 1 through 10
+Hero attacks first
+Monster attacks only if it survives
+Battle ends when either health value is zero or less
+```
+
+`do-while` is appropriate because the hero must attack at least once.
+
+### Input-validation challenges
+
+The numeric challenge accepts an integer from `5` through `10`, inclusive:
+
+```csharp
+if (acceptedValue < 5 || acceptedValue > 10)
+{
+    isValidNumber = false;
+}
+```
+
+The organized version corrects the earlier boundary condition that would have
+incorrectly rejected `5` and `10`.
+
+The role challenge accepts:
+
+```text
+Administrator
+Manager
+User
+```
+
+while ignoring surrounding spaces and letter casing by using `Trim()` and
+`ToLowerInvariant()`.
+
+### String-processing challenge
+
+The final challenge processes:
+
+```csharp
+string[] myStrings =
+{
+    "I like pizza. I like roast chicken. I like salad",
+    "I like all three of the menu choices"
+};
+```
+
+Expected output:
+
+```text
+I like pizza
+I like roast chicken
+I like salad
+I like all three of the menu choices
+```
+
+The outer loop uses `for` to obtain a modifiable working copy. The inner loop
+uses `while` because a string may contain no period, meaning the body may need
+to execute zero times.
+
+The organized source removes duplicate top-level declarations, removes unused
+`using` directives, uses descriptive names and constants, preserves detailed
+comments, and separates each example into a testable method.
+
+Verified results:
+
+```text
+Microsoft Learn completion: Verified
+Assessment: Passed
+Achievement: Earned
+Project registered in solution: Verified
+Registered solution projects: 18
+Final organized source: Completed
+Final-code run: Succeeded
+Interactive validation behavior: Verified
+Sentence-processing output: Verified
+Module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 6.4 seconds
+Verification date: July 28, 2026
+```
+
+---
+
 ## Repository Structure
 
 ```text
@@ -1081,9 +1302,12 @@ freecodecamp-csharp/
 │   │       ├── switch-case-construct/
 │   │       │   ├── Program.cs
 │   │       │   └── switch-case-construct.csproj
-│   │       └── for-statement/
+│   │       ├── for-statement/
+│   │       │   ├── Program.cs
+│   │       │   └── for-statement.csproj
+│   │       └── do-while-and-while-statements/
 │   │           ├── Program.cs
-│   │           └── for-statement.csproj
+│   │           └── do-while-and-while-statements.csproj
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
@@ -1132,7 +1356,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-17
+18
 ```
 
 List all projects registered in the solution:
@@ -1205,7 +1429,7 @@ curriculum/create-and-run-simple-csharp-console-applications/challenge-projects/
 ```
 
 
-### Completed projects from Section 3
+### Projects from Section 3
 
 ```text
 curriculum/add-logic-to-csharp-console-applications/modules/evaluate-boolean-expressions/evaluate-boolean-expressions.csproj
@@ -1215,13 +1439,15 @@ curriculum/add-logic-to-csharp-console-applications/modules/code-blocks-variable
 curriculum/add-logic-to-csharp-console-applications/modules/switch-case-construct/switch-case-construct.csproj
 
 curriculum/add-logic-to-csharp-console-applications/modules/for-statement/for-statement.csproj
+
+curriculum/add-logic-to-csharp-console-applications/modules/do-while-and-while-statements/do-while-and-while-statements.csproj
 ```
 
-Run the latest completed module from the repository root:
+Run the latest learning-completed module from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\add-logic-to-csharp-console-applications\modules\for-statement\for-statement.csproj"
+  ".\curriculum\add-logic-to-csharp-console-applications\modules\do-while-and-while-statements\do-while-and-while-statements.csproj"
 ```
 
 ---
@@ -1230,20 +1456,29 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest completed module: Iterate Through a Code Block Using the for Statement in C#
-Latest module run: Succeeded
-Latest module output: Verified
-Latest module build: Succeeded
-Full solution build: Succeeded
-Registered solution projects: 17
-Verification date: July 27, 2026
+Latest completed module: Add Looping Logic to Your Code Using the do-while and while Statements in C#
+Module assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Registered solution projects: 18
+Final organized source: Completed
+Final-code run: Succeeded
+Interactive validation behavior: Verified
+Sentence-processing output: Verified
+Latest module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 6.4 seconds
+Verification date: July 28, 2026
 ```
 
 The latest terminal verification confirms that:
 
-- `for-statement` compiled successfully;
-- the complete seventeen-project solution compiled successfully;
-- the latest module produced the expected loop, array, and FizzBuzz output;
+- `do-while-and-while-statements` ran successfully through all examples and
+  interactive challenges;
+- invalid role values were rejected until `User` was entered;
+- sentence extraction produced the four required lines without period
+  characters;
+- the module project compiled successfully in 0.9 seconds;
+- the complete eighteen-project solution compiled successfully in 6.4 seconds;
 - the repository remained buildable after the new project was registered.
 
 ---
