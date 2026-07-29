@@ -2,8 +2,8 @@
 
 ![C#](https://img.shields.io/badge/C%23-Section_3-512BD4?logo=csharp&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Progress](https://img.shields.io/badge/Curriculum_Items-5%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-18-2563EB)
+![Progress](https://img.shields.io/badge/Curriculum_Items-6%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-19-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 Section 3 of the **Foundational C# with Microsoft Certification** curriculum.
@@ -20,19 +20,20 @@ and a full-solution build.
 ```text
 Section: Add Logic to C# Console Applications
 Status: In progress
-Curriculum progress: 5 / 7
+Curriculum progress: 6 / 7
 Completed instructional modules: 5
-Completed guided projects: 0
+Completed guided projects: 1
 Completed challenge projects: 0
-Latest completed module: Add Looping Logic to Your Code Using the do-while and while Statements in C#
-Latest module assessment: Passed
+Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
+Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 28, 2026
-Projects registered in solution: 18
-Latest module bootstrap run: Verified
-Latest module final-code run: Verified
-Latest module build: Verified
+Latest completion date: July 29, 2026
+Projects registered in solution: 19
+Latest project run: Verified
+Latest project build: Verified
+Latest project build time: 0.9 seconds
 Full solution build: Verified
+Full solution build time: 8.1 seconds
 ```
 
 | Curriculum item | Status |
@@ -42,7 +43,8 @@ Full solution build: Verified
 | Branch the Flow of Code Using the switch-case Construct in C# | Completed |
 | Iterate Through a Code Block Using the for Statement in C# | Completed |
 | Add Looping Logic to Your Code Using the do-while and while Statements in C# | Completed |
-| Remaining Section 3 curriculum items | 2 not started |
+| Guided Project - Develop Conditional Branching and Looping Structures in C# | Completed |
+| Remaining Section 3 curriculum items | 1 not started |
 
 A curriculum item is marked `Completed` only after its Microsoft Learn units,
 assessment, achievement, local run, solution registration, project build, and
@@ -72,6 +74,9 @@ add-logic-to-csharp-console-applications/
 │       ├── Program.cs
 │       └── do-while-and-while-statements.csproj
 ├── guided-projects/
+│   └── contoso-pets/
+│       ├── Program.cs
+│       └── contoso-pets.csproj
 ├── challenge-projects/
 └── trophy/
 ```
@@ -2578,25 +2583,806 @@ Completion date: July 28, 2026
 
 ---
 
+# Guided Project 1 — Develop Conditional Branching and Looping Structures in C#
+
+## Completion Status
+
+```text
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Final organized Program.cs: Completed
+Project added to solution: Verified
+Solution project count: 19
+Local project run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 8.1 seconds
+Completion date: July 29, 2026
+```
+
+This guided project develops **Contoso Pets**, a C# console application that
+helps an animal-rescue team manage cats and dogs waiting for new homes.
+
+The project combines the control-flow concepts introduced throughout Section 3:
+
+```text
+Boolean expressions
+if / else logic
+switch statements
+for loops
+while loops
+do-while loops
+continue
+nullable console input
+two-dimensional arrays
+variable scope
+input validation
+```
+
+The completed guided-project scope implements:
+
+1. generation of predefined sample pet data;
+2. a persistent top-level application menu;
+3. menu selection with `switch`;
+4. display of all stored pet records;
+5. entry and validation of one or more new pets;
+6. automatic pet-ID generation;
+7. capacity management for a maximum of eight pets;
+8. placeholders for features completed in the later challenge project.
+
+---
+
+## Project Location
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── guided-projects/
+    └── contoso-pets/
+        ├── Program.cs
+        └── contoso-pets.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The solution now contains:
+
+```text
+19 projects
+```
+
+---
+
+## Application Data Model
+
+The runtime data store is a rectangular two-dimensional string array:
+
+```csharp
+string[,] ourAnimals =
+    new string[MaxPets, CharacteristicCount];
+```
+
+Configured dimensions:
+
+```text
+Rows:    8 pets
+Columns: 6 characteristics per pet
+Total:   48 string elements
+```
+
+Each row represents one pet. Each column represents one characteristic:
+
+| Column | Constant | Stored value |
+| ---: | --- | --- |
+| `0` | `PetIdColumn` | Pet ID |
+| `1` | `SpeciesColumn` | Species |
+| `2` | `AgeColumn` | Age |
+| `3` | `NicknameColumn` | Nickname |
+| `4` | `PhysicalDescriptionColumn` | Physical description |
+| `5` | `PersonalityDescriptionColumn` | Personality description |
+
+Example access:
+
+```csharp
+animals[row, PetIdColumn]
+```
+
+The first index selects the pet row. The second index selects one characteristic
+within that row.
+
+---
+
+## Zero-Based Array Indexing
+
+The application can manage eight pets:
+
+```csharp
+private const int MaxPets = 8;
+```
+
+The valid row indexes are:
+
+```text
+0, 1, 2, 3, 4, 5, 6, 7
+```
+
+The array has eight rows, but the last valid index is:
+
+```text
+MaxPets - 1 = 7
+```
+
+The outer iteration therefore begins at `0` and continues while the index is
+less than the row count:
+
+```csharp
+for (int row = 0; row < animals.GetLength(0); row++)
+{
+    // Process one pet row.
+}
+```
+
+Starting at `1` would skip the first row. Using `row <= MaxPets` would eventually
+attempt to access index `8`, which is outside the array.
+
+---
+
+## Why Nested `for` Loops Are Used
+
+Displaying all records requires two levels of iteration:
+
+```csharp
+for (int row = 0; row < animals.GetLength(0); row++)
+{
+    if (!HasPetData(animals, row))
+    {
+        continue;
+    }
+
+    for (
+        int column = 0;
+        column < animals.GetLength(1);
+        column++)
+    {
+        Console.WriteLine(animals[row, column]);
+    }
+}
+```
+
+Responsibilities:
+
+```text
+Outer loop → select one pet
+Inner loop → display all six characteristics for that pet
+```
+
+A single `foreach` over a rectangular two-dimensional array would process the
+48 strings as one flattened sequence. It would not directly preserve the
+required relationship of one row representing one pet.
+
+A jagged array could support nested `foreach` loops because each outer element
+would itself be a string array, but this project intentionally uses a
+rectangular two-dimensional array.
+
+---
+
+## Sample Data Generation
+
+`PopulateSampleData()` fills the first four rows with sample pets and initializes
+the remaining rows as empty records.
+
+A `switch` statement selects the sample data by row:
+
+```csharp
+switch (row)
+{
+    case 0:
+        // Lola
+        break;
+
+    case 1:
+        // Loki
+        break;
+
+    case 2:
+        // Puss
+        break;
+
+    case 3:
+        // Pet with incomplete information
+        break;
+
+    default:
+        // Empty record
+        break;
+}
+```
+
+This replaces a longer `if-elseif-else` chain and makes each sample record easier
+to identify and maintain.
+
+The initial sample pets are:
+
+```text
+d1 → dog → lola
+d2 → dog → loki
+c3 → cat → puss
+c4 → cat → incomplete information
+```
+
+---
+
+## Main Application Loop
+
+The menu must appear at least once, so the application uses a `do-while` loop:
+
+```csharp
+do
+{
+    DisplayMainMenu();
+    menuSelection = ReadMenuSelection();
+
+    switch (menuSelection)
+    {
+        // Menu branches
+    }
+}
+while (menuSelection != "exit");
+```
+
+Execution sequence:
+
+```text
+Display menu
+    ↓
+Read selection
+    ↓
+Execute matching switch branch
+    ↓
+Return to menu
+    ↓
+Stop only when selection is "exit"
+```
+
+Input is normalized with:
+
+```csharp
+return (Console.ReadLine() ?? "exit")
+    .Trim()
+    .ToLowerInvariant();
+```
+
+This allows the following values to behave identically:
+
+```text
+exit
+Exit
+EXIT
+   exit
+```
+
+A null console result is treated as `exit`, which allows the program to
+terminate safely when no further input is available.
+
+---
+
+## Menu Selection with `switch`
+
+The menu selection is text, so each case label is also text:
+
+```csharp
+switch (menuSelection)
+{
+    case "1":
+        ListAllPets(animals);
+        break;
+
+    case "2":
+        AddNewPets(animals);
+        break;
+
+    case "exit":
+        Console.WriteLine(
+            "Thank you for using Contoso PetFriends.");
+        break;
+
+    default:
+        Console.WriteLine(
+            $"\"{menuSelection}\" is not a valid menu option.");
+        break;
+}
+```
+
+This differs from switching on an integer:
+
+```csharp
+case 1:
+```
+
+The remaining menu options contain explicit placeholders so the user receives
+feedback rather than encountering a silent branch.
+
+---
+
+## Menu Option 1 — List All Pet Information
+
+A row is considered occupied when its pet-ID field differs from the empty
+record marker:
+
+```csharp
+private const string EmptyPetId = "ID #: ";
+```
+
+Check:
+
+```csharp
+private static bool HasPetData(
+    string[,] animals,
+    int row)
+{
+    return animals[row, PetIdColumn] != EmptyPetId;
+}
+```
+
+The list operation:
+
+1. iterates through every pet row;
+2. skips unused rows with `continue`;
+3. iterates through all six columns of each occupied row;
+4. writes every characteristic on a separate line;
+5. adds spacing between pet records.
+
+Expected sample structure:
+
+```text
+ID #: d1
+Species: dog
+Age: 2
+Nickname: lola
+Physical description: ...
+Personality: ...
+
+ID #: d2
+Species: dog
+Age: 9
+Nickname: loki
+Physical description: ...
+Personality: ...
+```
+
+---
+
+## Menu Option 2 — Add New Pets
+
+Before accepting new data, the application counts occupied rows:
+
+```csharp
+int petCount = CountPets(animals);
+```
+
+The value of `petCount` has two related meanings before a new record is stored:
+
+```text
+Number of currently stored pets
+Zero-based index of the next empty row
+```
+
+Example:
+
+```text
+Occupied rows: 0, 1, 2, 3
+Stored pets:   4
+petCount:      4
+Next row:      animals[4, ...]
+```
+
+The entry loop continues while both conditions are true:
+
+```csharp
+while (
+    anotherPet == "y" &&
+    petCount < animals.GetLength(0))
+{
+    // Read, validate, and store one pet.
+}
+```
+
+The loop stops when:
+
+```text
+The user enters n
+or
+The array reaches its eight-pet capacity
+```
+
+---
+
+## Species Validation
+
+Species is required and accepts only:
+
+```text
+dog
+cat
+```
+
+Validation loop:
+
+```csharp
+do
+{
+    animalSpecies = (Console.ReadLine() ?? string.Empty)
+        .Trim()
+        .ToLowerInvariant();
+
+    validEntry =
+        animalSpecies == "dog" ||
+        animalSpecies == "cat";
+}
+while (!validEntry);
+```
+
+Invalid input produces a clear retry message.
+
+Normalization ensures that inputs such as these are accepted:
+
+```text
+Dog
+DOG
+ cat
+```
+
+---
+
+## Automatic Pet-ID Generation
+
+The ID is built from:
+
+```text
+First letter of species
++
+One-based pet number
+```
+
+Implementation:
+
+```csharp
+string animalId =
+    animalSpecies[..1] +
+    (petCount + 1).ToString();
+```
+
+Examples:
+
+```text
+Fifth stored dog → d5
+Sixth stored cat → c6
+```
+
+`petCount + 1` converts the zero-based array position into a human-readable
+one-based pet number.
+
+---
+
+## Age Validation
+
+The application accepts:
+
+```text
+?
+or
+a non-negative whole number
+```
+
+Validation:
+
+```csharp
+validEntry =
+    animalAge == "?" ||
+    (
+        int.TryParse(animalAge, out int petAge) &&
+        petAge >= 0
+    );
+```
+
+Examples:
+
+```text
+?  → accepted as unknown
+0  → accepted
+3  → accepted
+-1 → rejected
+abc → rejected
+```
+
+`int.TryParse()` handles invalid text without throwing a conversion exception.
+
+---
+
+## Optional Pet Information
+
+The following fields may be unknown when a pet first arrives:
+
+```text
+Physical description
+Personality description
+Nickname
+```
+
+Blank input is stored as:
+
+```text
+tbd
+```
+
+Implementation:
+
+```csharp
+return value.Length == 0
+    ? "tbd"
+    : value;
+```
+
+`tbd` means:
+
+```text
+to be determined
+```
+
+This guarantees that every newly stored pet has a complete six-column record,
+even when the rescue team has not yet collected all information.
+
+---
+
+## Saving a Pet Record
+
+The new record is written before `petCount` is incremented:
+
+```csharp
+SavePet(
+    animals,
+    petCount,
+    animalId,
+    animalSpecies,
+    animalAge,
+    animalNickname,
+    animalPhysicalDescription,
+    animalPersonalityDescription);
+
+petCount++;
+```
+
+This order is essential:
+
+```text
+petCount before saving → next empty zero-based row
+Save record
+Increment petCount     → updated number of stored pets
+```
+
+Stored format:
+
+```csharp
+animals[row, PetIdColumn] =
+    $"ID #: {animalId}";
+
+animals[row, SpeciesColumn] =
+    $"Species: {animalSpecies}";
+
+animals[row, AgeColumn] =
+    $"Age: {animalAge}";
+```
+
+The remaining columns store nickname, physical description, and personality.
+
+---
+
+## Capacity Management
+
+When the application is full:
+
+```csharp
+if (petCount >= animals.GetLength(0))
+{
+    Console.WriteLine(
+        "We have reached our limit on the number of pets " +
+        "that we can manage.");
+}
+```
+
+The maximum capacity is:
+
+```text
+8 pets
+```
+
+The entry loop cannot write beyond the last valid row, preventing an
+`IndexOutOfRangeException`.
+
+---
+
+## Source-Code Architecture
+
+The original guided-project notes contain the complete learning sequence but
+also include intermediate code, duplicated `case` labels, repeated
+declarations, unused `using` directives, and an accidental character after a
+statement.
+
+The final executable source is organized into focused methods:
+
+```text
+Main()
+PopulateSampleData(...)
+RunApplication(...)
+DisplayMainMenu()
+ReadMenuSelection()
+ListAllPets(...)
+AddNewPets(...)
+CountPets(...)
+HasPetData(...)
+ReadAnimalSpecies()
+ReadAnimalAge()
+ReadOptionalDescription(...)
+ReadYesOrNo(...)
+SavePet(...)
+ShowChallengeProjectPlaceholder(...)
+ShowUnderConstructionPlaceholder(...)
+PauseBeforeReturningToMenu()
+```
+
+This organization provides:
+
+- narrow variable scope;
+- descriptive method and variable names;
+- no duplicate top-level declarations;
+- named column indexes instead of unexplained numeric literals;
+- isolated input-validation routines;
+- reusable pause and placeholder behavior;
+- XML documentation comments;
+- detailed inline explanations;
+- easier testing and maintenance.
+
+---
+
+## Cleanup Applied to the Learning Notes
+
+The final source resolves or removes:
+
+```text
+Unused using directives
+Repeated case "3" labels
+Repeated petCount increment statements
+The accidental character after petCount + 1
+Intermediate incomplete loops
+Duplicate variable declarations
+Commented starter-code fragments
+Unreachable or structurally invalid examples
+Unexplained array-column numbers
+Null-unsafe console input
+```
+
+The educational reasoning remains documented in comments without leaving
+non-compiling intermediate code active.
+
+---
+
+## Runtime and Build Verification
+
+Run the guided project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\add-logic-to-csharp-console-applications\guided-projects\contoso-pets\contoso-pets.csproj"
+```
+
+Build the guided project:
+
+```powershell
+dotnet build `
+  ".\curriculum\add-logic-to-csharp-console-applications\guided-projects\contoso-pets\contoso-pets.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Microsoft Learn completion: Verified
+Module assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Solution project count: 19
+Application launch: Succeeded
+Menu display: Verified
+Exit handling: Verified
+Project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 8.1 seconds
+Verification date: July 29, 2026
+```
+
+The terminal verification confirms that the final application starts, displays
+the complete Contoso PetFriends menu, accepts `exit`, and terminates normally.
+The project and complete nineteen-project solution compile successfully.
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| guided project | `/ˈɡaɪ.dɪd ˈprɒdʒ.ekt/` | “gai-địt pro-jẹct” | dự án thực hành có hướng dẫn |
+| conditional branching | `/kənˈdɪʃ.ən.əl ˈbrɑːn.tʃɪŋ/` | “cần-đi-shờ-nồ bran-ching” | phân nhánh có điều kiện |
+| looping structure | `/ˈluː.pɪŋ ˈstrʌk.tʃər/` | “lu-ping strắc-chờ” | cấu trúc lặp |
+| multidimensional array | `/ˌmʌl.ti.daɪˈmen.ʃən.əl əˈreɪ/` | “mân-ti đai-men-shờ-nồ ờ-rây” | mảng có từ hai chiều trở lên |
+| rectangular array | `/rekˈtæŋ.ɡjə.lər əˈreɪ/` | “rẹc-tang-giu-lờ ờ-rây” | mảng nhiều chiều dạng chữ nhật |
+| row | `/rəʊ/` | “râu” | hàng |
+| column | `/ˈkɒl.əm/` | “co-lầm” | cột |
+| zero-based indexing | `/ˈzɪə.rəʊ beɪst ˈɪn.dek.sɪŋ/` | “zi-râu bâyst in-đéc-sing” | đánh chỉ số bắt đầu từ `0` |
+| nested loop | `/ˈnes.tɪd luːp/` | “nes-tịt lúp” | vòng lặp nằm trong vòng lặp khác |
+| capacity | `/kəˈpæs.ə.ti/` | “cờ-pá-xờ-ti” | sức chứa tối đa |
+| persisted data | `/pəˈsɪs.tɪd ˈdeɪ.tə/` | “pờ-sít-tịt đây-tờ” | dữ liệu được lưu qua nhiều phiên |
+| validation | `/ˌvæl.ɪˈdeɪ.ʃən/` | “va-li-đây-shần” | kiểm tra dữ liệu hợp lệ |
+| placeholder | `/ˈpleɪsˌhəʊl.dər/` | “plâys-hâu-lđờ” | nội dung tạm giữ chỗ |
+| to be determined | `/tə biː dɪˈtɜː.mɪnd/` | “tờ bi đi-tơ-mìnhđ” | sẽ được xác định sau |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Guided Project - Develop Conditional Branching and Looping Structures in C#
+Application: Contoso Pets
+Section: Add Logic to C# Console Applications
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Final organized source: Completed
+Project registration: Verified
+Solution project count: 19
+Local run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 8.1 seconds
+Completion date: July 29, 2026
+```
+
+---
+
 ## Next Step
 
-Proceed to the next official curriculum item in:
+Proceed to the final curriculum item in:
 
 **Add Logic to C# Console Applications**
 
 Current verified repository baseline:
 
 ```text
-Section progress: 5 / 7
+Section progress: 6 / 7
 Completed instructional modules: 5
-Registered solution projects: 18
-Latest module run: Verified
-Latest module build: Verified
+Completed guided projects: 1
+Completed challenge projects: 0
+Registered solution projects: 19
+Latest project run: Verified
+Latest project build: Verified
+Latest project build time: 0.9 seconds
 Full solution build: Verified
-Latest full solution build time: 6.4 seconds
-Verification date: July 28, 2026
+Latest full solution build time: 8.1 seconds
+Verification date: July 29, 2026
 ```
 
-Preserve the repository structure, register each new project in
-`freecodecamp-csharp.slnx`, keep the eighteen-project solution green, and update
-this README after completing the next module.
+The remaining item is the Section 3 challenge project. Preserve the repository
+structure, register the new project in `freecodecamp-csharp.slnx`, keep the
+nineteen-project solution green, and update this README after the final item is
+completed.

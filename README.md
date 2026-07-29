@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-18-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-19-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -31,30 +31,30 @@ Certification status: In progress
 Curriculum sections completed: 2 / 7
 Current section: Add Logic to C# Console Applications
 Current section status: In progress
-Current section progress: 5 / 7
+Current section progress: 6 / 7
 Completed instructional modules in current section: 5
-Completed guided projects in current section: 0
+Completed guided projects in current section: 1
 Completed challenge projects in current section: 0
-Latest completed item: Add Looping Logic to Your Code Using the do-while and while Statements in C#
+Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
+Latest application: Contoso Pets
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 28, 2026
-Projects currently verified in solution: 18
-Latest module bootstrap run: Verified
+Latest completion date: July 29, 2026
+Projects currently verified in solution: 19
 Latest organized source: Completed
-Latest module final-code run: Verified
-Latest module build: Verified
-Latest module build time: 0.9 seconds
+Latest project run: Verified
+Latest project build: Verified
+Latest project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 6.4 seconds
+Full solution build time: 8.1 seconds
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | 5 / 7 | In progress |
+| 3 | Add Logic to C# Console Applications | 6 / 7 | In progress |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
@@ -600,23 +600,23 @@ expected report and that all thirteen solution projects compiled successfully.
 
 ```text
 Status: In progress
-Progress: 5 / 7
+Progress: 6 / 7
 Completed instructional modules: 5
-Completed guided projects: 0
+Completed guided projects: 1
 Completed challenge projects: 0
-Latest completed module: Add Looping Logic to Your Code Using the do-while and while Statements in C#
-Module assessment: Passed
+Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
+Application: Contoso Pets
+Item assessment: Passed
 Achievement: Earned
 Project registration: Verified
-Solution project count: 18
-Bootstrap project run: Verified
+Solution project count: 19
 Final organized Program.cs: Completed
-Final-code run: Verified
+Local project run: Verified
 Project build: Verified
 Project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 6.4 seconds
-Latest completion date: July 28, 2026
+Full solution build time: 8.1 seconds
+Latest completion date: July 29, 2026
 ```
 
 Section 3 develops Boolean evaluation, branching, iteration, and progressively
@@ -1245,6 +1245,162 @@ Verification date: July 28, 2026
 
 ---
 
+
+### Guided Project 1 — Develop Conditional Branching and Looping Structures in C#
+
+```text
+Status: Completed
+Application: Contoso Pets
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Final organized Program.cs: Completed
+Project registration in solution: Verified
+Solution project count: 19
+Local project run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 8.1 seconds
+Completion date: July 29, 2026
+```
+
+This guided project integrates the Section 3 control-flow concepts into
+**Contoso Pets**, a console application for managing cats and dogs awaiting new
+homes.
+
+The completed guided-project scope implements:
+
+- predefined sample pet data;
+- a persistent menu controlled by `do-while`;
+- menu routing with `switch`;
+- display of all occupied pet records;
+- validated entry of one or more new pets;
+- automatic pet-ID generation;
+- handling of unknown pet information with `tbd`;
+- capacity enforcement for a maximum of eight pets;
+- placeholders for features completed in the later challenge project.
+
+Project location:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── guided-projects/
+    └── contoso-pets/
+        ├── Program.cs
+        └── contoso-pets.csproj
+```
+
+The application stores runtime data in a two-dimensional string array:
+
+```csharp
+string[,] ourAnimals =
+    new string[MaxPets, CharacteristicCount];
+```
+
+Array layout:
+
+| Dimension | Meaning |
+| --- | --- |
+| First index | Pet row |
+| Second index | Pet characteristic |
+| Rows | `8` pets |
+| Columns | `6` characteristics |
+
+The six characteristics are:
+
+```text
+Pet ID
+Species
+Age
+Nickname
+Physical description
+Personality description
+```
+
+Each pet is processed with an outer row loop, while an inner column loop
+processes all six characteristics:
+
+```csharp
+for (int row = 0; row < animals.GetLength(0); row++)
+{
+    for (
+        int column = 0;
+        column < animals.GetLength(1);
+        column++)
+    {
+        Console.WriteLine(animals[row, column]);
+    }
+}
+```
+
+The zero-based relationship is important:
+
+```text
+8 rows
+Valid indexes: 0 through 7
+Last valid index: MaxPets - 1
+```
+
+The final source uses named column constants instead of unexplained numeric
+indexes and separates the application into focused methods:
+
+```text
+Main()
+PopulateSampleData(...)
+RunApplication(...)
+DisplayMainMenu()
+ReadMenuSelection()
+ListAllPets(...)
+AddNewPets(...)
+CountPets(...)
+HasPetData(...)
+ReadAnimalSpecies()
+ReadAnimalAge()
+ReadOptionalDescription(...)
+ReadYesOrNo(...)
+SavePet(...)
+```
+
+Input validation includes:
+
+```text
+Species → dog or cat
+Age     → ? or a non-negative integer
+Optional blank fields → tbd
+Continue adding pets → y or n
+```
+
+Automatic IDs combine the first species letter with a one-based pet number:
+
+```text
+Fifth dog → d5
+Sixth cat → c6
+```
+
+The organized implementation removes unused directives, duplicated case labels,
+repeated statements, incomplete intermediate code, and null-unsafe input while
+preserving the learning rationale through XML documentation and focused inline
+comments.
+
+Verification results:
+
+```text
+Application launch: Succeeded
+Complete menu display: Verified
+Exit handling: Verified
+Project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 8.1 seconds
+Registered solution projects: 19
+Verification date: July 29, 2026
+```
+
+The complete implementation of menu options 1 and 2 is present in the source.
+The recorded terminal verification confirms application startup, menu output,
+normal exit handling, the project build, and the full-solution build.
+
+---
+
 ## Repository Structure
 
 ```text
@@ -1292,22 +1448,26 @@ freecodecamp-csharp/
 │   │           └── microsoft-learn-section2-achievement.png
 │   ├── add-logic-to-csharp-console-applications/
 │   │   ├── README.md
-│   │   └── modules/
-│   │       ├── evaluate-boolean-expressions/
-│   │       │   ├── Program.cs
-│   │       │   └── evaluate-boolean-expressions.csproj
-│   │       ├── code-blocks-variable-scope/
-│   │       │   ├── Program.cs
-│   │       │   └── code-blocks-variable-scope.csproj
-│   │       ├── switch-case-construct/
-│   │       │   ├── Program.cs
-│   │       │   └── switch-case-construct.csproj
-│   │       ├── for-statement/
-│   │       │   ├── Program.cs
-│   │       │   └── for-statement.csproj
-│   │       └── do-while-and-while-statements/
+│   │   ├── modules/
+│   │   │   ├── evaluate-boolean-expressions/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── evaluate-boolean-expressions.csproj
+│   │   │   ├── code-blocks-variable-scope/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── code-blocks-variable-scope.csproj
+│   │   │   ├── switch-case-construct/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── switch-case-construct.csproj
+│   │   │   ├── for-statement/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── for-statement.csproj
+│   │   │   └── do-while-and-while-statements/
+│   │   │       ├── Program.cs
+│   │   │       └── do-while-and-while-statements.csproj
+│   │   └── guided-projects/
+│   │       └── contoso-pets/
 │   │           ├── Program.cs
-│   │           └── do-while-and-while-statements.csproj
+│   │           └── contoso-pets.csproj
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
@@ -1356,7 +1516,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-18
+19
 ```
 
 List all projects registered in the solution:
@@ -1441,13 +1601,15 @@ curriculum/add-logic-to-csharp-console-applications/modules/switch-case-construc
 curriculum/add-logic-to-csharp-console-applications/modules/for-statement/for-statement.csproj
 
 curriculum/add-logic-to-csharp-console-applications/modules/do-while-and-while-statements/do-while-and-while-statements.csproj
+
+curriculum/add-logic-to-csharp-console-applications/guided-projects/contoso-pets/contoso-pets.csproj
 ```
 
-Run the latest learning-completed module from the repository root:
+Run the latest completed project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\add-logic-to-csharp-console-applications\modules\do-while-and-while-statements\do-while-and-while-statements.csproj"
+  ".\curriculum\add-logic-to-csharp-console-applications\guided-projects\contoso-pets\contoso-pets.csproj"
 ```
 
 ---
@@ -1456,30 +1618,29 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest completed module: Add Looping Logic to Your Code Using the do-while and while Statements in C#
+Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
+Application: Contoso Pets
 Module assessment: Passed
 Achievement: Earned
-Project registration: Verified
-Registered solution projects: 18
 Final organized source: Completed
-Final-code run: Succeeded
-Interactive validation behavior: Verified
-Sentence-processing output: Verified
-Latest module build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 6.4 seconds
-Verification date: July 28, 2026
+Project registration: Verified
+Registered solution projects: 19
+Application launch: Succeeded
+Menu display: Verified
+Exit handling: Verified
+Latest project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 8.1 seconds
+Verification date: July 29, 2026
 ```
 
 The latest terminal verification confirms that:
 
-- `do-while-and-while-statements` ran successfully through all examples and
-  interactive challenges;
-- invalid role values were rejected until `User` was entered;
-- sentence extraction produced the four required lines without period
-  characters;
-- the module project compiled successfully in 0.9 seconds;
-- the complete eighteen-project solution compiled successfully in 6.4 seconds;
-- the repository remained buildable after the new project was registered.
+- `contoso-pets` launched successfully;
+- the complete eight-option Contoso PetFriends menu was displayed;
+- entering `exit` terminated the application normally;
+- the guided-project source compiled successfully in 0.9 seconds;
+- the complete nineteen-project solution compiled successfully in 8.1 seconds;
+- the repository remained buildable after the guided project was registered.
 
 ---
 
