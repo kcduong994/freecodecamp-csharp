@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/curriculum/" />
   <Folder Name="/curriculum/add-logic-to-csharp-console-applications/" />
+  <Folder Name="/curriculum/add-logic-to-csharp-console-applications/guided-projects/">
+    <Project Path="curriculum/add-logic-to-csharp-console-applications/guided-projects/contoso-pets/contoso-pets.csproj" />
+  </Folder>
   <Folder Name="/curriculum/add-logic-to-csharp-console-applications/modules/">
     <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/code-blocks-variable-scope/code-blocks-variable-scope.csproj" />
     <Project Path="curriculum/add-logic-to-csharp-console-applications/modules/do-while-and-while-statements/do-while-and-while-statements.csproj" />
