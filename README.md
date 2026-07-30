@@ -4,8 +4,8 @@
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Sections](https://img.shields.io/badge/Sections_Completed-2%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-19-2563EB)
+![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-20-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -28,33 +28,40 @@ It is maintained as a structured learning curriculum containing:
 
 ```text
 Certification status: In progress
-Curriculum sections completed: 2 / 7
-Current section: Add Logic to C# Console Applications
-Current section status: In progress
-Current section progress: 6 / 7
-Completed instructional modules in current section: 5
-Completed guided projects in current section: 1
-Completed challenge projects in current section: 0
-Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
-Latest application: Contoso Pets
+Curriculum sections completed: 3 / 7
+Latest completed section: Add Logic to C# Console Applications
+Latest section status: Completed
+Latest section progress: 7 / 7
+Instructional modules completed in latest section: 5
+Guided projects completed in latest section: 1
+Challenge projects completed in latest section: 1
+Latest completed item: Challenge Project - Develop Branching and Looping Structures in C#
+Latest application: Contoso PetFriends
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 29, 2026
-Projects currently verified in solution: 19
+Microsoft Learn certificate: Earned
+Microsoft Learn Trophy: Verified by freeCodeCamp
+Latest completion date: July 30, 2026
+Projects currently verified in solution: 20
 Latest organized source: Completed
+Professional source comments: Completed
 Latest project run: Verified
 Latest project build: Verified
 Latest project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 8.1 seconds
+Full solution build time: 2.6 seconds
+Build warnings: 0
+Build errors: 0
+Next curriculum section: Work with Variable Data in C# Console Applications
+Next section status: Not started
 ```
 
 | No. | Curriculum section | Progress | Status |
 | ---: | --- | --- | --- |
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | 6 / 7 | In progress |
+| 3 | Add Logic to C# Console Applications | 7 / 7 | Completed |
 | 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
@@ -594,35 +601,43 @@ expected report and that all thirteen solution projects compiled successfully.
 
 ---
 
-## Current Section
+## Completed Section
 
 ### 3. Add Logic to C# Console Applications
 
 ```text
-Status: In progress
-Progress: 6 / 7
+Status: Completed
+Progress: 7 / 7
 Completed instructional modules: 5
 Completed guided projects: 1
-Completed challenge projects: 0
-Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
-Application: Contoso Pets
+Completed challenge projects: 1
+Latest completed item: Challenge Project - Develop Branching and Looping Structures in C#
+Application: Contoso PetFriends
 Item assessment: Passed
 Achievement: Earned
+Microsoft Learn certificate: Earned
+Microsoft Learn Trophy: Verified by freeCodeCamp
 Project registration: Verified
-Solution project count: 19
+Solution project count: 20
 Final organized Program.cs: Completed
+Professional source comments: Completed
 Local project run: Verified
 Project build: Verified
 Project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 8.1 seconds
-Latest completion date: July 29, 2026
+Full solution build time: 2.6 seconds
+Build warnings: 0
+Build errors: 0
+Completion date: July 30, 2026
 ```
 
-Section 3 develops Boolean evaluation, branching, iteration, and progressively
-more structured control flow in C# console applications.
+Section 3 develops Boolean evaluation, branching, iteration, variable scope,
+input validation, and progressively more structured control flow in C# console
+applications.
 
-[Open the Section 3 documentation](./curriculum/add-logic-to-csharp-console-applications/README.md)
+[Open the completed Section 3 documentation](./curriculum/add-logic-to-csharp-console-applications/README.md)
+
+[View Section 3 Trophy and certificate evidence](./curriculum/add-logic-to-csharp-console-applications/trophy/README.md)
 
 ---
 
@@ -1401,6 +1416,172 @@ normal exit handling, the project build, and the full-solution build.
 
 ---
 
+
+### Challenge Project 1 — Develop Branching and Looping Structures in C#
+
+```text
+Status: Completed
+Application: Contoso PetFriends
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Microsoft Learn certificate: Earned
+Microsoft Learn Trophy: Verified by freeCodeCamp
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Project registration in solution: Verified
+Solution project count: 20
+Local project run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 2.6 seconds
+Build warnings: 0
+Build errors: 0
+Completion date: July 30, 2026
+```
+
+This challenge completes Section 3 by extending the **Contoso PetFriends**
+application from the guided project.
+
+The starter application already provided:
+
+- a persistent eight-option menu;
+- predefined pet records;
+- display of all occupied records;
+- validated entry of new cats and dogs;
+- automatic pet-ID generation;
+- an eight-pet capacity limit;
+- placeholders for later data-completion features.
+
+The challenge implements the two required workflows:
+
+```text
+Menu option 3
+→ Ensure animal ages and physical descriptions are complete
+
+Menu option 4
+→ Ensure animal nicknames and personality descriptions are complete
+```
+
+Project location:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── challenge-projects/
+    └── contoso-pets-challenge/
+        ├── Program.cs
+        └── contoso-pets-challenge.csproj
+```
+
+The final application demonstrates:
+
+- menu routing with `switch`;
+- record traversal with `for`;
+- repeated input validation with `while` and `do-while`;
+- skipping unused rows with `continue`;
+- safe numeric conversion with `int.TryParse()`;
+- required-text validation with `string.IsNullOrWhiteSpace()`;
+- null-safe console input with `?.` and `??`;
+- extraction of field values from display labels;
+- normalization of `tbd` and missing values;
+- named constants for array-column positions;
+- focused methods and narrow variable scope;
+- comments that explain intent, constraints, and control flow.
+
+The age workflow rejects values that cannot be converted to an integer. The
+description, nickname, and personality workflows reject `null`, empty, and
+whitespace-only values. Existing valid records are preserved, while only
+incomplete fields require new input.
+
+Menu options `5` through `8` remain explicitly under construction because they
+are visible in the starter interface but outside this challenge specification.
+
+Run the completed challenge:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\add-logic-to-csharp-console-applications\challenge-projects\contoso-pets-challenge\contoso-pets-challenge.csproj"
+```
+
+Build the challenge:
+
+```powershell
+dotnet build `
+  ".\curriculum\add-logic-to-csharp-console-applications\challenge-projects\contoso-pets-challenge\contoso-pets-challenge.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Challenge project run: Succeeded
+Challenge behavior: Verified
+Challenge project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.6 seconds
+Registered solution projects: 20
+Build warnings: 0
+Build errors: 0
+Verification date: July 30, 2026
+```
+
+---
+
+### Section 3 Trophy, Certificate, and Verification
+
+Official evidence is stored under:
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── trophy/
+    ├── README.md
+    └── assets/
+        ├── 1.PNG
+        └── 2.PNG
+```
+
+The evidence records:
+
+- completion of **Add logic to C# console applications (Get started with C#,
+  Part 3)** on Microsoft Learn;
+- the Microsoft Learn completion certificate issued to **Duong Kim Cuong** on
+  **30 July 2026**;
+- successful freeCodeCamp verification of the Microsoft Learn Trophy named
+  **Add Logic to C# Console Applications**.
+
+[View Section 3 Trophy documentation](./curriculum/add-logic-to-csharp-console-applications/trophy/README.md)
+
+[View the Microsoft Learn certificate](./curriculum/add-logic-to-csharp-console-applications/trophy/assets/1.PNG)
+
+[View the verified Trophy evidence](./curriculum/add-logic-to-csharp-console-applications/trophy/assets/2.PNG)
+
+---
+
+## Next Section
+
+### 4. Work with Variable Data in C# Console Applications
+
+```text
+Status: Not started
+Previous section completed: Add Logic to C# Console Applications
+Previous section progress: 7 / 7
+Current repository baseline: 20 projects
+Full solution baseline: Passing
+Build warnings: 0
+Build errors: 0
+```
+
+Section 4 will begin from the verified twenty-project solution baseline. New
+projects must preserve the existing curriculum structure, be registered in
+`freecodecamp-csharp.slnx`, run successfully, and keep the full solution green.
+
+---
+
 ## Repository Structure
 
 ```text
@@ -1418,56 +1599,34 @@ freecodecamp-csharp/
 │   ├── create-and-run-simple-csharp-console-applications/
 │   │   ├── README.md
 │   │   ├── modules/
-│   │   │   ├── install-and-configure-visual-studio-code/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── install-and-configure-visual-studio-code.csproj
-│   │   │   ├── call-methods/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── call-methods.csproj
-│   │   │   ├── decision-logic/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── decision-logic.csproj
-│   │   │   ├── arrays-foreach/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── arrays-foreach.csproj
-│   │   │   └── readable-code/
-│   │   │       ├── Program.cs
-│   │   │       └── readable-code.csproj
 │   │   ├── guided-projects/
 │   │   │   └── student-grading-application/
-│   │   │       ├── Program.cs
-│   │   │       └── student-grading-application.csproj
 │   │   ├── challenge-projects/
 │   │   │   └── student-grading-challenge/
-│   │   │       ├── Program.cs
-│   │   │       └── student-grading-challenge.csproj
 │   │   └── trophy/
 │   │       ├── README.md
 │   │       └── assets/
-│   │           ├── freecodecamp-section2-completion.png
-│   │           └── microsoft-learn-section2-achievement.png
 │   ├── add-logic-to-csharp-console-applications/
 │   │   ├── README.md
 │   │   ├── modules/
 │   │   │   ├── evaluate-boolean-expressions/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── evaluate-boolean-expressions.csproj
 │   │   │   ├── code-blocks-variable-scope/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── code-blocks-variable-scope.csproj
 │   │   │   ├── switch-case-construct/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── switch-case-construct.csproj
 │   │   │   ├── for-statement/
-│   │   │   │   ├── Program.cs
-│   │   │   │   └── for-statement.csproj
 │   │   │   └── do-while-and-while-statements/
+│   │   ├── guided-projects/
+│   │   │   └── contoso-pets/
 │   │   │       ├── Program.cs
-│   │   │       └── do-while-and-while-statements.csproj
-│   │   └── guided-projects/
-│   │       └── contoso-pets/
-│   │           ├── Program.cs
-│   │           └── contoso-pets.csproj
+│   │   │       └── contoso-pets.csproj
+│   │   ├── challenge-projects/
+│   │   │   └── contoso-pets-challenge/
+│   │   │       ├── Program.cs
+│   │   │       └── contoso-pets-challenge.csproj
+│   │   └── trophy/
+│   │       ├── README.md
+│   │       └── assets/
+│   │           ├── 1.PNG
+│   │           └── 2.PNG
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
@@ -1484,7 +1643,8 @@ Each curriculum section may contain:
 - `modules/` for Microsoft Learn instructional projects;
 - `guided-projects/` for guided applied projects;
 - `challenge-projects/` for independently completed challenge projects;
-- `trophy/` for completion and achievement evidence;
+- `trophy/README.md` for section-completion documentation;
+- `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
 
 ---
@@ -1516,7 +1676,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-19
+20
 ```
 
 List all projects registered in the solution:
@@ -1603,13 +1763,15 @@ curriculum/add-logic-to-csharp-console-applications/modules/for-statement/for-st
 curriculum/add-logic-to-csharp-console-applications/modules/do-while-and-while-statements/do-while-and-while-statements.csproj
 
 curriculum/add-logic-to-csharp-console-applications/guided-projects/contoso-pets/contoso-pets.csproj
+
+curriculum/add-logic-to-csharp-console-applications/challenge-projects/contoso-pets-challenge/contoso-pets-challenge.csproj
 ```
 
 Run the latest completed project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\add-logic-to-csharp-console-applications\guided-projects\contoso-pets\contoso-pets.csproj"
+  ".\curriculum\add-logic-to-csharp-console-applications\challenge-projects\contoso-pets-challenge\contoso-pets-challenge.csproj"
 ```
 
 ---
@@ -1618,29 +1780,43 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
-Application: Contoso Pets
+Latest completed section: Add Logic to C# Console Applications
+Section progress: 7 / 7
+Latest completed item: Challenge Project - Develop Branching and Looping Structures in C#
+Application: Contoso PetFriends
 Module assessment: Passed
 Achievement: Earned
+Microsoft Learn certificate: Earned
+Microsoft Learn Trophy: Verified by freeCodeCamp
 Final organized source: Completed
+Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 19
-Application launch: Succeeded
-Menu display: Verified
-Exit handling: Verified
+Registered solution projects: 20
+Challenge project run: Succeeded
+Challenge behavior: Verified
 Latest project build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 8.1 seconds
-Verification date: July 29, 2026
+Full solution build: Succeeded in 2.6 seconds
+Build warnings: 0
+Build errors: 0
+Verification date: July 30, 2026
 ```
 
-The latest terminal verification confirms that:
+The latest verification confirms that:
 
-- `contoso-pets` launched successfully;
-- the complete eight-option Contoso PetFriends menu was displayed;
-- entering `exit` terminated the application normally;
-- the guided-project source compiled successfully in 0.9 seconds;
-- the complete nineteen-project solution compiled successfully in 8.1 seconds;
-- the repository remained buildable after the guided project was registered.
+- `contoso-pets-challenge` is registered as the twentieth solution project;
+- menu option `3` completes missing ages and physical descriptions;
+- menu option `4` completes missing nicknames and personality descriptions;
+- invalid numeric, null, empty, and whitespace-only input is rejected;
+- unused array rows are skipped;
+- existing valid pet data is preserved;
+- the final source is organized as a complete application with focused methods,
+  named constants, and professional comments;
+- the challenge project compiled successfully in `0.9` seconds;
+- the complete twenty-project solution compiled successfully in `2.6` seconds;
+- the final build produced `0` warnings and `0` errors;
+- the Microsoft Learn certificate was earned;
+- freeCodeCamp verified the Microsoft Learn Trophy;
+- Section 3 is complete at `7 / 7`.
 
 ---
 

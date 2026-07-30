@@ -1,6 +1,9 @@
 <Solution>
   <Folder Name="/curriculum/" />
   <Folder Name="/curriculum/add-logic-to-csharp-console-applications/" />
+  <Folder Name="/curriculum/add-logic-to-csharp-console-applications/challenge-projects/">
+    <Project Path="curriculum/add-logic-to-csharp-console-applications/challenge-projects/contoso-pets-challenge/contoso-pets-challenge.csproj" />
+  </Folder>
   <Folder Name="/curriculum/add-logic-to-csharp-console-applications/guided-projects/">
     <Project Path="curriculum/add-logic-to-csharp-console-applications/guided-projects/contoso-pets/contoso-pets.csproj" />
   </Folder>
