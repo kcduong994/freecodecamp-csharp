@@ -1,10 +1,12 @@
 # Add Logic to C# Console Applications
 
 ![C#](https://img.shields.io/badge/C%23-Section_3-512BD4?logo=csharp&logoColor=white)
-![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Progress](https://img.shields.io/badge/Curriculum_Items-6%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-19-2563EB)
+![Status](https://img.shields.io/badge/Status-Completed-16A34A)
+![Progress](https://img.shields.io/badge/Curriculum_Items-7%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-20-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
+![Trophy](https://img.shields.io/badge/Microsoft_Learn_Trophy-Verified-512BD4)
+![Certificate](https://img.shields.io/badge/Certificate-Earned-0EA5E9)
 
 Section 3 of the **Foundational C# with Microsoft Certification** curriculum.
 
@@ -19,21 +21,24 @@ and a full-solution build.
 
 ```text
 Section: Add Logic to C# Console Applications
-Status: In progress
-Curriculum progress: 6 / 7
+Status: Completed
+Curriculum progress: 7 / 7
 Completed instructional modules: 5
 Completed guided projects: 1
-Completed challenge projects: 0
-Latest completed item: Guided Project - Develop Conditional Branching and Looping Structures in C#
+Completed challenge projects: 1
+Latest completed item: Challenge Project - Develop Branching and Looping Structures in C#
 Latest item assessment: Passed
-Latest achievement: Earned
-Latest completion date: July 29, 2026
-Projects registered in solution: 19
+Microsoft Learn achievement: Earned
+Microsoft Learn trophy: Verified
+Microsoft Learn certificate: Earned
+freeCodeCamp section completion: Verified
+Latest completion date: July 30, 2026
+Projects registered in solution: 20
 Latest project run: Verified
 Latest project build: Verified
 Latest project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 8.1 seconds
+Full solution build time: 2.6 seconds
 ```
 
 | Curriculum item | Status |
@@ -44,7 +49,7 @@ Full solution build time: 8.1 seconds
 | Iterate Through a Code Block Using the for Statement in C# | Completed |
 | Add Looping Logic to Your Code Using the do-while and while Statements in C# | Completed |
 | Guided Project - Develop Conditional Branching and Looping Structures in C# | Completed |
-| Remaining Section 3 curriculum items | 1 not started |
+| Challenge Project - Develop Branching and Looping Structures in C# | Completed |
 
 A curriculum item is marked `Completed` only after its Microsoft Learn units,
 assessment, achievement, local run, solution registration, project build, and
@@ -78,11 +83,20 @@ add-logic-to-csharp-console-applications/
 │       ├── Program.cs
 │       └── contoso-pets.csproj
 ├── challenge-projects/
+│   └── contoso-pets-challenge/
+│       ├── Program.cs
+│       └── contoso-pets-challenge.csproj
 └── trophy/
+    ├── README.md
+    └── assets/
+        ├── 1.PNG
+        └── 2.PNG
 ```
 
-This section uses one central README. Individual module directories contain the
-executable source code and project file without an additional README.
+This section uses one central README for curriculum notes. Individual module
+directories contain executable source code and project files without an
+additional README. The `trophy/README.md` file documents the two official
+completion-evidence images stored under `trophy/assets/`.
 
 ---
 
@@ -3360,29 +3374,872 @@ Completion date: July 29, 2026
 
 ---
 
-## Next Step
+---
 
-Proceed to the final curriculum item in:
+# Challenge Project — Develop Branching and Looping Structures in C#
 
-**Add Logic to C# Console Applications**
-
-Current verified repository baseline:
+## Completion Status
 
 ```text
-Section progress: 6 / 7
-Completed instructional modules: 5
-Completed guided projects: 1
-Completed challenge projects: 0
-Registered solution projects: 19
-Latest project run: Verified
-Latest project build: Verified
-Latest project build time: 0.9 seconds
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Microsoft Learn trophy: Verified
+Microsoft Learn certificate: Earned
+freeCodeCamp section completion: Verified
+Final organized Program.cs: Completed
+Professional code comments: Completed
+Project added to solution: Verified
+Solution project count: 20
+Local project run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
 Full solution build: Verified
-Latest full solution build time: 8.1 seconds
-Verification date: July 29, 2026
+Full solution build time: 2.6 seconds
+Completion date: July 30, 2026
 ```
 
-The remaining item is the Section 3 challenge project. Preserve the repository
-structure, register the new project in `freecodecamp-csharp.slnx`, keep the
-nineteen-project solution green, and update this README after the final item is
-completed.
+This challenge project completes Section 3 by extending the **Contoso
+PetFriends** console application. The starter application already provided the
+main menu, sample records, record display, and new-pet entry logic. The challenge
+required implementation of the two data-completion workflows represented by
+menu options `3` and `4`.
+
+The completed application now ensures that every occupied row in the
+`ourAnimals` array contains valid values for:
+
+```text
+Age
+Physical description
+Nickname
+Personality description
+```
+
+The final `Program.cs` is organized as a complete application rather than as two
+isolated `case` patches. The source includes named constants, focused methods,
+shared validation helpers, null-safe console input, professional comments, and
+clear separation between menu routing, business rules, array access, and user
+interaction.
+
+---
+
+## Project Location
+
+```text
+curriculum/add-logic-to-csharp-console-applications/
+└── challenge-projects/
+    └── contoso-pets-challenge/
+        ├── Program.cs
+        └── contoso-pets-challenge.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+The completed solution contains:
+
+```text
+20 projects
+```
+
+Target framework:
+
+```xml
+<TargetFramework>net10.0</TargetFramework>
+```
+
+---
+
+## Challenge Scope
+
+The completed application contains all eight menu entries from the starter
+project:
+
+```text
+1. List all current pet information
+2. Add a new animal friend
+3. Ensure ages and physical descriptions are complete
+4. Ensure nicknames and personality descriptions are complete
+5. Edit an animal's age
+6. Edit an animal's personality description
+7. Display cats with a specified characteristic
+8. Display dogs with a specified characteristic
+```
+
+Implementation status:
+
+| Menu option | Feature | Status in this project |
+| :---: | --- | --- |
+| `1` | List existing pet records | Implemented |
+| `2` | Add new pet records | Implemented |
+| `3` | Complete age and physical description | Implemented by this challenge |
+| `4` | Complete nickname and personality description | Implemented by this challenge |
+| `5`–`8` | Later Contoso Pets extensions | Explicitly retained as under construction |
+
+Menu options `5` through `8` remain visible because they are part of the starter
+application's interface, but they are outside the required scope of this
+challenge. Their placeholders provide clear feedback rather than silently doing
+nothing.
+
+---
+
+## Final Application Architecture
+
+The final source is organized into focused methods:
+
+```text
+Main()
+├── InitializeAnimalRecords()
+├── RunMainMenu()
+│   ├── DisplayMainMenu()
+│   ├── DisplayAllAnimals()
+│   ├── AddNewAnimals()
+│   ├── EnsureAgesAndPhysicalDescriptionsAreComplete()
+│   ├── EnsureNicknamesAndPersonalitiesAreComplete()
+│   └── ShowUnderConstruction(...)
+├── StoreAnimalRecord(...)
+├── PromptForSpecies()
+├── PromptForAgeOrUnknown()
+├── PromptForOptionalText(...)
+├── PromptForRequiredText(...)
+├── PromptForYesOrNo(...)
+├── ExtractValue(...)
+├── IsIncompleteText(...)
+├── IsOccupiedRow(...)
+├── CountOccupiedRows()
+├── FindFirstEmptyRow()
+└── Pause()
+```
+
+This structure replaces one large top-level block with methods whose names
+express their responsibilities. The result is easier to read, test, debug, and
+extend.
+
+---
+
+## Application Data Model
+
+The application uses one fixed-size rectangular array:
+
+```csharp
+private static readonly string[,] OurAnimals =
+    new string[MaxPets, FieldCount];
+```
+
+Configuration:
+
+```text
+Maximum pet records: 8
+Fields per record:    6
+Total array cells:    48
+```
+
+Named constants document every column:
+
+| Column | Constant | Stored data |
+| ---: | --- | --- |
+| `0` | `PetIdColumn` | Pet ID |
+| `1` | `SpeciesColumn` | Species |
+| `2` | `AgeColumn` | Age |
+| `3` | `NicknameColumn` | Nickname |
+| `4` | `PhysicalDescriptionColumn` | Physical description |
+| `5` | `PersonalityDescriptionColumn` | Personality description |
+
+Instead of relying on unexplained indexes:
+
+```csharp
+OurAnimals[i, 4]
+```
+
+the final source uses:
+
+```csharp
+OurAnimals[i, PhysicalDescriptionColumn]
+```
+
+This reduces ambiguity and lowers the risk of writing data to the wrong column.
+
+---
+
+## Stored Labels and Data Extraction
+
+Each array field stores both a display label and its value:
+
+```text
+ID #: c4
+Age: ?
+Nickname: 
+Physical description: 
+Personality: 
+```
+
+Validation must operate on the actual value rather than the complete display
+string. The shared helper removes the expected label:
+
+```csharp
+private static string ExtractValue(
+    string storedField,
+    string label)
+{
+    if (storedField.StartsWith(
+        label,
+        StringComparison.Ordinal))
+    {
+        return storedField[label.Length..].Trim();
+    }
+
+    return storedField.Trim();
+}
+```
+
+Example:
+
+```text
+Stored field:  "Age: 2"
+Label:         "Age: "
+Extracted data: "2"
+```
+
+The range expression:
+
+```csharp
+storedField[label.Length..]
+```
+
+returns the substring beginning immediately after the label.
+
+`StringComparison.Ordinal` is appropriate because the labels are fixed internal
+program tokens, not natural-language text requiring culture-sensitive rules.
+
+---
+
+## Empty-Row Detection
+
+Unused array rows are initialized with empty values such as:
+
+```text
+ID #: 
+```
+
+The completed application determines whether a row is occupied by extracting
+the data portion of the pet ID:
+
+```csharp
+private static bool IsOccupiedRow(int rowIndex)
+{
+    string petId = ExtractValue(
+        OurAnimals[rowIndex, PetIdColumn],
+        PetIdLabel);
+
+    return !string.IsNullOrWhiteSpace(petId);
+}
+```
+
+Each validation workflow skips unused rows:
+
+```csharp
+if (!IsOccupiedRow(i))
+{
+    continue;
+}
+```
+
+`continue` skips the remainder of the current iteration while preserving the
+outer `for` loop, allowing later records to be inspected.
+
+---
+
+## Menu Option 3 — Complete Age and Physical Description
+
+### Specification implemented
+
+For every occupied pet record, the feature must:
+
+```text
+Skip unused rows
+Display the pet ID when data is missing
+Require an age that can be converted to a numeric type
+Require a physical description that is not null or empty
+Store the validated values
+Report when all records are complete
+Pause before returning to the main menu
+```
+
+### Age validation
+
+The current age is extracted from the stored field:
+
+```csharp
+string currentAge = ExtractValue(
+    OurAnimals[i, AgeColumn],
+    AgeLabel);
+```
+
+The application uses `int.TryParse()`:
+
+```csharp
+if (!int.TryParse(currentAge, out _))
+{
+    // Prompt until a valid integer is entered.
+}
+```
+
+Why `TryParse()` is appropriate:
+
+```text
+Valid numeric input   → returns true
+Invalid text input    → returns false
+Conversion exception  → not thrown
+```
+
+Representative results:
+
+| Input | `TryParse()` result | Accepted |
+| --- | :---: | :---: |
+| `1` | `true` | Yes |
+| `12` | `true` | Yes |
+| `one` | `false` | No |
+| `?` | `false` | No |
+| empty input | `false` | No |
+
+Once incomplete data has been identified, a `do-while` loop ensures that the
+prompt executes at least once and repeats until validation succeeds:
+
+```csharp
+do
+{
+    Console.WriteLine($"Enter an age for {petId}:");
+    enteredAge =
+        (Console.ReadLine() ?? string.Empty).Trim();
+
+    validAge = int.TryParse(enteredAge, out _);
+}
+while (!validAge);
+```
+
+The valid value is stored in the same display format used throughout the
+application:
+
+```csharp
+OurAnimals[i, AgeColumn] = AgeLabel + enteredAge;
+```
+
+### Physical-description validation
+
+The application rejects:
+
+```text
+null
+an empty string
+whitespace-only input
+"tbd"
+```
+
+The starter project uses `tbd` for information that has not yet been collected.
+The final challenge treats it as incomplete so the record receives real data:
+
+```csharp
+private static bool IsIncompleteText(string value)
+{
+    return
+        string.IsNullOrWhiteSpace(value) ||
+        value.Equals(
+            ToBeDetermined,
+            StringComparison.OrdinalIgnoreCase);
+}
+```
+
+A shared required-text prompt guarantees that the returned string contains at
+least one non-whitespace character.
+
+### Completion message
+
+After all occupied rows pass both checks:
+
+```text
+Age and physical description fields are complete for all of our friends.
+Press the Enter key to continue.
+```
+
+The pause prevents the confirmation from disappearing immediately when the main
+menu is redrawn.
+
+---
+
+## Menu Option 4 — Complete Nickname and Personality Description
+
+### Specification implemented
+
+For every occupied pet record, the feature must:
+
+```text
+Skip unused rows
+Display the pet ID when data is missing
+Require a non-null, non-empty nickname
+Require a non-null, non-empty personality description
+Store the validated values
+Report when all records are complete
+Pause before returning to the main menu
+```
+
+### Nickname validation
+
+The application extracts the stored data:
+
+```csharp
+string currentNickname = ExtractValue(
+    OurAnimals[i, NicknameColumn],
+    NicknameLabel);
+```
+
+If the result is incomplete, it calls:
+
+```csharp
+string enteredNickname = PromptForRequiredText(
+    $"Enter a nickname for {petId}:");
+```
+
+The validated value is stored with its display label:
+
+```csharp
+OurAnimals[i, NicknameColumn] =
+    NicknameLabel + enteredNickname;
+```
+
+### Personality-description validation
+
+The same reusable validation rule is applied to the personality field:
+
+```csharp
+string enteredPersonalityDescription =
+    PromptForRequiredText(
+        $"Enter a personality description for {petId} " +
+        "(likes or dislikes, tricks, energy level):");
+```
+
+The completed value is normalized and saved:
+
+```csharp
+OurAnimals[i, PersonalityDescriptionColumn] =
+    PersonalityDescriptionLabel +
+    enteredPersonalityDescription.ToLowerInvariant();
+```
+
+### Completion message
+
+```text
+Nickname and personality description fields are complete for all of our friends.
+Press the Enter key to continue.
+```
+
+Selecting menu option `4` again after completion does not ask for the same data
+because every occupied record already passes validation.
+
+---
+
+## Shared Required-Text Validation
+
+The final application avoids duplicating the same null and empty-input checks:
+
+```csharp
+private static string PromptForRequiredText(string prompt)
+{
+    string value;
+
+    do
+    {
+        Console.WriteLine();
+        Console.WriteLine(prompt);
+
+        value = (Console.ReadLine() ?? string.Empty).Trim();
+
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            Console.WriteLine(
+                "The value cannot be empty. " +
+                "Please enter valid text.");
+        }
+    }
+    while (string.IsNullOrWhiteSpace(value));
+
+    return value;
+}
+```
+
+This method establishes a clear contract:
+
+```text
+Input:  any console result, including null or whitespace
+Output: a trimmed string containing at least one real character
+```
+
+Centralizing this rule makes the application more consistent and reduces future
+maintenance work.
+
+---
+
+## Null-Safe Console Input
+
+`Console.ReadLine()` returns `string?`, so a null result must be handled.
+
+The completed source repeatedly uses:
+
+```csharp
+(Console.ReadLine() ?? string.Empty).Trim()
+```
+
+Processing sequence:
+
+```text
+Read console input
+    ↓
+Replace null with string.Empty
+    ↓
+Remove leading and trailing whitespace
+    ↓
+Validate the normalized value
+```
+
+Operators involved:
+
+| Operator or method | Purpose |
+| --- | --- |
+| `??` | Provide a fallback when the left value is `null` |
+| `Trim()` | Remove leading and trailing whitespace |
+| `IsNullOrWhiteSpace()` | Reject null, empty, and whitespace-only strings |
+
+---
+
+## Branching and Looping Decisions
+
+The challenge demonstrates how control-flow structures are selected according
+to the problem rather than used interchangeably.
+
+| Construct | Role in the application |
+| --- | --- |
+| `switch` | Route the user's menu selection and initialize sample records |
+| `if` | Perform validation decisions and defensive checks |
+| `for` | Inspect every fixed array row or field |
+| `while` | Continue adding pets while the user agrees and capacity remains |
+| `do-while` | Prompt at least once and repeat until input is valid |
+| `continue` | Skip unused array rows or skip the remainder of one iteration |
+| `break` | End a switch section or stop a loop when no valid row remains |
+| `return` | Leave a method early when no more records can be added |
+
+Overall validation flow:
+
+```text
+Read menu selection
+        ↓
+Route through switch
+        ↓
+Iterate through fixed array rows
+        ↓
+Skip unused rows
+        ↓
+Extract the stored value
+        ↓
+Evaluate completeness
+    ├── complete   → continue to the next field or row
+    └── incomplete
+            ↓
+         Prompt in a validation loop
+            ↓
+         Store the normalized value
+        ↓
+Report completion and pause
+```
+
+---
+
+## Variable Scope and Maintainability
+
+The final source scopes values at the narrowest practical level:
+
+```text
+Application-wide configuration → private constants
+Runtime data store              → private static readonly array
+One menu operation              → local variables inside its method
+One iteration                   → loop-local variables
+Reusable input                  → method parameters and return values
+```
+
+Examples of application-wide constants:
+
+```csharp
+private const int MaxPets = 8;
+private const int PetIdColumn = 0;
+private const string AgeLabel = "Age: ";
+private const string ToBeDetermined = "tbd";
+```
+
+Benefits:
+
+- one authoritative definition for each program rule;
+- no repeated magic numbers or label strings;
+- reduced accidental variable reuse;
+- clearer method contracts;
+- easier future refactoring.
+
+---
+
+## Professional Commenting Strategy
+
+The final `Program.cs` uses comments to explain:
+
+```text
+Why a control-flow construct was selected
+What each array column represents
+Why an unused row is skipped
+Why TryParse is used instead of Parse
+Why tbd is considered incomplete
+How null console input is normalized
+What a helper method guarantees to its caller
+Which menu options are outside the challenge scope
+```
+
+Comments do not merely repeat syntax. They document intent, invariants,
+validation contracts, and design decisions that are not obvious from an
+individual statement.
+
+---
+
+## Runtime Verification
+
+Run the challenge project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\add-logic-to-csharp-console-applications\challenge-projects\contoso-pets-challenge\contoso-pets-challenge.csproj"
+```
+
+### Menu option 3 verification
+
+Suggested input sequence:
+
+```text
+3
+one
+1
+<press Enter without entering a physical description>
+small white Siamese cat weighing about 8 pounds. litter box trained.
+```
+
+Expected behavior:
+
+```text
+The nonnumeric age is rejected.
+The prompt repeats.
+The numeric age is accepted.
+The empty physical description is rejected.
+The prompt repeats.
+The valid physical description is stored.
+A completion message is displayed.
+```
+
+### Menu option 4 verification
+
+Suggested input sequence:
+
+```text
+4
+<press Enter without entering a nickname>
+snowflake
+<press Enter without entering a personality description>
+loves to curl up in a warm spot
+```
+
+Expected behavior:
+
+```text
+The empty nickname is rejected.
+The prompt repeats.
+The valid nickname is stored.
+The empty personality description is rejected.
+The prompt repeats.
+The valid personality description is stored.
+A completion message is displayed.
+```
+
+Afterward, menu option `1` displays the completed `c4` record. Running menu
+options `3` or `4` again does not request information that has already passed
+validation.
+
+---
+
+## Build Verification
+
+Build the challenge project:
+
+```powershell
+dotnet build `
+  ".\curriculum\add-logic-to-csharp-console-applications\challenge-projects\contoso-pets-challenge\contoso-pets-challenge.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Challenge project: contoso-pets-challenge
+Target framework: net10.0
+Project registration: Verified
+Solution project count: 20
+Project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.6 seconds
+Build warnings: 0
+Build errors: 0
+Verification date: July 30, 2026
+```
+
+---
+
+## Section Trophy and Achievement Evidence
+
+Official completion evidence is documented separately under:
+
+```text
+trophy/
+├── README.md
+└── assets/
+    ├── 1.PNG
+    └── 2.PNG
+```
+
+The two evidence files record:
+
+- the Microsoft Learn completion certificate for **Add logic to C# console
+  applications (Get started with C#, Part 3)**;
+- freeCodeCamp verification of the Microsoft Learn Trophy for **Add Logic to
+  C# Console Applications**.
+
+Open the dedicated evidence record:
+
+- [Section 3 Trophy documentation](./trophy/README.md)
+- [Microsoft Learn completion certificate](./trophy/assets/1.PNG)
+- [Verified freeCodeCamp Trophy evidence](./trophy/assets/2.PNG)
+
+The local build evidence remains recorded in the challenge-project
+**Build Verification** section above rather than being stored as a third Trophy
+image.
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| challenge project | `/ˈtʃæl.ɪndʒ ˈprɒdʒ.ekt/` | “cha-lừnh pro-jẹct” | dự án thử thách yêu cầu tự hoàn thiện theo đặc tả |
+| specification | `/ˌspes.ɪ.fɪˈkeɪ.ʃən/` | “spe-xi-fi-cây-shần” | đặc tả yêu cầu của chương trình |
+| branching | `/ˈbrɑːn.tʃɪŋ/` | “bran-ching” | phân nhánh luồng thực thi |
+| looping | `/ˈluː.pɪŋ/` | “lu-ping” | lặp lại một khối mã |
+| validation | `/ˌvæl.ɪˈdeɪ.ʃən/` | “va-li-đây-shần” | kiểm tra dữ liệu hợp lệ |
+| invariant | `/ɪnˈveə.ri.ənt/` | “in-ve-ri-ần-t” | điều kiện luôn phải đúng trong một phạm vi xử lý |
+| helper method | `/ˈhel.pər ˈmeθ.əd/` | “hel-pờ me-thợt” | phương thức hỗ trợ dùng chung |
+| null-coalescing operator | `/nʌl ˌkəʊ.əˈles.ɪŋ ˈɒp.ər.eɪ.tər/` | “nâl câu-ờ-le-xing op-pờ-rây-tờ” | toán tử `??` cung cấp giá trị thay thế cho `null` |
+| range operator | `/reɪndʒ ˈɒp.ər.eɪ.tər/` | “râyn-ch op-pờ-rây-tờ” | toán tử `..` chọn một phạm vi phần tử |
+| ordinal comparison | `/ˈɔː.dɪ.nəl kəmˈpær.ɪ.sən/` | “o-đi-nồ cờm-pe-rờ-sần” | so sánh theo giá trị ký tự chính xác |
+| whitespace | `/ˈwaɪt.speɪs/` | “oai-t-spâys” | ký tự khoảng trắng như dấu cách hoặc tab |
+| defensive guard | `/dɪˈfen.sɪv ɡɑːd/` | “đi-fen-xịv ga-đ” | kiểm tra phòng vệ trước trạng thái không mong đợi |
+| code maintainability | `/kəʊd ˌmeɪn.teɪ.nəˈbɪl.ə.ti/` | “câuđ mâyn-tây-nờ-bi-lờ-ti” | khả năng bảo trì và mở rộng mã nguồn |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Challenge Project - Develop Branching and Looping Structures in C#
+Application: Contoso PetFriends
+Section: Add Logic to C# Console Applications
+Status: Completed
+Microsoft Learn units: Completed
+Module assessment: Passed
+Achievement: Earned
+Microsoft Learn trophy: Verified
+Microsoft Learn certificate: Earned
+freeCodeCamp section completion: Verified
+Final organized source: Completed
+Professional comments: Completed
+Project registration: Verified
+Solution project count: 20
+Local run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 2.6 seconds
+Completion date: July 30, 2026
+```
+
+---
+
+# Section 3 Completion
+
+Section 3 is now complete.
+
+```text
+Section: Add Logic to C# Console Applications
+Final status: Completed
+Curriculum progress: 7 / 7
+Instructional modules: 5 / 5 completed
+Guided projects: 1 / 1 completed
+Challenge projects: 1 / 1 completed
+Registered solution projects: 20
+Microsoft Learn trophy: Verified
+Microsoft Learn certificate: Earned
+freeCodeCamp completion: Verified
+Latest project build: Passing
+Full solution build: Passing
+Completion date: July 30, 2026
+```
+
+The completed section demonstrates an integrated understanding of:
+
+```text
+Boolean expressions
+Conditional operators
+if / else branching
+switch-case branching
+Variable scope and code blocks
+for iteration
+while iteration
+do-while iteration
+continue and break
+Console-input validation
+Null-safe string handling
+Two-dimensional arrays
+Method extraction
+Maintainable program structure
+```
+
+Repository closeout sequence:
+
+```text
+Review git status
+Run the challenge project
+Build the challenge project
+Build the full solution
+Update the root repository README
+Commit the completed Section 3 work
+Push the feature branch
+Open and merge the pull request
+Synchronize local main
+Proceed to the next curriculum section
+```
+---
+
+## Navigation
+
+- [Repository overview](../../README.md)
+- [Section 3 Trophy documentation](./trophy/README.md)
+- [Challenge project source](./challenge-projects/contoso-pets-challenge/)
+- [Previous section — Create and Run Simple C# Console Applications](../create-and-run-simple-csharp-console-applications/README.md)
+- [Next section — Work with Variable Data in C# Console Applications](../work-with-variable-data-in-csharp-console-applications/README.md)
+
