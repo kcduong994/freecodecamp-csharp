@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-20-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-21-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -29,32 +29,30 @@ It is maintained as a structured learning curriculum containing:
 ```text
 Certification status: In progress
 Curriculum sections completed: 3 / 7
-Latest completed section: Add Logic to C# Console Applications
-Latest section status: Completed
-Latest section progress: 7 / 7
-Instructional modules completed in latest section: 5
-Guided projects completed in latest section: 1
-Challenge projects completed in latest section: 1
-Latest completed item: Challenge Project - Develop Branching and Looping Structures in C#
-Latest application: Contoso PetFriends
+Latest fully completed section: Add Logic to C# Console Applications
+Latest fully completed section progress: 7 / 7
+Current section: Work with Variable Data in C# Console Applications
+Current section status: In progress
+Current section progress: 1 / 7
+Instructional modules completed in current section: 1
+Guided projects completed in current section: 0
+Challenge projects completed in current section: 0
+Latest completed item: Choose the Correct Data Type in Your C# Code
+Latest project: choose-correct-data-type
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Microsoft Learn certificate: Earned
-Microsoft Learn Trophy: Verified by freeCodeCamp
-Latest completion date: July 30, 2026
-Projects currently verified in solution: 20
+Latest completion date: July 31, 2026
+Projects currently verified in solution: 21
 Latest organized source: Completed
 Professional source comments: Completed
 Latest project run: Verified
 Latest project build: Verified
 Latest project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 2.6 seconds
-Build warnings: 0
-Build errors: 0
-Next curriculum section: Work with Variable Data in C# Console Applications
-Next section status: Not started
+Full solution build time: 3.5 seconds
+IDE diagnostics: No issues found
+Next curriculum item: Convert Data Types Using Casting and Conversion Techniques in C#
 ```
 
 | No. | Curriculum section | Progress | Status |
@@ -62,14 +60,14 @@ Next section status: Not started
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Completed |
-| 4 | Work with Variable Data in C# Console Applications | Not started | Pending |
+| 4 | Work with Variable Data in C# Console Applications | 1 / 7 | In progress |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending |
 
-A curriculum item is marked `Completed` in this repository only after its official
-units, assessment, achievement, local run, project registration, and full-solution
-build have all been verified.
+A curriculum item is marked `Completed` in this repository only after its
+official units, assessment, achievement, local run, project registration,
+project build, and full-solution build have all been verified.
 
 ---
 
@@ -1562,23 +1560,457 @@ The evidence records:
 
 ---
 
-## Next Section
+## Current Section
 
 ### 4. Work with Variable Data in C# Console Applications
 
 ```text
-Status: Not started
-Previous section completed: Add Logic to C# Console Applications
-Previous section progress: 7 / 7
-Current repository baseline: 20 projects
-Full solution baseline: Passing
-Build warnings: 0
-Build errors: 0
+Status: In progress
+Progress: 1 / 7
+Completed instructional modules: 1
+Completed guided projects: 0
+Completed challenge projects: 0
+Latest completed item: Choose the Correct Data Type in Your C# Code
+Latest item assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Solution project count: 21
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Local project run: Verified
+Project build: Verified
+Project build time: 0.9 seconds
+Full solution build: Verified
+Full solution build time: 3.5 seconds
+IDE diagnostics: No issues found
+Latest completion date: July 31, 2026
+Next curriculum item: Convert Data Types Using Casting and Conversion Techniques in C#
 ```
 
-Section 4 will begin from the verified twenty-project solution baseline. New
-projects must preserve the existing curriculum structure, be registered in
-`freecodecamp-csharp.slnx`, run successfully, and keep the full solution green.
+Section 4 develops practical skills for selecting, converting, formatting,
+searching, and manipulating data in C# console applications.
+
+The section begins from the verified twenty-project baseline produced by
+Section 3. The first completed module adds the twenty-first solution project and
+preserves a passing full-solution build.
+
+[Open the current Section 4 documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/README.md)
+
+---
+
+### Module 1 — Choose the Correct Data Type in Your C# Code
+
+```text
+Status: Completed
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 21
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Local project run: Verified
+Project build: Succeeded
+Project build time: 0.9 seconds
+Full solution build: Succeeded
+Full solution build time: 3.5 seconds
+IDE diagnostics: No issues found
+Completion date: July 31, 2026
+```
+
+This module explains how C# represents data and how a developer selects a type
+that matches the meaning, range, precision, and interoperability requirements
+of an application.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── modules/
+    └── choose-correct-data-type/
+        ├── Program.cs
+        └── choose-correct-data-type.csproj
+```
+
+The final source preserves the complete lesson as one runnable console
+application. It is divided into ten learning sections:
+
+```text
+1. Data represented as bits
+2. C# aliases for .NET value types
+3. Signed integral types
+4. Unsigned integral types
+5. Floating-point types
+6. Creating reference-type instances
+7. Value-type assignment
+8. Reference-type assignment
+9. Practical data-type choices
+10. Boundary and interoperability example
+```
+
+#### Bits, bytes, and encoded data
+
+The project demonstrates that computer data is represented by binary values:
+
+```text
+bit  → one binary state: 0 or 1
+byte → eight bits
+2⁸   → 256 possible bit combinations
+```
+
+The decimal number `195` is converted to:
+
+```text
+11000011
+```
+
+because:
+
+```text
+128 + 64 + 2 + 1 = 195
+```
+
+The lowercase character `a` is also examined as numeric data:
+
+```text
+Character: a
+Decimal code: 97
+Binary representation: 01100001
+```
+
+#### C# aliases and .NET types
+
+The project verifies that C# keywords map to .NET types:
+
+```text
+int  → System.Int32
+bool → System.Boolean
+char → System.Char
+```
+
+Example:
+
+```csharp
+bool intAliasMatchesSystemType =
+    typeof(int) == typeof(System.Int32);
+```
+
+#### Signed and unsigned integral types
+
+The module inspects `MinValue` and `MaxValue` for:
+
+```text
+Signed:
+sbyte
+short
+int
+long
+
+Unsigned:
+byte
+ushort
+uint
+ulong
+```
+
+This demonstrates that signed types support negative and positive values,
+whereas unsigned types use their full bit range for zero and positive values.
+
+The project also decodes a `byte[]` containing:
+
+```text
+45 46 44 43
+```
+
+in hexadecimal form as the ASCII text:
+
+```text
+EFDC
+```
+
+#### Floating-point range and precision
+
+The module compares:
+
+| Type | Approximate precision | Typical use |
+| --- | --- | --- |
+| `float` | 6–9 significant decimal digits | lower-precision or memory-sensitive numeric data |
+| `double` | 15–17 significant decimal digits | scientific and engineering calculations |
+| `decimal` | 28–29 significant decimal digits | money and base-10 financial calculations |
+
+The code demonstrates that range and precision are separate properties.
+
+It also compares binary floating-point arithmetic with decimal arithmetic:
+
+```csharp
+double binaryFloatingPointSum = 0.1 + 0.2;
+decimal decimalFloatingPointSum = 0.1M + 0.2M;
+```
+
+Verified output:
+
+```text
+double  0.1 + 0.2 = 0.30000000000000004
+decimal 0.1 + 0.2 = 0.3
+```
+
+This does not make `decimal` universally better. The choice remains
+domain-specific:
+
+```text
+double  → scientific, engineering, geometric, and numerical work
+decimal → financial and accounting values expressed in base 10
+```
+
+#### Scientific notation and numeric literal suffixes
+
+The project demonstrates scientific notation:
+
+```csharp
+const double scientificNotationValue = 5E+2;
+```
+
+Result:
+
+```text
+5 × 10² = 500
+```
+
+It also documents common literal suffixes:
+
+```text
+F → float
+D → double
+M → decimal
+L → long
+U → unsigned integral type
+UL → ulong
+```
+
+#### Creating reference-type instances
+
+The `new` keyword is used to create arrays:
+
+```csharp
+int[] declaredThenCreatedData;
+declaredThenCreatedData = new int[3];
+```
+
+A newly created integer array begins with default values:
+
+```text
+[0, 0, 0]
+```
+
+The source then assigns:
+
+```text
+[10, 20, 30]
+```
+
+The project also notes that `string` is a reference type even though C#
+provides convenient literal syntax:
+
+```csharp
+string greeting = "Hello World!";
+```
+
+#### Value-type and reference-type assignment
+
+Value-type assignment copies the value:
+
+```csharp
+int valueA = 2;
+int valueB = valueA;
+
+valueB = 5;
+```
+
+Result:
+
+```text
+valueA: 2
+valueB: 5
+```
+
+Reference-type assignment copies the reference:
+
+```csharp
+int[] referenceA = new int[1];
+referenceA[0] = 2;
+
+int[] referenceB = referenceA;
+referenceB[0] = 5;
+```
+
+Result:
+
+```text
+referenceA[0]: 5
+referenceB[0]: 5
+Same array object: True
+```
+
+The final comments avoid treating “value type equals stack” and “reference type
+equals heap” as absolute language rules. The more reliable distinction for this
+module is:
+
+```text
+Value type assignment     → copies a value
+Reference type assignment → copies a reference
+```
+
+#### Practical engineering choices
+
+The final source applies type selection to coastal-engineering and
+numerical-modelling data:
+
+```csharp
+int computationalCellCount = 15_000;
+
+double waterLevelMeters = 1.425;
+double salinityPpt = 15.114;
+double simulationTimeStepSeconds = 10.0;
+
+decimal projectBudget = 125_000_000.50M;
+
+bool isCourantConditionSatisfied = true;
+
+string monitoringStationName = "Hoa Binh";
+
+DateTime observationTime =
+    new DateTime(2026, 7, 31, 18, 0, 0);
+
+TimeSpan simulationDuration =
+    TimeSpan.FromDays(30);
+```
+
+The selected types communicate domain meaning:
+
+| Data | Type | Reason |
+| --- | --- | --- |
+| Computational-cell count | `int` | whole-number count and broad API compatibility |
+| Water level | `double` | fractional scientific measurement |
+| Salinity | `double` | measured and simulated physical quantity |
+| Time step | `double` | can support sub-second values |
+| Project budget | `decimal` | financial base-10 quantity |
+| Courant-condition result | `bool` | two-state condition |
+| Monitoring-station name | `string` | textual identifier |
+| Observation timestamp | `DateTime` | calendar date and time |
+| Simulation duration | `TimeSpan` | elapsed interval |
+
+Verified output includes:
+
+```text
+Computational cells : 15,000
+Water level         : 1.425 m
+Salinity            : 15.114 ppt
+Time step           : 10 s
+Project budget      : 125,000,000.50
+Courant condition   : True
+Monitoring station  : Hoa Binh
+Observation time    : 2026-07-31 18:00:00
+Simulation duration : 30 days
+```
+
+#### Boundary versus interoperability
+
+The project compares a narrow domain type with a broadly compatible API type:
+
+```csharp
+const ushort boundedRecordNumber = 10_000;
+int apiCompatibleRecordNumber = boundedRecordNumber;
+```
+
+`ushort` represents the domain boundary, but `int` may still be preferable when
+surrounding .NET APIs expect `int`.
+
+The module therefore applies this selection sequence:
+
+```text
+Meaning
+    ↓
+Fractional or whole-number data
+    ↓
+Valid minimum and maximum
+    ↓
+Signed or non-negative domain
+    ↓
+Required precision
+    ↓
+API, database, and external-system compatibility
+    ↓
+Measured performance and storage requirements
+```
+
+The final rule recorded by the application is:
+
+```text
+Choose a data type for meaning, range, precision, and interoperability.
+Do not optimize numeric storage before measuring a real performance need.
+```
+
+Run the completed module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\choose-correct-data-type\choose-correct-data-type.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\choose-correct-data-type\choose-correct-data-type.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 3.5 seconds
+Registered solution projects: 21
+Target framework: net10.0
+IDE diagnostics: No issues found
+Verification date: July 31, 2026
+```
+
+---
+
+### Next Module — Convert Data Types Using Casting and Conversion Techniques in C#
+
+```text
+Status: Not started
+Current Section 4 progress: 1 / 7
+Current solution baseline: 21 projects
+Full solution baseline: Passing
+```
+
+The next module will examine:
+
+```text
+Implicit conversion
+Explicit casting
+Widening and narrowing conversions
+ToString()
+Convert
+Parse()
+TryParse()
+Potential data loss
+Checked numeric conversion
+```
+
+The next project must be added to `freecodecamp-csharp.slnx`, run successfully,
+build independently, and preserve the passing full-solution baseline.
 
 ---
 
@@ -1628,6 +2060,11 @@ freecodecamp-csharp/
 │   │           ├── 1.PNG
 │   │           └── 2.PNG
 │   ├── work-with-variable-data-in-csharp-console-applications/
+│   │   ├── README.md
+│   │   └── modules/
+│   │       └── choose-correct-data-type/
+│   │           ├── Program.cs
+│   │           └── choose-correct-data-type.csproj
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
@@ -1646,6 +2083,10 @@ Each curriculum section may contain:
 - `trophy/README.md` for section-completion documentation;
 - `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
+
+Section 4 currently contains one completed module project. Its `trophy/`
+directory will be added after the complete section has been finished and the
+official completion evidence has been earned.
 
 ---
 
@@ -1676,7 +2117,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-20
+21
 ```
 
 List all projects registered in the solution:
@@ -1767,56 +2208,71 @@ curriculum/add-logic-to-csharp-console-applications/guided-projects/contoso-pets
 curriculum/add-logic-to-csharp-console-applications/challenge-projects/contoso-pets-challenge/contoso-pets-challenge.csproj
 ```
 
+### Projects from Section 4
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose-correct-data-type/choose-correct-data-type.csproj
+```
+
 Run the latest completed project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\add-logic-to-csharp-console-applications\challenge-projects\contoso-pets-challenge\contoso-pets-challenge.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\choose-correct-data-type\choose-correct-data-type.csproj"
 ```
 
 ---
 
 
+
 ## Latest Repository Verification
 
 ```text
-Latest completed section: Add Logic to C# Console Applications
-Section progress: 7 / 7
-Latest completed item: Challenge Project - Develop Branching and Looping Structures in C#
-Application: Contoso PetFriends
+Latest fully completed section: Add Logic to C# Console Applications
+Latest fully completed section progress: 7 / 7
+Current section: Work with Variable Data in C# Console Applications
+Current section progress: 1 / 7
+Latest completed item: Choose the Correct Data Type in Your C# Code
+Latest project: choose-correct-data-type
+Module units: 8 / 8
 Module assessment: Passed
 Achievement: Earned
-Microsoft Learn certificate: Earned
-Microsoft Learn Trophy: Verified by freeCodeCamp
 Final organized source: Completed
 Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 20
-Challenge project run: Succeeded
-Challenge behavior: Verified
+Registered solution projects: 21
+Module run: Succeeded
+Module output: Verified
 Latest project build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 2.6 seconds
-Build warnings: 0
-Build errors: 0
-Verification date: July 30, 2026
+Full solution build: Succeeded in 3.5 seconds
+Target framework: net10.0
+IDE diagnostics: No issues found
+Verification date: July 31, 2026
 ```
 
 The latest verification confirms that:
 
-- `contoso-pets-challenge` is registered as the twentieth solution project;
-- menu option `3` completes missing ages and physical descriptions;
-- menu option `4` completes missing nicknames and personality descriptions;
-- invalid numeric, null, empty, and whitespace-only input is rejected;
-- unused array rows are skipped;
-- existing valid pet data is preserved;
-- the final source is organized as a complete application with focused methods,
-  named constants, and professional comments;
-- the challenge project compiled successfully in `0.9` seconds;
-- the complete twenty-project solution compiled successfully in `2.6` seconds;
-- the final build produced `0` warnings and `0` errors;
-- the Microsoft Learn certificate was earned;
-- freeCodeCamp verified the Microsoft Learn Trophy;
-- Section 3 is complete at `7 / 7`.
+- `choose-correct-data-type` is registered as the twenty-first solution project;
+- the project runs from beginning to end;
+- decimal and binary representations are displayed correctly;
+- C# aliases are compared with their corresponding .NET types;
+- signed and unsigned numeric ranges are inspected with `MinValue` and
+  `MaxValue`;
+- `float`, `double`, and `decimal` are compared by both range and precision;
+- `double` and `decimal` arithmetic differences are demonstrated;
+- array creation with `new` is demonstrated;
+- value-type assignment copies the value;
+- reference-type assignment copies the object reference;
+- engineering examples use `int`, `double`, `decimal`, `bool`, `string`,
+  `DateTime`, and `TimeSpan` according to domain meaning;
+- the boundary-versus-interoperability example compares `ushort` with `int`;
+- the final source contains professional comments explaining intent, constraints,
+  and technical trade-offs;
+- the module project compiled successfully in `0.9` seconds;
+- the complete twenty-one-project solution compiled successfully in `3.5`
+  seconds;
+- Visual Studio reported no source-code issues;
+- Section 4 is in progress at `1 / 7`.
 
 ---
 
@@ -1870,6 +2326,8 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 1](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-1/)
 - [Microsoft Learn — Get Started with C#, Part 2](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-2/)
 - [Microsoft Learn — Get Started with C#, Part 3](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-3/)
+- [Microsoft Learn — Get Started with C#, Part 4](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-4/)
+- [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 
 ---
 
