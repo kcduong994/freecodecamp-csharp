@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-21-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-22-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -33,26 +33,26 @@ Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
 Current section status: In progress
-Current section progress: 1 / 7
-Instructional modules completed in current section: 1
+Current section progress: 2 / 7
+Instructional modules completed in current section: 2
 Guided projects completed in current section: 0
 Challenge projects completed in current section: 0
-Latest completed item: Choose the Correct Data Type in Your C# Code
-Latest project: choose-correct-data-type
+Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
+Latest project: convert-data-types
 Latest item status: Completed
 Latest item assessment: Passed
 Latest achievement: Earned
-Latest completion date: July 31, 2026
-Projects currently verified in solution: 21
+Latest completion date: August 1, 2026
+Projects currently verified in solution: 22
 Latest organized source: Completed
 Professional source comments: Completed
 Latest project run: Verified
 Latest project build: Verified
-Latest project build time: 0.9 seconds
+Latest project build time: 1.0 seconds
 Full solution build: Verified
-Full solution build time: 3.5 seconds
+Full solution build time: 4.0 seconds
 IDE diagnostics: No issues found
-Next curriculum item: Convert Data Types Using Casting and Conversion Techniques in C#
+Next curriculum item: Perform Operations on Arrays Using Helper Methods in C#
 ```
 
 | No. | Curriculum section | Progress | Status |
@@ -60,7 +60,7 @@ Next curriculum item: Convert Data Types Using Casting and Conversion Techniques
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Completed |
-| 4 | Work with Variable Data in C# Console Applications | 1 / 7 | In progress |
+| 4 | Work with Variable Data in C# Console Applications | 2 / 7 | In progress |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending |
@@ -1566,33 +1566,33 @@ The evidence records:
 
 ```text
 Status: In progress
-Progress: 1 / 7
-Completed instructional modules: 1
+Progress: 2 / 7
+Completed instructional modules: 2
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Choose the Correct Data Type in Your C# Code
+Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
 Latest item assessment: Passed
 Achievement: Earned
 Project registration: Verified
-Solution project count: 21
+Solution project count: 22
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Local project run: Verified
 Project build: Verified
-Project build time: 0.9 seconds
+Project build time: 1.0 seconds
 Full solution build: Verified
-Full solution build time: 3.5 seconds
+Full solution build time: 4.0 seconds
 IDE diagnostics: No issues found
-Latest completion date: July 31, 2026
-Next curriculum item: Convert Data Types Using Casting and Conversion Techniques in C#
+Latest completion date: August 1, 2026
+Next curriculum item: Perform Operations on Arrays Using Helper Methods in C#
 ```
 
 Section 4 develops practical skills for selecting, converting, formatting,
 searching, and manipulating data in C# console applications.
 
-The section begins from the verified twenty-project baseline produced by
-Section 3. The first completed module adds the twenty-first solution project and
-preserves a passing full-solution build.
+The section now contains two completed instructional modules and extends the
+solution from twenty to twenty-two registered projects while preserving a
+passing full-solution build.
 
 [Open the current Section 4 documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/README.md)
 
@@ -1607,7 +1607,7 @@ Module assessment: Passed
 Achievement: Earned
 Target framework: net10.0
 Project registration in solution: Verified
-Solution project count: 21
+Solution project count after completion: 21
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Local project run: Verified
@@ -1649,222 +1649,21 @@ application. It is divided into ten learning sections:
 10. Boundary and interoperability example
 ```
 
-#### Bits, bytes, and encoded data
+Key outcomes include:
 
-The project demonstrates that computer data is represented by binary values:
+- converting decimal values and characters into binary representations;
+- relating C# aliases such as `int` to .NET types such as `System.Int32`;
+- inspecting numeric `MinValue` and `MaxValue` boundaries;
+- comparing signed and unsigned integral types;
+- distinguishing numeric range from numeric precision;
+- comparing `float`, `double`, and `decimal`;
+- demonstrating binary floating-point behavior with `0.1 + 0.2`;
+- creating arrays with `new`;
+- showing that value-type assignment copies a value;
+- showing that reference-type assignment copies a reference;
+- selecting types for engineering, financial, temporal, and binary data.
 
-```text
-bit  → one binary state: 0 or 1
-byte → eight bits
-2⁸   → 256 possible bit combinations
-```
-
-The decimal number `195` is converted to:
-
-```text
-11000011
-```
-
-because:
-
-```text
-128 + 64 + 2 + 1 = 195
-```
-
-The lowercase character `a` is also examined as numeric data:
-
-```text
-Character: a
-Decimal code: 97
-Binary representation: 01100001
-```
-
-#### C# aliases and .NET types
-
-The project verifies that C# keywords map to .NET types:
-
-```text
-int  → System.Int32
-bool → System.Boolean
-char → System.Char
-```
-
-Example:
-
-```csharp
-bool intAliasMatchesSystemType =
-    typeof(int) == typeof(System.Int32);
-```
-
-#### Signed and unsigned integral types
-
-The module inspects `MinValue` and `MaxValue` for:
-
-```text
-Signed:
-sbyte
-short
-int
-long
-
-Unsigned:
-byte
-ushort
-uint
-ulong
-```
-
-This demonstrates that signed types support negative and positive values,
-whereas unsigned types use their full bit range for zero and positive values.
-
-The project also decodes a `byte[]` containing:
-
-```text
-45 46 44 43
-```
-
-in hexadecimal form as the ASCII text:
-
-```text
-EFDC
-```
-
-#### Floating-point range and precision
-
-The module compares:
-
-| Type | Approximate precision | Typical use |
-| --- | --- | --- |
-| `float` | 6–9 significant decimal digits | lower-precision or memory-sensitive numeric data |
-| `double` | 15–17 significant decimal digits | scientific and engineering calculations |
-| `decimal` | 28–29 significant decimal digits | money and base-10 financial calculations |
-
-The code demonstrates that range and precision are separate properties.
-
-It also compares binary floating-point arithmetic with decimal arithmetic:
-
-```csharp
-double binaryFloatingPointSum = 0.1 + 0.2;
-decimal decimalFloatingPointSum = 0.1M + 0.2M;
-```
-
-Verified output:
-
-```text
-double  0.1 + 0.2 = 0.30000000000000004
-decimal 0.1 + 0.2 = 0.3
-```
-
-This does not make `decimal` universally better. The choice remains
-domain-specific:
-
-```text
-double  → scientific, engineering, geometric, and numerical work
-decimal → financial and accounting values expressed in base 10
-```
-
-#### Scientific notation and numeric literal suffixes
-
-The project demonstrates scientific notation:
-
-```csharp
-const double scientificNotationValue = 5E+2;
-```
-
-Result:
-
-```text
-5 × 10² = 500
-```
-
-It also documents common literal suffixes:
-
-```text
-F → float
-D → double
-M → decimal
-L → long
-U → unsigned integral type
-UL → ulong
-```
-
-#### Creating reference-type instances
-
-The `new` keyword is used to create arrays:
-
-```csharp
-int[] declaredThenCreatedData;
-declaredThenCreatedData = new int[3];
-```
-
-A newly created integer array begins with default values:
-
-```text
-[0, 0, 0]
-```
-
-The source then assigns:
-
-```text
-[10, 20, 30]
-```
-
-The project also notes that `string` is a reference type even though C#
-provides convenient literal syntax:
-
-```csharp
-string greeting = "Hello World!";
-```
-
-#### Value-type and reference-type assignment
-
-Value-type assignment copies the value:
-
-```csharp
-int valueA = 2;
-int valueB = valueA;
-
-valueB = 5;
-```
-
-Result:
-
-```text
-valueA: 2
-valueB: 5
-```
-
-Reference-type assignment copies the reference:
-
-```csharp
-int[] referenceA = new int[1];
-referenceA[0] = 2;
-
-int[] referenceB = referenceA;
-referenceB[0] = 5;
-```
-
-Result:
-
-```text
-referenceA[0]: 5
-referenceB[0]: 5
-Same array object: True
-```
-
-The final comments avoid treating “value type equals stack” and “reference type
-equals heap” as absolute language rules. The more reliable distinction for this
-module is:
-
-```text
-Value type assignment     → copies a value
-Reference type assignment → copies a reference
-```
-
-#### Practical engineering choices
-
-The final source applies type selection to coastal-engineering and
-numerical-modelling data:
+The final engineering examples use:
 
 ```csharp
 int computationalCellCount = 15_000;
@@ -1886,83 +1685,417 @@ TimeSpan simulationDuration =
     TimeSpan.FromDays(30);
 ```
 
-The selected types communicate domain meaning:
-
-| Data | Type | Reason |
-| --- | --- | --- |
-| Computational-cell count | `int` | whole-number count and broad API compatibility |
-| Water level | `double` | fractional scientific measurement |
-| Salinity | `double` | measured and simulated physical quantity |
-| Time step | `double` | can support sub-second values |
-| Project budget | `decimal` | financial base-10 quantity |
-| Courant-condition result | `bool` | two-state condition |
-| Monitoring-station name | `string` | textual identifier |
-| Observation timestamp | `DateTime` | calendar date and time |
-| Simulation duration | `TimeSpan` | elapsed interval |
-
-Verified output includes:
+Verified results:
 
 ```text
-Computational cells : 15,000
-Water level         : 1.425 m
-Salinity            : 15.114 ppt
-Time step           : 10 s
-Project budget      : 125,000,000.50
-Courant condition   : True
-Monitoring station  : Hoa Binh
-Observation time    : 2026-07-31 18:00:00
-Simulation duration : 30 days
+Module run: Succeeded
+Module output: Verified
+Module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 3.5 seconds
+Registered solution projects after completion: 21
+Target framework: net10.0
+IDE diagnostics: No issues found
+Verification date: July 31, 2026
 ```
 
-#### Boundary versus interoperability
+---
 
-The project compares a narrow domain type with a broadly compatible API type:
+### Module 2 — Convert Data Types Using Casting and Conversion Techniques in C#
+
+```text
+Status: Completed
+Microsoft Learn units: 9 / 9
+Module assessment: Passed
+Achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 22
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Local project run: Verified
+Project build: Succeeded
+Project build time: 1.0 seconds
+Full solution build: Succeeded
+Full solution build time: 4.0 seconds
+IDE diagnostics: No issues found
+Completion date: August 1, 2026
+```
+
+This module explains how to convert values between C# data types while
+controlling two principal risks:
+
+```text
+Runtime exception risk
+Information-loss risk
+```
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── modules/
+    └── convert-data-types/
+        ├── Program.cs
+        └── convert-data-types.csproj
+```
+
+The final application uses focused methods:
+
+```text
+Main()
+├── WriteApplicationHeader()
+├── DemonstrateCompilerConversionRules()
+├── DemonstrateWideningConversion()
+├── DemonstrateExplicitCasting()
+├── DemonstratePrecisionLoss()
+├── DemonstrateToString()
+├── DemonstrateParse()
+├── DemonstrateConvertClass()
+├── CompareCastingAndConvert()
+├── DemonstrateTryParse()
+├── RunMixedStringArrayChallenge()
+├── RunSpecificNumberTypeChallenge()
+└── WriteModuleSummary()
+```
+
+#### Compiler conversion rules
+
+The module documents why this code is invalid:
 
 ```csharp
-const ushort boundedRecordNumber = 10_000;
-int apiCompatibleRecordNumber = boundedRecordNumber;
+int first = 2;
+string second = "4";
+int result = first + second;
 ```
 
-`ushort` represents the domain boundary, but `int` may still be preferable when
-surrounding .NET APIs expect `int`.
-
-The module therefore applies this selection sequence:
+Compiler result:
 
 ```text
-Meaning
-    ↓
-Fractional or whole-number data
-    ↓
-Valid minimum and maximum
-    ↓
-Signed or non-negative domain
-    ↓
-Required precision
-    ↓
-API, database, and external-system compatibility
-    ↓
-Measured performance and storage requirements
+CS0029:
+Cannot implicitly convert type 'string' to 'int'
 ```
 
-The final rule recorded by the application is:
+The compiler cannot assume that every string contains valid numeric text. By
+contrast, this code is valid:
+
+```csharp
+int firstNumber = 2;
+string secondText = "4";
+
+string concatenatedResult =
+    firstNumber + secondText;
+```
+
+Result:
 
 ```text
-Choose a data type for meaning, range, precision, and interoperability.
-Do not optimize numeric storage before measuring a real performance need.
+24
+```
+
+This is string concatenation rather than numeric addition.
+
+#### Implicit widening conversion
+
+```csharp
+int integerValue = 3;
+decimal decimalValue = integerValue;
+```
+
+The compiler performs this conversion implicitly because `decimal` can represent
+every possible `int` value without losing the original whole-number
+information.
+
+#### Explicit casting and narrowing conversion
+
+```csharp
+decimal decimalValue = 3.14M;
+int integerValue = (int)decimalValue;
+```
+
+Result:
+
+```text
+3
+```
+
+The explicit cast communicates that losing the fractional component is
+intentional.
+
+#### Precision loss
+
+```csharp
+decimal highPrecisionValue = 1.23456789M;
+
+float reducedPrecisionValue =
+    (float)highPrecisionValue;
+```
+
+Typical result:
+
+```text
+decimal : 1.23456789
+float   : 1.2345679
+```
+
+This demonstrates that narrowing conversion can lose precision even when both
+types support fractional values.
+
+#### `ToString()`, `Parse()`, and `Convert`
+
+```csharp
+int firstNumber = 5;
+int secondNumber = 7;
+
+string message =
+    firstNumber.ToString() +
+    secondNumber.ToString();
+```
+
+Result:
+
+```text
+57
+```
+
+```csharp
+string firstText = "5";
+string secondText = "7";
+
+int sum =
+    int.Parse(firstText) +
+    int.Parse(secondText);
+```
+
+Result:
+
+```text
+12
+```
+
+`Parse()` is appropriate only when text is guaranteed to be valid or conversion
+exceptions are intentionally handled.
+
+The .NET `Convert` class provides helper methods such as:
+
+```text
+Convert.ToInt32()
+Convert.ToDouble()
+Convert.ToDecimal()
+Convert.ToString()
+Convert.ToBoolean()
+```
+
+Example:
+
+```csharp
+int product =
+    Convert.ToInt32("5") *
+    Convert.ToInt32("7");
+```
+
+Result:
+
+```text
+35
+```
+
+#### Casting truncates; `Convert.ToInt32()` rounds
+
+```csharp
+decimal sourceValue = 1.5M;
+
+int castResult = (int)sourceValue;
+int convertedResult =
+    Convert.ToInt32(sourceValue);
+```
+
+Results:
+
+```text
+castResult      : 1
+convertedResult : 2
+```
+
+An explicit cast truncates the fractional component toward zero.
+`Convert.ToInt32()` rounds to the nearest integer.
+
+The final source also records midpoint-to-even behavior:
+
+```text
+2.5 → 2
+3.5 → 4
+```
+
+This is more precise than describing `Convert.ToInt32()` as always rounding up.
+
+#### Safe conversion with `TryParse()`
+
+```csharp
+string validText = "102";
+int parsedMeasurement;
+
+bool conversionSucceeded =
+    int.TryParse(
+        validText,
+        out parsedMeasurement);
+```
+
+`TryParse()`:
+
+```text
+Attempts the conversion
+Stores the converted value in an out parameter
+Returns true or false
+```
+
+Successful result:
+
+```text
+Measurement: 102
+Measurement with offset: 152
+```
+
+For invalid text:
+
+```csharp
+string invalidText = "bad";
+
+bool succeeded =
+    int.TryParse(
+        invalidText,
+        out int result);
+```
+
+Result:
+
+```text
+succeeded = false
+result    = 0
+```
+
+The Boolean return value must be used to determine success because `"0"` is
+valid numeric text and also produces the value `0`.
+
+#### Culture-independent numeric processing
+
+The final source uses:
+
+```csharp
+CultureInfo.InvariantCulture
+```
+
+when stable machine-readable parsing and formatting are required.
+
+This ensures that:
+
+```text
+"12.3"
+```
+
+uses a period as the decimal separator regardless of local Windows regional
+settings.
+
+#### Challenge 1 — classify mixed string values
+
+Starter data:
+
+```csharp
+string[] values =
+{
+    "12.3",
+    "45",
+    "ABC",
+    "11",
+    "DEF"
+};
+```
+
+Business rules:
+
+```text
+Numeric value
+→ add to total
+
+Non-numeric value
+→ append to message
+```
+
+Verified output:
+
+```text
+Message: ABCDEF
+Total: 68.3
+```
+
+#### Challenge 2 — produce required numeric result types
+
+Starter values:
+
+```csharp
+int value1 = 11;
+decimal value2 = 6.2M;
+float value3 = 4.3F;
+```
+
+Implementation:
+
+```csharp
+int result1 =
+    Convert.ToInt32(value1 / value2);
+
+decimal result2 =
+    value2 / (decimal)value3;
+
+float result3 =
+    value3 / value1;
+```
+
+Verified output:
+
+```text
+Divide value1 by value2, display the result as an int: 2
+Divide value2 by value3, display the result as a decimal: 1.4418604651162790697674418605
+Divide value3 by value1, display the result as a float: 0.3909091
+```
+
+#### Conversion decision guide
+
+| Situation | Preferred technique |
+| --- | --- |
+| Destination safely represents all source values | Implicit conversion |
+| Information may be lost and the loss is intentional | Explicit cast |
+| Convert a value to text | `ToString()` |
+| Numeric text is guaranteed to be valid | `Parse()` |
+| Text may be invalid | `TryParse()` |
+| Use a .NET conversion helper | `Convert` |
+| Fractional to integer with truncation | Explicit cast |
+| Fractional to integer with rounding | `Convert.ToInt32()` |
+
+The final console summary states:
+
+```text
+Implicit conversion : use when the destination safely represents the source value.
+Explicit cast       : use when information may be lost and that loss is intentional.
+ToString()           : convert a value to its textual representation.
+Parse()              : use for numeric text known to be valid.
+TryParse()           : use for user, file, or external text that may be invalid.
+Convert              : use a .NET conversion helper, especially when rounding is required.
+
+Always consider both exception risk and information loss.
 ```
 
 Run the completed module:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\choose-correct-data-type\choose-correct-data-type.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\convert-data-types\convert-data-types.csproj"
 ```
 
 Build the module:
 
 ```powershell
 dotnet build `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\choose-correct-data-type\choose-correct-data-type.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\convert-data-types\convert-data-types.csproj"
 ```
 
 Build the complete solution:
@@ -1976,37 +2109,40 @@ Verified results:
 ```text
 Module run: Succeeded
 Module output: Verified
-Module build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 3.5 seconds
-Registered solution projects: 21
+Module build: Succeeded in 1.0 seconds
+Full solution build: Succeeded in 4.0 seconds
+Registered solution projects: 22
 Target framework: net10.0
 IDE diagnostics: No issues found
-Verification date: July 31, 2026
+Verification date: August 1, 2026
 ```
 
 ---
 
-### Next Module — Convert Data Types Using Casting and Conversion Techniques in C#
+### Next Module — Perform Operations on Arrays Using Helper Methods in C#
 
 ```text
 Status: Not started
-Current Section 4 progress: 1 / 7
-Current solution baseline: 21 projects
+Current Section 4 progress: 2 / 7
+Current solution baseline: 22 projects
 Full solution baseline: Passing
 ```
 
-The next module will examine:
+Expected topics include:
 
 ```text
-Implicit conversion
-Explicit casting
-Widening and narrowing conversions
-ToString()
-Convert
-Parse()
-TryParse()
-Potential data loss
-Checked numeric conversion
+Array.Clear()
+Array.Resize()
+Array.Reverse()
+Array.Sort()
+Array.IndexOf()
+Array.Copy()
+String.Split()
+String.Join()
+Changing array size
+Reordering array elements
+Locating values
+Converting between strings and arrays
 ```
 
 The next project must be added to `freecodecamp-csharp.slnx`, run successfully,
@@ -2062,9 +2198,12 @@ freecodecamp-csharp/
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   │   ├── README.md
 │   │   └── modules/
-│   │       └── choose-correct-data-type/
+│   │       ├── choose-correct-data-type/
+│   │       │   ├── Program.cs
+│   │       │   └── choose-correct-data-type.csproj
+│   │       └── convert-data-types/
 │   │           ├── Program.cs
-│   │           └── choose-correct-data-type.csproj
+│   │           └── convert-data-types.csproj
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
@@ -2084,7 +2223,7 @@ Each curriculum section may contain:
 - `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
 
-Section 4 currently contains one completed module project. Its `trophy/`
+Section 4 currently contains two completed module projects. Its `trophy/`
 directory will be added after the complete section has been finished and the
 official completion evidence has been earned.
 
@@ -2117,7 +2256,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-21
+22
 ```
 
 List all projects registered in the solution:
@@ -2212,13 +2351,15 @@ curriculum/add-logic-to-csharp-console-applications/challenge-projects/contoso-p
 
 ```text
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose-correct-data-type/choose-correct-data-type.csproj
+
+curriculum/work-with-variable-data-in-csharp-console-applications/modules/convert-data-types/convert-data-types.csproj
 ```
 
 Run the latest completed project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\choose-correct-data-type\choose-correct-data-type.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\convert-data-types\convert-data-types.csproj"
 ```
 
 ---
@@ -2231,48 +2372,50 @@ dotnet run --project `
 Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
-Current section progress: 1 / 7
-Latest completed item: Choose the Correct Data Type in Your C# Code
-Latest project: choose-correct-data-type
-Module units: 8 / 8
+Current section progress: 2 / 7
+Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
+Latest project: convert-data-types
+Module units: 9 / 9
 Module assessment: Passed
 Achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 21
+Registered solution projects: 22
 Module run: Succeeded
 Module output: Verified
-Latest project build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 3.5 seconds
+Latest project build: Succeeded in 1.0 seconds
+Full solution build: Succeeded in 4.0 seconds
 Target framework: net10.0
 IDE diagnostics: No issues found
-Verification date: July 31, 2026
+Verification date: August 1, 2026
 ```
 
 The latest verification confirms that:
 
-- `choose-correct-data-type` is registered as the twenty-first solution project;
-- the project runs from beginning to end;
-- decimal and binary representations are displayed correctly;
-- C# aliases are compared with their corresponding .NET types;
-- signed and unsigned numeric ranges are inspected with `MinValue` and
-  `MaxValue`;
-- `float`, `double`, and `decimal` are compared by both range and precision;
-- `double` and `decimal` arithmetic differences are demonstrated;
-- array creation with `new` is demonstrated;
-- value-type assignment copies the value;
-- reference-type assignment copies the object reference;
-- engineering examples use `int`, `double`, `decimal`, `bool`, `string`,
-  `DateTime`, and `TimeSpan` according to domain meaning;
-- the boundary-versus-interoperability example compares `ushort` with `int`;
-- the final source contains professional comments explaining intent, constraints,
-  and technical trade-offs;
-- the module project compiled successfully in `0.9` seconds;
-- the complete twenty-one-project solution compiled successfully in `3.5`
+- `convert-data-types` is registered as the twenty-second solution project;
+- the complete module runs successfully from beginning to end;
+- invalid compiler and runtime examples are preserved safely in comments;
+- string concatenation is distinguished from numeric addition;
+- implicit widening conversion is demonstrated;
+- explicit narrowing conversion is demonstrated;
+- decimal-to-float precision loss is demonstrated;
+- `ToString()`, `Parse()`, `Convert`, and `TryParse()` are compared;
+- casting truncation is distinguished from `Convert.ToInt32()` rounding;
+- midpoint-to-even rounding is documented;
+- successful and unsuccessful `TryParse()` operations are verified;
+- `out`-parameter behavior is demonstrated;
+- invariant-culture parsing is used for stable decimal input;
+- the mixed string-array challenge produces `ABCDEF` and `68.3`;
+- the numeric-type challenge produces the required `int`, `decimal`, and
+  `float` results;
+- the final source uses focused methods, isolated variable scope, descriptive
+  names, and professional comments;
+- the module project compiled successfully in `1.0` second;
+- the complete twenty-two-project solution compiled successfully in `4.0`
   seconds;
 - Visual Studio reported no source-code issues;
-- Section 4 is in progress at `1 / 7`.
+- Section 4 is in progress at `2 / 7`.
 
 ---
 
@@ -2328,6 +2471,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 3](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-3/)
 - [Microsoft Learn — Get Started with C#, Part 4](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-4/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
+- [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 
 ---
 
