@@ -14,37 +14,46 @@ documented, and verified with both a project build and a full-solution build.
 ```text
 Section: Work with Variable Data in C# Console Applications
 Status: In progress
-Curriculum progress: 2 / 7
-Completed instructional modules: 2
+Curriculum progress: 3 / 7
+Completed instructional modules: 3
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
-Latest item assessment: Passed
-Microsoft Learn achievement: Earned
-Latest completion date: August 1, 2026
-Projects registered in solution: 22
+Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
+Microsoft Learn module completion: Completed
+Microsoft Learn achievement page: Displayed
+Achievement saved to account: Not verified in the signed-out browser session
+Latest completion date: August 2, 2026
+Projects registered in solution: 23
 Latest project run: Verified
 Latest project build: Verified
-Latest project build time: 1.0 seconds
+Latest project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 4.0 seconds
-IDE diagnostics: No issues found
-Next curriculum item: Perform Operations on Arrays Using Helper Methods in C#
+Full solution build time: 4.4 seconds
+Compiler errors: 0
+Compiler warnings: 0
+Nullable warning CS8602: Resolved
+IDE style suggestions IDE0300 and IDE0090: Addressed in final source
+Next curriculum item: Format Alphanumeric Data for Presentation in C#
 ```
 
 | No. | Curriculum item | Status |
 | ---: | --- | --- |
 | 1 | Choose the Correct Data Type in Your C# Code | Completed |
 | 2 | Convert Data Types Using Casting and Conversion Techniques in C# | Completed |
-| 3 | Perform Operations on Arrays Using Helper Methods in C# | Pending |
+| 3 | Perform Operations on Arrays Using Helper Methods in C# | Completed |
 | 4 | Format Alphanumeric Data for Presentation in C# | Pending |
 | 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Pending |
 | 6 | Guided Project — Work with Variable Data in C# | Pending |
 | 7 | Challenge Project — Work with Variable Data in C# | Pending |
 
 A curriculum item is marked `Completed` only after its Microsoft Learn units,
-assessment, achievement, local run, solution registration, project build, and
-full-solution build have all been verified.
+local implementation, solution registration, project build, and full-solution
+build have been verified.
+
+For Module 3, Microsoft Learn displayed the achievement completion page, but the
+browser session also displayed `Sign in/Create profile`. The repository records
+the module as completed while keeping account-level achievement persistence
+explicitly unverified until the Microsoft Learn session is signed in.
 
 ---
 
@@ -57,9 +66,12 @@ work-with-variable-data-in-csharp-console-applications/
     ├── choose-correct-data-type/
     │   ├── Program.cs
     │   └── choose-correct-data-type.csproj
-    └── convert-data-types/
+    ├── convert-data-types/
+    │   ├── Program.cs
+    │   └── convert-data-types.csproj
+    └── array-helper-methods/
         ├── Program.cs
-        └── convert-data-types.csproj
+        └── array-helper-methods.csproj
 ```
 
 This section uses one central README for curriculum documentation. Individual
@@ -1941,27 +1953,1142 @@ Completion date: August 1, 2026
 
 ---
 
+# Module 3 — Perform Operations on Arrays Using Helper Methods in C#
+
+## Completion Status
+
+```text
+Status: Completed
+Microsoft Learn units: 10 / 10
+Microsoft Learn completion page: Displayed
+Achievement saved to account: Not verified in signed-out session
+Local project run: Verified
+Project added to solution: Verified
+Solution project count: 23
+Target framework: net10.0
+Project build: Succeeded
+Project build time: 0.9 seconds
+Full solution build: Succeeded
+Full solution build time: 4.4 seconds
+Compiler errors: 0
+Compiler warnings: 0
+Nullable warning CS8602: Resolved
+IDE style suggestions: Addressed in final source
+Completion date: August 2, 2026
+```
+
+This module demonstrates how arrays and strings can be transformed with helper
+methods from the .NET class library.
+
+The lesson uses pallet identifiers and order IDs from a logistics workflow. The
+final `Program.cs` preserves the complete Microsoft Learn sequence as one
+runnable console application with focused methods, nullable annotations, safe
+null handling, and both official challenges.
+
+---
+
+## Learning Objectives
+
+The completed project demonstrates how to:
+
+- sort array elements with `Array.Sort()`;
+- reverse the current order with `Array.Reverse()`;
+- reset selected elements with `Array.Clear()`;
+- distinguish a cleared `null` reference from an empty string;
+- avoid `NullReferenceException`;
+- resolve nullable warning `CS8602`;
+- expand and shrink an array with `Array.Resize()`;
+- explain why `Resize()` requires `ref`;
+- remove `null` elements by creating a compact array;
+- convert a string into `char[]` with `ToCharArray()`;
+- construct a string from `char[]`;
+- combine array elements with `string.Join()`;
+- parse delimited text with `string.Split()`;
+- reverse every word while preserving word order;
+- parse, sort, and validate order identifiers.
+
+---
+
+## Source-Code Structure
+
+The final application uses a conventional `Program` class and focused methods:
+
+```text
+Main()
+├── WriteApplicationHeader()
+├── DemonstrateSortAndReverse()
+├── DemonstrateClear()
+├── DemonstrateNullAfterClear()
+├── DemonstrateSafeNullAccess()
+├── DemonstrateResizeLargerAndSmaller()
+├── DemonstrateRemovingNullElements()
+├── DemonstrateToCharArrayAndReverse()
+├── DemonstrateJoinAndSplit()
+├── RunReverseWordsChallenge()
+├── RunOrderValidationChallenge()
+└── WriteModuleSummary()
+```
+
+Reusable output helpers:
+
+```text
+PrintStringArray()
+PrintNullableStringArray()
+WriteSectionHeader()
+WriteSectionSeparator()
+```
+
+This organisation provides:
+
+- isolated variable scope;
+- no duplicate top-level declarations;
+- one executable file containing the complete lesson;
+- independently reviewable examples;
+- comments that explain intent and runtime behaviour;
+- explicit handling of nullable array elements;
+- consistent console output.
+
+---
+
+## `Array.Sort()`
+
+`Array.Sort()` changes the order of elements in the existing array.
+
+```csharp
+string[] pallets =
+[
+    "B14",
+    "A11",
+    "B12",
+    "A13"
+];
+
+Array.Sort(pallets);
+```
+
+Result:
+
+```text
+A11
+A13
+B12
+B14
+```
+
+The operation is performed **in place**:
+
+```text
+Input variable:
+pallets
+
+Method call:
+Array.Sort(pallets)
+
+Result:
+the same array object now contains its elements in sorted order
+```
+
+The method does not return a second sorted array.
+
+---
+
+## `Array.Reverse()`
+
+`Array.Reverse()` flips the current element order.
+
+```csharp
+Array.Reverse(pallets);
+```
+
+After sorting, the result is:
+
+```text
+B14
+B12
+A13
+A11
+```
+
+Important distinction:
+
+```text
+Reverse()
+→ reverses the current order
+
+Descending sort
+→ requires an ordering operation followed by reversal,
+  or another explicit descending comparison
+```
+
+For an unsorted array:
+
+```text
+B14, A11, B12, A13
+```
+
+calling only `Reverse()` produces:
+
+```text
+A13, B12, A11, B14
+```
+
+It does not automatically produce alphanumeric descending order.
+
+---
+
+## `Array.Clear()`
+
+`Array.Clear()` resets a selected range to the element type's default value.
+
+```csharp
+Array.Clear(
+    pallets,
+    index: 0,
+    length: 2);
+```
+
+Parameters:
+
+```text
+pallets  → array to modify
+index    → first element to clear
+length   → number of elements to clear
+```
+
+For a nullable string array:
+
+```csharp
+string?[] pallets =
+[
+    "B14",
+    "A11",
+    "B12",
+    "A13"
+];
+```
+
+the result is:
+
+```text
+[null, null, "B12", "A13"]
+```
+
+For an `int[]`, cleared elements become:
+
+```text
+0
+```
+
+`Array.Clear()` does not change the array length:
+
+```text
+Length before Clear(): 4
+Length after Clear() : 4
+```
+
+---
+
+## `null` Is Not an Empty String
+
+After clearing a string element, this output:
+
+```csharp
+Console.WriteLine($"After: {pallets[0]}");
+```
+
+may appear as:
+
+```text
+After:
+```
+
+The absence of visible text can look like an empty string. The actual value is
+`null`.
+
+The completed application verifies it explicitly:
+
+```csharp
+Console.WriteLine(
+    $"Is pallets[0] null? {pallets[0] is null}");
+```
+
+Result:
+
+```text
+True
+```
+
+The following method call is unsafe:
+
+```csharp
+pallets[0].ToLowerInvariant();
+```
+
+because there is no `string` object at that array position.
+
+Runtime result without a guard:
+
+```text
+NullReferenceException
+```
+
+The unsafe example remains in comments so the lesson is preserved without
+causing the complete application to terminate.
+
+---
+
+## Nullable Array Declaration
+
+The final code uses:
+
+```csharp
+string?[] pallets
+```
+
+instead of:
+
+```csharp
+string[] pallets
+```
+
+for examples where `Array.Clear()` intentionally creates `null` elements.
+
+The nullable annotation communicates the actual data state:
+
+```text
+string[]
+→ elements are expected to contain non-null string references
+
+string?[]
+→ each element may contain a string reference or null
+```
+
+This improves compiler analysis and accurately documents the example.
+
+---
+
+## Resolve Warning `CS8602`
+
+The first implementation used this pattern:
+
+```csharp
+if (pallets[0] is not null)
+{
+    Console.WriteLine(
+        pallets[0].ToLowerInvariant());
+}
+```
+
+Visual Studio reported:
+
+```text
+CS8602:
+Dereference of a possibly null reference
+```
+
+### Why the warning occurs
+
+An array element is a mutable storage location. Nullable flow analysis does not
+treat repeated reads from that location as one permanently stable value.
+
+Conceptually:
+
+```text
+Check pallets[0]
+    ↓
+Read pallets[0] again
+```
+
+The second access is analysed separately.
+
+### Final correction
+
+The array element is copied into a local variable:
+
+```csharp
+string? firstPallet = pallets[0];
+
+if (firstPallet is not null)
+{
+    Console.WriteLine(
+        $"Lowercase pallet ID: {firstPallet.ToLowerInvariant()}");
+}
+else
+{
+    Console.WriteLine(
+        "pallets[0] is null, so ToLowerInvariant() was not called.");
+}
+```
+
+The local variable gives nullable flow analysis one stable value to track.
+
+Result:
+
+```text
+Compiler warning CS8602: resolved
+Project build: 0 warnings
+```
+
+This is preferable to suppressing the warning with the null-forgiving operator:
+
+```csharp
+pallets[0]!
+```
+
+because the local-variable solution proves safety rather than merely instructing
+the compiler to trust the developer.
+
+---
+
+## Null-Conditional and Null-Coalescing Operators
+
+The project also demonstrates a compact safe-access pattern:
+
+```csharp
+string secondPalletDisplay =
+    pallets[1]?.ToLowerInvariant() ??
+    "<null>";
+```
+
+Processing:
+
+```text
+pallets[1] contains a string
+→ call ToLowerInvariant()
+→ use the returned string
+
+pallets[1] is null
+→ ?. returns null
+→ ?? supplies "<null>"
+```
+
+Operators:
+
+| Operator | Name | Purpose |
+| --- | --- | --- |
+| `?.` | null-conditional | call a member only when the receiver is non-null |
+| `??` | null-coalescing | provide a fallback when the left side is null |
+
+---
+
+## `Array.Resize()`
+
+`Array.Resize()` changes the array length.
+
+```csharp
+Array.Resize(
+    ref pallets,
+    newSize: 6);
+```
+
+Growing an array from four to six elements:
+
+```text
+Before:
+[null, null, "B12", "A13"]
+
+After:
+[null, null, "B12", "A13", null, null]
+```
+
+The new elements receive the default value for the array element type.
+
+The project then assigns:
+
+```csharp
+pallets[4] = "C01";
+pallets[5] = "C02";
+```
+
+Result:
+
+```text
+[null, null, "B12", "A13", "C01", "C02"]
+```
+
+---
+
+## Why `Array.Resize()` Uses `ref`
+
+Arrays are reference types, but `Array.Resize()` may allocate a new array object.
+
+The process can be understood as:
+
+```text
+1. Allocate an array with the requested size
+2. Copy the retained elements
+3. Assign the new array reference back to the caller's variable
+```
+
+The `ref` keyword allows the method to update the variable itself:
+
+```csharp
+Array.Resize(
+    ref pallets,
+    newSize: 6);
+```
+
+Without `ref`, a method would receive only a copy of the original reference and
+could not replace the caller's variable with the new array reference.
+
+---
+
+## Shrinking an Array
+
+```csharp
+Array.Resize(
+    ref pallets,
+    newSize: 3);
+```
+
+Starting from:
+
+```text
+[null, null, "B12", "A13", "C01", "C02"]
+```
+
+the result is:
+
+```text
+[null, null, "B12"]
+```
+
+`Resize()` removes elements from the end. It does not search for `null` values
+and compact the array automatically.
+
+Therefore:
+
+```text
+Clear()
+→ changes selected values to defaults
+
+Resize()
+→ changes the number of positions from the end
+```
+
+---
+
+## Remove `null` Elements Manually
+
+The lesson explains a fundamental compaction algorithm:
+
+```text
+1. Count non-null elements
+2. Allocate a new array of that size
+3. Copy each non-null element into the new array
+```
+
+Source:
+
+```csharp
+string?[] sourcePallets =
+[
+    null,
+    null,
+    "B12",
+    "A13",
+    "C01",
+    "C02"
+];
+```
+
+Count:
+
+```csharp
+int nonNullCount = 0;
+
+foreach (string? pallet in sourcePallets)
+{
+    if (pallet is not null)
+    {
+        nonNullCount++;
+    }
+}
+```
+
+Allocate:
+
+```csharp
+string[] compactPallets =
+    new string[nonNullCount];
+```
+
+Copy:
+
+```csharp
+int destinationIndex = 0;
+
+foreach (string? pallet in sourcePallets)
+{
+    if (pallet is null)
+    {
+        continue;
+    }
+
+    compactPallets[destinationIndex] = pallet;
+    destinationIndex++;
+}
+```
+
+Result:
+
+```text
+Source length   : 6
+Compacted length: 4
+
+B12
+A13
+C01
+C02
+```
+
+The example deliberately uses loops rather than LINQ so the array-processing
+algorithm remains explicit.
+
+---
+
+## `ToCharArray()`
+
+`ToCharArray()` converts a string into an array of characters.
+
+```csharp
+string value = "abc123";
+
+char[] valueArray =
+    value.ToCharArray();
+```
+
+Result:
+
+```text
+['a', 'b', 'c', '1', '2', '3']
+```
+
+The project reverses that array:
+
+```csharp
+Array.Reverse(valueArray);
+```
+
+Result:
+
+```text
+['3', '2', '1', 'c', 'b', 'a']
+```
+
+A new string is constructed from the character array:
+
+```csharp
+string reversedValue =
+    new(valueArray);
+```
+
+Output:
+
+```text
+321cba
+```
+
+---
+
+## `string.Join()`
+
+`string.Join()` combines array elements and inserts a separator between adjacent
+elements.
+
+```csharp
+string commaSeparatedValue =
+    string.Join(
+        ",",
+        characters);
+```
+
+Result:
+
+```text
+3,2,1,c,b,a
+```
+
+General transformation:
+
+```text
+array elements
+    ↓
+separator inserted
+    ↓
+one string
+```
+
+---
+
+## `string.Split()`
+
+`Split()` divides a string at each delimiter occurrence.
+
+```csharp
+string[] items =
+    commaSeparatedValue.Split(',');
+```
+
+Source:
+
+```text
+3,2,1,c,b,a
+```
+
+Result:
+
+```text
+"3"
+"2"
+"1"
+"c"
+"b"
+"a"
+```
+
+Core transformations:
+
+```text
+ToCharArray()
+string → char[]
+
+new string(char[])
+char[] → string
+
+Split()
+string → string[]
+
+Join()
+array → string
+```
+
+---
+
+## Challenge 1 — Reverse Every Word in Place
+
+Input:
+
+```text
+The quick brown fox jumps over the lazy dog
+```
+
+Required output:
+
+```text
+ehT kciuq nworb xof spmuj revo eht yzal god
+```
+
+The word order must remain unchanged. Only the letters inside each word are
+reversed.
+
+### Step 1 — Split the sentence
+
+```csharp
+string[] words =
+    pangram.Split(' ');
+```
+
+### Step 2 — Allocate the result array
+
+```csharp
+string[] reversedWords =
+    new string[words.Length];
+```
+
+### Step 3 — Reverse each word
+
+```csharp
+for (int index = 0;
+     index < words.Length;
+     index++)
+{
+    char[] letters =
+        words[index].ToCharArray();
+
+    Array.Reverse(letters);
+
+    reversedWords[index] =
+        new string(letters);
+}
+```
+
+### Step 4 — Join the words
+
+```csharp
+string result =
+    string.Join(
+        " ",
+        reversedWords);
+```
+
+Verified transformation:
+
+```text
+The   → ehT
+quick → kciuq
+brown → nworb
+fox   → xof
+```
+
+Final result:
+
+```text
+ehT kciuq nworb xof spmuj revo eht yzal god
+```
+
+---
+
+## Challenge 2 — Parse and Validate Order IDs
+
+Input stream:
+
+```csharp
+string orderStream =
+    "B123,C234,A345,C15,B177,G3003,C235,B179";
+```
+
+### Parse
+
+```csharp
+string[] orderIds =
+    orderStream.Split(',');
+```
+
+### Sort
+
+```csharp
+Array.Sort(orderIds);
+```
+
+### Validate
+
+```csharp
+foreach (string orderId in orderIds)
+{
+    if (orderId.Length == 4)
+    {
+        Console.WriteLine(orderId);
+    }
+    else
+    {
+        Console.WriteLine(
+            $"{orderId}\t- Error");
+    }
+}
+```
+
+Business rule:
+
+```text
+Valid order ID
+→ exactly four characters
+
+Possible error
+→ any other length
+```
+
+Verified output:
+
+```text
+A345
+B123
+B177
+B179
+C15     - Error
+C234
+C235
+G3003   - Error
+```
+
+Validation details:
+
+```text
+C15
+→ length 3
+→ Error
+
+G3003
+→ length 5
+→ Error
+```
+
+---
+
+## Compiler Warning and IDE Message Cleanup
+
+The initial Visual Studio diagnostics contained:
+
+```text
+1 compiler warning
+7 IDE suggestions
+```
+
+### Compiler warning
+
+```text
+CS8602:
+Dereference of a possibly null reference
+```
+
+Resolution:
+
+```text
+Copy the mutable array element into a local nullable variable
+Check the local variable
+Call the method only in the non-null branch
+```
+
+### IDE0300 messages
+
+```text
+IDE0300:
+Collection initialization can be simplified
+```
+
+Classic array initializers:
+
+```csharp
+string[] pallets =
+{
+    "B14",
+    "A11"
+};
+```
+
+were modernised to collection expressions:
+
+```csharp
+string[] pallets =
+[
+    "B14",
+    "A11"
+];
+```
+
+### IDE0090 message
+
+```text
+IDE0090:
+'new' expression can be simplified
+```
+
+Original:
+
+```csharp
+string reversedValue =
+    new string(valueArray);
+```
+
+Final:
+
+```csharp
+string reversedValue =
+    new(valueArray);
+```
+
+These IDE codes are style suggestions rather than build failures. They were
+still addressed so the final source matches the active Visual Studio code-style
+rules.
+
+Final diagnostic target:
+
+```text
+Errors  : 0
+Warnings: 0
+Messages: 0 for the addressed rules
+```
+
+---
+
+## Source-Code Cleanup
+
+The original lesson notes contained independent fragments with repeated
+declarations such as:
+
+```text
+string[] pallets
+string value
+char[] valueArray
+string result
+string[] items
+```
+
+Combining them directly in one top-level file would cause duplicate-variable
+errors.
+
+The final source:
+
+- places every lesson unit in a focused method;
+- uses `string?[]` where `null` is an expected value;
+- preserves the unsafe null example in comments;
+- fixes nullable warning `CS8602`;
+- uses modern collection expressions;
+- uses target-typed `new`;
+- prints `null` positions explicitly as `<null>`;
+- separates reusable output helpers;
+- implements array compaction without hiding the algorithm;
+- preserves both official challenges;
+- compiles as one coherent application.
+
+---
+
+## Verified Runtime Behaviour
+
+The final application demonstrates:
+
+```text
+Original pallet order
+Sorted pallet order
+Reversed pallet order
+Array.Clear() behavior
+Array length preservation after Clear()
+Explicit null verification
+Safe nullable access
+Array expansion
+Assignment of new elements
+Array shrinking
+Manual null compaction
+String-to-char[] conversion
+Character reversal
+char[]-to-string construction
+Join() transformation
+Split() transformation
+Reverse-each-word challenge
+Order-ID parsing
+Order-ID sorting
+Order-ID length validation
+Final module summary
+```
+
+Final console summary:
+
+```text
+MODULE SUMMARY
+--------------
+
+Array.Sort()    : sorts elements in the existing array.
+Array.Reverse() : reverses the array's current order.
+Array.Clear()   : resets selected elements to default values.
+Array.Resize()  : changes the length from the end of the array.
+ToCharArray()   : converts a string into char elements.
+Split()         : converts delimited text into string elements.
+Join()          : combines array elements into one string.
+
+Clear() changes element values; Resize() changes array length.
+Always check for null before calling instance methods on cleared
+reference-type elements.
+```
+
+---
+
+## Build Verification
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\array-helper-methods\array-helper-methods.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\array-helper-methods\array-helper-methods.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results after warning correction:
+
+```text
+Module build: Succeeded
+Module build time: 0.9 seconds
+Module compiler warnings: 0
+Full solution build: Succeeded
+Full solution build time: 4.4 seconds
+Solution projects: 23
+Target framework: net10.0
+Compiler errors: 0
+Compiler warnings: 0
+Verification date: August 2, 2026
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| array | `/əˈreɪ/` | “ờ-rây” | mảng |
+| helper method | `/ˈhelp.ər ˈmeθ.əd/` | “heo-pờ me-thợd” | phương thức hỗ trợ |
+| sort | `/sɔːt/` | “soọt” | sắp xếp |
+| reverse | `/rɪˈvɜːs/` | “rì-vớs” | đảo ngược |
+| clear | `/klɪər/` | “kli-ờ” | làm trống hoặc đặt về mặc định |
+| resize | `/ˌriːˈsaɪz/` | “ri-sai-z” | thay đổi kích thước |
+| nullable | `/ˈnʌl.ə.bəl/` | “nal-lờ-bồ” | có thể nhận giá trị null |
+| dereference | `/ˌdiːˈref.ər.əns/` | “đi-ré-phờ-rần-x” | truy cập đối tượng qua tham chiếu |
+| delimiter | `/dɪˈlɪm.ɪ.tər/` | “đì-li-mi-tờ” | ký tự phân cách |
+| separator | `/ˈsep.ər.eɪ.tər/` | “sép-pờ-rây-tờ” | phần tử phân cách |
+| split | `/splɪt/` | “sờ-plit” | tách |
+| join | `/dʒɔɪn/` | “joi-n” | ghép |
+| compact | `/kəmˈpækt/` | “cầm-páct” | làm gọn |
+| mutate | `/mjuːˈteɪt/` | “miu-tâyt” | thay đổi dữ liệu hiện có |
+| in place | `/ɪn pleɪs/` | “in plâys” | thay đổi trực tiếp tại chỗ |
+| collection expression | `/kəˈlek.ʃən ɪkˈspreʃ.ən/` | “cờ-léc-shần ịch-spré-shần” | biểu thức tạo collection bằng cú pháp `[]` |
+| null-conditional | `/nʌl kənˈdɪʃ.ən.əl/` | “nal cần-đi-shờ-nồ” | toán tử chỉ truy cập khi khác null |
+| null-coalescing | `/nʌl ˌkəʊ.əˈles.ɪŋ/` | “nal cô-ờ-lét-sing” | toán tử cung cấp giá trị thay thế cho null |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Perform Operations on Arrays Using Helper Methods in C#
+Section: Work with Variable Data in C# Console Applications
+Module position: 3 / 7
+Module units: 10 / 10
+Status: Completed
+Microsoft Learn completion page: Displayed
+Achievement saved to account: Not verified in signed-out session
+Local run: Verified
+Project registration: Verified
+Project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 4.4 seconds
+Solution project count: 23
+Target framework: net10.0
+Compiler errors: 0
+Compiler warnings: 0
+Completion date: August 2, 2026
+```
+
+---
+
 ## Next Module
 
-### Perform Operations on Arrays Using Helper Methods in C#
+### Format Alphanumeric Data for Presentation in C#
 
-The next module will examine built-in array operations and helper methods.
+The next module will focus on formatting textual and numeric values for readable
+console output.
 
 Expected topics include:
 
 ```text
-Array.Clear()
-Array.Resize()
-Array.Reverse()
-Array.Sort()
-Array.IndexOf()
-Array.Copy()
-String.Split()
-String.Join()
-Changing array size
-Reordering array elements
-Locating values
-Converting between strings and arrays
+Composite formatting
+String interpolation
+Numeric format specifiers
+Currency formatting
+Percentage formatting
+Decimal precision
+Padding and alignment
+String concatenation
+Formatting values for reports
+Locale-sensitive presentation
 ```
 
 A new project should be created under:
@@ -1969,9 +3096,9 @@ A new project should be created under:
 ```text
 work-with-variable-data-in-csharp-console-applications/
 └── modules/
-    └── array-helper-methods/
+    └── format-alphanumeric-data/
         ├── Program.cs
-        └── array-helper-methods.csproj
+        └── format-alphanumeric-data.csproj
 ```
 
 The new project must be registered in `freecodecamp-csharp.slnx`, run
@@ -1984,6 +3111,7 @@ successfully, build independently, and preserve a passing full-solution build.
 - [Microsoft Learn — Work with Variable Data in C# Console Applications](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-4/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
+- [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
 - [freeCodeCamp — Foundational C# with Microsoft Certification](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 
 ---
@@ -1994,3 +3122,4 @@ successfully, build independently, and preserve a passing full-solution build.
 - [Previous section — Add Logic to C# Console Applications](../add-logic-to-csharp-console-applications/README.md)
 - [Module 1 source](./modules/choose-correct-data-type/)
 - [Module 2 source](./modules/convert-data-types/)
+- [Module 3 source](./modules/array-helper-methods/)

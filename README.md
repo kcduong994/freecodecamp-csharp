@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-22-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-23-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -33,26 +33,29 @@ Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
 Current section status: In progress
-Current section progress: 2 / 7
-Instructional modules completed in current section: 2
+Current section progress: 3 / 7
+Instructional modules completed in current section: 3
 Guided projects completed in current section: 0
 Challenge projects completed in current section: 0
-Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
-Latest project: convert-data-types
+Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
+Latest project: array-helper-methods
 Latest item status: Completed
-Latest item assessment: Passed
-Latest achievement: Earned
-Latest completion date: August 1, 2026
-Projects currently verified in solution: 22
+Microsoft Learn units: 10 / 10
+Microsoft Learn completion page: Displayed
+Achievement saved to account: Not verified in the signed-out browser session
+Latest completion date: August 2, 2026
+Projects currently verified in solution: 23
 Latest organized source: Completed
 Professional source comments: Completed
 Latest project run: Verified
 Latest project build: Verified
-Latest project build time: 1.0 seconds
+Latest project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 4.0 seconds
+Full solution build time: 2.2 seconds
+Compiler errors: 0
+Compiler warnings: 0
 IDE diagnostics: No issues found
-Next curriculum item: Perform Operations on Arrays Using Helper Methods in C#
+Next curriculum item: Format Alphanumeric Data for Presentation in C#
 ```
 
 | No. | Curriculum section | Progress | Status |
@@ -60,14 +63,18 @@ Next curriculum item: Perform Operations on Arrays Using Helper Methods in C#
 | 1 | Write Your First Code Using C# | 7 / 7 | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Completed |
-| 4 | Work with Variable Data in C# Console Applications | 2 / 7 | In progress |
+| 4 | Work with Variable Data in C# Console Applications | 3 / 7 | In progress |
 | 5 | Create Methods in C# Console Applications | Not started | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending |
 
 A curriculum item is marked `Completed` in this repository only after its
-official units, assessment, achievement, local run, project registration,
-project build, and full-solution build have all been verified.
+official units, local implementation, project registration, project build, and
+full-solution build have all been verified.
+
+For the latest module, Microsoft Learn displayed the completion page. The
+browser session also displayed `Sign in/Create profile`, so account-level
+achievement persistence is recorded as unverified rather than assumed.
 
 ---
 
@@ -1566,33 +1573,36 @@ The evidence records:
 
 ```text
 Status: In progress
-Progress: 2 / 7
-Completed instructional modules: 2
+Progress: 3 / 7
+Completed instructional modules: 3
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
-Latest item assessment: Passed
-Achievement: Earned
+Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
+Microsoft Learn units: 10 / 10
+Microsoft Learn completion page: Displayed
+Achievement saved to account: Not verified in signed-out session
 Project registration: Verified
-Solution project count: 22
+Solution project count: 23
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Local project run: Verified
 Project build: Verified
-Project build time: 1.0 seconds
+Project build time: 0.9 seconds
 Full solution build: Verified
-Full solution build time: 4.0 seconds
+Full solution build time: 2.2 seconds
+Compiler errors: 0
+Compiler warnings: 0
 IDE diagnostics: No issues found
-Latest completion date: August 1, 2026
-Next curriculum item: Perform Operations on Arrays Using Helper Methods in C#
+Latest completion date: August 2, 2026
+Next curriculum item: Format Alphanumeric Data for Presentation in C#
 ```
 
 Section 4 develops practical skills for selecting, converting, formatting,
 searching, and manipulating data in C# console applications.
 
-The section now contains two completed instructional modules and extends the
-solution from twenty to twenty-two registered projects while preserving a
-passing full-solution build.
+The section now contains three completed instructional modules and extends the
+solution from twenty to twenty-three registered projects while preserving a
+clean, passing full-solution build.
 
 [Open the current Section 4 documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/README.md)
 
@@ -2119,30 +2129,392 @@ Verification date: August 1, 2026
 
 ---
 
-### Next Module — Perform Operations on Arrays Using Helper Methods in C#
+### Module 3 — Perform Operations on Arrays Using Helper Methods in C#
+
+```text
+Status: Completed
+Microsoft Learn units: 10 / 10
+Microsoft Learn completion page: Displayed
+Achievement saved to account: Not verified in signed-out session
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 23
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Local project run: Verified
+Project build: Succeeded
+Project build time: 0.9 seconds
+Full solution build: Succeeded
+Full solution build time: 2.2 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 2, 2026
+```
+
+This module demonstrates how arrays and strings can be transformed using helper
+methods from the .NET class library.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── modules/
+    └── array-helper-methods/
+        ├── Program.cs
+        └── array-helper-methods.csproj
+```
+
+The final application uses focused methods:
+
+```text
+Main()
+├── WriteApplicationHeader()
+├── DemonstrateSortAndReverse()
+├── DemonstrateClear()
+├── DemonstrateNullAfterClear()
+├── DemonstrateSafeNullAccess()
+├── DemonstrateResizeLargerAndSmaller()
+├── DemonstrateRemovingNullElements()
+├── DemonstrateToCharArrayAndReverse()
+├── DemonstrateJoinAndSplit()
+├── RunReverseWordsChallenge()
+├── RunOrderValidationChallenge()
+└── WriteModuleSummary()
+```
+
+#### Sort and reverse arrays
+
+```csharp
+string[] pallets =
+[
+    "B14",
+    "A11",
+    "B12",
+    "A13"
+];
+
+Array.Sort(pallets);
+Array.Reverse(pallets);
+```
+
+`Array.Sort()` sorts the existing array in place. `Array.Reverse()` reverses the
+current order; it is not independently a descending sort.
+
+Verified sorted order:
+
+```text
+A11
+A13
+B12
+B14
+```
+
+Verified reversed order after sorting:
+
+```text
+B14
+B12
+A13
+A11
+```
+
+#### Clear selected elements
+
+```csharp
+string?[] pallets =
+[
+    "B14",
+    "A11",
+    "B12",
+    "A13"
+];
+
+Array.Clear(
+    pallets,
+    index: 0,
+    length: 2);
+```
+
+For `string?[]`, cleared elements become `null`. `Array.Clear()` resets values
+but does not change `Length`.
+
+```text
+Before: ["B14", "A11", "B12", "A13"]
+After : [null, null, "B12", "A13"]
+Length: 4
+```
+
+#### Safe nullable access and `CS8602`
+
+The initial implementation produced:
+
+```text
+CS8602:
+Dereference of a possibly null reference
+```
+
+The final source copies the mutable array element into a local variable before
+checking it:
+
+```csharp
+string? firstPallet = pallets[0];
+
+if (firstPallet is not null)
+{
+    Console.WriteLine(
+        firstPallet.ToLowerInvariant());
+}
+```
+
+This gives nullable flow analysis one stable value to track and resolves the
+warning without suppressing it.
+
+The source also demonstrates:
+
+```csharp
+string display =
+    pallets[1]?.ToLowerInvariant() ??
+    "<null>";
+```
+
+where `?.` performs a null-conditional access and `??` provides a fallback.
+
+#### Resize arrays
+
+```csharp
+Array.Resize(
+    ref pallets,
+    newSize: 6);
+```
+
+`Array.Resize()` may allocate a new array and update the caller's variable,
+which is why the array variable is passed with `ref`.
+
+Growing the array creates default-valued positions. Shrinking keeps the first
+`newSize` elements and removes elements only from the end.
+
+```text
+Array.Clear()
+→ changes element values
+
+Array.Resize()
+→ changes array length
+```
+
+`Resize()` does not automatically search for and remove `null` elements.
+
+#### Compact an array
+
+The project demonstrates a manual compaction algorithm:
+
+```text
+1. Count non-null elements
+2. Allocate a new array with that exact size
+3. Copy non-null elements into the new array
+```
+
+Example:
+
+```text
+Source:
+[null, null, "B12", "A13", "C01", "C02"]
+
+Compacted:
+["B12", "A13", "C01", "C02"]
+```
+
+#### Convert between strings and arrays
+
+```csharp
+string value = "abc123";
+
+char[] characters =
+    value.ToCharArray();
+
+Array.Reverse(characters);
+
+string reversedValue =
+    new(characters);
+```
+
+Result:
+
+```text
+321cba
+```
+
+`string.Join()` combines elements:
+
+```csharp
+string commaSeparatedValue =
+    string.Join(
+        ",",
+        characters);
+```
+
+Result:
+
+```text
+3,2,1,c,b,a
+```
+
+`Split()` converts delimited text back to an array:
+
+```csharp
+string[] items =
+    commaSeparatedValue.Split(',');
+```
+
+Core transformations:
+
+```text
+ToCharArray()       string → char[]
+new string(char[])  char[] → string
+Split()             string → string[]
+Join()              array  → string
+```
+
+#### Challenge 1 — reverse every word
+
+Input:
+
+```text
+The quick brown fox jumps over the lazy dog
+```
+
+Verified output:
+
+```text
+ehT kciuq nworb xof spmuj revo eht yzal god
+```
+
+The implementation preserves word order and reverses only the characters inside
+each word.
+
+#### Challenge 2 — validate order identifiers
+
+Input:
+
+```csharp
+string orderStream =
+    "B123,C234,A345,C15,B177,G3003,C235,B179";
+```
+
+Processing:
+
+```text
+Split by comma
+→ sort the identifiers
+→ validate the length
+→ append "- Error" when length is not four
+```
+
+Verified output:
+
+```text
+A345
+B123
+B177
+B179
+C15     - Error
+C234
+C235
+G3003   - Error
+```
+
+#### Diagnostic cleanup
+
+The final source addresses:
+
+```text
+CS8602 → nullable dereference warning
+IDE0300 → collection initialization suggestion
+IDE0090 → target-typed new suggestion
+```
+
+Classic array initializers were modernized to collection expressions:
+
+```csharp
+string[] values =
+[
+    "A11",
+    "B12"
+];
+```
+
+Explicit constructor syntax was simplified where the target type is known:
+
+```csharp
+string reversedValue =
+    new(characters);
+```
+
+Final diagnostic result:
+
+```text
+Compiler errors: 0
+Compiler warnings: 0
+Visual Studio: No issues found
+```
+
+Run the completed module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\array-helper-methods\array-helper-methods.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\array-helper-methods\array-helper-methods.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.2 seconds
+Registered solution projects: 23
+Target framework: net10.0
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 2, 2026
+```
+
+---
+
+### Next Module — Format Alphanumeric Data for Presentation in C#
 
 ```text
 Status: Not started
-Current Section 4 progress: 2 / 7
-Current solution baseline: 22 projects
+Current Section 4 progress: 3 / 7
+Current solution baseline: 23 projects
 Full solution baseline: Passing
 ```
 
 Expected topics include:
 
 ```text
-Array.Clear()
-Array.Resize()
-Array.Reverse()
-Array.Sort()
-Array.IndexOf()
-Array.Copy()
-String.Split()
-String.Join()
-Changing array size
-Reordering array elements
-Locating values
-Converting between strings and arrays
+Composite formatting
+String interpolation
+Currency formatting
+Percentage formatting
+Numeric precision
+Padding and alignment
+Format specifiers
+Locale-sensitive presentation
 ```
 
 The next project must be added to `freecodecamp-csharp.slnx`, run successfully,
@@ -2201,9 +2573,12 @@ freecodecamp-csharp/
 │   │       ├── choose-correct-data-type/
 │   │       │   ├── Program.cs
 │   │       │   └── choose-correct-data-type.csproj
-│   │       └── convert-data-types/
+│   │       ├── convert-data-types/
+│   │       │   ├── Program.cs
+│   │       │   └── convert-data-types.csproj
+│   │       └── array-helper-methods/
 │   │           ├── Program.cs
-│   │           └── convert-data-types.csproj
+│   │           └── array-helper-methods.csproj
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
@@ -2223,7 +2598,7 @@ Each curriculum section may contain:
 - `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
 
-Section 4 currently contains two completed module projects. Its `trophy/`
+Section 4 currently contains three completed module projects. Its `trophy/`
 directory will be added after the complete section has been finished and the
 official completion evidence has been earned.
 
@@ -2256,7 +2631,7 @@ freecodecamp-csharp.slnx
 Projects currently verified as registered:
 
 ```text
-22
+23
 ```
 
 List all projects registered in the solution:
@@ -2353,13 +2728,15 @@ curriculum/add-logic-to-csharp-console-applications/challenge-projects/contoso-p
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose-correct-data-type/choose-correct-data-type.csproj
 
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/convert-data-types/convert-data-types.csproj
+
+curriculum/work-with-variable-data-in-csharp-console-applications/modules/array-helper-methods/array-helper-methods.csproj
 ```
 
 Run the latest completed project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\convert-data-types\convert-data-types.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\array-helper-methods\array-helper-methods.csproj"
 ```
 
 ---
@@ -2372,50 +2749,50 @@ dotnet run --project `
 Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
-Current section progress: 2 / 7
-Latest completed item: Convert Data Types Using Casting and Conversion Techniques in C#
-Latest project: convert-data-types
-Module units: 9 / 9
-Module assessment: Passed
-Achievement: Earned
+Current section progress: 3 / 7
+Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
+Latest project: array-helper-methods
+Module units: 10 / 10
+Microsoft Learn completion page: Displayed
+Achievement saved to account: Not verified in signed-out session
 Final organized source: Completed
 Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 22
+Registered solution projects: 23
 Module run: Succeeded
 Module output: Verified
-Latest project build: Succeeded in 1.0 seconds
-Full solution build: Succeeded in 4.0 seconds
+Latest project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.2 seconds
 Target framework: net10.0
+Compiler errors: 0
+Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 1, 2026
+Verification date: August 2, 2026
 ```
 
 The latest verification confirms that:
 
-- `convert-data-types` is registered as the twenty-second solution project;
+- `array-helper-methods` is registered as the twenty-third solution project;
 - the complete module runs successfully from beginning to end;
-- invalid compiler and runtime examples are preserved safely in comments;
-- string concatenation is distinguished from numeric addition;
-- implicit widening conversion is demonstrated;
-- explicit narrowing conversion is demonstrated;
-- decimal-to-float precision loss is demonstrated;
-- `ToString()`, `Parse()`, `Convert`, and `TryParse()` are compared;
-- casting truncation is distinguished from `Convert.ToInt32()` rounding;
-- midpoint-to-even rounding is documented;
-- successful and unsuccessful `TryParse()` operations are verified;
-- `out`-parameter behavior is demonstrated;
-- invariant-culture parsing is used for stable decimal input;
-- the mixed string-array challenge produces `ABCDEF` and `68.3`;
-- the numeric-type challenge produces the required `int`, `decimal`, and
-  `float` results;
-- the final source uses focused methods, isolated variable scope, descriptive
-  names, and professional comments;
-- the module project compiled successfully in `1.0` second;
-- the complete twenty-two-project solution compiled successfully in `4.0`
+- `Array.Sort()` and `Array.Reverse()` are demonstrated;
+- `Array.Clear()` resets values without changing array length;
+- cleared string references are represented as `null`;
+- nullable arrays use `string?[]` where appropriate;
+- warning `CS8602` is resolved through a stable local variable;
+- null-conditional and null-coalescing operators are demonstrated;
+- `Array.Resize()` is demonstrated for both expansion and shrinking;
+- the role of `ref` in replacing the caller's array reference is documented;
+- a manual array-compaction algorithm removes `null` elements;
+- `ToCharArray()`, `new string(char[])`, `Split()`, and `Join()` are demonstrated;
+- the reverse-each-word challenge produces the required pangram output;
+- the order-ID challenge sorts values and tags invalid lengths;
+- modern collection expressions address `IDE0300`;
+- target-typed `new` addresses `IDE0090`;
+- the module project compiled successfully in `0.9` seconds;
+- the complete twenty-three-project solution compiled successfully in `2.2`
   seconds;
-- Visual Studio reported no source-code issues;
-- Section 4 is in progress at `2 / 7`.
+- Visual Studio reported no issues;
+- Section 4 is in progress at `3 / 7`.
 
 ---
 
@@ -2472,6 +2849,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 4](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-4/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
+- [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
 
 ---
 
