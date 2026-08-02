@@ -30,6 +30,7 @@
   </Folder>
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/" />
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/modules/">
+    <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/array-helper-methods/array-helper-methods.csproj" />
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose-correct-data-type/choose-correct-data-type.csproj" />
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/convert-data-types/convert-data-types.csproj" />
   </Folder>
