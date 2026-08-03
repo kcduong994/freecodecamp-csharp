@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-23-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-24-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -33,48 +33,56 @@ Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
 Current section status: In progress
-Current section progress: 3 / 7
-Instructional modules completed in current section: 3
+Current section learning progress: 4 / 7
+Current section repository-verified progress: 4 / 7
+Instructional modules completed on Microsoft Learn: 4
+Instructional modules fully repository-verified: 4
 Guided projects completed in current section: 0
 Challenge projects completed in current section: 0
-Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
-Latest project: array-helper-methods
-Latest item status: Completed
-Microsoft Learn units: 10 / 10
-Microsoft Learn completion page: Displayed
-Achievement saved to account: Not verified in the signed-out browser session
-Latest completion date: August 2, 2026
-Projects currently verified in solution: 23
+Latest completed learning item: Format Alphanumeric Data for Presentation in C#
+Latest project: format-alphanumeric-data
+Latest learning item status: Completed
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Latest completion date: August 3, 2026
+Projects currently registered in solution: 24
 Latest organized source: Completed
 Professional source comments: Completed
-Latest project run: Verified
-Latest project build: Verified
-Latest project build time: 0.9 seconds
-Full solution build: Verified
-Full solution build time: 2.2 seconds
-Compiler errors: 0
-Compiler warnings: 0
-IDE diagnostics: No issues found
-Next curriculum item: Format Alphanumeric Data for Presentation in C#
+Latest corrected module run: Verified
+Latest module output: Verified
+Latest corrected project build: Verified
+Latest corrected project build time: 1.5 seconds
+Latest full solution build: Verified
+Latest full solution build time: 3.1 seconds
+Latest project compiler errors: 0
+Latest project compiler warnings: 0
+Latest IDE diagnostics: No issues found
+Resolved compiler error: CS1503
+Addressed IDE suggestion: IDE0071
+Final module run after correction: Succeeded
+Full solution build after correction: Succeeded in 3.1 seconds
+Next curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
 ```
 
-| No. | Curriculum section | Progress | Status |
-| ---: | --- | --- | --- |
-| 1 | Write Your First Code Using C# | 7 / 7 | Completed |
-| 2 | Create and Run Simple C# Console Applications | 7 / 7 | Completed |
-| 3 | Add Logic to C# Console Applications | 7 / 7 | Completed |
-| 4 | Work with Variable Data in C# Console Applications | 3 / 7 | In progress |
-| 5 | Create Methods in C# Console Applications | Not started | Pending |
-| 6 | Debug C# Console Applications | Not started | Pending |
-| 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending |
+| No. | Curriculum section | Learning progress | Repository verification | Status |
+| ---: | --- | --- | --- | --- |
+| 1 | Write Your First Code Using C# | 7 / 7 | Verified | Completed |
+| 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
+| 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
+| 4 | Work with Variable Data in C# Console Applications | 4 / 7 | 4 / 7 verified | In progress |
+| 5 | Create Methods in C# Console Applications | Not started | Pending | Pending |
+| 6 | Debug C# Console Applications | Not started | Pending | Pending |
+| 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
-A curriculum item is marked `Completed` in this repository only after its
-official units, local implementation, project registration, project build, and
-full-solution build have all been verified.
+A curriculum item reaches learning completion after its official Microsoft Learn
+units and assessment have been completed. It reaches full repository
+verification after the final source has run successfully, its project has built
+successfully, and the complete solution has built successfully.
 
-For the latest module, Microsoft Learn displayed the completion page. The
-browser session also displayed `Sign in/Create profile`, so account-level
-achievement persistence is recorded as unverified rather than assumed.
+Module 4 is fully repository-verified. Its final corrected source ran
+successfully, its project built cleanly, and the complete twenty-four-project
+solution built successfully.
 
 ---
 
@@ -1573,36 +1581,43 @@ The evidence records:
 
 ```text
 Status: In progress
-Progress: 3 / 7
-Completed instructional modules: 3
+Learning progress: 4 / 7
+Repository-verified progress: 4 / 7
+Completed instructional modules on Microsoft Learn: 4
+Fully repository-verified instructional modules: 4
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
-Microsoft Learn units: 10 / 10
-Microsoft Learn completion page: Displayed
-Achievement saved to account: Not verified in signed-out session
+Latest completed learning item: Format Alphanumeric Data for Presentation in C#
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
 Project registration: Verified
-Solution project count: 23
+Solution project count: 24
 Final organized Program.cs: Completed
 Professional source comments: Completed
-Local project run: Verified
-Project build: Verified
-Project build time: 0.9 seconds
+Corrected module run: Verified
+Module output: Verified
+Corrected project build: Verified
+Corrected project build time: 1.5 seconds
 Full solution build: Verified
-Full solution build time: 2.2 seconds
-Compiler errors: 0
-Compiler warnings: 0
-IDE diagnostics: No issues found
-Latest completion date: August 2, 2026
-Next curriculum item: Format Alphanumeric Data for Presentation in C#
+Full solution build time: 3.1 seconds
+Compiler errors after correction: 0
+Compiler warnings after correction: 0
+IDE diagnostics after correction: No issues found
+Resolved compiler error: CS1503
+Addressed IDE suggestion: IDE0071
+Final module run after correction: Succeeded
+Full solution build after correction: Succeeded in 3.1 seconds
+Latest completion date: August 3, 2026
+Next curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
 ```
 
 Section 4 develops practical skills for selecting, converting, formatting,
 searching, and manipulating data in C# console applications.
 
-The section now contains three completed instructional modules and extends the
-solution from twenty to twenty-three registered projects while preserving a
-clean, passing full-solution build.
+The section now contains four completed and fully repository-verified
+instructional modules and twenty-four registered projects. The latest module
+runs successfully, builds cleanly, and preserves a passing full-solution state.
 
 [Open the current Section 4 documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/README.md)
 
@@ -2495,30 +2510,377 @@ Verification date: August 2, 2026
 
 ---
 
-### Next Module — Format Alphanumeric Data for Presentation in C#
+### Module 4 — Format Alphanumeric Data for Presentation in C#
+
+```text
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 24
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Corrected module run: Succeeded
+Module output: Verified
+Corrected project build: Succeeded
+Corrected project build time: 1.5 seconds
+Full solution build: Succeeded
+Full solution build time: 3.1 seconds
+Compiler errors after correction: 0
+Compiler warnings after correction: 0
+IDE diagnostics after correction: No issues found
+Resolved compiler error: CS1503
+Addressed IDE suggestion: IDE0071
+Final module run after correction: Succeeded
+Full solution build after correction: Succeeded in 3.1 seconds
+Completion date: August 3, 2026
+```
+
+This module explains how to convert numeric and textual values into readable,
+culture-aware presentation strings without modifying the underlying data.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── modules/
+    └── format-alphanumeric-data/
+        ├── Program.cs
+        └── format-alphanumeric-data.csproj
+```
+
+The final application uses focused methods:
+
+```text
+Main()
+├── WriteApplicationHeader()
+├── DemonstrateEscapeSequences()
+├── DemonstrateVerbatimStringsAndUnicode()
+├── DemonstrateCompositeFormatting()
+├── DemonstrateStringInterpolation()
+├── DemonstrateCurrencyAndCulture()
+├── DemonstrateNumericAndPercentageFormatting()
+├── DemonstrateCombinedFormattingApproaches()
+├── DemonstrateInterpolatedInvoiceReceipt()
+├── DemonstratePaddingAndAlignment()
+├── DemonstrateFixedWidthPaymentRecord()
+├── RunMarketingLetterChallenge()
+└── WriteModuleSummary()
+```
+
+#### Escape sequences, verbatim strings, and Unicode
+
+The project demonstrates:
+
+```text
+\\n      → new line
+\\t      → tab
+\\\\      → one backslash
+\\"      → quotation mark
+\\uXXXX  → Unicode code point
+```
+
+Example:
+
+```csharp
+Console.WriteLine(
+    "Coastal model\nSimulation report");
+
+string repositoryPath =
+    @"F:\DarkerThanBack-DKC\My world\Programs\Github\freecodecamp-csharp";
+
+string degreeSymbol = "\u00B0";
+string deltaSymbol = "\u0394";
+```
+
+Verbatim string literals simplify Windows paths because backslashes remain
+ordinary characters. Unicode escape sequences make the intended code point
+explicit in source code.
+
+#### Composite formatting
+
+```csharp
+string formattedGreeting =
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "{0} {1}!",
+        firstWord,
+        secondWord);
+```
+
+Composite formatting uses numbered replacement tokens:
+
+```text
+{0} → first argument
+{1} → second argument
+```
+
+Tokens can be reordered or reused.
+
+#### Resolved compiler error `CS1503`
+
+The original implementation attempted to pass `CultureInfo.InvariantCulture`
+directly to `Console.WriteLine()`:
+
+```csharp
+Console.WriteLine(
+    CultureInfo.InvariantCulture,
+    "{1} {0}!",
+    firstWord,
+    secondWord);
+```
+
+Compiler result:
+
+```text
+CS1503:
+Argument 1 cannot convert from
+System.Globalization.CultureInfo to string
+```
+
+`Console.WriteLine()` has no overload whose first parameter is an
+`IFormatProvider`.
+
+The corrected implementation formats the value first:
+
+```csharp
+Console.WriteLine(
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "{1} {0}!",
+        firstWord,
+        secondWord));
+```
+
+The repeated-token example was corrected in the same way.
+
+Verified corrected project-build evidence:
+
+```text
+dotnet clean: Succeeded in 0.5 seconds
+Project restore: Completed
+Project build: Succeeded in 1.5 seconds
+Compiler errors: 0
+IDE diagnostics: No issues found
+```
+
+#### String interpolation
+
+```csharp
+Console.WriteLine(
+    $"Station {stationName} measured a water level of " +
+    $"{waterLevelMeters} m and salinity of {salinityPpt} ppt.");
+```
+
+Interpolation places variable names and expressions directly inside the string
+template, often improving readability compared with numbered placeholders.
+
+#### Culture-aware formatting
+
+The application defines explicit cultures:
+
+```csharp
+CultureInfo.GetCultureInfo("en-US");
+CultureInfo.GetCultureInfo("fr-FR");
+CultureInfo.GetCultureInfo("ko-KR");
+```
+
+Explicit culture selection makes output stable across machines and regional
+settings.
+
+Examples:
+
+```text
+en-US → $123.45
+fr-FR → 123,45 €
+ko-KR → ₩123
+```
+
+Culture changes presentation, not the stored numeric value.
+
+#### Numeric format specifiers
+
+| Specifier | Purpose | Example |
+| --- | --- | --- |
+| `C2` | currency with two decimals | `$123.45` |
+| `N0` | grouped number with no decimals | `1,250,000` |
+| `N4` | grouped number with four decimals | `123,456.7891` |
+| `P2` | percentage with two decimals | `36.79%` |
+| `F2` | fixed-point with two decimals | `15.11` |
+
+Formatting produces a string. It does not mutate the original number.
+
+#### Investment receipt
+
+The module produces:
+
+```text
+Invoice Number: 1201
+   Shares: 25.457 Product
+     Sub Total: $2,750.00
+           Tax: 15.83%
+     Total Billed: $3,185.19
+```
+
+The project explicitly uses `en-US` so the educational output remains stable on
+a Korean or Vietnamese Windows installation.
+
+#### Padding and alignment
+
+```csharp
+string leftPadded =
+    input.PadLeft(12);
+
+string rightPadded =
+    input.PadRight(12);
+```
+
+Interpolation alignment:
+
+```text
+{value,positiveWidth} → right-aligned
+{value,negativeWidth} → left-aligned
+```
+
+Example:
+
+```csharp
+Console.WriteLine(
+    $"{"Station",-15}" +
+    $"{"Water level",12}" +
+    $"{"Salinity",12}");
+```
+
+The final source also addresses `IDE0071` by avoiding unnecessary interpolation
+in the simplest padding-output lines.
+
+#### Fixed-width payment record
+
+The project creates an exact 40-character record:
+
+```text
+Columns  1–6  → payment ID
+Columns  7–30 → payee name
+Columns 31–40 → payment amount
+```
+
+Implementation:
+
+```csharp
+string formattedLine =
+    paymentId.PadRight(6);
+
+formattedLine +=
+    payeeName.PadRight(24);
+
+formattedLine +=
+    paymentAmount.PadLeft(10);
+```
+
+Verification guide:
+
+```text
+1234567890123456789012345678901234567890
+769C  Mr. Stephen Ortega       $5,000.00
+```
+
+#### Challenge — personalized investment marketing letter
+
+The final challenge combines:
+
+```text
+String interpolation
+Currency formatting
+Percentage formatting
+Numeric grouping
+Paragraph spacing
+PadRight()
+Composite formatting
+Fixed-width comparison columns
+```
+
+Principal output:
+
+```text
+Dear Ms. Barros,
+
+Currently, you own 2,975,000.00 shares at a return of 12.75%.
+
+Our new product, Glorious Future offers a return of 13.13%.
+Given your current volume, your potential profit would be $63,000,000.00.
+
+Here's a quick comparison:
+
+Magic Yield         12.75%    $55,000,000.00
+Glorious Future     13.13%    $63,000,000.00
+```
+
+Run the corrected module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\format-alphanumeric-data\format-alphanumeric-data.csproj"
+```
+
+Build the corrected module:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\format-alphanumeric-data\format-alphanumeric-data.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Final verified result:
+
+```text
+Corrected module run: Succeeded
+Module output: Verified
+Corrected project build: Succeeded in 1.5 seconds
+Full solution build: Succeeded in 3.1 seconds
+Registered solution projects: 24
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+```
+
+---
+
+### Next Module — Modify the Content of Strings Using Built-In String Data Type Methods in C#
 
 ```text
 Status: Not started
-Current Section 4 progress: 3 / 7
-Current solution baseline: 23 projects
-Full solution baseline: Passing
+Current Section 4 learning progress: 4 / 7
+Current repository-verified progress: 4 / 7
+Current solution baseline: 24 projects
 ```
 
 Expected topics include:
 
 ```text
-Composite formatting
-String interpolation
-Currency formatting
-Percentage formatting
-Numeric precision
-Padding and alignment
-Format specifiers
-Locale-sensitive presentation
+IndexOf()
+LastIndexOf()
+IndexOfAny()
+Substring()
+Remove()
+Replace()
+Insert()
+Trim()
+String ranges
+Character positions
+Extracting data from structured text
+String immutability
 ```
 
-The next project must be added to `freecodecamp-csharp.slnx`, run successfully,
-build independently, and preserve the passing full-solution baseline.
+The next project must be registered in `freecodecamp-csharp.slnx`, run
+successfully, build independently, and preserve a passing full-solution build.
 
 ---
 
@@ -2576,9 +2938,12 @@ freecodecamp-csharp/
 │   │       ├── convert-data-types/
 │   │       │   ├── Program.cs
 │   │       │   └── convert-data-types.csproj
-│   │       └── array-helper-methods/
+│   │       ├── array-helper-methods/
+│   │       │   ├── Program.cs
+│   │       │   └── array-helper-methods.csproj
+│   │       └── format-alphanumeric-data/
 │   │           ├── Program.cs
-│   │           └── array-helper-methods.csproj
+│   │           └── format-alphanumeric-data.csproj
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
@@ -2598,7 +2963,7 @@ Each curriculum section may contain:
 - `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
 
-Section 4 currently contains three completed module projects. Its `trophy/`
+Section 4 currently contains four completed and fully repository-verified module projects. Its `trophy/`
 directory will be added after the complete section has been finished and the
 official completion evidence has been earned.
 
@@ -2628,10 +2993,10 @@ Solution file:
 freecodecamp-csharp.slnx
 ```
 
-Projects currently verified as registered:
+Projects currently registered:
 
 ```text
-23
+24
 ```
 
 List all projects registered in the solution:
@@ -2730,13 +3095,15 @@ curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/convert-data-types/convert-data-types.csproj
 
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/array-helper-methods/array-helper-methods.csproj
+
+curriculum/work-with-variable-data-in-csharp-console-applications/modules/format-alphanumeric-data/format-alphanumeric-data.csproj
 ```
 
-Run the latest completed project from the repository root:
+Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\array-helper-methods\array-helper-methods.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\format-alphanumeric-data\format-alphanumeric-data.csproj"
 ```
 
 ---
@@ -2749,50 +3116,55 @@ dotnet run --project `
 Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
-Current section progress: 3 / 7
-Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
-Latest project: array-helper-methods
-Module units: 10 / 10
-Microsoft Learn completion page: Displayed
-Achievement saved to account: Not verified in signed-out session
+Current section learning progress: 4 / 7
+Current section repository-verified progress: 4 / 7
+Latest completed learning item: Format Alphanumeric Data for Presentation in C#
+Latest project: format-alphanumeric-data
+Module units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 23
-Module run: Succeeded
-Module output: Verified
-Latest project build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 2.2 seconds
-Target framework: net10.0
-Compiler errors: 0
-Compiler warnings: 0
-IDE diagnostics: No issues found
-Verification date: August 2, 2026
+Registered solution projects: 24
+Corrected project build: Succeeded in 1.5 seconds
+Compiler errors after correction: 0
+Compiler warnings after correction: 0
+IDE diagnostics after correction: No issues found
+Resolved compiler error: CS1503
+Addressed IDE suggestion: IDE0071
+Corrected module run: Succeeded
+Corrected full-solution build: Succeeded in 3.1 seconds
+Verification date: August 3, 2026
 ```
 
-The latest verification confirms that:
+The latest evidence confirms that:
 
-- `array-helper-methods` is registered as the twenty-third solution project;
-- the complete module runs successfully from beginning to end;
-- `Array.Sort()` and `Array.Reverse()` are demonstrated;
-- `Array.Clear()` resets values without changing array length;
-- cleared string references are represented as `null`;
-- nullable arrays use `string?[]` where appropriate;
-- warning `CS8602` is resolved through a stable local variable;
-- null-conditional and null-coalescing operators are demonstrated;
-- `Array.Resize()` is demonstrated for both expansion and shrinking;
-- the role of `ref` in replacing the caller's array reference is documented;
-- a manual array-compaction algorithm removes `null` elements;
-- `ToCharArray()`, `new string(char[])`, `Split()`, and `Join()` are demonstrated;
-- the reverse-each-word challenge produces the required pangram output;
-- the order-ID challenge sorts values and tags invalid lengths;
-- modern collection expressions address `IDE0300`;
-- target-typed `new` addresses `IDE0090`;
-- the module project compiled successfully in `0.9` seconds;
-- the complete twenty-three-project solution compiled successfully in `2.2`
-  seconds;
-- Visual Studio reported no issues;
-- Section 4 is in progress at `3 / 7`.
+- `format-alphanumeric-data` is registered as the twenty-fourth solution
+  project;
+- the Microsoft Learn module assessment was passed;
+- the module achievement was earned;
+- the final source is organised into focused methods with professional comments;
+- escape sequences, verbatim strings, and Unicode are demonstrated;
+- composite formatting and string interpolation are compared;
+- culture-specific currency, number, percentage, and fixed-point formats are
+  demonstrated;
+- explicit `CultureInfo` values are used for stable presentation;
+- padding and interpolation alignment are demonstrated;
+- a 40-character fixed-width payment record is implemented;
+- the investment receipt is implemented;
+- the personalized marketing-letter challenge is implemented;
+- compiler error `CS1503` was diagnosed and corrected;
+- `IDE0071` was addressed in the final source;
+- the corrected module ran successfully and produced the expected complete output;
+- the corrected module project compiled successfully in `1.5` seconds;
+- the complete twenty-four-project solution compiled successfully in `3.1` seconds;
+- the corrected project has zero compiler errors and zero compiler warnings;
+- Visual Studio reports no issues.
+
+The latest evidence confirms both a successful final module run and a
+successful full-solution build after the correction. Module 4 is therefore fully
+repository-verified.
 
 ---
 
@@ -2850,6 +3222,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
+- [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
 
 ---
 

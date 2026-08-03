@@ -14,46 +14,53 @@ documented, and verified with both a project build and a full-solution build.
 ```text
 Section: Work with Variable Data in C# Console Applications
 Status: In progress
-Curriculum progress: 3 / 7
-Completed instructional modules: 3
+Curriculum learning progress: 4 / 7
+Repository-verified progress: 4 / 7
+Completed instructional modules on Microsoft Learn: 4
+Fully repository-verified instructional modules: 4
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Perform Operations on Arrays Using Helper Methods in C#
-Microsoft Learn module completion: Completed
-Microsoft Learn achievement page: Displayed
-Achievement saved to account: Not verified in the signed-out browser session
-Latest completion date: August 2, 2026
-Projects registered in solution: 23
-Latest project run: Verified
+Latest completed learning item: Format Alphanumeric Data for Presentation in C#
+Latest Microsoft Learn units: 8 / 8
+Latest module assessment: Passed
+Latest achievement: Earned
+Latest completion date: August 3, 2026
+Projects registered in solution: 24
+Latest project: format-alphanumeric-data
+Latest module run: Verified
+Latest module output: Verified
 Latest project build: Verified
-Latest project build time: 0.9 seconds
-Full solution build: Verified
-Full solution build time: 4.4 seconds
-Compiler errors: 0
-Compiler warnings: 0
-Nullable warning CS8602: Resolved
-IDE style suggestions IDE0300 and IDE0090: Addressed in final source
-Next curriculum item: Format Alphanumeric Data for Presentation in C#
+Latest project build time: 1.5 seconds
+Latest full solution build: Verified
+Latest full solution build time: 3.1 seconds
+Latest project compiler errors: 0
+Latest project compiler warnings: 0
+Latest IDE diagnostics: No issues found
+Resolved compiler error: CS1503
+Addressed IDE suggestion: IDE0071
+Latest module run after final correction: Succeeded
+Full solution build after final correction: Succeeded in 3.1 seconds
+Next curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
 ```
 
-| No. | Curriculum item | Status |
-| ---: | --- | --- |
-| 1 | Choose the Correct Data Type in Your C# Code | Completed |
-| 2 | Convert Data Types Using Casting and Conversion Techniques in C# | Completed |
-| 3 | Perform Operations on Arrays Using Helper Methods in C# | Completed |
-| 4 | Format Alphanumeric Data for Presentation in C# | Pending |
-| 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Pending |
-| 6 | Guided Project — Work with Variable Data in C# | Pending |
-| 7 | Challenge Project — Work with Variable Data in C# | Pending |
+| No. | Curriculum item | Learning status | Repository verification |
+| ---: | --- | --- | --- |
+| 1 | Choose the Correct Data Type in Your C# Code | Completed | Verified |
+| 2 | Convert Data Types Using Casting and Conversion Techniques in C# | Completed | Verified |
+| 3 | Perform Operations on Arrays Using Helper Methods in C# | Completed | Verified |
+| 4 | Format Alphanumeric Data for Presentation in C# | Completed | Verified |
+| 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Pending | Pending |
+| 6 | Guided Project — Work with Variable Data in C# | Pending | Pending |
+| 7 | Challenge Project — Work with Variable Data in C# | Pending | Pending |
 
-A curriculum item is marked `Completed` only after its Microsoft Learn units,
-local implementation, solution registration, project build, and full-solution
-build have been verified.
+A curriculum item reaches learning completion after its official Microsoft Learn
+units and assessment have been completed. It reaches full repository
+verification after the final source has run successfully, its project has built
+successfully, and the complete solution has built successfully.
 
-For Module 3, Microsoft Learn displayed the achievement completion page, but the
-browser session also displayed `Sign in/Create profile`. The repository records
-the module as completed while keeping account-level achievement persistence
-explicitly unverified until the Microsoft Learn session is signed in.
+Module 4 is fully repository-verified. The corrected application ran
+successfully, produced the complete expected output, built independently, and
+preserved a passing twenty-four-project full-solution build.
 
 ---
 
@@ -69,9 +76,12 @@ work-with-variable-data-in-csharp-console-applications/
     ├── convert-data-types/
     │   ├── Program.cs
     │   └── convert-data-types.csproj
-    └── array-helper-methods/
+    ├── array-helper-methods/
+    │   ├── Program.cs
+    │   └── array-helper-methods.csproj
+    └── format-alphanumeric-data/
         ├── Program.cs
-        └── array-helper-methods.csproj
+        └── format-alphanumeric-data.csproj
 ```
 
 This section uses one central README for curriculum documentation. Individual
@@ -3069,26 +3079,1009 @@ Completion date: August 2, 2026
 
 ---
 
+# Module 4 — Format Alphanumeric Data for Presentation in C#
+
+## Completion Status
+
+```text
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Project added to solution: Verified
+Solution project count: 24
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Corrected module run: Succeeded
+Module output: Verified
+Corrected project build: Succeeded
+Corrected project build time: 1.5 seconds
+Full solution build: Succeeded
+Full solution build time: 3.1 seconds
+Compiler errors after correction: 0
+Compiler warnings after correction: 0
+IDE diagnostics after correction: No issues found
+Resolved compiler error: CS1503
+Addressed IDE suggestion: IDE0071
+Final module run after correction: Succeeded
+Full solution build after correction: Succeeded in 3.1 seconds
+Completion date: August 3, 2026
+```
+
+This module explains how to transform numeric and textual values into readable,
+culture-aware presentation strings without changing the underlying application
+data.
+
+The final `Program.cs` preserves the complete learning sequence as one
+structured console application. It covers escape sequences, verbatim literals,
+Unicode, composite formatting, string interpolation, culture-specific numeric
+formats, fixed-width output, alignment, and the official personalized marketing
+letter challenge.
+
+---
+
+## Learning Objectives
+
+The completed project demonstrates how to:
+
+- represent new lines, tabs, backslashes, and quotation marks with escape
+  sequences;
+- create readable Windows paths with verbatim string literals;
+- place quotation marks inside verbatim strings;
+- represent Unicode characters with `\\uXXXX`;
+- compare composite formatting with string interpolation;
+- reuse and reorder composite-format placeholders;
+- format currency values with `C`;
+- format grouped numbers with `N`;
+- format percentages with `P`;
+- format fixed-point values with `F`;
+- select an explicit `CultureInfo`;
+- explain why formatting does not modify stored values;
+- combine interpolation, expressions, and format specifiers;
+- align columns with interpolation width components;
+- pad text with `PadLeft()` and `PadRight()`;
+- construct a 40-character fixed-width payment record;
+- create a personalized investment-marketing letter;
+- diagnose and repair an invalid `Console.WriteLine()` overload call.
+
+---
+
+## Source-Code Structure
+
+The final application is organised into focused methods:
+
+```text
+Main()
+├── WriteApplicationHeader()
+├── DemonstrateEscapeSequences()
+├── DemonstrateVerbatimStringsAndUnicode()
+├── DemonstrateCompositeFormatting()
+├── DemonstrateStringInterpolation()
+├── DemonstrateCurrencyAndCulture()
+├── DemonstrateNumericAndPercentageFormatting()
+├── DemonstrateCombinedFormattingApproaches()
+├── DemonstrateInterpolatedInvoiceReceipt()
+├── DemonstratePaddingAndAlignment()
+├── DemonstrateFixedWidthPaymentRecord()
+├── RunMarketingLetterChallenge()
+└── WriteModuleSummary()
+```
+
+Reusable output helpers:
+
+```text
+WriteSectionHeader()
+WriteSectionSeparator()
+```
+
+Culture definitions:
+
+```csharp
+private static readonly CultureInfo UsCulture =
+    CultureInfo.GetCultureInfo("en-US");
+
+private static readonly CultureInfo FrenchCulture =
+    CultureInfo.GetCultureInfo("fr-FR");
+
+private static readonly CultureInfo KoreanCulture =
+    CultureInfo.GetCultureInfo("ko-KR");
+```
+
+This organisation provides:
+
+- isolated variable scope;
+- independently reviewable lesson units;
+- explicit culture selection;
+- comments that explain presentation semantics;
+- one executable application instead of disconnected fragments;
+- preservation of the official challenge;
+- a conventional `Main()` entry point.
+
+---
+
+## Formatting Does Not Change Stored Data
+
+The central distinction in this module is:
+
+```text
+Stored value
+→ used for calculation and business logic
+
+Formatted string
+→ used for display, reports, exports, and messages
+```
+
+Example:
+
+```csharp
+decimal taxRate = 0.36785M;
+
+string formattedTax =
+    taxRate.ToString(
+        "P2",
+        UsCulture);
+```
+
+Result:
+
+```text
+Stored decimal:
+0.36785
+
+Formatted text:
+36.79%
+```
+
+The value in `taxRate` remains `0.36785M`. Formatting creates a new textual
+representation.
+
+---
+
+## Escape Sequences
+
+Escape sequences begin with a backslash and represent special characters inside
+ordinary string literals.
+
+```csharp
+Console.WriteLine(
+    "Coastal model\nSimulation report");
+
+Console.WriteLine(
+    "Station\tWater level\tSalinity");
+
+Console.WriteLine(
+    "Project path: C:\\Projects\\CSharp\\Formatting");
+
+Console.WriteLine(
+    "The application printed: \"Build succeeded.\"");
+```
+
+Common escape sequences:
+
+| Sequence | Meaning |
+| --- | --- |
+| `\\n` | new line |
+| `\\t` | horizontal tab |
+| `\\\\` | one backslash |
+| `\\"` | one quotation mark |
+| `\\r` | carriage return |
+| `\\uXXXX` | Unicode code point |
+
+**Escape sequence**  
+/ɪˈskeɪp ˈsiː.kwəns/ — chuỗi ký tự thoát.
+
+---
+
+## Verbatim String Literals
+
+The `@` prefix creates a verbatim string literal:
+
+```csharp
+string repositoryPath =
+    @"F:\DarkerThanBack-DKC\My world\Programs\Github\freecodecamp-csharp";
+```
+
+Backslashes remain ordinary characters, making this form useful for Windows
+paths.
+
+Without a verbatim literal, every backslash would require escaping:
+
+```csharp
+string repositoryPath =
+    "F:\\DarkerThanBack-DKC\\My world\\Programs\\Github\\freecodecamp-csharp";
+```
+
+A quotation mark inside a verbatim string is represented by two quotation marks:
+
+```csharp
+string message =
+    @"The terminal displayed ""Build succeeded."".";
+```
+
+---
+
+## Unicode Escape Sequences
+
+Unicode escape sequences use `\\u` followed by four hexadecimal digits.
+
+```csharp
+string degreeSymbol = "\u00B0";
+string deltaSymbol = "\u0394";
+
+Console.WriteLine(
+    $"Temperature: 25{degreeSymbol}C");
+
+Console.WriteLine(
+    $"{deltaSymbol}t = 10 seconds");
+```
+
+Output:
+
+```text
+Temperature: 25°C
+Δt = 10 seconds
+```
+
+The project also includes:
+
+```csharp
+string greetingInJapanese =
+    "\u3053\u3093\u306B\u3061\u306F";
+```
+
+which produces:
+
+```text
+こんにちは
+```
+
+---
+
+## Composite Formatting
+
+Composite formatting uses numbered replacement tokens.
+
+```csharp
+string formattedGreeting =
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "{0} {1}!",
+        firstWord,
+        secondWord);
+```
+
+Token mapping:
+
+```text
+{0} → firstWord
+{1} → secondWord
+```
+
+Tokens may be reordered:
+
+```csharp
+string.Format(
+    CultureInfo.InvariantCulture,
+    "{1} {0}!",
+    firstWord,
+    secondWord);
+```
+
+Tokens may also be reused:
+
+```csharp
+string.Format(
+    CultureInfo.InvariantCulture,
+    "{0} {0} {0}!",
+    firstWord,
+    secondWord);
+```
+
+Composite-format indexes begin at zero.
+
+---
+
+## Resolved Compiler Error `CS1503`
+
+The initial implementation attempted to call:
+
+```csharp
+Console.WriteLine(
+    CultureInfo.InvariantCulture,
+    "{1} {0}!",
+    firstWord,
+    secondWord);
+```
+
+The compiler reported:
+
+```text
+CS1503:
+Argument 1 cannot convert from
+System.Globalization.CultureInfo to string
+```
+
+### Root cause
+
+`Console.WriteLine()` does not provide an overload whose first parameter is an
+`IFormatProvider`.
+
+The compiler therefore attempted to match the call against another overload and
+could not convert the `CultureInfo` object into the required `string`.
+
+### Correct implementation
+
+The value must first be formatted by `string.Format()`:
+
+```csharp
+Console.WriteLine(
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "{1} {0}!",
+        firstWord,
+        secondWord));
+```
+
+The repeated-token example was corrected in the same way:
+
+```csharp
+Console.WriteLine(
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "{0} {0} {0}!",
+        firstWord,
+        secondWord));
+```
+
+Verification shown after correction:
+
+```text
+dotnet clean: Succeeded in 0.5 seconds
+Project restore: Completed
+Project build: Succeeded in 1.5 seconds
+Compiler errors: 0
+IDE diagnostics: No issues found
+```
+
+---
+
+## String Interpolation
+
+String interpolation uses the `$` prefix and places expressions directly inside
+braces.
+
+```csharp
+Console.WriteLine(
+    $"{firstWord} {secondWord}!");
+```
+
+Engineering example:
+
+```csharp
+Console.WriteLine(
+    $"Station {stationName} measured a water level of " +
+    $"{waterLevelMeters} m and salinity of {salinityPpt} ppt.");
+```
+
+Comparison:
+
+```text
+Composite formatting
+→ placeholder indexes are separate from arguments
+
+String interpolation
+→ variable names and expressions appear directly in the template
+```
+
+Interpolation is generally preferable when it makes the message easier to read.
+
+---
+
+## Currency Formatting
+
+The `C` standard numeric format specifier produces a culture-sensitive currency
+representation.
+
+```csharp
+decimal price = 123.45M;
+
+string formattedPrice =
+    price.ToString(
+        "C2",
+        UsCulture);
+```
+
+Possible culture-dependent results:
+
+```text
+en-US → $123.45
+fr-FR → 123,45 €
+ko-KR → ₩123
+```
+
+The symbol, decimal separator, group separator, and symbol position depend on
+the culture.
+
+The numeric value remains `123.45M`.
+
+---
+
+## Explicit Culture Selection
+
+The application compares multiple cultures explicitly:
+
+```csharp
+CultureInfo.GetCultureInfo("en-US");
+CultureInfo.GetCultureInfo("fr-FR");
+CultureInfo.GetCultureInfo("ko-KR");
+```
+
+Explicit culture selection is important when output must be:
+
+- stable across development machines;
+- validated by automated tests;
+- exchanged between systems;
+- displayed according to a contractual locale;
+- written into machine-readable reports.
+
+For user-facing output, the current UI culture may be more appropriate.
+
+---
+
+## Number Formatting with `N`
+
+The `N` format specifier adds group separators.
+
+```csharp
+decimal measurement = 123456.78912M;
+
+measurement.ToString(
+    "N2",
+    UsCulture);
+```
+
+Result:
+
+```text
+123,456.79
+```
+
+Examples:
+
+| Format | Result |
+| --- | ---: |
+| `N0` | `123,457` |
+| `N1` | `123,456.8` |
+| `N2` | `123,456.79` |
+| `N4` | `123,456.7891` |
+
+The number after `N` controls the displayed decimal places.
+
+---
+
+## Percentage Formatting with `P`
+
+The `P` format specifier multiplies a fractional value by `100` for
+presentation.
+
+```csharp
+decimal taxRate = 0.36785M;
+
+taxRate.ToString(
+    "P2",
+    UsCulture);
+```
+
+Result:
+
+```text
+36.79%
+```
+
+Correct stored representation:
+
+```text
+36.79% displayed
+→ 0.3679 approximately stored
+```
+
+A stored value of `36.79` would be displayed as approximately `3,679%`.
+
+---
+
+## Fixed-Point Formatting with `F`
+
+`F` produces fixed-point output without group separators.
+
+```csharp
+decimal salinityPpt = 15.11427M;
+
+salinityPpt.ToString(
+    "F2",
+    UsCulture);
+```
+
+Result:
+
+```text
+15.11
+```
+
+This is useful for engineering values that require a controlled number of
+decimal places without thousands grouping.
+
+---
+
+## Combined Formatting
+
+The application calculates a discount:
+
+```csharp
+decimal regularPrice = 67.55M;
+decimal salePrice = 59.99M;
+
+decimal amountSaved =
+    regularPrice - salePrice;
+
+decimal discountRate =
+    amountSaved / regularPrice;
+```
+
+It then combines composite formatting and interpolation:
+
+```csharp
+string discountMessage =
+    string.Format(
+        UsCulture,
+        "You saved {0:C2} off the regular {1:C2} price. ",
+        amountSaved,
+        regularPrice);
+
+discountMessage +=
+    $"A discount of " +
+    $"{discountRate.ToString("P2", UsCulture)}!";
+```
+
+This demonstrates that formatting techniques can be combined when their
+responsibilities are clear.
+
+---
+
+## Interpolated Investment Receipt
+
+The module includes a formatted investment receipt:
+
+```csharp
+int invoiceNumber = 1201;
+decimal productShares = 25.4568M;
+decimal subtotal = 2750.00M;
+decimal taxPercentage = 0.15825M;
+decimal total = 3185.19M;
+```
+
+Formatted output:
+
+```text
+Invoice Number: 1201
+   Shares: 25.457 Product
+     Sub Total: $2,750.00
+           Tax: 15.83%
+     Total Billed: $3,185.19
+```
+
+Applied formats:
+
+```text
+N3 → three decimal places with grouping
+C2 → currency with two decimal places
+P2 → percentage with two decimal places
+```
+
+The project explicitly selects `en-US` so this sample remains stable on a Korean
+or Vietnamese Windows installation.
+
+---
+
+## `PadLeft()` and `PadRight()`
+
+`PadLeft(totalWidth)` adds characters before the existing text.
+
+`PadRight(totalWidth)` adds characters after the existing text.
+
+```csharp
+string input = "Pad this";
+
+string leftPadded =
+    input.PadLeft(12);
+
+string rightPadded =
+    input.PadRight(12);
+```
+
+Custom padding characters are also supported:
+
+```csharp
+input.PadLeft(
+    12,
+    '-');
+
+input.PadRight(
+    12,
+    '-');
+```
+
+Results:
+
+```text
+|    Pad this|
+|Pad this    |
+|----Pad this|
+|Pad this----|
+```
+
+The final source avoids unnecessary interpolation on these two simple output
+lines, addressing the `IDE0071` informational suggestion.
+
+---
+
+## Interpolation Alignment Components
+
+Interpolation supports an alignment component:
+
+```text
+{value,width}
+```
+
+Rules:
+
+```text
+Positive width
+→ right alignment
+
+Negative width
+→ left alignment
+```
+
+Example:
+
+```csharp
+Console.WriteLine(
+    $"{"Station",-15}" +
+    $"{"Water level",12}" +
+    $"{"Salinity",12}");
+
+Console.WriteLine(
+    $"{stationName,-15}" +
+    $"{waterLevelMeters,12:F3}" +
+    $"{salinityPpt,12:F2}");
+```
+
+Output:
+
+```text
+Station         Water level    Salinity
+Hoa Binh              1.425       15.11
+```
+
+Alignment and format specifiers can be applied together.
+
+---
+
+## Fixed-Width Payment Record
+
+The project creates a 40-character legacy payment record.
+
+Field layout:
+
+```text
+Columns  1–6  → payment ID, left-aligned
+Columns  7–30 → payee name, left-aligned
+Columns 31–40 → payment amount, right-aligned
+```
+
+Implementation:
+
+```csharp
+string formattedLine =
+    paymentId.PadRight(6);
+
+formattedLine +=
+    payeeName.PadRight(24);
+
+formattedLine +=
+    paymentAmount.PadLeft(10);
+```
+
+Verification guide:
+
+```text
+1234567890123456789012345678901234567890
+769C  Mr. Stephen Ortega       $5,000.00
+```
+
+The application also prints:
+
+```text
+Record length: 40 characters
+```
+
+Fixed-width files depend on exact character positions rather than delimiters.
+
+---
+
+## Challenge — Personalized Investment Marketing Letter
+
+The final challenge uses:
+
+```csharp
+string customerName = "Ms. Barros";
+
+string currentProduct = "Magic Yield";
+int currentShares = 2_975_000;
+decimal currentReturn = 0.1275M;
+decimal currentProfit = 55_000_000.0M;
+
+string newProduct = "Glorious Future";
+decimal newReturn = 0.13125M;
+decimal newProfit = 63_000_000.0M;
+```
+
+The letter combines:
+
+- string interpolation;
+- currency formatting;
+- percentage formatting;
+- numeric grouping;
+- paragraph spacing;
+- `PadRight()`;
+- composite formatting;
+- line separators;
+- fixed-width comparison columns.
+
+Expected principal output:
+
+```text
+Dear Ms. Barros,
+
+Currently, you own 2,975,000.00 shares at a return of 12.75%.
+
+Our new product, Glorious Future offers a return of 13.13%.
+Given your current volume, your potential profit would be $63,000,000.00.
+
+Here's a quick comparison:
+
+Magic Yield         12.75%    $55,000,000.00
+Glorious Future     13.13%    $63,000,000.00
+```
+
+The comparison table is deliberately built step by step to preserve the
+module's learning objectives.
+
+---
+
+## Compiler and IDE Diagnostic Cleanup
+
+The final correction addressed:
+
+```text
+CS1503
+→ invalid Console.WriteLine() overload usage
+
+IDE0071
+→ interpolation can be simplified
+```
+
+### `CS1503`
+
+Incorrect:
+
+```csharp
+Console.WriteLine(
+    CultureInfo.InvariantCulture,
+    "{1} {0}!",
+    firstWord,
+    secondWord);
+```
+
+Correct:
+
+```csharp
+Console.WriteLine(
+    string.Format(
+        CultureInfo.InvariantCulture,
+        "{1} {0}!",
+        firstWord,
+        secondWord));
+```
+
+### `IDE0071`
+
+The padding display originally used interpolation for a simple single-value
+composition. The final source uses direct concatenation for those lines.
+
+Final visible diagnostic state:
+
+```text
+Compiler errors: 0
+IDE diagnostics: No issues found
+Project build: Succeeded
+```
+
+---
+
+## Source-Code Cleanup
+
+The original lesson material contained independent fragments with repeated
+variable declarations:
+
+```text
+first
+second
+result
+price
+discount
+measurement
+tax
+formattedLine
+```
+
+Combining those fragments directly at top level would create naming conflicts
+and an unreadable execution flow.
+
+The final source:
+
+- uses one focused method per learning unit;
+- selects cultures explicitly;
+- preserves the complete official challenge;
+- distinguishes data values from presentation strings;
+- isolates fixed-width formatting logic;
+- retains technical explanations in comments;
+- fixes the invalid `Console.WriteLine()` calls;
+- addresses `IDE0071`;
+- compiles successfully as one application.
+
+---
+
+## Current Verification Evidence
+
+Verified from the supplied Visual Studio terminal:
+
+```text
+dotnet clean:
+Succeeded in 0.5 seconds
+
+Project restore:
+Completed
+
+format-alphanumeric-data module run:
+Succeeded
+
+Module output:
+Verified through the final MODULE SUMMARY
+
+format-alphanumeric-data project build:
+Succeeded in 1.5 seconds
+
+Full solution build:
+Succeeded in 3.1 seconds
+
+Registered solution projects:
+24
+
+Compiler errors:
+0 after correction
+
+Compiler warnings:
+0 after correction
+
+IDE status:
+No issues found
+```
+
+Run the final module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\format-alphanumeric-data\format-alphanumeric-data.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Final repository verification:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Project build: Succeeded in 1.5 seconds
+Full solution build: Succeeded in 3.1 seconds
+Solution projects: 24
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| format | `/ˈfɔː.mæt/` | “pho-mát” | định dạng |
+| alphanumeric | `/ˌæl.fə.njuːˈmer.ɪk/` | “an-phờ-niu-me-rịch” | gồm chữ và số |
+| presentation | `/ˌprez.ənˈteɪ.ʃən/` | “pre-zần-tây-shần” | sự trình bày |
+| escape sequence | `/ɪˈskeɪp ˈsiː.kwəns/` | “ịch-skâyp si-quần-x” | chuỗi ký tự thoát |
+| verbatim | `/vɜːˈbeɪ.tɪm/` | “vờ-bây-tìm” | giữ nguyên ký tự |
+| Unicode | `/ˈjuː.nɪ.kəʊd/` | “niu-ni-câu-đ” | tiêu chuẩn mã ký tự |
+| composite formatting | `/ˈkɒm.pə.zɪt ˈfɔː.mæt.ɪŋ/` | “com-pờ-zịt pho-mát-ting” | định dạng bằng placeholder |
+| interpolation | `/ɪnˌtɜː.pəˈleɪ.ʃən/` | “in-tơ-pờ-lây-shần” | nội suy |
+| format specifier | `/ˈfɔː.mæt ˈspes.ɪ.faɪ.ər/` | “pho-mát spé-si-fai-ờ” | ký hiệu định dạng |
+| currency | `/ˈkʌr.ən.si/` | “câ-rần-xi” | tiền tệ |
+| percentage | `/pəˈsen.tɪdʒ/` | “pờ-xen-tịch” | tỷ lệ phần trăm |
+| fixed-point | `/ˌfɪkst ˈpɔɪnt/` | “phích-t poi-nt” | định dạng số thập phân cố định |
+| culture | `/ˈkʌl.tʃər/` | “câl-chờ” | quy ước vùng và ngôn ngữ |
+| alignment | `/əˈlaɪn.mənt/` | “ờ-lai-n-mần-t” | căn chỉnh |
+| padding | `/ˈpæd.ɪŋ/` | “pát-đing” | ký tự đệm |
+| fixed-width | `/ˌfɪkst ˈwɪdθ/` | “phích-t uýt-th” | độ rộng cố định |
+| placeholder | `/ˈpleɪsˌhəʊl.dər/` | “plâys-hâu-đờ” | vị trí thay thế |
+| overload | `/ˈəʊ.və.ləʊd/` | “âu-vờ-lâu-đ” | phiên bản phương thức theo tham số |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Format Alphanumeric Data for Presentation in C#
+Section: Work with Variable Data in C# Console Applications
+Module position: 4 / 7
+Microsoft Learn units: 8 / 8
+Learning status: Completed
+Module assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Solution project count: 24
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Corrected module run: Succeeded
+Module output: Verified
+Corrected project build: Succeeded in 1.5 seconds
+Full solution build: Succeeded in 3.1 seconds
+Compiler errors after correction: 0
+Compiler warnings after correction: 0
+IDE diagnostics after correction: No issues found
+Completion date: August 3, 2026
+```
+
+---
+
 ## Next Module
 
-### Format Alphanumeric Data for Presentation in C#
+### Modify the Content of Strings Using Built-In String Data Type Methods in C#
 
-The next module will focus on formatting textual and numeric values for readable
-console output.
+The next module will focus on locating, extracting, inserting, replacing, and
+removing content inside strings.
 
 Expected topics include:
 
 ```text
-Composite formatting
-String interpolation
-Numeric format specifiers
-Currency formatting
-Percentage formatting
-Decimal precision
-Padding and alignment
-String concatenation
-Formatting values for reports
-Locale-sensitive presentation
+IndexOf()
+LastIndexOf()
+IndexOfAny()
+Substring()
+Remove()
+Replace()
+Insert()
+Trim()
+String ranges
+Working with character positions
+Extracting data from structured text
+Modifying text without changing the original immutable string
 ```
 
 A new project should be created under:
@@ -3096,9 +4089,9 @@ A new project should be created under:
 ```text
 work-with-variable-data-in-csharp-console-applications/
 └── modules/
-    └── format-alphanumeric-data/
+    └── modify-string-content/
         ├── Program.cs
-        └── format-alphanumeric-data.csproj
+        └── modify-string-content.csproj
 ```
 
 The new project must be registered in `freecodecamp-csharp.slnx`, run
@@ -3112,6 +4105,7 @@ successfully, build independently, and preserve a passing full-solution build.
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
+- [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
 - [freeCodeCamp — Foundational C# with Microsoft Certification](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 
 ---
@@ -3123,3 +4117,4 @@ successfully, build independently, and preserve a passing full-solution build.
 - [Module 1 source](./modules/choose-correct-data-type/)
 - [Module 2 source](./modules/convert-data-types/)
 - [Module 3 source](./modules/array-helper-methods/)
+- [Module 4 source](./modules/format-alphanumeric-data/)
