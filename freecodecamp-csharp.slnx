@@ -34,6 +34,7 @@
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose-correct-data-type/choose-correct-data-type.csproj" />
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/convert-data-types/convert-data-types.csproj" />
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/format-alphanumeric-data/format-alphanumeric-data.csproj" />
+    <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/modify-string-content/modify-string-content.csproj" />
   </Folder>
   <Folder Name="/curriculum/write-your-first-code-using-csharp/" />
   <Folder Name="/curriculum/write-your-first-code-using-csharp/guided-projects/">

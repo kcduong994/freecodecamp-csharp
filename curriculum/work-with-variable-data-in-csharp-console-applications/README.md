@@ -14,33 +14,31 @@ documented, and verified with both a project build and a full-solution build.
 ```text
 Section: Work with Variable Data in C# Console Applications
 Status: In progress
-Curriculum learning progress: 4 / 7
-Repository-verified progress: 4 / 7
-Completed instructional modules on Microsoft Learn: 4
-Fully repository-verified instructional modules: 4
+Curriculum learning progress: 5 / 7
+Repository-verified progress: 5 / 7
+Completed instructional modules on Microsoft Learn: 5
+Fully repository-verified instructional modules: 5
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed learning item: Format Alphanumeric Data for Presentation in C#
+Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
 Latest Microsoft Learn units: 8 / 8
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 3, 2026
-Projects registered in solution: 24
-Latest project: format-alphanumeric-data
+Latest completion date: August 4, 2026
+Projects registered in solution: 25
+Latest project: modify-string-content
 Latest module run: Verified
 Latest module output: Verified
 Latest project build: Verified
-Latest project build time: 1.5 seconds
+Latest project build time: 0.4 seconds
 Latest full solution build: Verified
-Latest full solution build time: 3.1 seconds
+Latest full solution build time: 4.0 seconds
 Latest project compiler errors: 0
 Latest project compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Resolved compiler error: CS1503
-Addressed IDE suggestion: IDE0071
-Latest module run after final correction: Succeeded
-Full solution build after final correction: Succeeded in 3.1 seconds
-Next curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+Latest module run after final source organisation: Succeeded
+Full solution build after final source organisation: Succeeded in 4.0 seconds
+Next curriculum item: Guided Project — Work with Variable Data in C#
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
@@ -49,7 +47,7 @@ Next curriculum item: Modify the Content of Strings Using Built-In String Data T
 | 2 | Convert Data Types Using Casting and Conversion Techniques in C# | Completed | Verified |
 | 3 | Perform Operations on Arrays Using Helper Methods in C# | Completed | Verified |
 | 4 | Format Alphanumeric Data for Presentation in C# | Completed | Verified |
-| 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Pending | Pending |
+| 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Completed | Verified |
 | 6 | Guided Project — Work with Variable Data in C# | Pending | Pending |
 | 7 | Challenge Project — Work with Variable Data in C# | Pending | Pending |
 
@@ -58,9 +56,10 @@ units and assessment have been completed. It reaches full repository
 verification after the final source has run successfully, its project has built
 successfully, and the complete solution has built successfully.
 
-Module 4 is fully repository-verified. The corrected application ran
-successfully, produced the complete expected output, built independently, and
-preserved a passing twenty-four-project full-solution build.
+Module 5 is fully repository-verified. The organised application ran from
+beginning to end, produced the expected extraction and transformation results,
+built independently, and preserved a passing twenty-five-project full-solution
+build.
 
 ---
 
@@ -79,9 +78,12 @@ work-with-variable-data-in-csharp-console-applications/
     ├── array-helper-methods/
     │   ├── Program.cs
     │   └── array-helper-methods.csproj
-    └── format-alphanumeric-data/
+    ├── format-alphanumeric-data/
+    │   ├── Program.cs
+    │   └── format-alphanumeric-data.csproj
+    └── modify-string-content/
         ├── Program.cs
-        └── format-alphanumeric-data.csproj
+        └── modify-string-content.csproj
 ```
 
 This section uses one central README for curriculum documentation. Individual
@@ -4060,42 +4062,1157 @@ Completion date: August 3, 2026
 
 ---
 
-## Next Module
+---
 
-### Modify the Content of Strings Using Built-In String Data Type Methods in C#
+# Module 5 — Modify the Content of Strings Using Built-In String Data Type Methods in C#
 
-The next module will focus on locating, extracting, inserting, replacing, and
-removing content inside strings.
-
-Expected topics include:
+## Completion Status
 
 ```text
-IndexOf()
-LastIndexOf()
-IndexOfAny()
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Project added to solution: Verified
+Solution project count: 25
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Module run: Succeeded
+Module output: Verified
+Project build: Succeeded
+Project build time: 0.4 seconds
+Full solution build: Succeeded
+Full solution build time: 4.0 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 4, 2026
+```
+
+This module explains how to locate, extract, remove, and replace content inside
+structured strings.
+
+The final `Program.cs` preserves the principal Microsoft Learn examples as one
+runnable console application. It also strengthens the original fragments with
+clear method boundaries, descriptive names, not-found checks, delimiter-pair
+validation, and comments that explain index calculations and string
+immutability.
+
+---
+
+## Learning Objectives
+
+The completed project demonstrates how to:
+
+- locate the first occurrence of a character or substring with `IndexOf()`;
+- recognize `-1` as the not-found result;
+- locate the final occurrence with `LastIndexOf()`;
+- locate the first occurrence of any character in a set with `IndexOfAny()`;
+- use the starting-position overloads of `IndexOf()` and `IndexOfAny()`;
+- extract text with both `Substring()` overloads;
+- calculate a substring's start position and length;
+- avoid including opening and closing delimiters in extracted content;
+- avoid fragile magic strings and magic numbers with `const` and `Length`;
+- extract multiple parenthesized values with a `while` loop;
+- match parentheses, square brackets, and braces;
+- remove fixed-position fields with `Remove()`;
+- replace every matching occurrence with `Replace()`;
+- remove text by replacing it with `string.Empty`;
+- explain why `string` is immutable;
+- extract, replace, and remove data from an HTML fragment;
+- validate search results before using them as indexes.
+
+---
+
+## Source-Code Structure
+
+The final application is organised into focused methods:
+
+```text
+Top-level execution
+├── PrintApplicationHeader()
+├── DemonstrateIndexOfAndSubstring()
+├── DemonstrateLastIndexOfAndRepeatedExtraction()
+├── DemonstrateIndexOfAny()
+├── DemonstrateRemoveAndReplace()
+├── CompleteHtmlChallenge()
+└── PrintModuleSummary()
+```
+
+Reusable output helper:
+
+```text
+PrintSectionHeader()
+```
+
+This organisation provides:
+
+- isolated variable scope;
+- no duplicate top-level declarations;
+- one executable file containing the complete lesson;
+- independently reviewable examples;
+- descriptive variables for positions, lengths, and delimiters;
+- safe handling of failed searches;
+- comments that explain intent rather than merely repeating syntax.
+
+---
+
+## String Immutability
+
+A C# `string` is immutable.
+
+```text
+Immutable
+→ the content of an existing string object cannot be changed after creation
+```
+
+Methods such as:
+
+```text
 Substring()
 Remove()
 Replace()
-Insert()
-Trim()
-String ranges
-Working with character positions
-Extracting data from structured text
-Modifying text without changing the original immutable string
 ```
 
-A new project should be created under:
+return new strings. They do not modify the original string object.
+
+Example:
+
+```csharp
+string message =
+    "This--is--ex-amp-le--da-ta";
+
+string normalizedMessage =
+    message.Replace("--", " ");
+
+normalizedMessage =
+    normalizedMessage.Replace(
+        "-",
+        string.Empty);
+```
+
+After these operations:
 
 ```text
-work-with-variable-data-in-csharp-console-applications/
-└── modules/
-    └── modify-string-content/
-        ├── Program.cs
-        └── modify-string-content.csproj
+message
+→ still contains "This--is--ex-amp-le--da-ta"
+
+normalizedMessage
+→ contains "This is example data"
 ```
 
-The new project must be registered in `freecodecamp-csharp.slnx`, run
-successfully, build independently, and preserve a passing full-solution build.
+The returned value must be assigned, passed to another method, or otherwise
+used. Calling a string helper method without using its return value does not
+change the original variable.
+
+---
+
+## Zero-Based Indexes
+
+String character positions are zero-based.
+
+```text
+First character  → index 0
+Second character → index 1
+Third character  → index 2
+```
+
+Example:
+
+```csharp
+const string message =
+    "Find what is (inside the parentheses)";
+
+int openingPosition =
+    message.IndexOf('(');
+
+int closingPosition =
+    message.IndexOf(')');
+```
+
+Verified positions:
+
+```text
+Opening parenthesis index: 13
+Closing parenthesis index: 36
+```
+
+The opening parenthesis is the fourteenth visible character but has index `13`
+because counting begins at zero.
+
+---
+
+## `IndexOf()`
+
+`IndexOf()` returns the zero-based position of the first matching character or
+substring.
+
+```csharp
+int openingPosition =
+    message.IndexOf('(');
+```
+
+It can also search for a longer string:
+
+```csharp
+const string openSpan = "<span>";
+
+int openingTagPosition =
+    taggedMessage.IndexOf(openSpan);
+```
+
+If no match exists, the method returns:
+
+```text
+-1
+```
+
+The final application checks for `-1` before using a result as a substring
+boundary:
+
+```csharp
+if (openingPosition == -1 ||
+    closingPosition == -1 ||
+    closingPosition <= openingPosition)
+{
+    Console.WriteLine(
+        "A valid parenthesis pair was not found.");
+
+    return;
+}
+```
+
+This prevents invalid indexes and negative substring lengths.
+
+---
+
+## `Substring(startIndex, length)`
+
+The two-parameter overload returns a specified number of characters beginning
+at a specified index.
+
+```csharp
+string extractedValue =
+    message.Substring(
+        startIndex,
+        length);
+```
+
+For the parenthesis example:
+
+```csharp
+int contentStart =
+    openingPosition + 1;
+
+int contentLength =
+    closingPosition - contentStart;
+
+string parenthesizedContent =
+    message.Substring(
+        contentStart,
+        contentLength);
+```
+
+Verified output:
+
+```text
+inside the parentheses
+```
+
+### Why `openingPosition + 1` Is Required
+
+Starting at `openingPosition` includes the opening delimiter:
+
+```text
+(inside the parentheses
+```
+
+Adding `1` advances past the single opening-parenthesis character.
+
+```text
+openingPosition
+→ index of '('
+
+openingPosition + 1
+→ index of the first content character
+```
+
+This is a common boundary calculation in text parsing.
+
+---
+
+## Avoid Magic Strings and Magic Numbers
+
+A hardcoded value with unexplained structural meaning is often called a magic
+value.
+
+Fragile example:
+
+```csharp
+openingPosition += 6;
+```
+
+The number `6` is correct only while the opening tag remains:
+
+```text
+<span>
+```
+
+Safer implementation:
+
+```csharp
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+
+int contentStart =
+    openingTagPosition +
+    openSpan.Length;
+```
+
+Benefits:
+
+```text
+The tag is defined once
+Misspelled constant names are caught by the compiler
+Changing the tag automatically updates the required offset
+The purpose of the calculation is visible in the code
+```
+
+The final source uses constants for all structural tags and HTML entities in the
+challenge.
+
+---
+
+## Extract Text Between Tags
+
+Input:
+
+```csharp
+const string taggedMessage =
+    "What is the value <span>between the tags</span>?";
+```
+
+Delimiters:
+
+```csharp
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+```
+
+Boundary calculation:
+
+```csharp
+int openingTagPosition =
+    taggedMessage.IndexOf(openSpan);
+
+int closingTagPosition =
+    taggedMessage.IndexOf(closeSpan);
+
+int taggedContentStart =
+    openingTagPosition +
+    openSpan.Length;
+
+int taggedContentLength =
+    closingTagPosition -
+    taggedContentStart;
+```
+
+Extraction:
+
+```csharp
+string taggedContent =
+    taggedMessage.Substring(
+        taggedContentStart,
+        taggedContentLength);
+```
+
+Verified output:
+
+```text
+between the tags
+```
+
+---
+
+## `LastIndexOf()`
+
+`LastIndexOf()` returns the position of the final matching character or
+substring.
+
+```csharp
+const string greeting =
+    "hello there!";
+
+int firstHPosition =
+    greeting.IndexOf('h');
+
+int lastHPosition =
+    greeting.LastIndexOf('h');
+```
+
+Verified output:
+
+```text
+For the message 'hello there!', the first 'h' is at position 0
+and the last 'h' is at position 7.
+```
+
+This method is useful when the required content is associated with the final
+occurrence rather than the first.
+
+---
+
+## Extract the Final Parenthesis Pair
+
+Input:
+
+```csharp
+const string lastPairMessage =
+    "(What if) I am (only interested) in the last " +
+    "(set of parentheses)?";
+```
+
+Locate the final delimiters:
+
+```csharp
+int lastOpeningPosition =
+    lastPairMessage.LastIndexOf('(');
+
+int lastClosingPosition =
+    lastPairMessage.LastIndexOf(')');
+```
+
+Extract the content:
+
+```csharp
+int lastContentStart =
+    lastOpeningPosition + 1;
+
+int lastContentLength =
+    lastClosingPosition -
+    lastContentStart;
+
+string lastParenthesizedContent =
+    lastPairMessage.Substring(
+        lastContentStart,
+        lastContentLength);
+```
+
+Verified output:
+
+```text
+set of parentheses
+```
+
+The final source validates that both delimiters exist and that the closing
+delimiter follows the opening delimiter.
+
+---
+
+## `Substring(startIndex)`
+
+The one-parameter overload returns every character from the supplied starting
+index through the end of the string.
+
+```csharp
+remainingMessage =
+    remainingMessage.Substring(
+        closingPosition + 1);
+```
+
+This overload is used while extracting every parenthesized value.
+
+After one pair is processed, the application assigns the unprocessed remainder
+to `remainingMessage`. The next loop iteration searches only that remaining
+text.
+
+---
+
+## Extract Every Parenthesized Value
+
+Input:
+
+```csharp
+string remainingMessage =
+    "(What if) there are (more than) one " +
+    "(set of parentheses)?";
+```
+
+Core loop:
+
+```csharp
+while (true)
+{
+    int openingPosition =
+        remainingMessage.IndexOf('(');
+
+    if (openingPosition == -1)
+    {
+        break;
+    }
+
+    int closingPosition =
+        remainingMessage.IndexOf(
+            ')',
+            openingPosition + 1);
+
+    if (closingPosition == -1)
+    {
+        break;
+    }
+
+    int contentStart =
+        openingPosition + 1;
+
+    int contentLength =
+        closingPosition - contentStart;
+
+    Console.WriteLine(
+        remainingMessage.Substring(
+            contentStart,
+            contentLength));
+
+    remainingMessage =
+        remainingMessage.Substring(
+            closingPosition + 1);
+}
+```
+
+Verified output:
+
+```text
+What if
+more than
+set of parentheses
+```
+
+### Loop Termination
+
+The loop ends when:
+
+```text
+No opening parenthesis remains
+or
+An opening parenthesis has no matching closing parenthesis
+```
+
+This avoids treating `-1` as a valid string index.
+
+---
+
+## `IndexOfAny()`
+
+`IndexOfAny()` searches for any character contained in a supplied `char[]`.
+
+```csharp
+const string message =
+    "Hello, world!";
+
+char[] vowelsToFind =
+[
+    'a',
+    'e',
+    'i'
+];
+
+int vowelPosition =
+    message.IndexOfAny(
+        vowelsToFind);
+```
+
+Verified output:
+
+```text
+Found 'e' in 'Hello, world!' at index 1.
+```
+
+The method returns the position of the earliest matching character in the
+string, not the position of the character inside the search array.
+
+If none of the supplied characters occurs, it returns `-1`.
+
+---
+
+## Starting-Position Overload
+
+`IndexOfAny()` can begin searching at a specified index.
+
+```csharp
+int openingAfterStartPosition =
+    openingSymbolMessage.IndexOfAny(
+        openingSymbols,
+        startPosition);
+```
+
+Input:
+
+```text
+Help (find) the {opening symbols}
+```
+
+Search characters:
+
+```csharp
+char[] openingSymbols =
+[
+    '[',
+    '{',
+    '('
+];
+```
+
+The overload is useful when part of the string has already been processed and
+the next search must begin later.
+
+---
+
+## Match Different Delimiter Types
+
+Input:
+
+```csharp
+const string mixedSymbolMessage =
+    "(What if) I have [different symbols] but every " +
+    "{open symbol} needs a [matching closing symbol]?";
+```
+
+Opening characters:
+
+```csharp
+char[] openingSymbols =
+[
+    '[',
+    '{',
+    '('
+];
+```
+
+The application uses `IndexOfAny()` to locate the next opening symbol and a
+`switch` statement to select its matching closing symbol:
+
+```csharp
+switch (currentOpeningSymbol)
+{
+    case "[":
+        matchingClosingSymbol = ']';
+        break;
+
+    case "{":
+        matchingClosingSymbol = '}';
+        break;
+
+    case "(":
+        matchingClosingSymbol = ')';
+        break;
+}
+```
+
+It then searches for the corresponding close:
+
+```csharp
+int closingPosition =
+    mixedSymbolMessage.IndexOf(
+        matchingClosingSymbol,
+        contentStart);
+```
+
+Verified output:
+
+```text
+What if
+different symbols
+open symbol
+matching closing symbol
+```
+
+The loop continues after the matched closing symbol:
+
+```csharp
+searchPosition =
+    closingPosition + 1;
+```
+
+This prevents already processed content from being searched again.
+
+---
+
+## `Remove()`
+
+`Remove(startIndex, count)` returns a new string without the specified range.
+
+Input:
+
+```csharp
+const string fixedWidthData =
+    "12345John Smith          5000  3  ";
+```
+
+Field layout:
+
+```text
+Indexes 0–4   → customer identifier
+Indexes 5–24  → customer name, 20 characters
+Remaining     → invoice amount and item count
+```
+
+Removal:
+
+```csharp
+string dataWithoutCustomerName =
+    fixedWidthData.Remove(
+        5,
+        20);
+```
+
+Verified output:
+
+```text
+Original fixed-width data: '12345John Smith          5000  3  '
+After removing the name:   '123455000  3  '
+```
+
+`Remove()` is appropriate when the starting position and field width are known
+and stable.
+
+---
+
+## `Replace()`
+
+`Replace()` returns a new string in which every matching occurrence has been
+replaced.
+
+```csharp
+string hyphenatedMessage =
+    "This--is--ex-amp-le--da-ta";
+
+string normalizedMessage =
+    hyphenatedMessage.Replace(
+        "--",
+        " ");
+
+normalizedMessage =
+    normalizedMessage.Replace(
+        "-",
+        string.Empty);
+```
+
+Processing:
+
+```text
+First Replace()
+→ every "--" becomes one space
+
+Second Replace()
+→ every remaining "-" becomes an empty string
+```
+
+Verified output:
+
+```text
+Original: This--is--ex-amp-le--da-ta
+Updated : This is example data
+```
+
+Unlike `IndexOf()`, `Replace()` does not stop after the first match.
+
+---
+
+## Challenge — Extract, Replace, and Remove HTML Data
+
+Input:
+
+```csharp
+const string input =
+    "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+```
+
+Required output:
+
+```text
+Quantity: 5000
+Output: <h2>Widgets &reg;</h2><span>5000</span>
+```
+
+The challenge requires three transformations:
+
+```text
+1. Extract the text between <span> and </span>
+2. Replace &trade; with &reg;
+3. Remove the opening and closing <div> tags
+```
+
+### Structural Constants
+
+```csharp
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+const string openDiv = "<div>";
+const string closeDiv = "</div>";
+const string tradeSymbol = "&trade;";
+const string registeredSymbol = "&reg;";
+```
+
+### Extract Quantity
+
+```csharp
+int spanOpeningPosition =
+    input.IndexOf(openSpan);
+
+int spanClosingPosition =
+    input.IndexOf(closeSpan);
+
+int quantityStart =
+    spanOpeningPosition +
+    openSpan.Length;
+
+int quantityLength =
+    spanClosingPosition -
+    quantityStart;
+
+string quantity =
+    input.Substring(
+        quantityStart,
+        quantityLength);
+```
+
+### Replace the HTML Entity
+
+```csharp
+string output =
+    input.Replace(
+        tradeSymbol,
+        registeredSymbol);
+```
+
+### Remove the Outer `<div>` Tags
+
+```csharp
+int openingDivPosition =
+    output.IndexOf(openDiv);
+
+if (openingDivPosition != -1)
+{
+    output =
+        output.Remove(
+            openingDivPosition,
+            openDiv.Length);
+}
+
+int closingDivPosition =
+    output.IndexOf(closeDiv);
+
+if (closingDivPosition != -1)
+{
+    output =
+        output.Remove(
+            closingDivPosition,
+            closeDiv.Length);
+}
+```
+
+Verified result:
+
+```text
+Quantity: 5000
+Output: <h2>Widgets &reg;</h2><span>5000</span>
+```
+
+The source checks every search result before passing it to `Substring()` or
+`Remove()`.
+
+---
+
+## Boundary Validation
+
+Text-processing code becomes fragile when it assumes delimiters always exist.
+
+Potential failures include:
+
+```text
+Opening delimiter not found
+Closing delimiter not found
+Closing delimiter appears before the opening delimiter
+Opening delimiter has no matching close
+A search result of -1 is used as an index
+A calculated length becomes negative
+```
+
+The final source uses checks such as:
+
+```csharp
+if (openingPosition == -1 ||
+    closingPosition == -1 ||
+    closingPosition <= openingPosition)
+{
+    // Handle invalid structure safely.
+}
+```
+
+For repeated extraction, the closing search begins after the opening delimiter:
+
+```csharp
+int closingPosition =
+    remainingMessage.IndexOf(
+        ')',
+        openingPosition + 1);
+```
+
+These checks make the learning examples safer while preserving the original
+module concepts.
+
+---
+
+## Common Indexing Errors
+
+### Off-by-One Error
+
+An off-by-one error occurs when a boundary is shifted by one character.
+
+```text
+Start at opening delimiter
+→ delimiter is included accidentally
+
+Start one character too far
+→ first content character is lost
+```
+
+Correct pattern for a one-character opening delimiter:
+
+```csharp
+int contentStart =
+    openingPosition + 1;
+```
+
+Correct pattern for a multi-character opening delimiter:
+
+```csharp
+int contentStart =
+    openingPosition +
+    openingDelimiter.Length;
+```
+
+### Incorrect Length
+
+`Substring(startIndex, length)` expects a character count, not an ending index.
+
+Correct calculation:
+
+```csharp
+int length =
+    endingPosition -
+    startingPosition;
+```
+
+The ending delimiter itself is excluded because the count stops immediately
+before its index.
+
+---
+
+## Source-Code Cleanup
+
+The original study notes contained independent instructional fragments that
+could not be compiled directly as one top-level program.
+
+They included:
+
+```text
+Repeated declarations of message
+Repeated openingPosition and closingPosition variables
+Repeated length and output variables
+Narrative text mixed with executable statements
+A large set of unrelated unused using directives
+Multiple complete examples in the same top-level scope
+Examples that assumed delimiters always existed
+Hardcoded tag lengths
+The complete challenge and solution duplicated in one scope
+```
+
+The final source:
+
+- removes unrelated `using` directives;
+- gives every learning group its own method;
+- uses descriptive names for each boundary;
+- replaces magic offsets with constant lengths;
+- retains the complete challenge;
+- checks `IndexOf()` and related results for `-1`;
+- checks delimiter ordering;
+- avoids negative substring lengths;
+- explains string immutability;
+- preserves the official output;
+- compiles and runs as one coherent application.
+
+---
+
+## Verified Runtime Behaviour
+
+The organised application ran successfully from beginning to end.
+
+Verified behaviour includes:
+
+```text
+First opening and closing parenthesis positions
+Extraction including the opening parenthesis
+Extraction excluding both delimiters
+Extraction between <span> tags
+First and last occurrence of a character
+Extraction from the final parenthesis pair
+Extraction of every parenthesized value
+IndexOfAny() vowel search
+IndexOfAny() start-position overload
+Matching parentheses, brackets, and braces
+Fixed-width field removal
+Repeated separator replacement
+HTML quantity extraction
+HTML entity replacement
+Outer <div> removal
+Final module summary
+```
+
+Verified challenge output:
+
+```text
+Quantity: 5000
+Output: <h2>Widgets &reg;</h2><span>5000</span>
+```
+
+Final console summary:
+
+```text
+MODULE SUMMARY
+--------------
+
+IndexOf()     -> returns the first matching position or -1.
+LastIndexOf() -> returns the final matching position or -1.
+IndexOfAny()  -> finds the first occurrence of any supplied char.
+Substring()   -> returns a selected portion of a string.
+Remove()      -> returns a string without a selected range.
+Replace()     -> replaces every matching occurrence.
+const/Length  -> avoid fragile magic strings and magic numbers.
+string        -> immutable; helper methods return new strings.
+```
+
+---
+
+## Build Verification
+
+Run the module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\modify-string-content\modify-string-content.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\modify-string-content\modify-string-content.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results from the supplied Visual Studio evidence:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Project build: Succeeded
+Project build time: 0.4 seconds
+Full solution build: Succeeded
+Full solution build time: 4.0 seconds
+Solution projects: 25
+Target framework: net10.0
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 4, 2026
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| modify | `/ˈmɒd.ɪ.faɪ/` | “mo-đi-fai” | sửa đổi |
+| content | `/ˈkɒn.tent/` | “con-ten-t” | nội dung |
+| string | `/strɪŋ/` | “x-trinh” | chuỗi ký tự |
+| built-in | `/ˌbɪltˈɪn/` | “bilt-in” | được tích hợp sẵn |
+| method | `/ˈmeθ.əd/` | “mé-thợd” | phương thức |
+| index | `/ˈɪn.deks/` | “in-đéc-x” | chỉ số vị trí |
+| zero-based | `/ˌzɪə.rəʊˈbeɪst/` | “zi-râu-bâyst” | bắt đầu đếm từ zero |
+| occurrence | `/əˈkʌr.əns/` | “ờ-câ-rần-x” | lần xuất hiện |
+| substring | `/ˈsʌb.strɪŋ/` | “sấp-xtrinh” | chuỗi con |
+| delimiter | `/dɪˈlɪm.ɪ.tər/` | “đì-li-mi-tờ” | ký tự hoặc chuỗi phân cách |
+| opening delimiter | `/ˈəʊ.pən.ɪŋ dɪˈlɪm.ɪ.tər/` | “âu-pờ-ning đì-li-mi-tờ” | dấu phân cách mở |
+| closing delimiter | `/ˈkləʊ.zɪŋ dɪˈlɪm.ɪ.tər/` | “clâu-zing đì-li-mi-tờ” | dấu phân cách đóng |
+| immutable | `/ɪˈmjuː.tə.bəl/` | “i-miu-tờ-bồ” | không thể thay đổi nội dung sau khi tạo |
+| replace | `/rɪˈpleɪs/` | “rì-plâys” | thay thế |
+| remove | `/rɪˈmuːv/` | “rì-muuv” | loại bỏ |
+| magic number | `/ˈmædʒ.ɪk ˈnʌm.bər/` | “ma-jịch năm-bờ” | số hardcode có ý nghĩa ẩn |
+| magic string | `/ˈmædʒ.ɪk strɪŋ/` | “ma-jịch xtrinh” | chuỗi hardcode có ý nghĩa ẩn |
+| boundary | `/ˈbaʊn.dər.i/` | “bao-n-đờ-ri” | ranh giới |
+| off-by-one error | `/ˌɒf baɪ ˈwʌn ˈer.ər/` | “óp-bai-oăn e-rờ” | lỗi lệch một vị trí |
+| fixed-width | `/ˌfɪkst ˈwɪdθ/` | “phích-t uýt-th” | có độ rộng cố định |
+| HTML entity | `/ˌeɪtʃ tiː em ˈel ˈen.tɪ.ti/` | “âych-ti-em-el en-ti-ti” | mã biểu diễn ký tự trong HTML |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+Section: Work with Variable Data in C# Console Applications
+Module position: 5 / 7
+Microsoft Learn units: 8 / 8
+Learning status: Completed
+Module assessment: Passed
+Achievement: Earned
+Project registration: Verified
+Solution project count: 25
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Module run: Succeeded
+Module output: Verified
+Project build: Succeeded in 0.4 seconds
+Full solution build: Succeeded in 4.0 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 4, 2026
+```
+
+---
+
+## Next Curriculum Item
+
+### Guided Project — Work with Variable Data in C#
+
+The next curriculum item will integrate the techniques from the first five
+instructional modules into one guided project.
+
+The repository project should be created only after reviewing the official
+guided-project requirements and verifying the current repository state.
+
+Expected repository verification remains:
+
+```text
+Run the guided project successfully
+Verify the complete expected output
+Build the guided project independently
+Build the full solution
+Update this section README
+Update the repository root README
+Review the Git diff
+Commit and push to main
+```
 
 ---
 
@@ -4106,6 +5223,7 @@ successfully, build independently, and preserve a passing full-solution build.
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
 - [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
+- [Microsoft Learn — Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/)
 - [freeCodeCamp — Foundational C# with Microsoft Certification](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 
 ---
@@ -4118,3 +5236,4 @@ successfully, build independently, and preserve a passing full-solution build.
 - [Module 2 source](./modules/convert-data-types/)
 - [Module 3 source](./modules/array-helper-methods/)
 - [Module 4 source](./modules/format-alphanumeric-data/)
+- [Module 5 source](./modules/modify-string-content/)

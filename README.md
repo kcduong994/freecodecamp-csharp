@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-24-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-25-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -33,36 +33,32 @@ Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
 Current section status: In progress
-Current section learning progress: 4 / 7
-Current section repository-verified progress: 4 / 7
-Instructional modules completed on Microsoft Learn: 4
-Instructional modules fully repository-verified: 4
+Current section learning progress: 5 / 7
+Current section repository-verified progress: 5 / 7
+Instructional modules completed on Microsoft Learn: 5
+Instructional modules fully repository-verified: 5
 Guided projects completed in current section: 0
 Challenge projects completed in current section: 0
-Latest completed learning item: Format Alphanumeric Data for Presentation in C#
-Latest project: format-alphanumeric-data
+Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+Latest project: modify-string-content
 Latest learning item status: Completed
 Microsoft Learn units: 8 / 8
 Module assessment: Passed
 Achievement: Earned
-Latest completion date: August 3, 2026
-Projects currently registered in solution: 24
+Latest completion date: August 4, 2026
+Projects currently registered in solution: 25
 Latest organized source: Completed
 Professional source comments: Completed
-Latest corrected module run: Verified
+Latest module run: Verified
 Latest module output: Verified
-Latest corrected project build: Verified
-Latest corrected project build time: 1.5 seconds
+Latest project build: Verified
+Latest project build time: 0.4 seconds
 Latest full solution build: Verified
-Latest full solution build time: 3.1 seconds
+Latest full solution build time: 4.0 seconds
 Latest project compiler errors: 0
 Latest project compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Resolved compiler error: CS1503
-Addressed IDE suggestion: IDE0071
-Final module run after correction: Succeeded
-Full solution build after correction: Succeeded in 3.1 seconds
-Next curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+Next curriculum item: Guided Project — Work with Variable Data in C#
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -70,7 +66,7 @@ Next curriculum item: Modify the Content of Strings Using Built-In String Data T
 | 1 | Write Your First Code Using C# | 7 / 7 | Verified | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
-| 4 | Work with Variable Data in C# Console Applications | 4 / 7 | 4 / 7 verified | In progress |
+| 4 | Work with Variable Data in C# Console Applications | 5 / 7 | 5 / 7 verified | In progress |
 | 5 | Create Methods in C# Console Applications | Not started | Pending | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
@@ -80,9 +76,9 @@ units and assessment have been completed. It reaches full repository
 verification after the final source has run successfully, its project has built
 successfully, and the complete solution has built successfully.
 
-Module 4 is fully repository-verified. Its final corrected source ran
-successfully, its project built cleanly, and the complete twenty-four-project
-solution built successfully.
+Module 5 is fully repository-verified. Its organized source ran successfully,
+produced the expected string-processing output, built cleanly, and preserved a
+passing twenty-five-project full-solution build.
 
 ---
 
@@ -1581,42 +1577,38 @@ The evidence records:
 
 ```text
 Status: In progress
-Learning progress: 4 / 7
-Repository-verified progress: 4 / 7
-Completed instructional modules on Microsoft Learn: 4
-Fully repository-verified instructional modules: 4
+Learning progress: 5 / 7
+Repository-verified progress: 5 / 7
+Completed instructional modules on Microsoft Learn: 5
+Fully repository-verified instructional modules: 5
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed learning item: Format Alphanumeric Data for Presentation in C#
+Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
 Microsoft Learn units: 8 / 8
 Module assessment: Passed
 Achievement: Earned
 Project registration: Verified
-Solution project count: 24
+Solution project count: 25
 Final organized Program.cs: Completed
 Professional source comments: Completed
-Corrected module run: Verified
+Module run: Verified
 Module output: Verified
-Corrected project build: Verified
-Corrected project build time: 1.5 seconds
+Project build: Verified
+Project build time: 0.4 seconds
 Full solution build: Verified
-Full solution build time: 3.1 seconds
-Compiler errors after correction: 0
-Compiler warnings after correction: 0
-IDE diagnostics after correction: No issues found
-Resolved compiler error: CS1503
-Addressed IDE suggestion: IDE0071
-Final module run after correction: Succeeded
-Full solution build after correction: Succeeded in 3.1 seconds
-Latest completion date: August 3, 2026
-Next curriculum item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+Full solution build time: 4.0 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Latest completion date: August 4, 2026
+Next curriculum item: Guided Project — Work with Variable Data in C#
 ```
 
 Section 4 develops practical skills for selecting, converting, formatting,
 searching, and manipulating data in C# console applications.
 
-The section now contains four completed and fully repository-verified
-instructional modules and twenty-four registered projects. The latest module
+The section now contains five completed and fully repository-verified
+instructional modules and twenty-five registered projects. The latest module
 runs successfully, builds cleanly, and preserves a passing full-solution state.
 
 [Open the current Section 4 documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/README.md)
@@ -2853,16 +2845,226 @@ IDE diagnostics: No issues found
 
 ---
 
-### Next Module — Modify the Content of Strings Using Built-In String Data Type Methods in C#
+### Module 5 — Modify the Content of Strings Using Built-In String Data Type Methods in C#
 
 ```text
-Status: Not started
-Current Section 4 learning progress: 4 / 7
-Current repository-verified progress: 4 / 7
-Current solution baseline: 24 projects
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 25
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Module run: Succeeded
+Module output: Verified
+Project build: Succeeded
+Project build time: 0.4 seconds
+Full solution build: Succeeded
+Full solution build time: 4.0 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 4, 2026
 ```
 
-Expected topics include:
+This module explains how to locate, extract, remove, and replace information
+inside structured string data.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── modules/
+    └── modify-string-content/
+        ├── Program.cs
+        └── modify-string-content.csproj
+```
+
+The final application preserves the principal Microsoft Learn examples as one
+runnable program:
+
+```text
+PrintApplicationHeader()
+DemonstrateIndexOfAndSubstring()
+DemonstrateLastIndexOfAndRepeatedExtraction()
+DemonstrateIndexOfAny()
+DemonstrateRemoveAndReplace()
+CompleteHtmlChallenge()
+PrintModuleSummary()
+```
+
+#### Locate and extract content
+
+`IndexOf()` returns the zero-based position of the first matching character or
+substring. It returns `-1` when the requested value is not found.
+
+```csharp
+const string message =
+    "Find what is (inside the parentheses)";
+
+int openingPosition =
+    message.IndexOf('(');
+
+int closingPosition =
+    message.IndexOf(')');
+```
+
+`Substring(startIndex, length)` returns the selected portion of the string:
+
+```csharp
+int contentStart =
+    openingPosition + 1;
+
+int contentLength =
+    closingPosition - contentStart;
+
+string content =
+    message.Substring(
+        contentStart,
+        contentLength);
+```
+
+Result:
+
+```text
+inside the parentheses
+```
+
+Adding `1` skips the opening parenthesis. The source documents this boundary
+calculation explicitly to prevent an off-by-one error.
+
+#### Avoid magic strings and magic numbers
+
+The HTML-tag example uses constants:
+
+```csharp
+const string openSpan = "<span>";
+const string closeSpan = "</span>";
+```
+
+The extraction offset is calculated from:
+
+```csharp
+openSpan.Length
+```
+
+instead of a hardcoded number such as `6`.
+
+This keeps the code valid if the tag value changes and allows the compiler to
+detect misspelled constant names.
+
+#### Find the final occurrence
+
+`LastIndexOf()` returns the final matching position.
+
+```csharp
+int firstHPosition =
+    greeting.IndexOf('h');
+
+int lastHPosition =
+    greeting.LastIndexOf('h');
+```
+
+It is also used to extract the value inside the last parenthesis pair:
+
+```text
+set of parentheses
+```
+
+#### Extract repeated values
+
+The project repeatedly extracts parenthesized content with a `while` loop.
+
+```text
+What if
+more than
+set of parentheses
+```
+
+Each iteration:
+
+```text
+1. Finds the next opening delimiter
+2. Finds its closing delimiter
+3. Extracts the text between them
+4. Continues with the unprocessed remainder
+```
+
+The implementation checks both search results before calling `Substring()` so
+an absent or unmatched delimiter does not create an invalid range.
+
+#### Search for several symbols with `IndexOfAny()`
+
+`IndexOfAny()` receives a `char[]` and returns the first occurrence of any
+character in that set.
+
+```csharp
+char[] openingSymbols =
+[
+    '[',
+    '{',
+    '('
+];
+```
+
+The completed example matches each opening symbol with the corresponding closing
+symbol:
+
+```text
+( → )
+[ → ]
+{ → }
+```
+
+Verified output:
+
+```text
+What if
+different symbols
+open symbol
+matching closing symbol
+```
+
+#### Remove and replace data
+
+`Remove(startIndex, count)` returns a new string without the selected character
+range.
+
+The fixed-width-data example removes the twenty-character customer-name field:
+
+```csharp
+string dataWithoutCustomerName =
+    fixedWidthData.Remove(
+        5,
+        20);
+```
+
+`Replace(oldValue, newValue)` replaces every occurrence of the supplied value.
+
+```csharp
+string normalizedMessage =
+    hyphenatedMessage.Replace(
+        "--",
+        " ");
+
+normalizedMessage =
+    normalizedMessage.Replace(
+        "-",
+        string.Empty);
+```
+
+Result:
+
+```text
+This is example data
+```
+
+#### String immutability
+
+`string` is immutable.
 
 ```text
 IndexOf()
@@ -2871,15 +3073,88 @@ IndexOfAny()
 Substring()
 Remove()
 Replace()
-Insert()
-Trim()
-String ranges
-Character positions
-Extracting data from structured text
-String immutability
 ```
 
-The next project must be registered in `freecodecamp-csharp.slnx`, run
+do not modify the existing string object. Methods that transform text return a
+new string, which must be stored or used by the application.
+
+#### Challenge — extract, replace, and remove HTML data
+
+Input:
+
+```csharp
+const string input =
+    "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
+```
+
+Required processing:
+
+```text
+Extract the text inside <span>...</span>
+Replace &trade; with &reg;
+Remove the opening and closing <div> tags
+```
+
+Verified result:
+
+```text
+Quantity: 5000
+Output: <h2>Widgets &reg;</h2><span>5000</span>
+```
+
+The final source also checks the required tag positions before calculating
+substring boundaries.
+
+Run the completed module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\modify-string-content\modify-string-content.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\modify-string-content\modify-string-content.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Module run: Succeeded
+Module output: Verified
+Module build: Succeeded in 0.4 seconds
+Full solution build: Succeeded in 4.0 seconds
+Registered solution projects: 25
+Target framework: net10.0
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 4, 2026
+```
+
+---
+
+### Next Curriculum Item — Guided Project — Work with Variable Data in C#
+
+```text
+Status: Not started
+Current Section 4 learning progress: 5 / 7
+Current repository-verified progress: 5 / 7
+Current solution baseline: 25 projects
+```
+
+The guided project will integrate the data-selection, conversion, array,
+formatting, and string-manipulation techniques completed in Modules 1 through 5.
+
+The new project must be registered in `freecodecamp-csharp.slnx`, run
 successfully, build independently, and preserve a passing full-solution build.
 
 ---
@@ -2941,9 +3216,12 @@ freecodecamp-csharp/
 │   │       ├── array-helper-methods/
 │   │       │   ├── Program.cs
 │   │       │   └── array-helper-methods.csproj
-│   │       └── format-alphanumeric-data/
+│   │       ├── format-alphanumeric-data/
+│   │       │   ├── Program.cs
+│   │       │   └── format-alphanumeric-data.csproj
+│   │       └── modify-string-content/
 │   │           ├── Program.cs
-│   │           └── format-alphanumeric-data.csproj
+│   │           └── modify-string-content.csproj
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
@@ -2963,7 +3241,7 @@ Each curriculum section may contain:
 - `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
 
-Section 4 currently contains four completed and fully repository-verified module projects. Its `trophy/`
+Section 4 currently contains five completed and fully repository-verified module projects. Its `trophy/`
 directory will be added after the complete section has been finished and the
 official completion evidence has been earned.
 
@@ -2996,7 +3274,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-24
+25
 ```
 
 List all projects registered in the solution:
@@ -3097,13 +3375,15 @@ curriculum/work-with-variable-data-in-csharp-console-applications/modules/conver
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/array-helper-methods/array-helper-methods.csproj
 
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/format-alphanumeric-data/format-alphanumeric-data.csproj
+
+curriculum/work-with-variable-data-in-csharp-console-applications/modules/modify-string-content/modify-string-content.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\format-alphanumeric-data\format-alphanumeric-data.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\modify-string-content\modify-string-content.csproj"
 ```
 
 ---
@@ -3116,55 +3396,52 @@ dotnet run --project `
 Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
-Current section learning progress: 4 / 7
-Current section repository-verified progress: 4 / 7
-Latest completed learning item: Format Alphanumeric Data for Presentation in C#
-Latest project: format-alphanumeric-data
+Current section learning progress: 5 / 7
+Current section repository-verified progress: 5 / 7
+Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
+Latest project: modify-string-content
 Module units: 8 / 8
 Module assessment: Passed
 Achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 24
-Corrected project build: Succeeded in 1.5 seconds
-Compiler errors after correction: 0
-Compiler warnings after correction: 0
-IDE diagnostics after correction: No issues found
-Resolved compiler error: CS1503
-Addressed IDE suggestion: IDE0071
-Corrected module run: Succeeded
-Corrected full-solution build: Succeeded in 3.1 seconds
-Verification date: August 3, 2026
+Registered solution projects: 25
+Project build: Succeeded in 0.4 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Module run: Succeeded
+Module output: Verified
+Full-solution build: Succeeded in 4.0 seconds
+Verification date: August 4, 2026
 ```
 
 The latest evidence confirms that:
 
-- `format-alphanumeric-data` is registered as the twenty-fourth solution
-  project;
+- `modify-string-content` is registered as the twenty-fifth solution project;
 - the Microsoft Learn module assessment was passed;
 - the module achievement was earned;
 - the final source is organised into focused methods with professional comments;
-- escape sequences, verbatim strings, and Unicode are demonstrated;
-- composite formatting and string interpolation are compared;
-- culture-specific currency, number, percentage, and fixed-point formats are
-  demonstrated;
-- explicit `CultureInfo` values are used for stable presentation;
-- padding and interpolation alignment are demonstrated;
-- a 40-character fixed-width payment record is implemented;
-- the investment receipt is implemented;
-- the personalized marketing-letter challenge is implemented;
-- compiler error `CS1503` was diagnosed and corrected;
-- `IDE0071` was addressed in the final source;
-- the corrected module ran successfully and produced the expected complete output;
-- the corrected module project compiled successfully in `1.5` seconds;
-- the complete twenty-four-project solution compiled successfully in `3.1` seconds;
-- the corrected project has zero compiler errors and zero compiler warnings;
+- `IndexOf()`, `LastIndexOf()`, and `IndexOfAny()` are demonstrated;
+- both principal `Substring()` overloads are demonstrated;
+- search results are checked for `-1` before substring ranges are calculated;
+- magic strings and magic numbers are replaced with constants and `Length`;
+- repeated delimited values are extracted with a `while` loop;
+- parentheses, square brackets, and braces are matched;
+- fixed-width data is processed with `Remove()`;
+- repeated values are transformed with `Replace()`;
+- string immutability is documented;
+- the HTML extraction, replacement, and removal challenge is implemented;
+- the module ran successfully and produced the expected complete output;
+- the module project compiled successfully in `0.4` seconds;
+- the complete twenty-five-project solution compiled successfully in `4.0`
+  seconds;
+- the project has zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues.
 
-The latest evidence confirms both a successful final module run and a
-successful full-solution build after the correction. Module 4 is therefore fully
-repository-verified.
+The latest evidence confirms both a successful final module run and a successful
+full-solution build. Module 5 is therefore fully repository-verified.
 
 ---
 
@@ -3223,6 +3500,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
 - [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
+- [Microsoft Learn — Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/)
 
 ---
 
