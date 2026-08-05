@@ -13,30 +13,34 @@ documented, and verified with both a project build and a full-solution build.
 
 ```text
 Section: Work with Variable Data in C# Console Applications
-Status: In progress
-Curriculum learning progress: 6 / 7
-Repository-verified progress: 6 / 7
+Status: Completed
+Curriculum learning progress: 7 / 7
+Repository-verified progress: 7 / 7
 Completed instructional modules on Microsoft Learn: 5
 Fully repository-verified instructional modules: 5
 Completed guided projects: 1
-Completed challenge projects: 0
-Latest completed learning item: Guided Project — Work with Variable Data in C#
-Latest Microsoft Learn units: 7 / 7
-Latest completion date: August 5, 2026
-Projects registered in solution: 26
-Latest project: contoso-petfriends
+Completed challenge projects: 1
+Latest completed learning item: Challenge Project — Work with Variable Data in C#
+Latest Microsoft Learn units: 6 / 6
+Latest module assessment: Passed
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Latest completion date: August 6, 2026
+Projects registered in solution: 27
+Latest project: contoso-petfriends-challenge
 Latest final source: Completed
 Latest professional source comments: Completed
-Latest guided-project run: Verified
-Latest application startup and normal exit: Verified
-Suggested-donation feature: Implemented
-Dog-characteristic search: Implemented
-Latest project build: Verified
-Latest full solution build: Verified
+Multiple-term dog search: Implemented
+Sorted search-term processing: Implemented
+Search spinner: Implemented
+Search countdown from 2 to 0: Implemented
+Latest challenge project build: Verified
+Latest full solution build: Succeeded in 2.3 seconds
 Latest project compiler errors: 0
-Latest project compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Challenge Project — Work with Variable Data in C#
+Trophy evidence: Added
+Trophy assets: 2 PNG files
+Next curriculum section: Create Methods in C# Console Applications
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
@@ -47,18 +51,18 @@ Next curriculum item: Challenge Project — Work with Variable Data in C#
 | 4 | Format Alphanumeric Data for Presentation in C# | Completed | Verified |
 | 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Completed | Verified |
 | 6 | Guided Project — Work with Variable Data in C# | Completed | Verified |
-| 7 | Challenge Project — Work with Variable Data in C# | Pending | Pending |
+| 7 | Challenge Project — Work with Variable Data in C# | Completed | Verified |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
-units have been completed. It reaches full repository verification after the
-final source has run successfully, its project has built successfully, and the
-complete solution has built successfully.
+units and assessment have been completed. It reaches full repository
+verification after its final source has been organised, the project has built
+successfully, and the complete solution has built successfully.
 
-The guided project is fully repository-verified. The final Contoso PetFriends
-source is registered as the twenty-sixth solution project, starts successfully,
-supports normal menu exit, implements suggested-donation formatting and dog
-characteristic search, builds independently, and preserves a passing
-twenty-six-project full-solution build.
+Section 4 is complete and fully repository-verified. Its five instructional
+modules, guided project, and challenge project are preserved in the repository.
+The final challenge is registered as the twenty-seventh solution project, and
+the trophy directory records the certificate and Microsoft Learn achievement
+evidence.
 ---
 
 ## Repository Structure
@@ -82,18 +86,25 @@ work-with-variable-data-in-csharp-console-applications/
 │   └── modify-string-content/
 │       ├── Program.cs
 │       └── modify-string-content.csproj
-└── guided-projects/
-    └── contoso-petfriends/
-        ├── Program.cs
-        └── contoso-petfriends.csproj
+├── guided-projects/
+│   └── contoso-petfriends/
+│       ├── Program.cs
+│       └── contoso-petfriends.csproj
+├── challenge-projects/
+│   └── contoso-petfriends-challenge/
+│       ├── Program.cs
+│       └── contoso-petfriends-challenge.csproj
+└── trophy/
+    ├── README.md
+    └── assets/
+        ├── 1.PNG
+        └── 2.PNG
 ```
 
-This section uses one central README for curriculum documentation. Module and
-guided-project directories contain executable source code and project files
-without an additional README.
-
-A `trophy/` directory will be added after the complete Section 4 learning path
-has been finished and the corresponding completion evidence has been earned.
+This section uses one central README for curriculum documentation. Module,
+guided-project, and challenge-project directories contain executable source
+code and project files. The `trophy/` directory preserves the final certificate
+and Microsoft Learn achievement evidence.
 
 ---
 
@@ -5675,27 +5686,374 @@ Completion date: August 5, 2026
 
 ---
 
-## Next Curriculum Item
+# Challenge Project — Work with Variable Data in C#
 
-### Challenge Project — Work with Variable Data in C#
-
-The final Section 4 item will independently apply data selection, conversion,
-array processing, formatting, and string-manipulation requirements.
-
-Expected repository verification:
+## Completion Status
 
 ```text
-Complete the official challenge requirements
-Organize and comment the final source
-Run the challenge successfully
-Verify the required behavior and output
-Build the challenge independently
-Build the full solution
-Update this section README
-Update the repository root README
-Review the Git diff
-Commit and push to main
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 6 / 6
+Module assessment: Passed
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Project added to solution: Verified
+Solution project count: 27
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Multiple-term dog search: Implemented
+Search-term validation: Implemented
+Alphabetical search-term sorting: Implemented
+Case-insensitive description search: Implemented
+Search spinner: Implemented
+Countdown from 2 to 0: Implemented
+Challenge project build: Succeeded
+Full solution build: Succeeded in 2.3 seconds
+Compiler errors: 0
+IDE diagnostics: No issues found
+Completion date: August 6, 2026
 ```
+
+The final Section 4 challenge extends the **Contoso PetFriends** application
+from single-term dog search to a validated, sorted, multiple-term search with an
+improved animated search-status display.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── challenge-projects/
+    └── contoso-petfriends-challenge/
+        ├── Program.cs
+        └── contoso-petfriends-challenge.csproj
+```
+
+---
+
+## Challenge Requirements
+
+The completed project implements the official challenge requirements:
+
+```text
+Multiple-term search
+→ users enter terms separated by commas
+→ terms are stored in an array
+→ terms are sorted alphabetically
+→ every dog is searched for every term
+→ all matching terms are reported
+→ matching dog details are displayed once
+→ a no-match message is displayed when required
+
+Improved search status
+→ spinner frames resemble a rotating dial
+→ one status line is overwritten repeatedly
+→ countdown displays 2, 1, and 0
+→ the status line is removed after the search
+```
+
+---
+
+## Split and Validate Search Input
+
+The application converts comma-separated input into a string array:
+
+```csharp
+dogSearchTerms =
+    rawSearchInput.Split(
+        ',',
+        StringSplitOptions.RemoveEmptyEntries |
+        StringSplitOptions.TrimEntries);
+```
+
+This combination:
+
+```text
+RemoveEmptyEntries
+→ removes empty elements created by repeated commas
+
+TrimEntries
+→ removes surrounding whitespace from every term
+```
+
+The prompt repeats until at least one non-empty term exists. Inputs such as
+`null`, an empty string, spaces, or `",,,"` do not start a search.
+
+---
+
+## Sort Search Terms
+
+The challenge requires alphanumeric order:
+
+```csharp
+Array.Sort(
+    dogSearchTerms,
+    StringComparer.OrdinalIgnoreCase);
+```
+
+Example:
+
+```text
+Input:
+golden, big
+
+Search order:
+big
+golden
+```
+
+`OrdinalIgnoreCase` provides stable programmatic ordering without treating
+uppercase and lowercase forms as different categories.
+
+---
+
+## Search Every Dog for Every Term
+
+The source uses nested iteration:
+
+```text
+Outer pet loop
+→ inspect each populated dog record
+
+Inner search-term loop
+→ search the current dog's combined description for every term
+```
+
+Physical and personality descriptions are combined:
+
+```csharp
+string dogDescription =
+    ourAnimals[
+        petIndex,
+        PhysicalDescriptionIndex] +
+    Environment.NewLine +
+    ourAnimals[
+        petIndex,
+        PersonalityDescriptionIndex];
+```
+
+Each term is searched without case sensitivity:
+
+```csharp
+bool termMatched =
+    dogDescription.Contains(
+        searchTerm,
+        StringComparison.OrdinalIgnoreCase);
+```
+
+A separate flag records whether the current dog matched, while another flag
+records whether any dog matched during the complete search.
+
+---
+
+## Match Reporting
+
+For each matching term:
+
+```text
+Our dog lola matches your search for cream.
+Our dog lola matches your search for golden.
+```
+
+After all terms have been processed, the matching dog's description is printed
+once.
+
+When no dog matches any term:
+
+```text
+None of our dogs are a match for: big, grey, stripes
+```
+
+The no-match list is created with:
+
+```csharp
+string.Join(
+    ", ",
+    dogSearchTerms);
+```
+
+---
+
+## Spinner and Countdown
+
+The spinner uses four rotating frames:
+
+```csharp
+string[] searchingIcons =
+{
+    "|",
+    "/",
+    "-",
+    "\\"
+};
+```
+
+The animation counts down:
+
+```text
+2
+1
+0
+```
+
+For each countdown value, all spinner frames are displayed on the same console
+line with `\r`.
+
+A padded replacement prevents leftover characters from a longer previous frame.
+When the search finishes, the status line is erased completely.
+
+Redirected output uses a single readable status line and skips the delay because
+a terminal animation cannot be rendered correctly in redirected streams.
+
+---
+
+## Challenge Concepts Integrated
+
+| Concept | Final application |
+| --- | --- |
+| data input | reads menu choices and comma-separated terms |
+| arrays | creates, sorts, and iterates through `string[]` |
+| conversion | safely parses suggested-donation text |
+| string manipulation | splits, trims, joins, searches, and builds output |
+| iteration | loops through pets, terms, countdown values, and spinner frames |
+| formatting | displays stable currency and readable search results |
+| Boolean state | tracks current-dog and global match results |
+
+---
+
+## Verification
+
+Run the challenge:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\challenge-projects\contoso-petfriends-challenge\contoso-petfriends-challenge.csproj"
+```
+
+Build the challenge:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\challenge-projects\contoso-petfriends-challenge\contoso-petfriends-challenge.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified evidence:
+
+```text
+Challenge project registration: Verified
+Registered solution projects: 27
+Challenge project build: Succeeded
+Full solution build: Succeeded in 2.3 seconds
+Compiler errors: 0
+IDE diagnostics: No issues found
+Microsoft Learn units: 6 / 6
+Module assessment: Passed
+Learning-path assessments: All passed
+Achievements shown: 2
+Verification date: August 6, 2026
+```
+
+Recommended runtime checks:
+
+```text
+large, cream, golden
+→ lola matches cream and golden
+→ gus matches golden and large
+
+big, grey, stripes
+→ no-match message appears
+
+golden, big
+→ terms are processed as big, golden
+→ spinner rotates
+→ countdown displays 2, 1, 0
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| challenge project | `/ˈtʃæl.ɪndʒ ˈprɒdʒ.ekt/` | “cha-lần-ch pro-jẹct” | dự án thử thách |
+| multiple-term search | `/ˈmʌl.tɪ.pəl tɜːm sɜːtʃ/` | “man-ti-pồ tơm sớt-ch” | tìm kiếm nhiều từ khóa |
+| spinner | `/ˈspɪn.ər/` | “spi-nờ” | biểu tượng quay |
+| countdown | `/ˈkaʊnt.daʊn/` | “cao-nt-đao-n” | đếm ngược |
+| split | `/splɪt/` | “sờ-plit” | tách chuỗi |
+| trim | `/trɪm/` | “trim” | loại bỏ khoảng trắng ngoài |
+| sort | `/sɔːt/` | “soọt” | sắp xếp |
+| match | `/mætʃ/` | “mét-ch” | kết quả khớp |
+| search term | `/sɜːtʃ tɜːm/` | “sớt-ch tơm” | từ khóa tìm kiếm |
+| animation frame | `/ˌæn.ɪˈmeɪ.ʃən freɪm/` | “a-ni-mây-shần phrâym” | một khung của hiệu ứng |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Challenge Project — Work with Variable Data in C#
+Section: Work with Variable Data in C# Console Applications
+Project position: 7 / 7
+Microsoft Learn units: 6 / 6
+Learning status: Completed
+Module assessment: Passed
+Learning-path assessments: All passed
+Repository verification status: Fully verified
+Project registration: Verified
+Solution project count: 27
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Multiple-term dog search: Implemented
+Search spinner and countdown: Implemented
+Challenge project build: Succeeded
+Full solution build: Succeeded in 2.3 seconds
+Compiler errors: 0
+IDE diagnostics: No issues found
+Completion date: August 6, 2026
+```
+
+---
+
+# Section 4 Trophy
+
+The final completion evidence is stored at:
+
+```text
+trophy/
+├── README.md
+└── assets/
+    ├── 1.PNG
+    └── 2.PNG
+```
+
+Evidence includes:
+
+```text
+Section completion certificate
+Microsoft Learn achievement page
+All module assessments passed
+Challenge module assessment passed
+Two achievements shown on the completion page
+```
+
+[Open the Section 4 trophy](./trophy/README.md)
+
+---
+
+## Next Curriculum Section
+
+### Create Methods in C# Console Applications
+
+Section 4 is complete. The next curriculum section introduces reusable methods,
+parameters, return values, method overloading, and method-based application
+organisation.
 ---
 
 ## Official Curriculum References
@@ -5707,6 +6065,7 @@ Commit and push to main
 - [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
 - [Microsoft Learn — Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/)
 - [Microsoft Learn — Guided Project: Work with Variable Data in C#](https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/)
+- [Microsoft Learn — Challenge Project: Work with Variable Data in C#](https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/)
 - [freeCodeCamp — Foundational C# with Microsoft Certification](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 
 ---
@@ -5721,3 +6080,5 @@ Commit and push to main
 - [Module 4 source](./modules/format-alphanumeric-data/)
 - [Module 5 source](./modules/modify-string-content/)
 - [Guided Project source](./guided-projects/contoso-petfriends/)
+- [Challenge Project source](./challenge-projects/contoso-petfriends-challenge/)
+- [Section 4 trophy](./trophy/README.md)
