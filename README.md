@@ -72,11 +72,6 @@ verification after its final source has run successfully, its project has built
 successfully, the complete solution has built successfully, and the associated
 documentation and evidence have been stored.
 
-Section 4 is complete and fully repository-verified. The final challenge is
-registered as the twenty-seventh solution project, implements sorted
-multiple-term dog search and the required spinner/countdown workflow, preserves
-a passing twenty-seven-project solution build, and includes certificate and
-achievement evidence in the Section 4 Trophy directory.
 ---
 
 ## Completed Section
@@ -3466,6 +3461,7 @@ The evidence confirms:
 [View the Section 4 completion certificate](./curriculum/work-with-variable-data-in-csharp-console-applications/trophy/assets/1.PNG)
 
 [View the Microsoft Learn achievement evidence](./curriculum/work-with-variable-data-in-csharp-console-applications/trophy/assets/2.PNG)
+
 ---
 
 ## Repository Structure
