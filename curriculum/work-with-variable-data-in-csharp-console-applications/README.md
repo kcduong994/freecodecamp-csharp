@@ -14,31 +14,29 @@ documented, and verified with both a project build and a full-solution build.
 ```text
 Section: Work with Variable Data in C# Console Applications
 Status: In progress
-Curriculum learning progress: 5 / 7
-Repository-verified progress: 5 / 7
+Curriculum learning progress: 6 / 7
+Repository-verified progress: 6 / 7
 Completed instructional modules on Microsoft Learn: 5
 Fully repository-verified instructional modules: 5
-Completed guided projects: 0
+Completed guided projects: 1
 Completed challenge projects: 0
-Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
-Latest Microsoft Learn units: 8 / 8
-Latest module assessment: Passed
-Latest achievement: Earned
-Latest completion date: August 4, 2026
-Projects registered in solution: 25
-Latest project: modify-string-content
-Latest module run: Verified
-Latest module output: Verified
+Latest completed learning item: Guided Project — Work with Variable Data in C#
+Latest Microsoft Learn units: 7 / 7
+Latest completion date: August 5, 2026
+Projects registered in solution: 26
+Latest project: contoso-petfriends
+Latest final source: Completed
+Latest professional source comments: Completed
+Latest guided-project run: Verified
+Latest application startup and normal exit: Verified
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
 Latest project build: Verified
-Latest project build time: 0.4 seconds
 Latest full solution build: Verified
-Latest full solution build time: 4.0 seconds
 Latest project compiler errors: 0
 Latest project compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Latest module run after final source organisation: Succeeded
-Full solution build after final source organisation: Succeeded in 4.0 seconds
-Next curriculum item: Guided Project — Work with Variable Data in C#
+Next curriculum item: Challenge Project — Work with Variable Data in C#
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
@@ -48,19 +46,19 @@ Next curriculum item: Guided Project — Work with Variable Data in C#
 | 3 | Perform Operations on Arrays Using Helper Methods in C# | Completed | Verified |
 | 4 | Format Alphanumeric Data for Presentation in C# | Completed | Verified |
 | 5 | Modify the Content of Strings Using Built-In String Data Type Methods in C# | Completed | Verified |
-| 6 | Guided Project — Work with Variable Data in C# | Pending | Pending |
+| 6 | Guided Project — Work with Variable Data in C# | Completed | Verified |
 | 7 | Challenge Project — Work with Variable Data in C# | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
-units and assessment have been completed. It reaches full repository
-verification after the final source has run successfully, its project has built
-successfully, and the complete solution has built successfully.
+units have been completed. It reaches full repository verification after the
+final source has run successfully, its project has built successfully, and the
+complete solution has built successfully.
 
-Module 5 is fully repository-verified. The organised application ran from
-beginning to end, produced the expected extraction and transformation results,
-built independently, and preserved a passing twenty-five-project full-solution
-build.
-
+The guided project is fully repository-verified. The final Contoso PetFriends
+source is registered as the twenty-sixth solution project, starts successfully,
+supports normal menu exit, implements suggested-donation formatting and dog
+characteristic search, builds independently, and preserves a passing
+twenty-six-project full-solution build.
 ---
 
 ## Repository Structure
@@ -68,27 +66,31 @@ build.
 ```text
 work-with-variable-data-in-csharp-console-applications/
 ├── README.md
-└── modules/
-    ├── choose-correct-data-type/
-    │   ├── Program.cs
-    │   └── choose-correct-data-type.csproj
-    ├── convert-data-types/
-    │   ├── Program.cs
-    │   └── convert-data-types.csproj
-    ├── array-helper-methods/
-    │   ├── Program.cs
-    │   └── array-helper-methods.csproj
-    ├── format-alphanumeric-data/
-    │   ├── Program.cs
-    │   └── format-alphanumeric-data.csproj
-    └── modify-string-content/
+├── modules/
+│   ├── choose-correct-data-type/
+│   │   ├── Program.cs
+│   │   └── choose-correct-data-type.csproj
+│   ├── convert-data-types/
+│   │   ├── Program.cs
+│   │   └── convert-data-types.csproj
+│   ├── array-helper-methods/
+│   │   ├── Program.cs
+│   │   └── array-helper-methods.csproj
+│   ├── format-alphanumeric-data/
+│   │   ├── Program.cs
+│   │   └── format-alphanumeric-data.csproj
+│   └── modify-string-content/
+│       ├── Program.cs
+│       └── modify-string-content.csproj
+└── guided-projects/
+    └── contoso-petfriends/
         ├── Program.cs
-        └── modify-string-content.csproj
+        └── contoso-petfriends.csproj
 ```
 
-This section uses one central README for curriculum documentation. Individual
-module directories contain executable source code and project files without an
-additional README.
+This section uses one central README for curriculum documentation. Module and
+guided-project directories contain executable source code and project files
+without an additional README.
 
 A `trophy/` directory will be added after the complete Section 4 learning path
 has been finished and the corresponding completion evidence has been earned.
@@ -5191,29 +5193,509 @@ Completion date: August 4, 2026
 
 ---
 
-## Next Curriculum Item
+# Guided Project — Work with Variable Data in C#
 
-### Guided Project — Work with Variable Data in C#
-
-The next curriculum item will integrate the techniques from the first five
-instructional modules into one guided project.
-
-The repository project should be created only after reviewing the official
-guided-project requirements and verifying the current repository state.
-
-Expected repository verification remains:
+## Completion Status
 
 ```text
-Run the guided project successfully
-Verify the complete expected output
-Build the guided project independently
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 7 / 7
+Application: Contoso PetFriends
+Project added to solution: Verified
+Solution project count: 26
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
+Application run: Succeeded
+Application startup: Verified
+Normal exit behavior: Verified
+Project build: Succeeded
+Full solution build: Succeeded
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 5, 2026
+```
+
+This guided project integrates the first five Section 4 modules into one
+interactive **Contoso PetFriends** console application.
+
+The completed application:
+
+- stores adoptable-pet records in a two-dimensional array;
+- lists every populated pet record;
+- adds a suggested-donation field;
+- parses donation text safely with `decimal.TryParse()`;
+- assigns a default donation when source data is missing or invalid;
+- formats donation values with an explicit currency culture;
+- requests one dog characteristic from the user;
+- searches physical and personality descriptions;
+- compares text without case sensitivity;
+- reports every matching dog;
+- reports clearly when no match exists;
+- validates menu and search input;
+- runs until the user enters `exit`.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── guided-projects/
+    └── contoso-petfriends/
+        ├── Program.cs
+        └── contoso-petfriends.csproj
+```
+
+---
+
+## Project Requirements
+
+The starter application contained two menu options:
+
+```text
+1. List all of our current pet information
+2. Display all dogs with a specified characteristic
+```
+
+The guided project completes two principal requirements:
+
+```text
+Feature 1
+→ add and display a suggested donation for each populated pet record
+
+Feature 2
+→ search dogs by a requested physical or personality characteristic
+```
+
+---
+
+## Expanded Pet Data Table
+
+The starter table contained six fields. The completed application expands it to
+seven:
+
+```csharp
+const int MaxPets = 8;
+const int PetFieldCount = 7;
+
+string[,] ourAnimals =
+    new string[MaxPets, PetFieldCount];
+```
+
+Named constants document the field positions:
+
+```csharp
+const int IdIndex = 0;
+const int SpeciesIndex = 1;
+const int AgeIndex = 2;
+const int NicknameIndex = 3;
+const int PhysicalDescriptionIndex = 4;
+const int PersonalityDescriptionIndex = 5;
+const int SuggestedDonationIndex = 6;
+```
+
+| Index | Field |
+| ---: | --- |
+| `0` | ID |
+| `1` | Species |
+| `2` | Age |
+| `3` | Nickname |
+| `4` | Physical description |
+| `5` | Personality description |
+| `6` | Suggested donation |
+
+The first array dimension identifies a pet row. The second dimension identifies
+a field inside that record.
+
+---
+
+## Suggested Donation
+
+The sample donation text is converted to `decimal`:
+
+```csharp
+bool donationWasParsed =
+    decimal.TryParse(
+        suggestedDonation,
+        NumberStyles.Number,
+        CultureInfo.InvariantCulture,
+        out decimal decimalDonation);
+```
+
+When conversion fails:
+
+```csharp
+const decimal DefaultSuggestedDonation =
+    45.00M;
+
+if (!donationWasParsed)
+{
+    decimalDonation =
+        DefaultSuggestedDonation;
+}
+```
+
+`decimal` is used because the values represent money. `TryParse()` avoids a
+`FormatException` when the source string is empty or invalid.
+
+---
+
+## Stable Currency Formatting
+
+The final source separates parsing culture from display culture.
+
+```csharp
+CultureInfo currencyCulture =
+    CultureInfo.GetCultureInfo("en-US");
+```
+
+The formatted donation is stored as:
+
+```csharp
+ourAnimals[
+    petIndex,
+    SuggestedDonationIndex] =
+        SuggestedDonationLabel +
+        decimalDonation.ToString(
+            "C2",
+            currencyCulture);
+```
+
+Stable results include:
+
+```text
+85.00  → $85.00
+49.99  → $49.99
+40.00  → $40.00
+invalid → $45.00
+```
+
+This prevents the output from changing to Korean won merely because the
+application is run on a Korean Windows installation.
+
+---
+
+## List Populated Pet Records
+
+Menu option `1` uses nested loops:
+
+```text
+Outer loop
+→ inspect each pet row
+
+Inner loop
+→ display all seven fields in a populated row
+```
+
+Unused rows are detected through the ID field and skipped with `continue`.
+
+Using `PetFieldCount` rather than a hardcoded `7` keeps the display logic aligned
+with the table definition.
+
+---
+
+## Validate the Search Term
+
+Menu option `2` requires one non-empty characteristic:
+
+```csharp
+while (
+    string.IsNullOrWhiteSpace(
+        dogCharacteristic))
+{
+    readResult =
+        Console.ReadLine();
+
+    dogCharacteristic =
+        (readResult ?? string.Empty)
+            .Trim();
+}
+```
+
+This rejects `null`, empty, and whitespace-only input.
+
+---
+
+## Search Dog Records
+
+Only dog rows are searched:
+
+```csharp
+bool isDog =
+    ourAnimals[
+        petIndex,
+        SpeciesIndex]
+    .Contains(
+        "dog",
+        StringComparison.OrdinalIgnoreCase);
+```
+
+The physical and personality descriptions are combined:
+
+```csharp
+string dogDescription =
+    ourAnimals[
+        petIndex,
+        PhysicalDescriptionIndex] +
+    Environment.NewLine +
+    ourAnimals[
+        petIndex,
+        PersonalityDescriptionIndex];
+```
+
+The requested characteristic is searched without case sensitivity:
+
+```csharp
+bool descriptionContainsCharacteristic =
+    dogDescription.Contains(
+        dogCharacteristic,
+        StringComparison.OrdinalIgnoreCase);
+```
+
+Examples:
+
+```text
+cream  → matches lola
+kisses → matches lola
+hugs   → matches gus
+```
+
+---
+
+## Display Matches
+
+The stored nickname field includes the label:
+
+```text
+Nickname: lola
+```
+
+The label is removed using the exact label length:
+
+```csharp
+string dogNickname =
+    ourAnimals[
+        petIndex,
+        NicknameIndex]
+    .Substring(
+        NicknameLabel.Length);
+```
+
+Output:
+
+```text
+Our dog lola is a match!
+```
+
+This applies the `Substring()` and `Length` techniques from Module 5 without a
+magic numeric offset.
+
+A Boolean flag records whether any dog matched. When no match is found, the
+application displays an explicit no-match message.
+
+---
+
+## Input Normalization
+
+Menu input is normalized safely:
+
+```csharp
+menuSelection =
+    (readResult ?? string.Empty)
+        .Trim()
+        .ToLowerInvariant();
+```
+
+The following inputs therefore behave identically:
+
+```text
+exit
+Exit
+EXIT
+  exit
+```
+
+Unsupported selections display:
+
+```text
+Invalid selection. Enter 1, 2, or Exit.
+```
+
+---
+
+## Source-Code Organisation
+
+The final source remains a top-level program because custom methods are taught
+in the next curriculum section.
+
+The file is organised into seven documented stages:
+
+```text
+1. Define dimensions and field indexes
+2. Declare working variables
+3. Create the pet-data table
+4. Populate sample records and format donations
+5. Display and process the menu
+6. Search dog records
+7. Display matches or the no-match result
+```
+
+Engineering improvements include:
+
+- named constants instead of hardcoded field indexes;
+- explicit parsing and display cultures;
+- null-safe console input;
+- case-insensitive comparison;
+- a named default donation;
+- safe `Console.Clear()` handling;
+- descriptive variable names;
+- comments that explain intent and data flow;
+- no premature use of custom methods.
+
+---
+
+## Concepts Integrated
+
+| Previous module | Guided-project use |
+| --- | --- |
+| Choose the Correct Data Type | `decimal` donation values and Boolean state |
+| Convert Data Types | `decimal.TryParse()` and an `out` parameter |
+| Work with Arrays | two-dimensional pet-record storage |
+| Format Alphanumeric Data | `C2` currency formatting and explicit culture |
+| Modify String Content | trimming, searching, and extracting nickname text |
+
+---
+
+## Verification
+
+Run the project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\guided-projects\contoso-petfriends\contoso-petfriends.csproj"
+```
+
+Build the project:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\guided-projects\contoso-petfriends\contoso-petfriends.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified repository evidence:
+
+```text
+Application launch: Succeeded
+Menu display: Verified
+Normal exit with "exit": Verified
+Suggested-donation implementation: Present
+Dog-search implementation: Present
+Project registration: Verified
+Registered solution projects: 26
+Project build: Succeeded
+Full solution build: Succeeded
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 5, 2026
+```
+
+Recommended interactive checks:
+
+```text
+Menu 1
+→ all four populated records include Suggested Donation
+
+Menu 2, search "cream"
+→ lola is reported as a match
+
+Menu 2, search "hugs"
+→ gus is reported as a match
+
+Menu 2, search an absent characteristic
+→ the no-match message is displayed
+
+exit
+→ the application terminates normally
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| guided project | `/ˈɡaɪ.dɪd ˈprɒdʒ.ekt/` | “gai-địt pro-jẹct” | dự án có hướng dẫn |
+| variable data | `/ˈveə.ri.ə.bəl ˈdeɪ.tə/` | “ve-ri-ờ-bồ đây-tờ” | dữ liệu có thể thay đổi |
+| suggested donation | `/səˈdʒes.tɪd dəʊˈneɪ.ʃən/` | “sờ-jét-tịt đô-nây-shần” | khoản quyên góp đề xuất |
+| characteristic | `/ˌkær.ək.təˈrɪs.tɪk/` | “ke-rặc-tờ-rít-tịch” | đặc điểm |
+| two-dimensional array | `/ˌtuː daɪˈmen.ʃən.əl əˈreɪ/` | “tu-đai-men-shờ-nồ ờ-rây” | mảng hai chiều |
+| fallback value | `/ˈfɔːl.bæk ˈvæl.juː/` | “pho-l-béc va-liu” | giá trị thay thế |
+| case-insensitive | `/ˌkeɪs ɪnˈsen.sɪ.tɪv/` | “kâys in-sen-si-tịv” | không phân biệt hoa thường |
+| search term | `/sɜːtʃ tɜːm/` | “sớt-ch tơm” | từ khóa tìm kiếm |
+| normalization | `/ˌnɔː.mə.laɪˈzeɪ.ʃən/` | “no-mờ-lai-zây-shần” | chuẩn hóa dữ liệu |
+| populated row | `/ˈpɒp.jə.leɪ.tɪd rəʊ/` | “póp-piu-lây-tịt râu” | hàng có dữ liệu |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Guided Project — Work with Variable Data in C#
+Section: Work with Variable Data in C# Console Applications
+Project position: 6 / 7
+Microsoft Learn units: 7 / 7
+Learning status: Completed
+Repository verification status: Fully verified
+Application: Contoso PetFriends
+Project registration: Verified
+Solution project count: 26
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
+Application run: Succeeded
+Project build: Succeeded
+Full solution build: Succeeded
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 5, 2026
+```
+
+---
+
+## Next Curriculum Item
+
+### Challenge Project — Work with Variable Data in C#
+
+The final Section 4 item will independently apply data selection, conversion,
+array processing, formatting, and string-manipulation requirements.
+
+Expected repository verification:
+
+```text
+Complete the official challenge requirements
+Organize and comment the final source
+Run the challenge successfully
+Verify the required behavior and output
+Build the challenge independently
 Build the full solution
 Update this section README
 Update the repository root README
 Review the Git diff
 Commit and push to main
 ```
-
 ---
 
 ## Official Curriculum References
@@ -5224,6 +5706,7 @@ Commit and push to main
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
 - [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
 - [Microsoft Learn — Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/)
+- [Microsoft Learn — Guided Project: Work with Variable Data in C#](https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/)
 - [freeCodeCamp — Foundational C# with Microsoft Certification](https://www.freecodecamp.org/learn/foundational-c-sharp-with-microsoft/)
 
 ---
@@ -5237,3 +5720,4 @@ Commit and push to main
 - [Module 3 source](./modules/array-helper-methods/)
 - [Module 4 source](./modules/format-alphanumeric-data/)
 - [Module 5 source](./modules/modify-string-content/)
+- [Guided Project source](./guided-projects/contoso-petfriends/)

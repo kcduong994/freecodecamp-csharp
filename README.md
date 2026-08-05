@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-3%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-25-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-26-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -33,32 +33,30 @@ Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
 Current section status: In progress
-Current section learning progress: 5 / 7
-Current section repository-verified progress: 5 / 7
+Current section learning progress: 6 / 7
+Current section repository-verified progress: 6 / 7
 Instructional modules completed on Microsoft Learn: 5
 Instructional modules fully repository-verified: 5
-Guided projects completed in current section: 0
+Guided projects completed in current section: 1
 Challenge projects completed in current section: 0
-Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
-Latest project: modify-string-content
+Latest completed learning item: Guided Project — Work with Variable Data in C#
+Latest project: contoso-petfriends
 Latest learning item status: Completed
-Microsoft Learn units: 8 / 8
-Module assessment: Passed
-Achievement: Earned
-Latest completion date: August 4, 2026
-Projects currently registered in solution: 25
+Microsoft Learn units: 7 / 7
+Latest completion date: August 5, 2026
+Projects currently registered in solution: 26
 Latest organized source: Completed
 Professional source comments: Completed
-Latest module run: Verified
-Latest module output: Verified
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
+Latest guided-project run: Verified
+Latest application startup and normal exit: Verified
 Latest project build: Verified
-Latest project build time: 0.4 seconds
 Latest full solution build: Verified
-Latest full solution build time: 4.0 seconds
 Latest project compiler errors: 0
 Latest project compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Guided Project — Work with Variable Data in C#
+Next curriculum item: Challenge Project — Work with Variable Data in C#
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -66,20 +64,21 @@ Next curriculum item: Guided Project — Work with Variable Data in C#
 | 1 | Write Your First Code Using C# | 7 / 7 | Verified | Completed |
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
-| 4 | Work with Variable Data in C# Console Applications | 5 / 7 | 5 / 7 verified | In progress |
+| 4 | Work with Variable Data in C# Console Applications | 6 / 7 | 6 / 7 verified | In progress |
 | 5 | Create Methods in C# Console Applications | Not started | Pending | Pending |
 | 6 | Debug C# Console Applications | Not started | Pending | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
-units and assessment have been completed. It reaches full repository
-verification after the final source has run successfully, its project has built
-successfully, and the complete solution has built successfully.
+units have been completed. It reaches full repository verification after the
+final source has run successfully, its project has built successfully, and the
+complete solution has built successfully.
 
-Module 5 is fully repository-verified. Its organized source ran successfully,
-produced the expected string-processing output, built cleanly, and preserved a
-passing twenty-five-project full-solution build.
-
+The guided project is fully repository-verified. Its final Contoso PetFriends
+source is registered as the twenty-sixth solution project, implements the
+suggested-donation and dog-characteristic-search requirements, starts and exits
+successfully, builds independently, and preserves a passing twenty-six-project
+full-solution build.
 ---
 
 ## Completed Section
@@ -1577,39 +1576,40 @@ The evidence records:
 
 ```text
 Status: In progress
-Learning progress: 5 / 7
-Repository-verified progress: 5 / 7
+Learning progress: 6 / 7
+Repository-verified progress: 6 / 7
 Completed instructional modules on Microsoft Learn: 5
 Fully repository-verified instructional modules: 5
-Completed guided projects: 0
+Completed guided projects: 1
 Completed challenge projects: 0
-Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
-Microsoft Learn units: 8 / 8
-Module assessment: Passed
-Achievement: Earned
+Latest completed learning item: Guided Project — Work with Variable Data in C#
+Microsoft Learn units: 7 / 7
+Application: Contoso PetFriends
 Project registration: Verified
-Solution project count: 25
+Solution project count: 26
 Final organized Program.cs: Completed
 Professional source comments: Completed
-Module run: Verified
-Module output: Verified
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
+Application run: Verified
+Application startup and normal exit: Verified
 Project build: Verified
-Project build time: 0.4 seconds
 Full solution build: Verified
-Full solution build time: 4.0 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Latest completion date: August 4, 2026
-Next curriculum item: Guided Project — Work with Variable Data in C#
+Latest completion date: August 5, 2026
+Next curriculum item: Challenge Project — Work with Variable Data in C#
 ```
 
 Section 4 develops practical skills for selecting, converting, formatting,
 searching, and manipulating data in C# console applications.
 
-The section now contains five completed and fully repository-verified
-instructional modules and twenty-five registered projects. The latest module
-runs successfully, builds cleanly, and preserves a passing full-solution state.
+The section now contains five completed instructional modules, one completed
+guided project, and twenty-six registered solution projects. The latest project
+integrates data conversion, two-dimensional arrays, currency formatting, input
+normalization, and case-insensitive string searching in the Contoso PetFriends
+application.
 
 [Open the current Section 4 documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/README.md)
 
@@ -3142,21 +3142,188 @@ Verification date: August 4, 2026
 
 ---
 
-### Next Curriculum Item — Guided Project — Work with Variable Data in C#
+### Guided Project — Work with Variable Data in C#
+
+```text
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 7 / 7
+Application: Contoso PetFriends
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 26
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
+Application run: Succeeded
+Application startup and normal exit: Verified
+Project build: Succeeded
+Full solution build: Succeeded
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 5, 2026
+```
+
+This guided project integrates the five preceding Section 4 modules into a
+single interactive console application.
+
+Project location:
+
+```text
+curriculum/work-with-variable-data-in-csharp-console-applications/
+└── guided-projects/
+    └── contoso-petfriends/
+        ├── Program.cs
+        └── contoso-petfriends.csproj
+```
+
+The completed project extends the starter application with two required
+features:
+
+```text
+1. Add and display a suggested donation for every populated pet record
+2. Search dogs by a requested physical or personality characteristic
+```
+
+The application expands the two-dimensional pet-data array from six to seven
+fields:
+
+```csharp
+const int MaxPets = 8;
+const int PetFieldCount = 7;
+
+string[,] ourAnimals =
+    new string[MaxPets, PetFieldCount];
+```
+
+Named constants replace unexplained numeric field indexes:
+
+```csharp
+const int IdIndex = 0;
+const int SpeciesIndex = 1;
+const int AgeIndex = 2;
+const int NicknameIndex = 3;
+const int PhysicalDescriptionIndex = 4;
+const int PersonalityDescriptionIndex = 5;
+const int SuggestedDonationIndex = 6;
+```
+
+Suggested-donation text is converted safely:
+
+```csharp
+bool donationWasParsed =
+    decimal.TryParse(
+        suggestedDonation,
+        NumberStyles.Number,
+        CultureInfo.InvariantCulture,
+        out decimal decimalDonation);
+```
+
+Missing or invalid data receives a defined fallback:
+
+```csharp
+const decimal DefaultSuggestedDonation =
+    45.00M;
+```
+
+The project uses an explicit display culture so its educational currency output
+remains stable on Korean, Vietnamese, and other Windows regional settings:
+
+```csharp
+CultureInfo currencyCulture =
+    CultureInfo.GetCultureInfo("en-US");
+```
+
+Example values:
+
+```text
+85.00  → $85.00
+49.99  → $49.99
+40.00  → $40.00
+invalid → $45.00
+```
+
+The dog-search workflow:
+
+- validates a non-empty characteristic;
+- skips non-dog records;
+- combines physical and personality descriptions;
+- searches with `StringComparison.OrdinalIgnoreCase`;
+- removes the stored nickname label with
+  `Substring(NicknameLabel.Length)`;
+- reports every matching dog;
+- displays a no-match message when appropriate.
+
+Examples:
+
+```text
+cream  → lola
+kisses → lola
+hugs   → gus
+```
+
+The final source also normalizes menu input with `Trim()` and
+`ToLowerInvariant()`, handles `Console.ReadLine()` returning `null`, reports
+invalid selections, and treats `Console.Clear()` as an optional presentation
+operation.
+
+Run the completed guided project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\guided-projects\contoso-petfriends\contoso-petfriends.csproj"
+```
+
+Build the guided project:
+
+```powershell
+dotnet build `
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\guided-projects\contoso-petfriends\contoso-petfriends.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified repository evidence:
+
+```text
+Application launch: Succeeded
+Menu display: Verified
+Normal exit with "exit": Verified
+Suggested-donation implementation: Present
+Dog-search implementation: Present
+Project registration: Verified
+Registered solution projects: 26
+Project build: Succeeded
+Full solution build: Succeeded
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 5, 2026
+```
+
+---
+
+### Next Curriculum Item — Challenge Project — Work with Variable Data in C#
 
 ```text
 Status: Not started
-Current Section 4 learning progress: 5 / 7
-Current repository-verified progress: 5 / 7
-Current solution baseline: 25 projects
+Current Section 4 learning progress: 6 / 7
+Current repository-verified progress: 6 / 7
+Current solution baseline: 26 projects
 ```
 
-The guided project will integrate the data-selection, conversion, array,
-formatting, and string-manipulation techniques completed in Modules 1 through 5.
+The final Section 4 item will independently apply data selection, conversion,
+array processing, formatting, and string-manipulation requirements.
 
-The new project must be registered in `freecodecamp-csharp.slnx`, run
-successfully, build independently, and preserve a passing full-solution build.
-
+The challenge project must be registered in `freecodecamp-csharp.slnx`, run
+successfully, build independently, preserve a passing full-solution build, and
+complete the Section 4 documentation and Trophy workflow.
 ---
 
 ## Repository Structure
@@ -3206,22 +3373,26 @@ freecodecamp-csharp/
 │   │           └── 2.PNG
 │   ├── work-with-variable-data-in-csharp-console-applications/
 │   │   ├── README.md
-│   │   └── modules/
-│   │       ├── choose-correct-data-type/
-│   │       │   ├── Program.cs
-│   │       │   └── choose-correct-data-type.csproj
-│   │       ├── convert-data-types/
-│   │       │   ├── Program.cs
-│   │       │   └── convert-data-types.csproj
-│   │       ├── array-helper-methods/
-│   │       │   ├── Program.cs
-│   │       │   └── array-helper-methods.csproj
-│   │       ├── format-alphanumeric-data/
-│   │       │   ├── Program.cs
-│   │       │   └── format-alphanumeric-data.csproj
-│   │       └── modify-string-content/
+│   │   ├── modules/
+│   │   │   ├── choose-correct-data-type/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── choose-correct-data-type.csproj
+│   │   │   ├── convert-data-types/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── convert-data-types.csproj
+│   │   │   ├── array-helper-methods/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── array-helper-methods.csproj
+│   │   │   ├── format-alphanumeric-data/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── format-alphanumeric-data.csproj
+│   │   │   └── modify-string-content/
+│   │   │       ├── Program.cs
+│   │   │       └── modify-string-content.csproj
+│   │   └── guided-projects/
+│   │       └── contoso-petfriends/
 │   │           ├── Program.cs
-│   │           └── modify-string-content.csproj
+│   │           └── contoso-petfriends.csproj
 │   ├── create-methods-in-csharp-console-applications/
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
@@ -3241,9 +3412,10 @@ Each curriculum section may contain:
 - `trophy/assets/` for official certificate and Trophy evidence;
 - project-specific source files and notes.
 
-Section 4 currently contains five completed and fully repository-verified module projects. Its `trophy/`
-directory will be added after the complete section has been finished and the
-official completion evidence has been earned.
+Section 4 currently contains five completed module projects and one completed
+guided project, all fully repository-verified. Its `trophy/` directory will
+be added after the final challenge project and official completion evidence
+have been completed.
 
 ---
 
@@ -3274,7 +3446,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-25
+26
 ```
 
 List all projects registered in the solution:
@@ -3377,13 +3549,15 @@ curriculum/work-with-variable-data-in-csharp-console-applications/modules/array-
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/format-alphanumeric-data/format-alphanumeric-data.csproj
 
 curriculum/work-with-variable-data-in-csharp-console-applications/modules/modify-string-content/modify-string-content.csproj
+
+curriculum/work-with-variable-data-in-csharp-console-applications/guided-projects/contoso-petfriends/contoso-petfriends.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\work-with-variable-data-in-csharp-console-applications\modules\modify-string-content\modify-string-content.csproj"
+  ".\curriculum\work-with-variable-data-in-csharp-console-applications\guided-projects\contoso-petfriends\contoso-petfriends.csproj"
 ```
 
 ---
@@ -3396,52 +3570,50 @@ dotnet run --project `
 Latest fully completed section: Add Logic to C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Work with Variable Data in C# Console Applications
-Current section learning progress: 5 / 7
-Current section repository-verified progress: 5 / 7
-Latest completed learning item: Modify the Content of Strings Using Built-In String Data Type Methods in C#
-Latest project: modify-string-content
-Module units: 8 / 8
-Module assessment: Passed
-Achievement: Earned
+Current section learning progress: 6 / 7
+Current section repository-verified progress: 6 / 7
+Latest completed learning item: Guided Project — Work with Variable Data in C#
+Latest project: contoso-petfriends
+Microsoft Learn units: 7 / 7
+Application: Contoso PetFriends
 Final organized source: Completed
 Professional source comments: Completed
 Project registration: Verified
-Registered solution projects: 25
-Project build: Succeeded in 0.4 seconds
+Registered solution projects: 26
+Suggested-donation feature: Implemented
+Dog-characteristic search: Implemented
+Application run: Succeeded
+Application startup and normal exit: Verified
+Project build: Succeeded
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Module run: Succeeded
-Module output: Verified
-Full-solution build: Succeeded in 4.0 seconds
-Verification date: August 4, 2026
+Full-solution build: Succeeded
+Verification date: August 5, 2026
 ```
 
 The latest evidence confirms that:
 
-- `modify-string-content` is registered as the twenty-fifth solution project;
-- the Microsoft Learn module assessment was passed;
-- the module achievement was earned;
-- the final source is organised into focused methods with professional comments;
-- `IndexOf()`, `LastIndexOf()`, and `IndexOfAny()` are demonstrated;
-- both principal `Substring()` overloads are demonstrated;
-- search results are checked for `-1` before substring ranges are calculated;
-- magic strings and magic numbers are replaced with constants and `Length`;
-- repeated delimited values are extracted with a `while` loop;
-- parentheses, square brackets, and braces are matched;
-- fixed-width data is processed with `Remove()`;
-- repeated values are transformed with `Replace()`;
-- string immutability is documented;
-- the HTML extraction, replacement, and removal challenge is implemented;
-- the module ran successfully and produced the expected complete output;
-- the module project compiled successfully in `0.4` seconds;
-- the complete twenty-five-project solution compiled successfully in `4.0`
-  seconds;
+- `contoso-petfriends` is registered as the twenty-sixth solution project;
+- the guided project has reached `7 / 7` Microsoft Learn units;
+- the final source is organized and professionally commented;
+- the pet-data table contains seven fields;
+- donation text is converted with `decimal.TryParse()`;
+- invalid donation data receives the defined `$45.00` fallback;
+- currency output uses an explicit `en-US` culture;
+- menu option `1` displays the new Suggested Donation field;
+- menu option `2` searches dog physical and personality descriptions;
+- text matching uses `StringComparison.OrdinalIgnoreCase`;
+- empty and whitespace-only search terms are rejected;
+- menu input is null-safe and normalized;
+- the application starts successfully and exits normally with `exit`;
+- the guided-project build succeeds;
+- the complete twenty-six-project solution build succeeds;
 - the project has zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues.
 
-The latest evidence confirms both a successful final module run and a successful
-full-solution build. Module 5 is therefore fully repository-verified.
+The guided project is therefore fully repository-verified. Section 4 now stands
+at `6 / 7`; only the final challenge project remains.
 
 ---
 
@@ -3501,6 +3673,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
 - [Microsoft Learn — Format Alphanumeric Data for Presentation in C#](https://learn.microsoft.com/training/modules/csharp-format-strings/)
 - [Microsoft Learn — Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/)
+- [Microsoft Learn — Guided Project: Work with Variable Data in C#](https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/)
 
 ---
 

@@ -29,6 +29,9 @@
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/readable-code/readable-code.csproj" />
   </Folder>
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/" />
+  <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/guided-projects/">
+    <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/guided-projects/contoso-petfriends/contoso-petfriends.csproj" />
+  </Folder>
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/modules/">
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/array-helper-methods/array-helper-methods.csproj" />
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/modules/choose-correct-data-type/choose-correct-data-type.csproj" />
