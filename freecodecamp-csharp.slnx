@@ -28,6 +28,10 @@
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/install-and-configure-visual-studio-code/install-and-configure-visual-studio-code.csproj" />
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/readable-code/readable-code.csproj" />
   </Folder>
+  <Folder Name="/curriculum/create-methods-in-csharp-console-applications/" />
+  <Folder Name="/curriculum/create-methods-in-csharp-console-applications/modules/">
+    <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/write-first-csharp-method.csproj" />
+  </Folder>
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/" />
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/challenge-projects/">
     <Project Path="curriculum/work-with-variable-data-in-csharp-console-applications/challenge-projects/contoso-petfriends-challenge/contoso-petfriends-challenge.csproj" />
