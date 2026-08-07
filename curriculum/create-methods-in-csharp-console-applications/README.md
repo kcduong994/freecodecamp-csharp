@@ -21,36 +21,37 @@ The learning path contains five curriculum items:
 Section: Create Methods in C# Console Applications
 Section position: 5 / 7
 Status: In progress
-Curriculum learning progress: 1 / 5
-Repository-verified progress: 1 / 5
-Completed instructional modules: 1
-Fully repository-verified instructional modules: 1
+Curriculum learning progress: 2 / 5
+Repository-verified progress: 2 / 5
+Completed instructional modules: 2
+Fully repository-verified instructional modules: 2
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed learning item: Write Your First C# Method
+Latest completed learning item: Create C# Methods with Parameters
 Latest Microsoft Learn units: 9 / 9
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 7, 2026
-Projects registered in solution: 28
-Latest project: write-first-csharp-method
+Latest completion date: August 8, 2026
+Projects registered in solution: 29
+Latest project: create-csharp-methods-parameters
 Target framework: net10.0
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final output: Verified
+Email challenge output: Verified
 Project compilation in full solution: Succeeded
-Full solution build: Succeeded in 4.2 seconds
+Full solution build: Succeeded in 3.9 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Create C# Methods with Parameters
+Next curriculum item: Create C# Methods That Return Values
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
 | ---: | --- | --- | --- |
 | 1 | Write Your First C# Method | Completed | Verified |
-| 2 | Create C# Methods with Parameters | Pending | Pending |
+| 2 | Create C# Methods with Parameters | Completed | Verified |
 | 3 | Create C# Methods That Return Values | Pending | Pending |
 | 4 | Guided Project — Plan a Petting Zoo Visit | Pending | Pending |
 | 5 | Challenge Project — Create a Mini-Game | Pending | Pending |
@@ -67,9 +68,10 @@ It reaches **full repository verification** after:
 - the complete solution has built successfully;
 - the repository documentation has been updated.
 
-Module 1 is fully repository-verified. Its final application executes all major
-lesson examples, produces the expected method-flow and challenge output, and
-preserves a passing twenty-eight-project solution build.
+Modules 1 and 2 are fully repository-verified. The latest parameter module
+executes its complete lesson flow, verifies the employee email-address
+challenge, compiles as part of the twenty-nine-project solution, and preserves
+a passing full-solution build.
 
 ---
 
@@ -79,9 +81,12 @@ preserves a passing twenty-eight-project solution build.
 create-methods-in-csharp-console-applications/
 ├── README.md
 └── modules/
-    └── write-first-csharp-method/
+    ├── write-first-csharp-method/
+    │   ├── Program.cs
+    │   └── write-first-csharp-method.csproj
+    └── create-csharp-methods-parameters/
         ├── Program.cs
-        └── write-first-csharp-method.csproj
+        └── create-csharp-methods-parameters.csproj
 ```
 
 This section uses one central README for curriculum documentation. Individual
@@ -1180,44 +1185,1075 @@ Completion date: August 7, 2026
 
 ---
 
+# Module 2 — Create C# Methods with Parameters
+
+## Completion Status
+
+```text
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 9 / 9
+Module assessment: Passed
+Achievement: Earned
+Project added to solution: Verified
+Solution project count: 29
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Application run: Succeeded
+Expected output: Verified
+Employee email challenge: Verified
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 8, 2026
+```
+
+The second module makes method inputs explicit by introducing **parameters** and
+**arguments**.
+
+The final project demonstrates:
+
+- declaring one or more method parameters;
+- supplying literal and variable arguments;
+- distinguishing parameters from arguments;
+- method scope;
+- variables with the same name in different scopes;
+- methods calling other methods;
+- value-type argument behavior;
+- reference-type argument behavior;
+- array mutation through a method parameter;
+- string immutability;
+- required parameters;
+- optional parameters with default values;
+- positional arguments;
+- named arguments;
+- mixing positional and named arguments correctly;
+- an RSVP application;
+- the employee email-address challenge.
+
+Project location:
+
+```text
+curriculum/create-methods-in-csharp-console-applications/
+└── modules/
+    └── create-csharp-methods-parameters/
+        ├── Program.cs
+        └── create-csharp-methods-parameters.csproj
+```
+
+---
+
+## Parameters and Arguments
+
+A parameter is a variable declared in a method signature.
+
+```csharp
+void CountTo(int max)
+{
+    for (int index = 0; index < max; index++)
+    {
+        Console.Write($"{index}, ");
+    }
+}
+```
+
+Here:
+
+```text
+int max
+→ parameter
+```
+
+The caller supplies an argument:
+
+```csharp
+CountTo(5);
+```
+
+Here:
+
+```text
+5
+→ argument
+```
+
+The data flow is:
+
+```text
+caller
+  ↓
+argument
+  ↓
+parameter
+  ↓
+method body
+```
+
+This makes a method's required input visible directly in its signature.
+
+---
+
+## Multiple Parameters
+
+Methods can accept multiple parameters separated by commas:
+
+```csharp
+void DisplayAdjustedTimes(
+    int[] times,
+    int currentGmt,
+    int newGmt)
+{
+    // Method implementation.
+}
+```
+
+A matching call supplies three arguments:
+
+```csharp
+DisplayAdjustedTimes(
+    schedule,
+    6,
+    -6);
+```
+
+Argument-to-parameter mapping:
+
+```text
+schedule → times
+6        → currentGmt
+-6       → newGmt
+```
+
+The caller can supply:
+
+- variables;
+- literals;
+- expressions;
+- arrays;
+- objects whose types are compatible with the declared parameters.
+
+---
+
+## Parameterized Medicine-Schedule Example
+
+The previous module relied on shared top-level variables.
+
+The parameterized version makes its dependencies explicit:
+
+```csharp
+void DisplayAdjustedTimes(
+    int[] times,
+    int currentGmt,
+    int newGmt)
+```
+
+The method:
+
+1. validates GMT offsets;
+2. calculates the difference;
+3. adjusts every scheduled time;
+4. displays the original and adjusted values.
+
+Example call:
+
+```csharp
+DisplayAdjustedTimes(
+    schedule,
+    6,
+    -6);
+```
+
+Expected lesson output:
+
+```text
+800 -> 2000
+1200 -> 0
+1600 -> 400
+2000 -> 800
+```
+
+The repository version also normalizes negative remainders so displayed times
+remain in the `0000` through `2399` range.
+
+---
+
+## Why Parameters Improve Method Design
+
+Compare the two designs.
+
+Hidden dependency:
+
+```csharp
+void AdjustTimes()
+{
+    // Reads shared variables from outer scope.
+}
+```
+
+Explicit dependency:
+
+```csharp
+void DisplayAdjustedTimes(
+    int[] times,
+    int currentGmt,
+    int newGmt)
+{
+}
+```
+
+The second signature tells the reader exactly what the method requires.
+
+Benefits:
+
+```text
+Readability
+→ dependencies are visible
+
+Reuse
+→ the same method can receive different data
+
+Testing
+→ a caller can supply controlled test inputs
+
+Maintenance
+→ data flow is easier to trace
+
+Isolation
+→ fewer unrelated outer variables are required
+```
+
+---
+
+## Method Scope
+
+**Scope** is the region where a variable can be accessed.
+
+A parameter exists inside the method that declares it:
+
+```csharp
+void DisplayStudents(string[] students)
+{
+    foreach (string student in students)
+    {
+        Console.Write($"{student}, ");
+    }
+}
+```
+
+The `students` parameter is available inside `DisplayStudents()`.
+
+A variable declared inside one method is not automatically available inside a
+different method.
+
+---
+
+## Same Name, Different Scope
+
+A caller can have a variable named `students`:
+
+```csharp
+string[] students =
+{
+    "Jenna",
+    "Ayesha",
+    "Carlos",
+    "Viktor"
+};
+```
+
+and call:
+
+```csharp
+DisplayStudents(students);
+```
+
+The method may also declare:
+
+```csharp
+void DisplayStudents(string[] students)
+```
+
+These are separate variables in different scopes.
+
+The caller's `students` variable supplies the argument.
+
+The method's `students` parameter receives the argument value.
+
+---
+
+## Methods Calling Other Methods
+
+Methods can delegate work to other methods.
+
+```csharp
+void PrintCircleInfo(
+    int radius,
+    double pi)
+{
+    PrintCircleArea(
+        radius,
+        pi);
+
+    PrintCircleCircumference(
+        radius,
+        pi);
+}
+```
+
+Data can therefore flow through several levels:
+
+```text
+top-level caller
+    ↓
+PrintCircleInfo(radius, pi)
+    ↓
+PrintCircleArea(radius, pi)
+    ↓
+PrintCircleCircumference(radius, pi)
+```
+
+This supports modular program organization.
+
+---
+
+## Value-Type Arguments
+
+Types such as:
+
+```text
+int
+bool
+float
+double
+char
+```
+
+are value types.
+
+Example:
+
+```csharp
+int a = 3;
+int b = 4;
+int c = 0;
+
+Multiply(
+    a,
+    b,
+    c);
+```
+
+Method:
+
+```csharp
+void Multiply(
+    int a,
+    int b,
+    int c)
+{
+    c = a * b;
+}
+```
+
+`c` inside the method is a separate parameter variable.
+
+Expected behavior:
+
+```text
+inside Multiply method: 3 x 4 = 12
+global statement: 3 x 4 = 0
+```
+
+Changing the method's `c` parameter does not modify the caller's `c` variable.
+
+---
+
+## Reference-Type Arguments
+
+Arrays are reference types.
+
+Example:
+
+```csharp
+int[] numbers =
+{
+    1,
+    2,
+    3,
+    4,
+    5
+};
+
+Clear(numbers);
+```
+
+Method:
+
+```csharp
+void Clear(int[] numbers)
+{
+    for (
+        int index = 0;
+        index < numbers.Length;
+        index++)
+    {
+        numbers[index] = 0;
+    }
+}
+```
+
+After the method returns:
+
+```text
+0 0 0 0 0
+```
+
+The important distinction is:
+
+```text
+The parameter is still passed by value by default.
+The copied value is a reference to the same array object.
+Mutating that shared object is therefore visible to the caller.
+```
+
+This is more precise than saying that an array is automatically "passed by
+reference."
+
+---
+
+## String Immutability
+
+`string` is a reference type, but strings are **immutable**.
+
+A method can receive:
+
+```csharp
+string status = "Healthy";
+
+SetHealthCopy(
+    status,
+    false);
+```
+
+Method:
+
+```csharp
+void SetHealthCopy(
+    string status,
+    bool isHealthy)
+{
+    status =
+        isHealthy
+            ? "Healthy"
+            : "Unhealthy";
+}
+```
+
+Reassigning the method parameter does not rewrite the original string object.
+
+Expected flow:
+
+```text
+Start: Healthy
+Middle: Unhealthy
+End: Healthy
+```
+
+The parameter is rebound to another string inside the method scope.
+
+The caller's variable remains unchanged.
+
+---
+
+## Mutable Reference Objects
+
+The repository source also demonstrates the contrasting behavior using an
+array:
+
+```csharp
+string[] statusHolder =
+{
+    "Healthy"
+};
+
+SetHealthInArray(
+    statusHolder,
+    false);
+```
+
+Because the array object is mutable:
+
+```csharp
+statusHolder[0] = "Unhealthy";
+```
+
+changes the shared array object.
+
+This example separates two different ideas:
+
+```text
+reference type
+≠ automatically mutable
+
+string
+→ reference type
+→ immutable
+
+array
+→ reference type
+→ mutable elements
+```
+
+---
+
+## Optional Parameters
+
+A parameter becomes optional when its declaration includes a default value:
+
+```csharp
+void RSVP(
+    string name,
+    int partySize = 1,
+    string allergies = "none",
+    bool inviteOnly = true)
+```
+
+Here:
+
+```text
+name
+→ required
+
+partySize
+→ optional
+→ default: 1
+
+allergies
+→ optional
+→ default: "none"
+
+inviteOnly
+→ optional
+→ default: true
+```
+
+Required parameters must be supplied.
+
+Optional parameters may be omitted.
+
+---
+
+## Optional Parameter Calls
+
+The same method can be called in several forms:
+
+```csharp
+RSVP("Rebecca");
+```
+
+uses all defaults.
+
+```csharp
+RSVP(
+    "Nadia",
+    2,
+    "Nuts");
+```
+
+supplies the first three arguments and uses the default `inviteOnly`.
+
+```csharp
+RSVP(
+    name: "Linh",
+    partySize: 2,
+    inviteOnly: false);
+```
+
+omits `allergies`, so `"none"` is used.
+
+---
+
+## Named Arguments
+
+A named argument identifies the target parameter explicitly:
+
+```csharp
+RSVP(
+    name: "Linh",
+    partySize: 2,
+    inviteOnly: false);
+```
+
+Syntax:
+
+```text
+parameterName: argumentValue
+```
+
+Named arguments improve readability when several parameters have similar types.
+
+Example:
+
+```csharp
+RSVP(
+    "Tony",
+    allergies: "Jackfruit",
+    inviteOnly: true);
+```
+
+The call clearly states what each non-positional value means.
+
+---
+
+## Positional and Named Arguments
+
+Positional arguments are matched by their position.
+
+Named arguments are matched by parameter name.
+
+A valid mixed call:
+
+```csharp
+RSVP(
+    "Tony",
+    allergies: "Jackfruit",
+    inviteOnly: true);
+```
+
+The first argument remains positional because it corresponds to the first
+parameter.
+
+Named arguments can then select later parameters.
+
+The principal design rule is to avoid ambiguous ordering and make the intended
+parameter mapping obvious.
+
+---
+
+## RSVP Application
+
+The module uses an RSVP application to integrate:
+
+- required parameters;
+- optional parameters;
+- named arguments;
+- positional arguments;
+- early `return`;
+- array storage;
+- invite-only validation.
+
+Guest list:
+
+```text
+Rebecca
+Nadia
+Noor
+Jonte
+```
+
+Tony is rejected because the call uses:
+
+```csharp
+inviteOnly: true
+```
+
+and his name is absent from the guest list.
+
+Expected message:
+
+```text
+Sorry, Tony is not on the guest list
+```
+
+Valid RSVP entries are then displayed.
+
+---
+
+## Challenge — Display Employee Email Addresses
+
+The final challenge creates email addresses for internal and external employees.
+
+Two employee groups are stored in two-dimensional arrays:
+
+```text
+corporate
+external
+```
+
+Internal domain:
+
+```text
+contoso.com
+```
+
+External domain:
+
+```text
+hayworth.com
+```
+
+Username rule:
+
+```text
+first two characters of first name
++
+full last name
++
+lowercase
+```
+
+Example:
+
+```text
+Robert Bavin
+→ Ro + Bavin
+→ RoBavin
+→ robavin
+→ robavin@contoso.com
+```
+
+---
+
+## Optional Domain Parameter
+
+The challenge method is:
+
+```csharp
+void DisplayEmail(
+    string first,
+    string last,
+    string domain = "contoso.com")
+```
+
+For internal employees:
+
+```csharp
+DisplayEmail(
+    first: corporate[row, 0],
+    last: corporate[row, 1]);
+```
+
+The domain argument is omitted.
+
+Result:
+
+```text
+contoso.com
+```
+
+For external employees:
+
+```csharp
+DisplayEmail(
+    first: external[row, 0],
+    last: external[row, 1],
+    domain: externalDomain);
+```
+
+The default is overridden.
+
+Result:
+
+```text
+hayworth.com
+```
+
+---
+
+## Verified Email Output
+
+The completed application produces:
+
+```text
+robavin@contoso.com
+sibright@contoso.com
+kisinclair@contoso.com
+aakamath@contoso.com
+sadelucchi@contoso.com
+siali@contoso.com
+viashton@hayworth.com
+codysart@hayworth.com
+shlawrence@hayworth.com
+davaldes@hayworth.com
+```
+
+This verifies:
+
+- optional parameter behavior;
+- named argument behavior;
+- two-dimensional array indexing;
+- username construction;
+- lowercase normalization;
+- internal and external domains.
+
+---
+
+## Safer Username Prefix Handling
+
+The lesson data guarantees first names of at least two characters.
+
+The repository source nevertheless calculates:
+
+```csharp
+int prefixLength =
+    Math.Min(
+        2,
+        first.Length);
+```
+
+and then uses:
+
+```csharp
+first[..prefixLength]
+```
+
+This preserves the required challenge behavior while avoiding an out-of-range
+substring operation if future test data contains a one-character first name.
+
+---
+
+## Source-Code Organization
+
+The final `Program.cs` is organized into:
+
+```text
+1. Module documentation
+2. High-level application flow
+3. Parameter and argument example
+4. Method-scope examples
+5. Value-type behavior
+6. Array reference behavior
+7. String immutability
+8. RSVP application
+9. Employee email challenge
+10. Module summary
+```
+
+Top-level flow:
+
+```csharp
+DemonstrateBasicParameters();
+DemonstrateMethodScope();
+DemonstrateValueAndReferenceBehavior();
+RunRsvpApplication();
+RunEmailChallenge();
+DisplayModuleSummary();
+```
+
+A reader can first understand **what** the program does, then inspect each method
+to understand **how** that task is implemented.
+
+---
+
+## Commenting Standard for Parameterized Methods
+
+Comments now document data-flow responsibilities in addition to method intent.
+
+Important questions include:
+
+```text
+What data enters this method?
+Which name is the parameter?
+Which value is the argument?
+Does the method mutate a shared object?
+Does reassignment affect only the local parameter?
+Is a parameter required or optional?
+What default is used when an argument is omitted?
+Why is a named argument clearer here?
+```
+
+This is a higher-level commenting standard than merely describing syntax.
+
+---
+
+## Module Progression
+
+Section 5 now has a clear progression:
+
+```text
+Module 1
+parameterless methods
+→ organize behavior
+
+Module 2
+parameters
+→ explicit input data
+
+Module 3
+return values
+→ explicit output data
+```
+
+After Module 2, a reusable method can clearly declare what it needs from its
+caller.
+
+The next module completes the basic method data-flow model by returning a result
+to the caller.
+
+---
+
+## Verification
+
+Run the completed module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-parameters\create-csharp-methods-parameters.csproj"
+```
+
+Build the module independently:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-parameters\create-csharp-methods-parameters.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified repository evidence:
+
+```text
+Final application run: Succeeded
+Parameter and argument examples: Verified
+Method-scope examples: Verified
+Value-type behavior: Verified
+Array mutation behavior: Verified
+String immutability behavior: Verified
+RSVP application: Verified
+Employee email challenge: Verified
+Module summary reached: Verified
+Project registration: Verified
+Registered solution projects: 29
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 8, 2026
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| parameter | `/pəˈræm.ɪ.tər/` | “pờ-ram-mi-tờ” | tham số được khai báo trong method |
+| argument | `/ˈɑːɡ.jə.mənt/` | “a-giu-mần-t” | đối số truyền vào khi gọi method |
+| method signature | `/ˈmeθ.əd ˈsɪɡ.nə.tʃər/` | “me-thợd síc-nờ-chờ” | chữ ký phương thức |
+| scope | `/skəʊp/` | “scốup” | phạm vi truy cập |
+| value type | `/ˈvæl.juː taɪp/` | “va-liu tai-p” | kiểu giá trị |
+| reference type | `/ˈref.ər.əns taɪp/` | “re-phờ-rần-x tai-p” | kiểu tham chiếu |
+| immutable | `/ɪˈmjuː.tə.bəl/` | “i-miu-tờ-bồ” | bất biến, không thể sửa tại chỗ |
+| mutable | `/ˈmjuː.tə.bəl/` | “miu-tờ-bồ” | có thể thay đổi |
+| positional argument | `/pəˈzɪʃ.ən.əl ˈɑːɡ.jə.mənt/` | “pờ-zi-shờ-nồ a-giu-mần-t” | đối số theo vị trí |
+| named argument | `/neɪmd ˈɑːɡ.jə.mənt/` | “nâymđ a-giu-mần-t” | đối số có tên |
+| optional parameter | `/ˈɒp.ʃən.əl pəˈræm.ɪ.tər/` | “óp-shờ-nồ pờ-ram-mi-tờ” | tham số tùy chọn |
+| default value | `/dɪˈfɔːlt ˈvæl.juː/` | “đi-pho-lt va-liu” | giá trị mặc định |
+| explicit input | `/ɪkˈsplɪs.ɪt ˈɪn.pʊt/` | “ích-spli-sịt in-pút” | dữ liệu vào được khai báo rõ |
+| data flow | `/ˈdeɪ.tə fləʊ/` | “đây-tờ flâu” | luồng dữ liệu |
+| caller | `/ˈkɔː.lər/` | “co-lờ” | nơi gọi method |
+| callee | `/kɔːˈliː/` | “co-li” | method được gọi |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Create C# Methods with Parameters
+Section: Create Methods in C# Console Applications
+Module position: 2 / 5
+Microsoft Learn units: 9 / 9
+Learning status: Completed
+Module assessment: Passed
+Achievement: Earned
+Repository verification status: Fully verified
+Project registration: Verified
+Solution project count: 29
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Final application run: Succeeded
+Expected output: Verified
+Employee email challenge: Verified
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 8, 2026
+```
+
+---
+
 ## Next Curriculum Item
 
-### Create C# Methods with Parameters
+### Create C# Methods That Return Values
 
-The next module makes method inputs explicit.
+Module 2 made method inputs explicit.
 
 Current pattern:
 
 ```csharp
-void TellFortune()
+void DisplayEmail(
+    string first,
+    string last,
+    string domain = "contoso.com")
 {
-    // Reads luck from shared outer scope.
+    Console.WriteLine(...);
 }
 ```
 
-Next-stage pattern:
+The method receives input, performs work, and writes output directly.
+
+The next module introduces methods that send data back to the caller:
 
 ```csharp
-void TellFortune(int luck)
+string BuildEmail(
+    string first,
+    string last,
+    string domain = "contoso.com")
 {
-    // Uses the supplied parameter.
+    return ...;
 }
 ```
 
-Expected topics:
+The progression becomes:
 
-- parameter declaration;
-- method arguments;
-- parameter data types;
-- passing values into methods;
-- passing arrays into methods;
-- value and reference behavior;
-- named arguments;
-- optional arguments.
+```text
+argument
+   ↓
+parameter
+   ↓
+method processing
+   ↓
+return value
+   ↓
+caller
+```
 
-The project should remain registered in `freecodecamp-csharp.slnx`, run
-successfully, build independently, preserve a passing full-solution build, and
-receive the same source-organization and documentation treatment.
+Expected repository verification remains:
+
+```text
+Complete all official module units
+Pass the module assessment
+Organize and comment the final source
+Run the completed source
+Verify required behavior and output
+Build the module
+Build the complete solution
+Update this section README
+Update the repository root README
+Review the Git diff
+Commit and push
+```
 
 ---
 
@@ -1225,12 +2261,14 @@ receive the same source-organization and documentation treatment.
 
 - [Microsoft Learn — Create Methods in C# Console Applications](https://learn.microsoft.com/en-us/training/paths/get-started-c-sharp-part-5/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/)
+- [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/)
 
 ---
 
 ## Navigation
 
 - [Module 1 source](./modules/write-first-csharp-method/)
+- [Module 2 source](./modules/create-csharp-methods-parameters/)
 - [Repository overview](../../README.md)
 
 ---

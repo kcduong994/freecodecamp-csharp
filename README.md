@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-4%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-28-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-29-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -34,29 +34,30 @@ Latest fully completed section progress: 7 / 7
 Latest fully completed section repository verification: 7 / 7
 Current section: Create Methods in C# Console Applications
 Current section status: In progress
-Current section learning progress: 1 / 5
-Current section repository-verified progress: 1 / 5
-Completed instructional modules in current section: 1
+Current section learning progress: 2 / 5
+Current section repository-verified progress: 2 / 5
+Completed instructional modules in current section: 2
 Completed guided projects in current section: 0
 Completed challenge projects in current section: 0
-Latest completed learning item: Write Your First C# Method
-Latest project: write-first-csharp-method
+Latest completed learning item: Create C# Methods with Parameters
+Latest project: create-csharp-methods-parameters
 Latest learning item status: Completed
 Latest Microsoft Learn units: 9 / 9
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 7, 2026
-Projects currently registered in solution: 28
+Latest completion date: August 8, 2026
+Projects currently registered in solution: 29
 Latest organized source: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final application output: Verified
+Employee email challenge: Verified
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 4.2 seconds
+Latest full solution build: Succeeded in 3.9 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Create C# Methods with Parameters
+Next curriculum item: Create C# Methods That Return Values
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -65,7 +66,7 @@ Next curriculum item: Create C# Methods with Parameters
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
-| 5 | Create Methods in C# Console Applications | 1 / 5 | 1 / 5 verified | In progress |
+| 5 | Create Methods in C# Console Applications | 2 / 5 | 2 / 5 verified | In progress |
 | 6 | Debug C# Console Applications | Not started | Pending | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
@@ -3473,48 +3474,38 @@ The evidence confirms:
 
 ```text
 Status: In progress
-Learning progress: 1 / 5
-Repository-verified progress: 1 / 5
-Completed instructional modules: 1
+Learning progress: 2 / 5
+Repository-verified progress: 2 / 5
+Completed instructional modules: 2
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Write Your First C# Method
+Latest completed item: Create C# Methods with Parameters
 Microsoft Learn units: 9 / 9
 Module assessment: Passed
 Achievement: Earned
-Latest project: write-first-csharp-method
-Solution project count: 28
+Latest project: create-csharp-methods-parameters
+Solution project count: 29
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Application run and output: Verified
-Full solution build: Succeeded in 4.2 seconds
+Employee email challenge: Verified
+Full solution build: Succeeded in 3.9 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 7, 2026
-Next item: Create C# Methods with Parameters
+Completion date: August 8, 2026
+Next item: Create C# Methods That Return Values
 ```
 
-The first Section 5 module introduces user-defined methods as named,
-reusable units of behavior.
+Section 5 currently covers two verified stages of method design:
 
-The completed project demonstrates:
-
-- method declarations and method invocations;
-- execution control entering and returning from a method;
-- parameterless `void` methods;
-- PascalCase method naming;
-- removal of duplicated logic;
-- early method termination with `return`;
-- pseudo-code-driven decomposition;
-- focused IPv4 validation methods;
-- reusable medicine-schedule methods;
-- the `TellFortune()` challenge;
-- the limitations of shared state before parameters are introduced.
+- **Module 1:** parameterless methods, reusable behavior, decomposition, and execution flow;
+- **Module 2:** parameters and arguments, method scope, value/reference behavior,
+  optional parameters, named arguments, and explicit method input.
 
 [Open the current Section 5 documentation](./curriculum/create-methods-in-csharp-console-applications/README.md)
 
-[Open the Module 1 source](./curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/)
+[Open the latest Module 2 source](./curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/)
 
 ---
 
@@ -3597,9 +3588,12 @@ freecodecamp-csharp/
 │   ├── create-methods-in-csharp-console-applications/
 │   │   ├── README.md
 │   │   └── modules/
-│   │       └── write-first-csharp-method/
+│   │       ├── write-first-csharp-method/
+│   │       │   ├── Program.cs
+│   │       │   └── write-first-csharp-method.csproj
+│   │       └── create-csharp-methods-parameters/
 │   │           ├── Program.cs
-│   │           └── write-first-csharp-method.csproj
+│   │           └── create-csharp-methods-parameters.csproj
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
@@ -3622,9 +3616,9 @@ Section 4 contains five completed module projects, one completed guided
 project, one completed challenge project, and a verified Trophy directory.
 All seven Section 4 learning items are fully repository-verified.
 
-Section 5 currently contains one completed and fully repository-verified
-instructional module. Its first project introduces user-defined methods and is
-registered as solution project 28.
+Section 5 currently contains two completed and fully repository-verified
+instructional modules. The latest project introduces explicit method input
+through parameters and is registered as solution project 29.
 
 ---
 
@@ -3655,7 +3649,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-28
+29
 ```
 
 List all projects registered in the solution:
@@ -3768,13 +3762,15 @@ curriculum/work-with-variable-data-in-csharp-console-applications/challenge-proj
 
 ```text
 curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/write-first-csharp-method.csproj
+
+curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/create-csharp-methods-parameters.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-methods-in-csharp-console-applications\modules\write-first-csharp-method\write-first-csharp-method.csproj"
+  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-parameters\create-csharp-methods-parameters.csproj"
 ```
 
 ---
@@ -3787,10 +3783,10 @@ dotnet run --project `
 Latest fully completed section: Work with Variable Data in C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Create Methods in C# Console Applications
-Current section progress: 1 / 5
-Current section repository verification: 1 / 5
-Latest completed learning item: Write Your First C# Method
-Latest project: write-first-csharp-method
+Current section progress: 2 / 5
+Current section repository verification: 2 / 5
+Latest completed learning item: Create C# Methods with Parameters
+Latest project: create-csharp-methods-parameters
 Microsoft Learn units: 9 / 9
 Module assessment: Passed
 Achievement: Earned
@@ -3798,38 +3794,40 @@ Final organized source: Completed
 Professional source comments: Completed
 Application run: Succeeded
 Expected output: Verified
+Employee email challenge: Verified
 Project registration: Verified
-Registered solution projects: 28
+Registered solution projects: 29
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 4.2 seconds
+Full-solution build: Succeeded in 3.9 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 7, 2026
-Next curriculum item: Create C# Methods with Parameters
+Verification date: August 8, 2026
+Next curriculum item: Create C# Methods That Return Values
 ```
 
 The latest evidence confirms that:
 
-- `write-first-csharp-method` is registered as the twenty-eighth solution
+- `create-csharp-methods-parameters` is registered as the twenty-ninth solution
   project;
 - the module has reached `9 / 9` Microsoft Learn units;
 - its module assessment is passed and achievement is earned;
 - the final source is organized and professionally commented;
-- method declaration and invocation behavior is demonstrated;
-- duplicated medicine-schedule logic is moved into reusable methods;
-- IPv4 validation is divided into focused validation methods;
-- malformed and empty IPv4 segments are handled safely;
-- early `return` behavior is demonstrated;
-- the `TellFortune()` challenge is implemented as reusable method logic;
-- the application runs through the final module summary;
+- parameter and argument behavior is demonstrated;
+- method-scope behavior is demonstrated;
+- value-type, array reference, and string-immutability behavior is demonstrated;
+- required and optional parameters are demonstrated;
+- positional and named arguments are demonstrated;
+- the RSVP example is implemented;
+- the employee email-address challenge produces the expected internal and
+  external addresses;
 - the project compiles successfully as part of the solution;
-- the complete twenty-eight-project solution builds in `4.2 seconds`;
+- the complete twenty-nine-project solution builds in `3.9 seconds`;
 - the build reports zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues.
 
-Section 5 is now in progress at `1 / 5`. The next curriculum item is
-**Create C# Methods with Parameters**.
+Section 5 is now in progress at `2 / 5`. The next curriculum item is
+**Create C# Methods That Return Values**.
 
 ---
 
@@ -3886,6 +3884,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 4](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-4/)
 - [Microsoft Learn — Get Started with C#, Part 5](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-5/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
+- [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
