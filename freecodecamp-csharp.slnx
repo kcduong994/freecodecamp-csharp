@@ -31,6 +31,7 @@
   <Folder Name="/curriculum/create-methods-in-csharp-console-applications/" />
   <Folder Name="/curriculum/create-methods-in-csharp-console-applications/modules/">
     <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/create-csharp-methods-parameters.csproj" />
+    <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/create-csharp-methods-return-values.csproj" />
     <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/write-first-csharp-method.csproj" />
   </Folder>
   <Folder Name="/curriculum/work-with-variable-data-in-csharp-console-applications/" />

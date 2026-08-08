@@ -21,38 +21,43 @@ The learning path contains five curriculum items:
 Section: Create Methods in C# Console Applications
 Section position: 5 / 7
 Status: In progress
-Curriculum learning progress: 2 / 5
-Repository-verified progress: 2 / 5
-Completed instructional modules: 2
-Fully repository-verified instructional modules: 2
+Curriculum learning progress: 3 / 5
+Repository-verified progress: 3 / 5
+Completed instructional modules: 3
+Fully repository-verified instructional modules: 3
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed learning item: Create C# Methods with Parameters
-Latest Microsoft Learn units: 9 / 9
+Latest completed learning item: Create C# Methods That Return Values
+Latest Microsoft Learn units: 10 / 10
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 8, 2026
-Projects registered in solution: 29
-Latest project: create-csharp-methods-parameters
+Latest completion date: August 9, 2026
+Projects registered in solution: 30
+Latest project: create-csharp-methods-return-values
 Target framework: net10.0
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final output: Verified
-Email challenge output: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array return examples: Verified
+Dice mini-game challenge: Verified
 Project compilation in full solution: Succeeded
 Full solution build: Succeeded in 3.9 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Create C# Methods That Return Values
+Next curriculum item: Guided Project — Plan a Petting Zoo Visit
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
 | ---: | --- | --- | --- |
 | 1 | Write Your First C# Method | Completed | Verified |
 | 2 | Create C# Methods with Parameters | Completed | Verified |
-| 3 | Create C# Methods That Return Values | Pending | Pending |
+| 3 | Create C# Methods That Return Values | Completed | Verified |
 | 4 | Guided Project — Plan a Petting Zoo Visit | Pending | Pending |
 | 5 | Challenge Project — Create a Mini-Game | Pending | Pending |
 
@@ -68,10 +73,11 @@ It reaches **full repository verification** after:
 - the complete solution has built successfully;
 - the repository documentation has been updated.
 
-Modules 1 and 2 are fully repository-verified. The latest parameter module
-executes its complete lesson flow, verifies the employee email-address
-challenge, compiles as part of the twenty-nine-project solution, and preserves
-a passing full-solution build.
+Modules 1, 2, and 3 are fully repository-verified. The latest return-values
+module completes the basic method data-flow model by combining explicit inputs
+with explicit outputs, verifies all lesson examples and the dice mini-game
+challenge, compiles as part of the thirty-project solution, and preserves a
+passing full-solution build.
 
 ---
 
@@ -84,9 +90,12 @@ create-methods-in-csharp-console-applications/
     ├── write-first-csharp-method/
     │   ├── Program.cs
     │   └── write-first-csharp-method.csproj
-    └── create-csharp-methods-parameters/
+    ├── create-csharp-methods-parameters/
+    │   ├── Program.cs
+    │   └── create-csharp-methods-parameters.csproj
+    └── create-csharp-methods-return-values/
         ├── Program.cs
-        └── create-csharp-methods-parameters.csproj
+        └── create-csharp-methods-return-values.csproj
 ```
 
 This section uses one central README for curriculum documentation. Individual
@@ -2193,61 +2202,1123 @@ Completion date: August 8, 2026
 
 ---
 
-## Next Curriculum Item
+# Module 3 — Create C# Methods That Return Values
 
-### Create C# Methods That Return Values
-
-Module 2 made method inputs explicit.
-
-Current pattern:
-
-```csharp
-void DisplayEmail(
-    string first,
-    string last,
-    string domain = "contoso.com")
-{
-    Console.WriteLine(...);
-}
-```
-
-The method receives input, performs work, and writes output directly.
-
-The next module introduces methods that send data back to the caller:
-
-```csharp
-string BuildEmail(
-    string first,
-    string last,
-    string domain = "contoso.com")
-{
-    return ...;
-}
-```
-
-The progression becomes:
+## Completion Status
 
 ```text
-argument
-   ↓
-parameter
-   ↓
-method processing
-   ↓
-return value
-   ↓
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 10 / 10
+Module assessment: Passed
+Achievement: Earned
+Project added to solution: Verified
+Solution project count: 30
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Application run: Succeeded
+Expected output: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array return examples: Verified
+Dice mini-game challenge: Verified
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 9, 2026
+```
+
+The third instructional module completes the fundamental method data-flow model.
+
+Modules 1 and 2 established:
+
+```text
+named behavior
+→ method
+
+explicit input
+→ parameters and arguments
+```
+
+Module 3 adds:
+
+```text
+explicit output
+→ return values
+```
+
+The complete model is now:
+
+```text
 caller
+  ↓
+argument
+  ↓
+parameter
+  ↓
+method processing
+  ↓
+return statement
+  ↓
+return value
+  ↓
+caller
+```
+
+The final project demonstrates:
+
+- declaring method return types;
+- distinguishing `void` from value-returning methods;
+- returning literals, variables, and expressions;
+- capturing returned values in variables;
+- using returned values directly inside arithmetic expressions;
+- using `bool` return values directly in conditions and ternary expressions;
+- returning `int` and `double`;
+- numeric casting and integer-division concerns;
+- returning `string`;
+- composing methods by consuming one method's return value inside another;
+- returning `bool` with early termination;
+- returning one-dimensional and two-dimensional arrays;
+- returning newly constructed arrays directly;
+- using sentinel values in partially populated results;
+- completing the dice mini-game challenge with correctly typed methods.
+
+Project location:
+
+```text
+curriculum/create-methods-in-csharp-console-applications/
+└── modules/
+    └── create-csharp-methods-return-values/
+        ├── Program.cs
+        └── create-csharp-methods-return-values.csproj
+```
+
+---
+
+## Return Type Syntax
+
+A method's return type appears before its name.
+
+A `void` method performs work without returning data:
+
+```csharp
+void PrintMessage(string message)
+{
+    Console.WriteLine(message);
+}
+```
+
+A value-returning method declares the type it sends back:
+
+```csharp
+int Add(int first, int second)
+{
+    return first + second;
+}
+```
+
+The return type is part of the method's contract.
+
+```text
+int
+→ the caller receives an int
+
+double
+→ the caller receives a double
+
+string
+→ the caller receives a string
+
+bool
+→ the caller receives true or false
+
+int[,]
+→ the caller receives a two-dimensional integer array
+```
+
+Every normal execution path in a non-`void` method must provide a value
+compatible with the declared return type.
+
+---
+
+## The `return` Keyword
+
+For a value-returning method:
+
+```csharp
+return expression;
+```
+
+does two jobs:
+
+```text
+1. evaluate the expression
+2. immediately end the current method and send the value to the caller
+```
+
+Example:
+
+```csharp
+double GetDiscountedPrice(int itemIndex)
+{
+    return
+        items[itemIndex] *
+        (1 - discounts[itemIndex]);
+}
+```
+
+The returned expression evaluates to `double`, which matches the method's
+declared return type.
+
+A `return` statement can provide:
+
+```text
+a literal
+a variable
+an arithmetic expression
+a comparison
+a method-call result
+a newly created object or array
+```
+
+as long as the resulting type matches the method contract.
+
+---
+
+## Capturing Return Values
+
+A caller can store a returned value:
+
+```csharp
+int vnd =
+    UsdToVnd(usd);
+```
+
+Data flow:
+
+```text
+usd
+ ↓ argument
+
+UsdToVnd(double usdAmount)
+ ↓ processing
+
+return int
+ ↓
+
+vnd
+```
+
+The caller can then reuse the captured value in later statements.
+
+Returned values do not need to be stored first. They can also be consumed
+directly:
+
+```csharp
+Console.WriteLine(
+    ReverseSentence(input));
+```
+
+or:
+
+```csharp
+total -=
+    TotalMeetsMinimum()
+        ? 5.00
+        : 0.00;
+```
+
+The method call acts like an expression whose value is the method's returned
+result.
+
+---
+
+## Shopping-Center Example
+
+The Contoso Shopping Center example combines three different return types:
+
+```csharp
+double GetDiscountedPrice(int itemIndex)
+bool TotalMeetsMinimum()
+string FormatDecimal(double input)
+```
+
+Each method answers a different question:
+
+```text
+GetDiscountedPrice(...)
+→ What is this item's discounted price?
+→ double
+
+TotalMeetsMinimum()
+→ Has the current total reached the spending threshold?
+→ bool
+
+FormatDecimal(...)
+→ What text should be displayed for this number?
+→ string
+```
+
+The caller combines all three results:
+
+```csharp
+for (int index = 0; index < items.Length; index++)
+{
+    total += GetDiscountedPrice(index);
+}
+
+total -=
+    TotalMeetsMinimum()
+        ? 5.00
+        : 0.00;
+
+Console.WriteLine(
+    $"Total: ${FormatDecimal(total)}");
+```
+
+Verified lesson result:
+
+```text
+Total: $44.58
+```
+
+---
+
+## Return an Expression Directly
+
+A temporary variable is not required when the desired value can be expressed
+clearly in the `return` statement.
+
+Longer form:
+
+```csharp
+double result =
+    items[itemIndex] *
+    (1 - discounts[itemIndex]);
+
+return result;
+```
+
+Equivalent direct form:
+
+```csharp
+return
+    items[itemIndex] *
+    (1 - discounts[itemIndex]);
+```
+
+Direct returns are useful when the expression remains readable and the
+intermediate variable would not add meaningful domain information.
+
+---
+
+## Return Boolean Expressions
+
+Comparisons already evaluate to `bool`.
+
+Instead of:
+
+```csharp
+bool result =
+    total >= minimumSpend;
+
+return result;
+```
+
+the method can simply return:
+
+```csharp
+return
+    total >= minimumSpend;
+```
+
+The caller may then use the method anywhere a Boolean expression is valid:
+
+```csharp
+if (TotalMeetsMinimum())
+{
+    // ...
+}
+```
+
+or:
+
+```csharp
+total -=
+    TotalMeetsMinimum()
+        ? 5.00
+        : 0.00;
+```
+
+A well-named Boolean method can make the caller read almost like a sentence.
+
+---
+
+## Return Numeric Values
+
+The currency-conversion example demonstrates that numeric return types must be
+chosen together with the arithmetic performed inside the method.
+
+### Return `int`
+
+```csharp
+int UsdToVnd(double usdAmount)
+{
+    int rate = 23500;
+
+    return
+        (int)(rate * usdAmount);
+}
+```
+
+`rate * usdAmount` evaluates to `double`.
+
+Because the method promises to return `int`, the example performs an explicit
+cast:
+
+```csharp
+(int)
+```
+
+The cast acknowledges that the fractional part, if any, will be discarded.
+
+Verified result:
+
+```text
+$23.73 USD = $557655 VND
+```
+
+### Return `double`
+
+```csharp
+double VndToUsd(int vndAmount)
+{
+    double rate = 23500;
+
+    return
+        vndAmount / rate;
+}
+```
+
+Using a `double` rate ensures floating-point division.
+
+If both operands were integers:
+
+```text
+integer / integer
+→ integer division first
+→ fractional part discarded
+→ conversion to double happens afterward
+```
+
+The method therefore chooses its internal data types deliberately.
+
+Verified result:
+
+```text
+$557655 VND = $23.73 USD
+```
+
+---
+
+## Return Strings
+
+The string exercise separates two reusable transformations:
+
+```csharp
+string ReverseWord(string word)
+string ReverseSentence(string sentence)
+```
+
+`ReverseWord()` returns one reversed word.
+
+`ReverseSentence()` splits the sentence and reuses `ReverseWord()` for every
+word.
+
+Example:
+
+```text
+there are snakes at the zoo
+```
+
+becomes:
+
+```text
+ereht era sekans ta eht ooz
+```
+
+---
+
+## Method Composition
+
+One of the strongest ideas in this module is **method composition**.
+
+**Method composition** means using the result produced by one method as part of
+another operation or method.
+
+Example:
+
+```csharp
+result +=
+    ReverseWord(word) +
+    " ";
+```
+
+Execution flow:
+
+```text
+ReverseSentence()
+    ↓
+calls ReverseWord(word)
+    ↓
+ReverseWord returns string
+    ↓
+returned string is appended to result
+```
+
+This allows complex behavior to be assembled from small, focused methods.
+
+---
+
+## Return Values Inside Return Statements
+
+A return expression may itself call another method:
+
+```csharp
+return result.Trim();
+```
+
+Execution order:
+
+```text
+result.Trim()
+    ↓
+Trim() returns string
+    ↓
+that string becomes the return value of the current method
+    ↓
+caller receives the final string
+```
+
+The important requirement is type compatibility.
+
+---
+
+## Return Boolean Values
+
+The palindrome example uses:
+
+```csharp
+bool IsPalindrome(string word)
+```
+
+The algorithm compares characters from both ends:
+
+```text
+start → first character
+end   → last character
+
+compare
+ ↓
+move both pointers inward
+ ↓
+repeat until they meet or cross
+```
+
+If any mirrored characters differ:
+
+```csharp
+if (word[start] != word[end])
+{
+    return false;
+}
+```
+
+The method ends immediately.
+
+If every comparison succeeds:
+
+```csharp
+return true;
+```
+
+Verified output:
+
+```text
+racecar: True
+talented: False
+deified: True
+tent: False
+tenet: True
+```
+
+---
+
+## Multiple Return Paths
+
+`IsPalindrome()` demonstrates that a method may contain multiple `return`
+statements:
+
+```text
+mismatch found
+→ return false immediately
+
+no mismatch found
+→ return true at the end
+```
+
+The key requirement is not "one return statement."
+
+The real requirement is:
+
+```text
+Every reachable completion path in a value-returning method
+must produce a compatible return value.
+```
+
+---
+
+## Return Arrays
+
+Methods can return complete data structures.
+
+A one-dimensional version can return:
+
+```csharp
+return new int[]
+{
+    current,
+    next
+};
+```
+
+The extended lesson returns a two-dimensional array:
+
+```csharp
+int[,] TwoCoins(
+    int[] availableCoins,
+    int targetValue)
+```
+
+The method searches for pairs of coin indices whose values sum to the target.
+
+---
+
+## Two-Coin Search Strategy
+
+For each current coin:
+
+```text
+choose current index
+    ↓
+compare with each later index
+    ↓
+if values sum to target
+    ↓
+store the pair
+```
+
+The inner loop starts at:
+
+```csharp
+current + 1
+```
+
+This prevents:
+
+```text
+pairing one coin with itself
+duplicate reversed pairs such as 0,3 and 3,0
+```
+
+---
+
+## Return a Newly Constructed Array
+
+When no matching pair exists, the method can create and return an empty array
+directly:
+
+```csharp
+return new int[0, 0];
+```
+
+No temporary variable is required.
+
+This is another example of the flexibility of the `return` expression.
+
+---
+
+## Sentinel Values
+
+The two-dimensional result array is initialized with:
+
+```text
+-1, -1
+```
+
+for unused rows.
+
+`-1` acts as a **sentinel value**:
+
+```text
+valid index
+→ 0 or greater
+
+-1
+→ no result stored in this row
+```
+
+The caller stops displaying rows when it encounters the sentinel.
+
+This lets one fixed-size array represent between one and five valid pairs.
+
+---
+
+## Early Return When the Result Buffer Is Full
+
+The result array stores at most five pairs.
+
+After the fifth match:
+
+```csharp
+if (count == matches.GetLength(0))
+{
+    return matches;
+}
+```
+
+The method returns immediately.
+
+This prevents the next match from trying to write beyond the array boundary.
+
+---
+
+## Verified Array Results
+
+For:
+
+```text
+coins  = 5, 5, 50, 25, 25, 10, 5
+target = 30
+```
+
+the expected result is:
+
+```text
+Change found at positions:
+0,3
+0,4
+1,3
+1,4
+3,6
+```
+
+For:
+
+```text
+target = 80
+```
+
+the expected result is:
+
+```text
+No two coins make change
+```
+
+The final repository source executes both verification cases.
+
+---
+
+## Dice Mini-Game Challenge
+
+The final challenge integrates parameters and return values into a small
+interactive program.
+
+Required methods:
+
+```csharp
+bool ShouldPlay()
+int GetTarget()
+int RollDice()
+string WinOrLose(int roll, int target)
+void PlayGame()
+```
+
+The signatures communicate each method's responsibility.
+
+### `ShouldPlay()`
+
+```text
+input source
+→ Console.ReadLine()
+
+processing
+→ compare response with "y"
+
+output
+→ bool
+```
+
+The returned value decides whether the game starts or continues.
+
+### `GetTarget()`
+
+```csharp
+int GetTarget()
+```
+
+returns a random integer from:
+
+```text
+1 through 5 inclusive
+```
+
+### `RollDice()`
+
+```csharp
+int RollDice()
+```
+
+returns a random integer from:
+
+```text
+1 through 6 inclusive
+```
+
+### `WinOrLose(...)`
+
+```csharp
+string WinOrLose(
+    int roll,
+    int target)
+```
+
+receives explicit input and returns explicit output:
+
+```text
+roll > target
+→ "You win!"
+
+otherwise
+→ "You lose!"
+```
+
+### `PlayGame()`
+
+`PlayGame()` coordinates the returned values:
+
+```text
+GetTarget()
+→ target
+
+RollDice()
+→ roll
+
+WinOrLose(roll, target)
+→ result message
+
+ShouldPlay()
+→ continue or stop
+```
+
+This challenge demonstrates how a larger workflow can be built by composing
+small methods with clear contracts.
+
+---
+
+## Repository Refinements
+
+The final organized source preserves the lesson concepts while adding a few
+small robustness improvements.
+
+### Culture-stable decimal conversion
+
+The shopping example uses invariant culture before applying the lesson's
+substring technique:
+
+```csharp
+input
+    .ToString(CultureInfo.InvariantCulture)
+    .Substring(0, 5);
+```
+
+This makes repository verification less dependent on the machine's decimal
+separator.
+
+For production software, numeric formatting such as:
+
+```csharp
+input.ToString("0.00")
+```
+
+would normally be preferable to `Substring()`.
+
+### Safer interactive input
+
+The dice challenge protects against a missing input line:
+
+```csharp
+string response =
+    Console.ReadLine() ??
+    string.Empty;
+```
+
+and compares using:
+
+```csharp
+StringComparison.OrdinalIgnoreCase
+```
+
+This preserves the lesson behavior while making the method safer and clearer.
+
+---
+
+## Source-Code Organization
+
+The final `Program.cs` is organized into:
+
+```text
+1. Module documentation
+2. High-level application flow
+3. Shopping-center return-type example
+4. Numeric return values
+5. String return values
+6. Boolean return values
+7. Array return values
+8. Dice mini-game challenge
+9. Module summary
+```
+
+Top-level flow:
+
+```csharp
+RunShoppingCenterExample();
+RunCurrencyConversionExample();
+RunStringReturnExample();
+RunBooleanReturnExample();
+RunArrayReturnExample();
+RunDiceMiniGameChallenge();
+DisplayModuleSummary();
+```
+
+The high-level program therefore describes **what** happens, while the method
+bodies explain **how** each task is performed.
+
+---
+
+## Commenting Standard for Return-Value Methods
+
+Comments in this module document both control flow and data flow.
+
+Important questions include:
+
+```text
+What return type does this method promise?
+What expression is returned?
+Where does the returned value go?
+Is the caller storing the value or consuming it immediately?
+Does the return type preserve the needed precision?
+Can an early return end the search safely?
+Does every reachable completion path return a compatible value?
+Is one method consuming the result of another?
+```
+
+This makes comments useful for understanding behavior rather than merely
+restating syntax.
+
+---
+
+## Completed Method Progression
+
+The first three modules now form one complete conceptual progression:
+
+```text
+Module 1
+void Method()
+→ named behavior
+
+Module 2
+void Method(parameters)
+→ explicit input
+
+Module 3
+returnType Method(parameters)
+→ explicit input
+→ processing
+→ explicit output
+```
+
+A reusable method can now expose both sides of its contract:
+
+```text
+What does the method need?
+→ parameters
+
+What does the method produce?
+→ return type
+```
+
+This is the core method model used throughout later C# application design.
+
+---
+
+## Verification
+
+Run the completed module:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-return-values\create-csharp-methods-return-values.csproj"
+```
+
+The application is interactive in the final dice challenge.
+
+At:
+
+```text
+Would you like to play? (Y/N)
+```
+
+enter:
+
+```text
+Y
+```
+
+to exercise the mini-game, or:
+
+```text
+N
+```
+
+to terminate that section.
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-return-values\create-csharp-methods-return-values.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified repository evidence:
+
+```text
+Final application run: Succeeded
+Module summary reached: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array-return example, target 30: Verified
+Array-return example, target 80: Verified
+Dice mini-game challenge: Verified
+Project registration: Verified
+Registered solution projects: 30
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 9, 2026
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| return type | `/rɪˈtɜːn taɪp/` | “ri-tơn tai-p” | kiểu dữ liệu method trả về |
+| return value | `/rɪˈtɜːn ˈvæl.juː/` | “ri-tơn va-liu” | giá trị được trả cho caller |
+| return statement | `/rɪˈtɜːn ˈsteɪt.mənt/` | “ri-tơn stâyt-mần-t” | câu lệnh trả kết quả và kết thúc method |
+| caller | `/ˈkɔː.lər/` | “co-lờ” | nơi gọi method |
+| capture | `/ˈkæp.tʃər/` | “cáp-chờ” | nhận/lưu giá trị trả về |
+| expression | `/ɪkˈspreʃ.ən/` | “ích-spre-shần” | biểu thức tạo ra một giá trị |
+| numeric | `/njuːˈmer.ɪk/` | “niu-me-rịch” | thuộc dữ liệu số |
+| cast | `/kɑːst/` | “ca-st” | ép kiểu |
+| integer division | `/ˈɪn.tɪ.dʒər dɪˈvɪʒ.ən/` | “in-ti-jờ đi-vi-zhần” | phép chia số nguyên |
+| palindrome | `/ˈpæl.ɪn.droʊm/` | “pa-lin-đrôm” | chuỗi đọc xuôi và ngược giống nhau |
+| method composition | `/ˈmeθ.əd ˌkɒm.pəˈzɪʃ.ən/` | “me-thợd com-pờ-zi-shần” | kết hợp nhiều method qua kết quả trả về |
+| sentinel value | `/ˈsen.tɪ.nəl ˈvæl.juː/` | “sen-ti-nồ va-liu” | giá trị đánh dấu trạng thái đặc biệt |
+| early return | `/ˈɜː.li rɪˈtɜːn/` | “ơ-li ri-tơn” | trả về và kết thúc method sớm |
+| explicit output | `/ɪkˈsplɪs.ɪt ˈaʊt.pʊt/` | “ích-spli-sịt ao-pút” | dữ liệu đầu ra được khai báo rõ |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Create C# Methods That Return Values
+Section: Create Methods in C# Console Applications
+Module position: 3 / 5
+Microsoft Learn units: 10 / 10
+Learning status: Completed
+Module assessment: Passed
+Achievement: Earned
+Repository verification status: Fully verified
+Project registration: Verified
+Solution project count: 30
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Final application run: Succeeded
+Expected output: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array return examples: Verified
+Dice mini-game challenge: Verified
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 9, 2026
+```
+
+---
+
+## Next Curriculum Item
+
+### Guided Project — Plan a Petting Zoo Visit
+
+The three instructional method modules are now complete.
+
+The guided project is the first Section 5 task that combines the method concepts
+inside a larger application:
+
+```text
+named methods
++
+parameters and arguments
++
+return values
++
+program decomposition
++
+application workflow
 ```
 
 Expected repository verification remains:
 
 ```text
-Complete all official module units
-Pass the module assessment
+Complete the official guided project
 Organize and comment the final source
-Run the completed source
+Run the completed application
 Verify required behavior and output
-Build the module
+Build the project
 Build the complete solution
 Update this section README
 Update the repository root README
@@ -2262,6 +3333,7 @@ Commit and push
 - [Microsoft Learn — Create Methods in C# Console Applications](https://learn.microsoft.com/en-us/training/paths/get-started-c-sharp-part-5/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/)
+- [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/)
 
 ---
 
@@ -2269,6 +3341,7 @@ Commit and push
 
 - [Module 1 source](./modules/write-first-csharp-method/)
 - [Module 2 source](./modules/create-csharp-methods-parameters/)
+- [Module 3 source](./modules/create-csharp-methods-return-values/)
 - [Repository overview](../../README.md)
 
 ---

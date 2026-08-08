@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-4%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-29-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-30-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -34,30 +34,35 @@ Latest fully completed section progress: 7 / 7
 Latest fully completed section repository verification: 7 / 7
 Current section: Create Methods in C# Console Applications
 Current section status: In progress
-Current section learning progress: 2 / 5
-Current section repository-verified progress: 2 / 5
-Completed instructional modules in current section: 2
+Current section learning progress: 3 / 5
+Current section repository-verified progress: 3 / 5
+Completed instructional modules in current section: 3
 Completed guided projects in current section: 0
 Completed challenge projects in current section: 0
-Latest completed learning item: Create C# Methods with Parameters
-Latest project: create-csharp-methods-parameters
+Latest completed learning item: Create C# Methods That Return Values
+Latest project: create-csharp-methods-return-values
 Latest learning item status: Completed
-Latest Microsoft Learn units: 9 / 9
+Latest Microsoft Learn units: 10 / 10
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 8, 2026
-Projects currently registered in solution: 29
+Latest completion date: August 9, 2026
+Projects currently registered in solution: 30
 Latest organized source: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final application output: Verified
-Employee email challenge: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array return examples: Verified
+Dice mini-game challenge: Verified
 Project compilation in full solution: Succeeded
 Latest full solution build: Succeeded in 3.9 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Create C# Methods That Return Values
+Next curriculum item: Guided Project — Plan a Petting Zoo Visit
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -66,7 +71,7 @@ Next curriculum item: Create C# Methods That Return Values
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
-| 5 | Create Methods in C# Console Applications | 2 / 5 | 2 / 5 verified | In progress |
+| 5 | Create Methods in C# Console Applications | 3 / 5 | 3 / 5 verified | In progress |
 | 6 | Debug C# Console Applications | Not started | Pending | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
@@ -3474,38 +3479,55 @@ The evidence confirms:
 
 ```text
 Status: In progress
-Learning progress: 2 / 5
-Repository-verified progress: 2 / 5
-Completed instructional modules: 2
+Learning progress: 3 / 5
+Repository-verified progress: 3 / 5
+Completed instructional modules: 3
 Completed guided projects: 0
 Completed challenge projects: 0
-Latest completed item: Create C# Methods with Parameters
-Microsoft Learn units: 9 / 9
+Latest completed item: Create C# Methods That Return Values
+Microsoft Learn units: 10 / 10
 Module assessment: Passed
 Achievement: Earned
-Latest project: create-csharp-methods-parameters
-Solution project count: 29
+Latest project: create-csharp-methods-return-values
+Solution project count: 30
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Application run and output: Verified
-Employee email challenge: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array return examples: Verified
+Dice mini-game challenge: Verified
 Full solution build: Succeeded in 3.9 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 8, 2026
-Next item: Create C# Methods That Return Values
+Completion date: August 9, 2026
+Next item: Guided Project — Plan a Petting Zoo Visit
 ```
 
-Section 5 currently covers two verified stages of method design:
+Section 5 now covers all three instructional stages of method design:
 
 - **Module 1:** parameterless methods, reusable behavior, decomposition, and execution flow;
 - **Module 2:** parameters and arguments, method scope, value/reference behavior,
-  optional parameters, named arguments, and explicit method input.
+  optional parameters, named arguments, and explicit method input;
+- **Module 3:** return types, return values, numeric/string/Boolean/array returns,
+  method composition, early returns, and explicit method output.
+
+The three instructional modules now form the complete basic data-flow model:
+
+```text
+arguments
+→ parameters
+→ method processing
+→ return value
+→ caller
+```
 
 [Open the current Section 5 documentation](./curriculum/create-methods-in-csharp-console-applications/README.md)
 
-[Open the latest Module 2 source](./curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/)
+[Open the latest Module 3 source](./curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/)
 
 ---
 
@@ -3591,9 +3613,12 @@ freecodecamp-csharp/
 │   │       ├── write-first-csharp-method/
 │   │       │   ├── Program.cs
 │   │       │   └── write-first-csharp-method.csproj
-│   │       └── create-csharp-methods-parameters/
+│   │       ├── create-csharp-methods-parameters/
+│   │       │   ├── Program.cs
+│   │       │   └── create-csharp-methods-parameters.csproj
+│   │       └── create-csharp-methods-return-values/
 │   │           ├── Program.cs
-│   │           └── create-csharp-methods-parameters.csproj
+│   │           └── create-csharp-methods-return-values.csproj
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
@@ -3616,9 +3641,9 @@ Section 4 contains five completed module projects, one completed guided
 project, one completed challenge project, and a verified Trophy directory.
 All seven Section 4 learning items are fully repository-verified.
 
-Section 5 currently contains two completed and fully repository-verified
-instructional modules. The latest project introduces explicit method input
-through parameters and is registered as solution project 29.
+Section 5 currently contains three completed and fully repository-verified
+instructional modules. The latest project completes the basic method data-flow
+model by adding explicit return values and is registered as solution project 30.
 
 ---
 
@@ -3649,7 +3674,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-29
+30
 ```
 
 List all projects registered in the solution:
@@ -3764,13 +3789,15 @@ curriculum/work-with-variable-data-in-csharp-console-applications/challenge-proj
 curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/write-first-csharp-method.csproj
 
 curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/create-csharp-methods-parameters.csproj
+
+curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/create-csharp-methods-return-values.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-parameters\create-csharp-methods-parameters.csproj"
+  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-return-values\create-csharp-methods-return-values.csproj"
 ```
 
 ---
@@ -3783,51 +3810,60 @@ dotnet run --project `
 Latest fully completed section: Work with Variable Data in C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Create Methods in C# Console Applications
-Current section progress: 2 / 5
-Current section repository verification: 2 / 5
-Latest completed learning item: Create C# Methods with Parameters
-Latest project: create-csharp-methods-parameters
-Microsoft Learn units: 9 / 9
+Current section progress: 3 / 5
+Current section repository verification: 3 / 5
+Latest completed learning item: Create C# Methods That Return Values
+Latest project: create-csharp-methods-return-values
+Microsoft Learn units: 10 / 10
 Module assessment: Passed
 Achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
 Application run: Succeeded
 Expected output: Verified
-Employee email challenge: Verified
+Shopping-center example: Verified
+Numeric return examples: Verified
+String return examples: Verified
+Boolean return examples: Verified
+Array return examples: Verified
+Dice mini-game challenge: Verified
 Project registration: Verified
-Registered solution projects: 29
+Registered solution projects: 30
 Project compilation in full solution: Succeeded
 Full-solution build: Succeeded in 3.9 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 8, 2026
-Next curriculum item: Create C# Methods That Return Values
+Verification date: August 9, 2026
+Next curriculum item: Guided Project — Plan a Petting Zoo Visit
 ```
 
 The latest evidence confirms that:
 
-- `create-csharp-methods-parameters` is registered as the twenty-ninth solution
+- `create-csharp-methods-return-values` is registered as the thirtieth solution
   project;
-- the module has reached `9 / 9` Microsoft Learn units;
+- the module has reached `10 / 10` Microsoft Learn units;
 - its module assessment is passed and achievement is earned;
 - the final source is organized and professionally commented;
-- parameter and argument behavior is demonstrated;
-- method-scope behavior is demonstrated;
-- value-type, array reference, and string-immutability behavior is demonstrated;
-- required and optional parameters are demonstrated;
-- positional and named arguments are demonstrated;
-- the RSVP example is implemented;
-- the employee email-address challenge produces the expected internal and
-  external addresses;
+- return types and return values are demonstrated across numeric, string,
+  Boolean, and array examples;
+- method composition is demonstrated by consuming one method's returned value
+  inside another method;
+- early returns are demonstrated in Boolean and array-search workflows;
+- the shopping-center example is verified;
+- the currency-conversion examples are verified;
+- the reverse-string examples are verified;
+- the palindrome example is verified;
+- the two-coin array-return examples are verified;
+- the dice mini-game challenge is implemented and verified;
 - the project compiles successfully as part of the solution;
-- the complete twenty-nine-project solution builds in `3.9 seconds`;
+- the complete thirty-project solution builds in `3.9 seconds`;
 - the build reports zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues.
 
-Section 5 is now in progress at `2 / 5`. The next curriculum item is
-**Create C# Methods That Return Values**.
+Section 5 is now in progress at `3 / 5`. All three instructional method modules
+are complete. The next curriculum item is **Guided Project — Plan a Petting Zoo
+Visit**.
 
 ---
 
@@ -3885,6 +3921,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 5](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-5/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
+- [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
