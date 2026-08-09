@@ -29,6 +29,9 @@
     <Project Path="curriculum/create-and-run-simple-csharp-console-applications/modules/readable-code/readable-code.csproj" />
   </Folder>
   <Folder Name="/curriculum/create-methods-in-csharp-console-applications/" />
+  <Folder Name="/curriculum/create-methods-in-csharp-console-applications/guided-projects/">
+    <Project Path="curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-petting-zoo-visit/plan-petting-zoo-visit.csproj" />
+  </Folder>
   <Folder Name="/curriculum/create-methods-in-csharp-console-applications/modules/">
     <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/create-csharp-methods-parameters.csproj" />
     <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/create-csharp-methods-return-values.csproj" />

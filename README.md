@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-4%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-30-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-31-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -34,35 +34,35 @@ Latest fully completed section progress: 7 / 7
 Latest fully completed section repository verification: 7 / 7
 Current section: Create Methods in C# Console Applications
 Current section status: In progress
-Current section learning progress: 3 / 5
-Current section repository-verified progress: 3 / 5
+Current section learning progress: 4 / 5
+Current section repository-verified progress: 4 / 5
 Completed instructional modules in current section: 3
-Completed guided projects in current section: 0
+Completed guided projects in current section: 1
 Completed challenge projects in current section: 0
-Latest completed learning item: Create C# Methods That Return Values
-Latest project: create-csharp-methods-return-values
+Latest completed learning item: Guided Project — Plan a Petting Zoo Visit
+Latest project: plan-petting-zoo-visit
 Latest learning item status: Completed
-Latest Microsoft Learn units: 10 / 10
+Latest Microsoft Learn units: 8 / 8
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 9, 2026
-Projects currently registered in solution: 30
+Latest completion date: August 10, 2026
+Projects currently registered in solution: 31
 Latest organized source: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final application output: Verified
-Shopping-center example: Verified
-Numeric return examples: Verified
-String return examples: Verified
-Boolean return examples: Verified
-Array return examples: Verified
-Dice mini-game challenge: Verified
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 3.9 seconds
+Latest full solution build: Succeeded in 3.4 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Guided Project — Plan a Petting Zoo Visit
+Next curriculum item: Challenge Project — Create a Mini-Game
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -71,7 +71,7 @@ Next curriculum item: Guided Project — Plan a Petting Zoo Visit
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
-| 5 | Create Methods in C# Console Applications | 3 / 5 | 3 / 5 verified | In progress |
+| 5 | Create Methods in C# Console Applications | 4 / 5 | 4 / 5 verified | In progress |
 | 6 | Debug C# Console Applications | Not started | Pending | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
@@ -3479,55 +3479,58 @@ The evidence confirms:
 
 ```text
 Status: In progress
-Learning progress: 3 / 5
-Repository-verified progress: 3 / 5
+Learning progress: 4 / 5
+Repository-verified progress: 4 / 5
 Completed instructional modules: 3
-Completed guided projects: 0
+Completed guided projects: 1
 Completed challenge projects: 0
-Latest completed item: Create C# Methods That Return Values
-Microsoft Learn units: 10 / 10
+Latest completed item: Guided Project — Plan a Petting Zoo Visit
+Microsoft Learn units: 8 / 8
 Module assessment: Passed
 Achievement: Earned
-Latest project: create-csharp-methods-return-values
-Solution project count: 30
+Latest project: plan-petting-zoo-visit
+Solution project count: 31
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Application run and output: Verified
-Shopping-center example: Verified
-Numeric return examples: Verified
-String return examples: Verified
-Boolean return examples: Verified
-Array return examples: Verified
-Dice mini-game challenge: Verified
-Full solution build: Succeeded in 3.9 seconds
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
+Full solution build: Succeeded in 3.4 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 9, 2026
-Next item: Guided Project — Plan a Petting Zoo Visit
+Completion date: August 10, 2026
+Next item: Challenge Project — Create a Mini-Game
 ```
 
-Section 5 now covers all three instructional stages of method design:
+Section 5 has completed the three instructional method modules and the guided
+project:
 
 - **Module 1:** parameterless methods, reusable behavior, decomposition, and execution flow;
 - **Module 2:** parameters and arguments, method scope, value/reference behavior,
   optional parameters, named arguments, and explicit method input;
 - **Module 3:** return types, return values, numeric/string/Boolean/array returns,
-  method composition, early returns, and explicit method output.
+  method composition, early returns, and explicit method output;
+- **Guided Project:** pseudo-code-driven decomposition, animal randomization,
+  optional parameters, two-dimensional arrays, returned group assignments, and
+  method orchestration in a complete application workflow.
 
-The three instructional modules now form the complete basic data-flow model:
+The progression is now:
 
 ```text
-arguments
-→ parameters
-→ method processing
-→ return value
-→ caller
+named methods
+→ explicit input with parameters
+→ explicit output with return values
+→ method composition in a complete application
 ```
 
 [Open the current Section 5 documentation](./curriculum/create-methods-in-csharp-console-applications/README.md)
 
-[Open the latest Module 3 source](./curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/)
+[Open the latest Guided Project source](./curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-petting-zoo-visit/)
 
 ---
 
@@ -3609,16 +3612,20 @@ freecodecamp-csharp/
 │   │           └── 2.PNG
 │   ├── create-methods-in-csharp-console-applications/
 │   │   ├── README.md
-│   │   └── modules/
-│   │       ├── write-first-csharp-method/
-│   │       │   ├── Program.cs
-│   │       │   └── write-first-csharp-method.csproj
-│   │       ├── create-csharp-methods-parameters/
-│   │       │   ├── Program.cs
-│   │       │   └── create-csharp-methods-parameters.csproj
-│   │       └── create-csharp-methods-return-values/
+│   │   ├── modules/
+│   │   │   ├── write-first-csharp-method/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── write-first-csharp-method.csproj
+│   │   │   ├── create-csharp-methods-parameters/
+│   │   │   │   ├── Program.cs
+│   │   │   │   └── create-csharp-methods-parameters.csproj
+│   │   │   └── create-csharp-methods-return-values/
+│   │   │       ├── Program.cs
+│   │   │       └── create-csharp-methods-return-values.csproj
+│   │   └── guided-projects/
+│   │       └── plan-petting-zoo-visit/
 │   │           ├── Program.cs
-│   │           └── create-csharp-methods-return-values.csproj
+│   │           └── plan-petting-zoo-visit.csproj
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
@@ -3642,8 +3649,10 @@ project, one completed challenge project, and a verified Trophy directory.
 All seven Section 4 learning items are fully repository-verified.
 
 Section 5 currently contains three completed and fully repository-verified
-instructional modules. The latest project completes the basic method data-flow
-model by adding explicit return values and is registered as solution project 30.
+instructional modules plus one completed and repository-verified guided project.
+The latest project integrates method decomposition, parameters, return values,
+two-dimensional arrays, and method composition and is registered as solution
+project 31.
 
 ---
 
@@ -3674,7 +3683,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-30
+31
 ```
 
 List all projects registered in the solution:
@@ -3791,13 +3800,15 @@ curriculum/create-methods-in-csharp-console-applications/modules/write-first-csh
 curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-parameters/create-csharp-methods-parameters.csproj
 
 curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/create-csharp-methods-return-values.csproj
+
+curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-petting-zoo-visit/plan-petting-zoo-visit.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-methods-in-csharp-console-applications\modules\create-csharp-methods-return-values\create-csharp-methods-return-values.csproj"
+  ".\curriculum\create-methods-in-csharp-console-applications\guided-projects\plan-petting-zoo-visit\plan-petting-zoo-visit.csproj"
 ```
 
 ---
@@ -3810,60 +3821,57 @@ dotnet run --project `
 Latest fully completed section: Work with Variable Data in C# Console Applications
 Latest fully completed section progress: 7 / 7
 Current section: Create Methods in C# Console Applications
-Current section progress: 3 / 5
-Current section repository verification: 3 / 5
-Latest completed learning item: Create C# Methods That Return Values
-Latest project: create-csharp-methods-return-values
-Microsoft Learn units: 10 / 10
+Current section progress: 4 / 5
+Current section repository verification: 4 / 5
+Latest completed learning item: Guided Project — Plan a Petting Zoo Visit
+Latest project: plan-petting-zoo-visit
+Microsoft Learn units: 8 / 8
 Module assessment: Passed
 Achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
 Application run: Succeeded
 Expected output: Verified
-Shopping-center example: Verified
-Numeric return examples: Verified
-String return examples: Verified
-Boolean return examples: Verified
-Array return examples: Verified
-Dice mini-game challenge: Verified
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
 Project registration: Verified
-Registered solution projects: 30
+Registered solution projects: 31
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 3.9 seconds
+Full-solution build: Succeeded in 3.4 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 9, 2026
-Next curriculum item: Guided Project — Plan a Petting Zoo Visit
+Verification date: August 10, 2026
+Next curriculum item: Challenge Project — Create a Mini-Game
 ```
 
 The latest evidence confirms that:
 
-- `create-csharp-methods-return-values` is registered as the thirtieth solution
-  project;
-- the module has reached `10 / 10` Microsoft Learn units;
+- `plan-petting-zoo-visit` is registered as the thirty-first solution project;
+- the guided project has reached `8 / 8` Microsoft Learn units;
 - its module assessment is passed and achievement is earned;
 - the final source is organized and professionally commented;
-- return types and return values are demonstrated across numeric, string,
-  Boolean, and array examples;
-- method composition is demonstrated by consuming one method's returned value
-  inside another method;
-- early returns are demonstrated in Boolean and array-search workflows;
-- the shopping-center example is verified;
-- the currency-conversion examples are verified;
-- the reverse-string examples are verified;
-- the palindrome example is verified;
-- the two-coin array-return examples are verified;
-- the dice mini-game challenge is implemented and verified;
+- the application successfully randomizes the petting-zoo animal order;
+- School A is assigned six groups;
+- School B is assigned three groups;
+- School C is assigned two groups;
+- the optional `groups = 6` parameter behavior is verified;
+- `AssignGroup(...)` returns the required two-dimensional `string[,]` result;
+- `PrintGroup(...)` traverses the returned two-dimensional assignment;
+- `PlanSchoolVisit(...)` coordinates randomization, assignment, and display as
+  one reusable application workflow;
 - the project compiles successfully as part of the solution;
-- the complete thirty-project solution builds in `3.9 seconds`;
+- the complete thirty-one-project solution builds in `3.4 seconds`;
 - the build reports zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues.
 
-Section 5 is now in progress at `3 / 5`. All three instructional method modules
-are complete. The next curriculum item is **Guided Project — Plan a Petting Zoo
-Visit**.
+Section 5 is now in progress at `4 / 5`. The three instructional method modules
+and the guided project are complete. The next curriculum item is **Challenge
+Project — Create a Mini-Game**.
 
 ---
 
@@ -3922,6 +3930,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
+- [Microsoft Learn — Guided Project: Plan a Petting Zoo Visit](https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)

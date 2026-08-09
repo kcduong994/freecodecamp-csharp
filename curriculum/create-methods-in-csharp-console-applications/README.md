@@ -21,36 +21,37 @@ The learning path contains five curriculum items:
 Section: Create Methods in C# Console Applications
 Section position: 5 / 7
 Status: In progress
-Curriculum learning progress: 3 / 5
-Repository-verified progress: 3 / 5
+Curriculum learning progress: 4 / 5
+Repository-verified progress: 4 / 5
 Completed instructional modules: 3
 Fully repository-verified instructional modules: 3
-Completed guided projects: 0
+Completed guided projects: 1
+Fully repository-verified guided projects: 1
 Completed challenge projects: 0
-Latest completed learning item: Create C# Methods That Return Values
-Latest Microsoft Learn units: 10 / 10
+Latest completed learning item: Guided Project — Plan a Petting Zoo Visit
+Latest Microsoft Learn units: 8 / 8
 Latest module assessment: Passed
 Latest achievement: Earned
-Latest completion date: August 9, 2026
-Projects registered in solution: 30
-Latest project: create-csharp-methods-return-values
+Latest completion date: August 10, 2026
+Projects registered in solution: 31
+Latest project: plan-petting-zoo-visit
 Target framework: net10.0
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final output: Verified
-Shopping-center example: Verified
-Numeric return examples: Verified
-String return examples: Verified
-Boolean return examples: Verified
-Array return examples: Verified
-Dice mini-game challenge: Verified
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
 Project compilation in full solution: Succeeded
-Full solution build: Succeeded in 3.9 seconds
+Full solution build: Succeeded in 3.4 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Guided Project — Plan a Petting Zoo Visit
+Next curriculum item: Challenge Project — Create a Mini-Game
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
@@ -58,7 +59,7 @@ Next curriculum item: Guided Project — Plan a Petting Zoo Visit
 | 1 | Write Your First C# Method | Completed | Verified |
 | 2 | Create C# Methods with Parameters | Completed | Verified |
 | 3 | Create C# Methods That Return Values | Completed | Verified |
-| 4 | Guided Project — Plan a Petting Zoo Visit | Pending | Pending |
+| 4 | Guided Project — Plan a Petting Zoo Visit | Completed | Verified |
 | 5 | Challenge Project — Create a Mini-Game | Pending | Pending |
 
 A curriculum item reaches **learning completion** after its official Microsoft
@@ -73,11 +74,11 @@ It reaches **full repository verification** after:
 - the complete solution has built successfully;
 - the repository documentation has been updated.
 
-Modules 1, 2, and 3 are fully repository-verified. The latest return-values
-module completes the basic method data-flow model by combining explicit inputs
-with explicit outputs, verifies all lesson examples and the dice mini-game
-challenge, compiles as part of the thirty-project solution, and preserves a
-passing full-solution build.
+The three instructional modules and the guided project are now fully
+repository-verified. The latest project combines method decomposition,
+parameters, optional parameters, return values, one-dimensional and
+two-dimensional arrays, randomized assignment, and a reusable orchestration
+method in one complete application workflow.
 
 ---
 
@@ -86,16 +87,20 @@ passing full-solution build.
 ```text
 create-methods-in-csharp-console-applications/
 ├── README.md
-└── modules/
-    ├── write-first-csharp-method/
-    │   ├── Program.cs
-    │   └── write-first-csharp-method.csproj
-    ├── create-csharp-methods-parameters/
-    │   ├── Program.cs
-    │   └── create-csharp-methods-parameters.csproj
-    └── create-csharp-methods-return-values/
+├── modules/
+│   ├── write-first-csharp-method/
+│   │   ├── Program.cs
+│   │   └── write-first-csharp-method.csproj
+│   ├── create-csharp-methods-parameters/
+│   │   ├── Program.cs
+│   │   └── create-csharp-methods-parameters.csproj
+│   └── create-csharp-methods-return-values/
+│       ├── Program.cs
+│       └── create-csharp-methods-return-values.csproj
+└── guided-projects/
+    └── plan-petting-zoo-visit/
         ├── Program.cs
-        └── create-csharp-methods-return-values.csproj
+        └── plan-petting-zoo-visit.csproj
 ```
 
 This section uses one central README for curriculum documentation. Individual
@@ -3290,31 +3295,1050 @@ Completion date: August 9, 2026
 
 ---
 
-## Next Curriculum Item
+# Guided Project — Plan a Petting Zoo Visit
 
-### Guided Project — Plan a Petting Zoo Visit
-
-The three instructional method modules are now complete.
-
-The guided project is the first Section 5 task that combines the method concepts
-inside a larger application:
+## Completion Status
 
 ```text
-named methods
-+
-parameters and arguments
-+
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 8 / 8
+Module assessment: Passed
+Achievement: Earned
+Project added to solution: Verified
+Solution project count: 31
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Application run: Succeeded
+Expected output: Verified
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.4 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 10, 2026
+```
+
+This guided project is the first Section 5 application that combines the three
+method modules into one complete workflow.
+
+The scenario is the **Contoso Petting Zoo**.
+
+The zoo contains 18 animal species, and three schools are scheduled to visit:
+
+```text
+School A
+→ 6 groups
+
+School B
+→ 3 groups
+
+School C
+→ 2 groups
+```
+
+For every school, the application must:
+
+```text
+randomize the animals
+→ assign animals to the requested number of groups
+→ print the school name
+→ print every animal group
+```
+
+Project location:
+
+```text
+curriculum/create-methods-in-csharp-console-applications/
+└── guided-projects/
+    └── plan-petting-zoo-visit/
+        ├── Program.cs
+        └── plan-petting-zoo-visit.csproj
+```
+
+---
+
+## From Pseudo-Code to Methods
+
+The project begins by translating the specification into pseudo-code.
+
+Initial plan:
+
+```csharp
+// RandomizeAnimals();
+// string[,] group = AssignGroup();
+
+Console.WriteLine("School A");
+
+// PrintGroup(group);
+```
+
+This planning step separates the application into distinct tasks before syntax
+details are implemented.
+
+The mapping is direct:
+
+| Requirement | Method |
+| --- | --- |
+| randomize animal order | `RandomizeAnimals()` |
+| assign animals to groups | `AssignGroup(...)` |
+| print one group assignment | `PrintGroup(...)` |
+| coordinate one complete school visit | `PlanSchoolVisit(...)` |
+
+This is an important transition from writing one long statement sequence to
+designing an application from named responsibilities.
+
+---
+
+## Application Data
+
+The project uses one array containing 18 animal species:
+
+```csharp
+string[] pettingZoo =
+{
+    "alpacas",
+    "capybaras",
+    "chickens",
+    "ducks",
+    "emus",
+    "geese",
+    "goats",
+    "iguanas",
+    "kangaroos",
+    "lemurs",
+    "llamas",
+    "macaws",
+    "ostriches",
+    "pigs",
+    "ponies",
+    "rabbits",
+    "sheep",
+    "tortoises",
+};
+```
+
+The same array participates in two stages:
+
+```text
+RandomizeAnimals()
+→ changes the order in-place
+
+AssignGroup(...)
+→ reads the randomized order
+→ produces a new 2D assignment array
+```
+
+---
+
+## `RandomizeAnimals()`
+
+The randomization method has no explicit parameters:
+
+```csharp
+void RandomizeAnimals()
+```
+
+It operates on the shared `pettingZoo` array.
+
+Its responsibility is:
+
+```text
+INPUT
+shared pettingZoo array
+
+PROCESSING
+shuffle the array in-place
+
+OUTPUT
+no return value
+but the shared array order changes
+```
+
+---
+
+## Swapping Two Array Values
+
+The shuffle algorithm depends on a safe swap.
+
+Incorrect idea:
+
+```csharp
+pettingZoo[i] = pettingZoo[r];
+pettingZoo[r] = pettingZoo[i];
+```
+
+The first assignment would destroy the original value at index `i`.
+
+The correct pattern uses temporary storage:
+
+```csharp
+string temp =
+    pettingZoo[r];
+
+pettingZoo[r] =
+    pettingZoo[i];
+
+pettingZoo[i] =
+    temp;
+```
+
+Data movement:
+
+```text
+pettingZoo[r]
+→ temp
+
+pettingZoo[i]
+→ pettingZoo[r]
+
+temp
+→ pettingZoo[i]
+```
+
+No animal value is lost during the exchange.
+
+---
+
+## Random Index Range
+
+The final shuffle chooses:
+
+```csharp
+int r =
+    random.Next(
+        i,
+        pettingZoo.Length);
+```
+
+`Random.Next(minValue, maxValue)`:
+
+```text
+includes minValue
+excludes maxValue
+```
+
+Therefore:
+
+```text
+r
+→ i through pettingZoo.Length - 1
+```
+
+The lower bound increases as the loop advances.
+
+Conceptually:
+
+```text
+iteration 0
+→ choose from the complete remaining array
+
+iteration 1
+→ index 0 is already finalized
+→ choose from index 1 onward
+
+iteration 2
+→ indexes 0 and 1 are already finalized
+→ choose from index 2 onward
+```
+
+This prevents previously finalized positions from being repeatedly included in
+later selection ranges.
+
+---
+
+## `AssignGroup(...)`
+
+The group-assignment method returns a two-dimensional string array:
+
+```csharp
+string[,] AssignGroup(int groups = 6)
+```
+
+Its method contract is:
+
+```text
+INPUT
+groups
+
+PROCESSING
+divide the 18 randomized animals
+across the requested number of groups
+
+OUTPUT
+string[,]
+```
+
+The `groups` parameter is optional.
+
+Default:
+
+```text
+6
+```
+
+So this call:
+
+```csharp
+AssignGroup();
+```
+
+is equivalent to:
+
+```csharp
+AssignGroup(6);
+```
+
+---
+
+## Optional Parameter
+
+The optional parameter is declared by assigning a default value:
+
+```csharp
+int groups = 6
+```
+
+This allows School A to use the standard configuration without explicitly
+supplying the number:
+
+```csharp
+PlanSchoolVisit("School A");
+```
+
+while the other schools override it:
+
+```csharp
+PlanSchoolVisit("School B", 3);
+PlanSchoolVisit("School C", 2);
+```
+
+The same method therefore supports multiple visit configurations.
+
+---
+
+## Two-Dimensional Array Dimensions
+
+The group result is created with:
+
+```csharp
+string[,] result =
+    new string[
+        groups,
+        pettingZoo.Length / groups];
+```
+
+Dimension 0:
+
+```text
+number of groups
+```
+
+Dimension 1:
+
+```text
+animals per group
+```
+
+The three required configurations are:
+
+```text
+School A
+18 / 6
+→ 3 animals per group
+→ string[6,3]
+
+School B
+18 / 3
+→ 6 animals per group
+→ string[3,6]
+
+School C
+18 / 2
+→ 9 animals per group
+→ string[2,9]
+```
+
+The guided-project requirements use group counts that divide 18 exactly.
+
+---
+
+## Why a 2D Array Fits the Problem
+
+The data naturally has two coordinates:
+
+```text
+row
+→ student group
+
+column
+→ animal position inside that group
+```
+
+Example:
+
+```text
+groups[0,0]
+→ first animal in Group 1
+
+groups[0,1]
+→ second animal in Group 1
+
+groups[1,0]
+→ first animal in Group 2
+```
+
+This makes the 2D array a direct representation of the planning table.
+
+---
+
+## The `start` Index
+
+`AssignGroup(...)` uses:
+
+```csharp
+int start = 0;
+```
+
+The source array is one-dimensional:
+
+```text
+pettingZoo[start]
+```
+
+but the destination is two-dimensional:
+
+```text
+result[i,j]
+```
+
+The `start` variable connects those two structures.
+
+Core assignment:
+
+```csharp
+result[i, j] =
+    pettingZoo[start++];
+```
+
+`start++` means:
+
+```text
+1. use the current value of start
+2. perform the assignment
+3. increment start
+```
+
+The sequence is therefore:
+
+```text
+pettingZoo[0] → result[0,0]
+pettingZoo[1] → result[0,1]
+pettingZoo[2] → result[0,2]
+...
+```
+
+until all 18 animals have been assigned.
+
+---
+
+## Nested Loops in `AssignGroup(...)`
+
+The outer loop traverses rows:
+
+```csharp
+for (
+    int i = 0;
+    i < groups;
+    i++)
+```
+
+The inner loop traverses columns:
+
+```csharp
+for (
+    int j = 0;
+    j < result.GetLength(1);
+    j++)
+```
+
+Meaning:
+
+```text
+outer loop
+→ choose one group
+
+inner loop
+→ fill every animal slot in that group
+```
+
+This is the standard traversal pattern for rectangular two-dimensional arrays.
+
+---
+
+## Returning the Group Assignment
+
+At the end of `AssignGroup(...)`:
+
+```csharp
+return result;
+```
+
+The complete 2D array is sent back to the caller.
+
+The caller captures it:
+
+```csharp
+string[,] group =
+    AssignGroup(groups);
+```
+
+Data flow:
+
+```text
+groups
+  ↓
+AssignGroup(groups)
+  ↓
+create + fill string[,]
+  ↓
+return result
+  ↓
+group
+```
+
+This directly applies the return-value concepts from Module 3.
+
+---
+
+## `PrintGroup(...)`
+
+The display method accepts:
+
+```csharp
+void PrintGroup(string[,] groups)
+```
+
+It does not need to know:
+
+```text
+which school produced the data
+how the array was randomized
+how many groups were requested originally
+```
+
+It only needs one input:
+
+```text
+the completed 2D assignment array
+```
+
+This is a good example of a focused method responsibility.
+
+---
+
+## `GetLength(0)` and `GetLength(1)`
+
+For a rectangular 2D array:
+
+```csharp
+groups.GetLength(0)
+```
+
+returns the number of rows.
+
+In this project:
+
+```text
+rows
+→ groups
+```
+
+While:
+
+```csharp
+groups.GetLength(1)
+```
+
+returns the number of columns.
+
+In this project:
+
+```text
+columns
+→ animals per group
+```
+
+`PrintGroup(...)` therefore works for all three schools without hardcoding array
+dimensions.
+
+---
+
+## Human-Readable Group Numbers
+
+Array indexes begin at zero:
+
+```text
+0
+1
+2
+...
+```
+
+But the console output should show:
+
+```text
+Group 1
+Group 2
+Group 3
+...
+```
+
+So the method prints:
+
+```csharp
+$"Group {i + 1}: "
+```
+
+The internal index remains zero-based while the user-facing label becomes
+one-based.
+
+---
+
+## `PlanSchoolVisit(...)`
+
+The orchestration method is:
+
+```csharp
+void PlanSchoolVisit(
+    string schoolName,
+    int groups = 6)
+```
+
+This method contains the complete workflow for one school:
+
+```csharp
+RandomizeAnimals();
+
+string[,] group =
+    AssignGroup(groups);
+
+Console.WriteLine(schoolName);
+
+PrintGroup(group);
+```
+
+Instead of duplicating the same four operations three times, the application
+calls one reusable method with different arguments.
+
+---
+
+## Method Composition in the Guided Project
+
+`PlanSchoolVisit(...)` composes three lower-level methods:
+
+```text
+PlanSchoolVisit(...)
+    ↓
+RandomizeAnimals()
+    ↓
+AssignGroup(...)
+    ↓
+PrintGroup(...)
+```
+
+This demonstrates an important application-design principle:
+
+```text
+high-level method
+→ coordinates the workflow
+
+lower-level methods
+→ perform focused tasks
+```
+
+The caller can therefore express the entire requirement with:
+
+```csharp
+PlanSchoolVisit("School A");
+PlanSchoolVisit("School B", 3);
+PlanSchoolVisit("School C", 2);
+```
+
+The top-level program now reads like the business specification.
+
+---
+
+## Full Data Flow for School B
+
+Call:
+
+```csharp
+PlanSchoolVisit("School B", 3);
+```
+
+Data flow:
+
+```text
+"School B"
+→ schoolName
+
+3
+→ groups
+```
+
+Then:
+
+```text
+PlanSchoolVisit(...)
+      ↓
+RandomizeAnimals()
+      ↓
+pettingZoo order changes
+      ↓
+AssignGroup(3)
+      ↓
+18 / 3 = 6 animals per group
+      ↓
+return string[3,6]
+      ↓
+group
+      ↓
+PrintGroup(group)
+      ↓
+3 displayed groups
+```
+
+This is the complete **input → processing → output** model applied across
+multiple methods.
+
+---
+
+## Verified School Configurations
+
+The final application run verifies:
+
+```text
+School A
+→ 6 groups
+→ 3 animals per group
+
+School B
+→ 3 groups
+→ 6 animals per group
+
+School C
+→ 2 groups
+→ 9 animals per group
+```
+
+The displayed animal order is randomized, so exact animal sequences may differ
+between runs.
+
+The structural requirements remain stable:
+
+```text
+18 animals total for each school
+correct group count
+correct animals-per-group count
+all assignments displayed
+```
+
+---
+
+## Verified Output Shape
+
+A successful run has the following shape:
+
+```text
+School A
+Group 1: ...
+Group 2: ...
+Group 3: ...
+Group 4: ...
+Group 5: ...
+Group 6: ...
+
+School B
+Group 1: ...
+Group 2: ...
+Group 3: ...
+
+School C
+Group 1: ...
+Group 2: ...
+```
+
+The actual animal order is intentionally nondeterministic.
+
+Repository verification therefore checks the structure and group counts rather
+than expecting one fixed animal sequence.
+
+---
+
+## Source-Code Organization
+
+The final `Program.cs` is organized into:
+
+```text
+1. Guided-project documentation
+2. Application data
+3. Top-level application flow
+4. PlanSchoolVisit(...)
+5. RandomizeAnimals()
+6. AssignGroup(...)
+7. PrintGroup(...)
+8. Guided-project summary
+```
+
+The top-level flow remains intentionally short:
+
+```csharp
+PlanSchoolVisit("School A");
+PlanSchoolVisit("School B", 3);
+PlanSchoolVisit("School C", 2);
+```
+
+A reader can understand the complete application requirement before examining
+the implementation details.
+
+---
+
+## Method Contracts in the Guided Project
+
+The completed source comments explicitly describe each method using:
+
+```text
+INPUT
+PROCESSING
+OUTPUT
+```
+
+### `RandomizeAnimals()`
+
+```text
+INPUT
+shared pettingZoo array
+
+PROCESSING
+shuffle in-place
+
+OUTPUT
+changed shared array state
+```
+
+### `AssignGroup(...)`
+
+```text
+INPUT
+group count
+
+PROCESSING
+build and populate 2D array
+
+OUTPUT
+string[,]
+```
+
+### `PrintGroup(...)`
+
+```text
+INPUT
+string[,] group assignment
+
+PROCESSING
+traverse rows and columns
+
+OUTPUT
+console text
+```
+
+### `PlanSchoolVisit(...)`
+
+```text
+INPUT
+school name
+group count
+
+PROCESSING
+coordinate the complete workflow
+
+OUTPUT
+complete school visit plan on the console
+```
+
+This is the clearest application so far of method contracts and data flow.
+
+---
+
+## Guided-Project Progression
+
+The Section 5 progression is now:
+
+```text
+Module 1
+method
+→ named behavior
+
+Module 2
+parameters
+→ explicit input
+
+Module 3
 return values
+→ explicit output
+
+Guided Project
+method composition
+→ complete application workflow
+```
+
+The guided project demonstrates that methods are not isolated syntax features.
+
+They are a way to design an application as cooperating components.
+
+---
+
+## Verification
+
+Run the guided project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-methods-in-csharp-console-applications\guided-projects\plan-petting-zoo-visit\plan-petting-zoo-visit.csproj"
+```
+
+Build the project independently:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-methods-in-csharp-console-applications\guided-projects\plan-petting-zoo-visit\plan-petting-zoo-visit.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified repository evidence:
+
+```text
+Final application run: Succeeded
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
+Project registration: Verified
+Registered solution projects: 31
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.4 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 10, 2026
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| guided project | `/ˈɡaɪ.dɪd ˈprɒdʒ.ekt/` | “gai-địt pro-jéct” | dự án có hướng dẫn |
+| petting zoo | `/ˈpet.ɪŋ zuː/` | “pe-ting zuu” | sở thú cho phép tiếp xúc với động vật |
+| shuffle | `/ˈʃʌf.əl/` | “shấ-phồ” | xáo trộn thứ tự |
+| swap | `/swɒp/` | “swo-p” | hoán đổi |
+| temporary variable | `/ˈtem.pər.ər.i ˈveə.ri.ə.bəl/` | “tem-pờ-rờ-ri ve-ri-ờ-bồ” | biến tạm |
+| assign | `/əˈsaɪn/` | “ờ-xain” | gán / phân bổ |
+| group | `/ɡruːp/` | “gruup” | nhóm |
+| two-dimensional array | `/ˌtuː daɪˈmen.ʃən.əl əˈreɪ/` | “tu đai-men-shờ-nồ ờ-rây” | mảng hai chiều |
+| dimension | `/daɪˈmen.ʃən/` | “đai-men-shần” | chiều của mảng |
+| row | `/rəʊ/` | “râu” | hàng |
+| column | `/ˈkɒl.əm/` | “co-lầm” | cột |
+| optional parameter | `/ˈɒp.ʃən.əl pəˈræm.ɪ.tər/` | “óp-shờ-nồ pờ-ram-mi-tờ” | tham số tùy chọn |
+| orchestration | `/ˌɔː.kɪˈstreɪ.ʃən/` | “o-ki-strây-shần” | điều phối nhiều bước |
+| method composition | `/ˈmeθ.əd ˌkɒm.pəˈzɪʃ.ən/` | “me-thợd com-pờ-zi-shần” | kết hợp các method thành workflow |
+| in-place | `/ˌɪn ˈpleɪs/` | “in plâys” | thay đổi trực tiếp trên dữ liệu hiện có |
+| data flow | `/ˈdeɪ.tə fləʊ/` | “đây-tờ flâu” | luồng dữ liệu |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Guided Project — Plan a Petting Zoo Visit
+Section: Create Methods in C# Console Applications
+Module position: 4 / 5
+Microsoft Learn units: 8 / 8
+Learning status: Completed
+Module assessment: Passed
+Achievement: Earned
+Repository verification status: Fully verified
+Project registration: Verified
+Solution project count: 31
+Target framework: net10.0
+Final organized source: Completed
+Professional source comments: Completed
+Final application run: Succeeded
+Expected output: Verified
+School A — 6 groups: Verified
+School B — 3 groups: Verified
+School C — 2 groups: Verified
+Randomized animal assignments: Verified
+Optional group parameter: Verified
+2D group assignment return value: Verified
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 3.4 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 10, 2026
+```
+
+---
+
+## Next Curriculum Item
+
+### Challenge Project — Create a Mini-Game
+
+Section 5 has now completed:
+
+```text
+3 instructional modules
 +
-program decomposition
-+
-application workflow
+1 guided project
+=
+4 / 5 curriculum items
+```
+
+The final Section 5 challenge is expected to apply the method concepts with less
+step-by-step guidance.
+
+The preparation from the first four items is:
+
+```text
+decompose the problem
+→ identify method responsibilities
+→ define inputs with parameters
+→ define outputs with return types
+→ compose methods into a complete workflow
+→ verify behavior at the application level
 ```
 
 Expected repository verification remains:
 
 ```text
-Complete the official guided project
+Complete the official challenge project
 Organize and comment the final source
 Run the completed application
 Verify required behavior and output
@@ -3334,6 +4358,7 @@ Commit and push
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/en-us/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/)
+- [Microsoft Learn — Guided Project: Plan a Petting Zoo Visit](https://learn.microsoft.com/en-us/training/modules/guided-project-visit-petting-zoo/)
 
 ---
 
@@ -3342,6 +4367,7 @@ Commit and push
 - [Module 1 source](./modules/write-first-csharp-method/)
 - [Module 2 source](./modules/create-csharp-methods-parameters/)
 - [Module 3 source](./modules/create-csharp-methods-return-values/)
+- [Guided project source](./guided-projects/plan-petting-zoo-visit/)
 - [Repository overview](../../README.md)
 
 ---
