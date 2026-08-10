@@ -20,38 +20,46 @@ The learning path contains five curriculum items:
 ```text
 Section: Create Methods in C# Console Applications
 Section position: 5 / 7
-Status: In progress
-Curriculum learning progress: 4 / 5
-Repository-verified progress: 4 / 5
+Status: Completed
+Curriculum learning progress: 5 / 5
+Repository-verified progress: 5 / 5
 Completed instructional modules: 3
 Fully repository-verified instructional modules: 3
 Completed guided projects: 1
 Fully repository-verified guided projects: 1
-Completed challenge projects: 0
-Latest completed learning item: Guided Project — Plan a Petting Zoo Visit
-Latest Microsoft Learn units: 8 / 8
+Completed challenge projects: 1
+Fully repository-verified challenge projects: 1
+Latest completed learning item: Challenge Project — Create a Mini-Game
+Latest Microsoft Learn units: 7 / 7
 Latest module assessment: Passed
-Latest achievement: Earned
-Latest completion date: August 10, 2026
-Projects registered in solution: 31
-Latest project: plan-petting-zoo-visit
+Latest learning-path assessments: All passed
+Latest achievements shown: 2
+Latest completion date: August 11, 2026
+Projects registered in solution: 32
+Latest project: create-mini-game
 Target framework: net10.0
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Final application run: Verified
 Final output: Verified
-School A — 6 groups: Verified
-School B — 3 groups: Verified
-School C — 2 groups: Verified
-Randomized animal assignments: Verified
-Optional group parameter: Verified
-2D group assignment return value: Verified
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
+Challenge project compilation: Succeeded in 0.9 seconds
 Project compilation in full solution: Succeeded
-Full solution build: Succeeded in 3.4 seconds
+Full solution build: Succeeded in 5.9 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Challenge Project — Create a Mini-Game
+Trophy: Verified
+Trophy assets: 2 PNG files
+Next curriculum section: Debug C# Console Applications
 ```
 
 | No. | Curriculum item | Learning status | Repository verification |
@@ -60,7 +68,7 @@ Next curriculum item: Challenge Project — Create a Mini-Game
 | 2 | Create C# Methods with Parameters | Completed | Verified |
 | 3 | Create C# Methods That Return Values | Completed | Verified |
 | 4 | Guided Project — Plan a Petting Zoo Visit | Completed | Verified |
-| 5 | Challenge Project — Create a Mini-Game | Pending | Pending |
+| 5 | Challenge Project — Create a Mini-Game | Completed | Verified |
 
 A curriculum item reaches **learning completion** after its official Microsoft
 Learn units and assessment have been completed.
@@ -74,11 +82,21 @@ It reaches **full repository verification** after:
 - the complete solution has built successfully;
 - the repository documentation has been updated.
 
-The three instructional modules and the guided project are now fully
-repository-verified. The latest project combines method decomposition,
-parameters, optional parameters, return values, one-dimensional and
-two-dimensional arrays, randomized assignment, and a reusable orchestration
-method in one complete application workflow.
+All five curriculum items are now fully repository-verified. Section 5 closes
+with a complete interactive console mini-game that combines method
+decomposition, parameters, optional parameters, return values, Boolean rules,
+shared application state, keyboard input, collision detection, state
+transitions, terminal rendering, and a persistent game loop.
+
+The progression across the section is now complete:
+
+```text
+named methods
+→ explicit input with parameters
+→ explicit output with return values
+→ method composition
+→ interactive state-driven application architecture
+```
 
 ---
 
@@ -97,16 +115,26 @@ create-methods-in-csharp-console-applications/
 │   └── create-csharp-methods-return-values/
 │       ├── Program.cs
 │       └── create-csharp-methods-return-values.csproj
-└── guided-projects/
-    └── plan-petting-zoo-visit/
-        ├── Program.cs
-        └── plan-petting-zoo-visit.csproj
+├── guided-projects/
+│   └── plan-petting-zoo-visit/
+│       ├── Program.cs
+│       └── plan-petting-zoo-visit.csproj
+├── challenge-projects/
+│   └── create-mini-game/
+│       ├── Program.cs
+│       └── create-mini-game.csproj
+└── trophy/
+    ├── README.md
+    └── assets/
+        ├── 1.PNG
+        └── 2.PNG
 ```
 
 This section uses one central README for curriculum documentation. Individual
 module, guided-project, and challenge-project directories contain executable
-source code and project files without an additional README unless a future
-project requires dedicated documentation.
+source code and project files. The `trophy/` directory preserves completion
+evidence and a dedicated achievement record for the completed Section 5
+learning path.
 
 ---
 
@@ -4307,49 +4335,766 @@ Completion date: August 10, 2026
 
 ---
 
-## Next Curriculum Item
+# Challenge Project — Create a Mini-Game
 
-### Challenge Project — Create a Mini-Game
-
-Section 5 has now completed:
+## Completion Status
 
 ```text
-3 instructional modules
-+
-1 guided project
-=
-4 / 5 curriculum items
+Learning status: Completed
+Repository verification status: Fully verified
+Microsoft Learn units: 7 / 7
+Module assessment: Passed
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Project added to solution: Verified
+Solution project count: 32
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Application run: Succeeded
+Expected gameplay behavior: Verified
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
+Challenge project build: Succeeded in 0.9 seconds
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 5.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Trophy: Verified
+Trophy assets: 2 PNG files
+Completion date: August 11, 2026
 ```
 
-The final Section 5 challenge is expected to apply the method concepts with less
-step-by-step guidance.
+The final Section 5 challenge turns the method concepts from the previous four
+items into a small interactive game.
 
-The preparation from the first four items is:
+The project is especially important because the program is no longer only a
+linear sequence of calculations and console output. It continuously maintains
+and updates a **game state** inside a **game loop**.
+
+Project location:
 
 ```text
-decompose the problem
-→ identify method responsibilities
-→ define inputs with parameters
-→ define outputs with return types
-→ compose methods into a complete workflow
-→ verify behavior at the application level
+curriculum/create-methods-in-csharp-console-applications/
+└── challenge-projects/
+    └── create-mini-game/
+        ├── Program.cs
+        └── create-mini-game.csproj
 ```
 
-Expected repository verification remains:
+---
+
+## From Methods to a Game Loop
+
+The central architecture is:
 
 ```text
-Complete the official challenge project
-Organize and comment the final source
-Run the completed application
-Verify required behavior and output
-Build the project
-Build the complete solution
-Update this section README
-Update the repository root README
-Review the Git diff
-Commit and push
+initialize game state
+    ↓
+read player input
+    ↓
+update player position
+    ↓
+evaluate player state
+    ↓
+detect food collision
+    ↓
+apply food effect
+    ↓
+spawn new food
+    ↓
+render the next state
+    ↓
+repeat until termination
 ```
 
+This changes the execution model from:
+
+```text
+statement 1
+→ statement 2
+→ statement 3
+→ program ends
+```
+
+to:
+
+```text
+state
+→ input
+→ processing
+→ state update
+→ output
+→ next iteration
+```
+
+The output of one iteration becomes the starting state for the next iteration.
+
+---
+
+## Main Game State
+
+The completed source stores the current game world in a small set of variables:
+
+```text
+playerX / playerY
+→ current player position
+
+foodX / foodY
+→ current food position
+
+player
+→ current player appearance and behavioral state
+
+food
+→ current food type
+
+shouldExit
+→ controls the lifetime of the game loop
+```
+
+These values collectively form the **game state**.
+
+---
+
+## Main Game Loop
+
+The core loop is:
+
+```csharp
+while (!shouldExit)
+{
+    // Validate terminal state.
+    // Apply the current player behavior.
+    // Read input and move the player.
+    // Detect food collision.
+    // Apply a food effect.
+    // Generate the next food item.
+}
+```
+
+The loop continues while `shouldExit == false` and terminates after the state
+changes to `true`.
+
+This is the first Section 5 project where application lifetime itself is
+controlled by continuously changing state.
+
+---
+
+## Terminal Resize Detection
+
+The Boolean method:
+
+```csharp
+bool TerminalResized()
+```
+
+compares the original terminal dimensions with the current dimensions.
+
+Method contract:
+
+```text
+INPUT
+original terminal dimensions
+current terminal dimensions
+
+PROCESSING
+compare both values
+
+OUTPUT
+true  → terminal was resized
+false → terminal size is unchanged
+```
+
+If the terminal changes size, the game exits safely instead of continuing with
+invalid coordinate assumptions.
+
+Verified exit behavior:
+
+```text
+Console was resized. Program exiting.
+```
+
+---
+
+## Player Movement and Input
+
+Movement is handled by:
+
+```csharp
+void Move(
+    int speed = 1,
+    bool otherKeysExit = false)
+```
+
+The two optional parameters have real runtime meaning:
+
+```text
+speed
+→ horizontal movement distance
+
+otherKeysExit
+→ whether unsupported input terminates the game
+```
+
+Arrow-key processing is:
+
+```text
+UpArrow
+→ playerY--
+
+DownArrow
+→ playerY++
+
+LeftArrow
+→ playerX -= speed
+
+RightArrow
+→ playerX += speed
+```
+
+The player is then clamped to the valid terminal bounds before being redrawn.
+
+Input is read with:
+
+```csharp
+Console.ReadKey(
+    intercept: true)
+```
+
+so the pressed key controls game behavior without being printed as ordinary
+console text.
+
+---
+
+## Erase and Redraw
+
+Before movement, the game remembers the old player coordinates.
+
+The rendering flow is:
+
+```text
+remember old position
+    ↓
+read movement input
+    ↓
+calculate new position
+    ↓
+erase old rendering
+    ↓
+clamp coordinates
+    ↓
+draw new rendering
+```
+
+This prevents old player images from remaining on the screen.
+
+---
+
+## Collision Detection
+
+Food consumption is detected by:
+
+```csharp
+bool GotFood()
+```
+
+The collision rule is:
+
+```text
+playerX == foodX
+        +
+playerY == foodY
+        ↓
+true / false
+```
+
+When the method returns `true`:
+
+```text
+food consumed
+    ↓
+ChangePlayer()
+    ↓
+ShowFood()
+```
+
+This is the project's explicit collision-detection rule.
+
+---
+
+## Food Generation
+
+`ShowFood()`:
+
+```text
+chooses a food type
+→ chooses a valid X coordinate
+→ chooses a valid Y coordinate
+→ renders the food
+```
+
+The selected food index is also used to select the corresponding player state.
+
+That shared index connects game data without requiring a long set of separate
+conditionals.
+
+---
+
+## Player State Transitions
+
+The game defines three player states:
+
+```text
+('-')
+→ normal
+
+(^-^)
+→ faster horizontal movement
+
+(X_X)
+→ temporary frozen state
+```
+
+The corresponding food types are:
+
+```text
+@@@@@
+→ normal state
+
+$$$$$
+→ fast state
+
+#####
+→ frozen state
+```
+
+Matching indexes connect the arrays:
+
+```text
+foods[0] → states[0]
+foods[1] → states[1]
+foods[2] → states[2]
+```
+
+The transition is applied by:
+
+```csharp
+player =
+    states[food];
+```
+
+This is a compact example of data-driven state transition.
+
+---
+
+## Boolean Methods as Game Rules
+
+The challenge uses several Boolean-returning methods:
+
+```text
+TerminalResized()
+→ Is the terminal still valid?
+
+GotFood()
+→ Did the player reach the food?
+
+PlayerIsSick()
+→ Is the frozen state active?
+
+PlayerIsFaster()
+→ Is the fast state active?
+```
+
+This lets the main loop express rules as readable questions about current
+state.
+
+---
+
+## Frozen State
+
+When the player consumes:
+
+```text
+#####
+```
+
+the state becomes:
+
+```text
+(X_X)
+```
+
+The flow is:
+
+```text
+#####
+→ ChangePlayer()
+→ (X_X)
+→ PlayerIsSick() == true
+→ FreezePlayer()
+→ temporary pause
+→ ('-')
+```
+
+The project therefore implements a simple timed gameplay effect using method
+coordination and state transition.
+
+---
+
+## Fast State
+
+When the player consumes:
+
+```text
+$$$$$
+```
+
+the state becomes:
+
+```text
+(^-^)
+```
+
+`PlayerIsFaster()` identifies the state.
+
+The repository version follows the written challenge behavior:
+
+```text
+normal horizontal movement
+→ 1 column per key press
+
+fast horizontal movement
+→ 3 columns per key press
+```
+
+The fast state therefore changes behavior, not merely appearance.
+
+---
+
+## Unsupported-Key Termination
+
+The optional challenge behavior is enabled in the final source.
+
+Inside `Move(...)`:
+
+```text
+otherKeysExit = false
+→ ignore unsupported keys
+
+otherKeysExit = true
+→ unsupported key terminates the game
+```
+
+This demonstrates how an optional parameter can configure behavior without
+duplicating the movement method.
+
+---
+
+## Method Responsibilities
+
+The game is divided into focused responsibilities:
+
+```text
+InitializeGame()
+→ establish the first visible state
+
+ShowFood()
+→ choose and render food
+
+TerminalResized()
+→ validate terminal dimensions
+
+GotFood()
+→ detect food collision
+
+PlayerIsSick()
+→ identify frozen state
+
+PlayerIsFaster()
+→ identify fast state
+
+ChangePlayer()
+→ perform player-state transition
+
+FreezePlayer()
+→ apply temporary freeze effect
+
+Move(...)
+→ read input and update player position
+```
+
+The application emerges from the coordination of these small methods.
+
+---
+
+## Complete Game Data Flow
+
+One representative loop iteration is:
+
+```text
+CURRENT GAME STATE
+player position
+food position
+player state
+    ↓
+INPUT
+Console.ReadKey(...)
+    ↓
+PROCESSING
+Move(...)
+    ↓
+UPDATED POSITION
+    ↓
+RULE CHECK
+GotFood()
+    ↓
+if true
+    ↓
+ChangePlayer()
+    ↓
+ShowFood()
+    ↓
+NEW GAME STATE
+    ↓
+next loop iteration
+```
+
+This extends the earlier Section 5 method model into a continuously running,
+state-driven application.
+
+---
+
+## Why This Challenge Matters
+
+Earlier modules asked:
+
+```text
+How do I declare a method?
+How do I pass data into a method?
+How do I return data from a method?
+```
+
+The final challenge asks:
+
+```text
+How do several methods cooperate to keep an interactive application running?
+```
+
+That requires understanding:
+
+```text
+control flow
+shared state
+input handling
+rules
+side effects
+rendering
+termination
+method contracts
+method composition
+```
+
+The result is a small console game, but the architecture introduces concepts
+used by larger interactive applications.
+
+---
+
+## Source-Code Organization
+
+The final `Program.cs` is organized around:
+
+```text
+1. Challenge documentation
+2. Game configuration
+3. Shared game state
+4. Player position
+5. Food position
+6. Player and food state arrays
+7. Initialization
+8. Main game loop
+9. Terminal resize detection
+10. Food generation
+11. Collision detection
+12. Player-state checks
+13. State transitions
+14. Freeze behavior
+15. Movement and input handling
+16. Game architecture summary
+```
+
+Comments emphasize method contracts, data flow, state changes, control flow, and
+game-loop responsibilities rather than simply restating syntax.
+
+---
+
+## Verification
+
+Run the completed challenge:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\create-methods-in-csharp-console-applications\challenge-projects\create-mini-game\create-mini-game.csproj"
+```
+
+Build the challenge independently:
+
+```powershell
+dotnet build `
+  ".\curriculum\create-methods-in-csharp-console-applications\challenge-projects\create-mini-game\create-mini-game.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified repository evidence:
+
+```text
+Final application run: Succeeded
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
+Project registration: Verified
+Registered solution projects: 32
+Challenge project build: Succeeded in 0.9 seconds
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 5.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Trophy: Verified
+Trophy assets: 2 PNG files
+Verification date: August 11, 2026
+```
+
+---
+
+## Key Terms
+
+| Term | IPA | Approximate reading | Meaning |
+| --- | --- | --- | --- |
+| challenge project | `/ˈtʃæl.ɪndʒ ˈprɒdʒ.ekt/` | “cha-lầnj pro-jéct” | dự án thử thách |
+| mini-game | `/ˈmɪn.i ɡeɪm/` | “mi-ni gâym” | trò chơi nhỏ |
+| game loop | `/ɡeɪm luːp/` | “gâym luup” | vòng lặp chính của trò chơi |
+| game state | `/ɡeɪm steɪt/` | “gâym stâyt” | trạng thái hiện tại của trò chơi |
+| collision detection | `/kəˈlɪʒ.ən dɪˈtek.ʃən/` | “cờ-li-zhần đi-téc-shần” | phát hiện va chạm |
+| state transition | `/steɪt trænˈzɪʃ.ən/` | “stâyt tran-zi-shần” | chuyển đổi trạng thái |
+| movement | `/ˈmuːv.mənt/` | “muuv-mần-t” | sự di chuyển |
+| render | `/ˈren.dər/` | “ren-đờ” | hiển thị trạng thái ra màn hình |
+| freeze | `/friːz/` | “friiz” | đóng băng / tạm dừng chuyển động |
+| terminate | `/ˈtɜː.mɪ.neɪt/` | “tơ-mi-nâyt” | kết thúc chương trình |
+| unsupported key | `/ˌʌn.səˈpɔː.tɪd kiː/` | “ân-sờ-po-tịt kii” | phím không được hỗ trợ |
+| shared state | `/ʃeəd steɪt/` | “she-ờđ stâyt” | trạng thái dùng chung |
+| side effect | `/ˈsaɪd ɪˌfekt/` | “sai-đi-féct” | thay đổi trạng thái bên ngoài giá trị trả về |
+| input handling | `/ˈɪn.pʊt ˈhæn.dəl.ɪŋ/` | “in-pút han-đờ-ling” | xử lý dữ liệu nhập |
+| state-driven | `/steɪt ˈdrɪv.ən/` | “stâyt đri-vần” | vận hành dựa trên trạng thái |
+
+---
+
+## Completion Record
+
+```text
+Curriculum item: Challenge Project — Create a Mini-Game
+Section: Create Methods in C# Console Applications
+Module position: 5 / 5
+Microsoft Learn units: 7 / 7
+Learning status: Completed
+Module assessment: Passed
+Learning-path assessments: All passed
+Achievements shown: 2
+Repository verification status: Fully verified
+Project registration: Verified
+Solution project count: 32
+Target framework: net10.0
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Final application run: Succeeded
+Expected gameplay behavior: Verified
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
+Challenge project build: Succeeded in 0.9 seconds
+Project compilation in full solution: Succeeded
+Full solution build: Succeeded in 5.9 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Trophy: Verified
+Trophy assets: 2 PNG files
+Completion date: August 11, 2026
+```
+
+---
+
+## Section 5 Completion
+
+Section 5 is now complete:
+
+```text
+Instructional modules: 3 / 3
+Guided projects: 1 / 1
+Challenge projects: 1 / 1
+Total curriculum items: 5 / 5
+Repository verification: 5 / 5
+Solution projects after completion: 32
+Trophy: Verified
+```
+
+The complete progression is:
+
+```text
+Module 1
+method
+→ named behavior
+
+Module 2
+parameters
+→ explicit input
+
+Module 3
+return values
+→ explicit output
+
+Guided Project
+method composition
+→ complete workflow
+
+Challenge Project
+game loop + game state
+→ interactive application architecture
+```
+
+The next curriculum section is:
+
+```text
+Debug C# Console Applications
+```
+
+Section 5 therefore closes with both learning completion and repository
+verification complete.
 ---
 
 ## Official Curriculum References
@@ -4359,6 +5104,7 @@ Commit and push
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/en-us/training/modules/create-c-sharp-methods-return-values/)
 - [Microsoft Learn — Guided Project: Plan a Petting Zoo Visit](https://learn.microsoft.com/en-us/training/modules/guided-project-visit-petting-zoo/)
+- [Microsoft Learn — Challenge Project: Create a Mini-Game](https://learn.microsoft.com/en-us/training/modules/challenge-project-create-mini-game/)
 
 ---
 
@@ -4368,6 +5114,8 @@ Commit and push
 - [Module 2 source](./modules/create-csharp-methods-parameters/)
 - [Module 3 source](./modules/create-csharp-methods-return-values/)
 - [Guided project source](./guided-projects/plan-petting-zoo-visit/)
+- [Challenge project source](./challenge-projects/create-mini-game/)
+- [Section 5 trophy](./trophy/README.md)
 - [Repository overview](../../README.md)
 
 ---

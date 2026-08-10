@@ -4,8 +4,8 @@
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Sections](https://img.shields.io/badge/Sections_Completed-4%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-31-2563EB)
+![Sections](https://img.shields.io/badge/Sections_Completed-5%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-32-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -28,41 +28,44 @@ It is maintained as a structured learning curriculum containing:
 
 ```text
 Certification status: In progress
-Curriculum sections completed: 4 / 7
-Latest fully completed section: Work with Variable Data in C# Console Applications
-Latest fully completed section progress: 7 / 7
-Latest fully completed section repository verification: 7 / 7
-Current section: Create Methods in C# Console Applications
-Current section status: In progress
-Current section learning progress: 4 / 5
-Current section repository-verified progress: 4 / 5
-Completed instructional modules in current section: 3
-Completed guided projects in current section: 1
-Completed challenge projects in current section: 0
-Latest completed learning item: Guided Project — Plan a Petting Zoo Visit
-Latest project: plan-petting-zoo-visit
+Curriculum sections completed: 5 / 7
+Latest fully completed section: Create Methods in C# Console Applications
+Latest fully completed section progress: 5 / 5
+Latest fully completed section repository verification: 5 / 5
+Current section: Debug C# Console Applications
+Current section status: Not started
+Current section learning progress: 0 / 0 recorded
+Current section repository-verified progress: Pending
+Latest completed learning item: Challenge Project — Create a Mini-Game
+Latest project: create-mini-game
 Latest learning item status: Completed
-Latest Microsoft Learn units: 8 / 8
+Latest Microsoft Learn units: 7 / 7
 Latest module assessment: Passed
-Latest achievement: Earned
-Latest completion date: August 10, 2026
-Projects currently registered in solution: 31
+Latest learning-path assessments: All passed
+Latest achievements shown: 2
+Latest completion date: August 11, 2026
+Projects currently registered in solution: 32
 Latest organized source: Completed
 Professional source comments: Completed
 Final application run: Verified
-Final application output: Verified
-School A — 6 groups: Verified
-School B — 3 groups: Verified
-School C — 2 groups: Verified
-Randomized animal assignments: Verified
-Optional group parameter: Verified
-2D group assignment return value: Verified
+Final gameplay behavior: Verified
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
+Challenge project build: Succeeded in 0.9 seconds
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 3.4 seconds
+Latest full solution build: Succeeded in 5.9 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Challenge Project — Create a Mini-Game
+Section 5 Trophy: Verified
+Next curriculum section: Debug C# Console Applications
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -71,7 +74,7 @@ Next curriculum item: Challenge Project — Create a Mini-Game
 | 2 | Create and Run Simple C# Console Applications | 7 / 7 | Verified | Completed |
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
-| 5 | Create Methods in C# Console Applications | 4 / 5 | 4 / 5 verified | In progress |
+| 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
 | 6 | Debug C# Console Applications | Not started | Pending | Pending |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
@@ -3473,64 +3476,92 @@ The evidence confirms:
 
 ---
 
-## Current Section
+## Completed Section
 
 ### 5. Create Methods in C# Console Applications
 
 ```text
-Status: In progress
-Learning progress: 4 / 5
-Repository-verified progress: 4 / 5
+Status: Completed
+Learning progress: 5 / 5
+Repository-verified progress: 5 / 5
 Completed instructional modules: 3
 Completed guided projects: 1
-Completed challenge projects: 0
-Latest completed item: Guided Project — Plan a Petting Zoo Visit
-Microsoft Learn units: 8 / 8
+Completed challenge projects: 1
+Latest completed item: Challenge Project — Create a Mini-Game
+Microsoft Learn units: 7 / 7
 Module assessment: Passed
-Achievement: Earned
-Latest project: plan-petting-zoo-visit
-Solution project count: 31
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Latest project: create-mini-game
+Solution project count: 32
 Final organized Program.cs: Completed
 Professional source comments: Completed
-Application run and output: Verified
-School A — 6 groups: Verified
-School B — 3 groups: Verified
-School C — 2 groups: Verified
-Randomized animal assignments: Verified
-Optional group parameter: Verified
-2D group assignment return value: Verified
-Full solution build: Succeeded in 3.4 seconds
+Application run and gameplay behavior: Verified
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
+Challenge project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 5.9 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 10, 2026
-Next item: Challenge Project — Create a Mini-Game
+Trophy: Verified
+Completion date: August 11, 2026
+Next section: Debug C# Console Applications
 ```
 
-Section 5 has completed the three instructional method modules and the guided
-project:
+Section 5 is fully completed and repository-verified.
+
+The section progression is:
 
 - **Module 1:** parameterless methods, reusable behavior, decomposition, and execution flow;
 - **Module 2:** parameters and arguments, method scope, value/reference behavior,
   optional parameters, named arguments, and explicit method input;
 - **Module 3:** return types, return values, numeric/string/Boolean/array returns,
   method composition, early returns, and explicit method output;
-- **Guided Project:** pseudo-code-driven decomposition, animal randomization,
-  optional parameters, two-dimensional arrays, returned group assignments, and
-  method orchestration in a complete application workflow.
+- **Guided Project:** pseudo-code-driven decomposition, randomized animal
+  assignment, optional parameters, two-dimensional arrays, and method orchestration;
+- **Challenge Project:** an interactive console mini-game using a persistent game
+  loop, shared state, keyboard input, movement, collision detection, player-state
+  transitions, terminal rendering, and safe termination conditions.
 
-The progression is now:
+The completed conceptual progression is:
 
 ```text
 named methods
 → explicit input with parameters
 → explicit output with return values
-→ method composition in a complete application
+→ method composition
+→ interactive state-driven application architecture
 ```
 
-[Open the current Section 5 documentation](./curriculum/create-methods-in-csharp-console-applications/README.md)
+[Open the completed Section 5 documentation](./curriculum/create-methods-in-csharp-console-applications/README.md)
 
-[Open the latest Guided Project source](./curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-petting-zoo-visit/)
+[Open the Challenge Project source](./curriculum/create-methods-in-csharp-console-applications/challenge-projects/create-mini-game/)
+
+[View Section 5 Trophy evidence](./curriculum/create-methods-in-csharp-console-applications/trophy/README.md)
+
+---
+
+## Current Section
+
+### 6. Debug C# Console Applications
+
+```text
+Status: Not started
+Learning progress: Not started
+Repository verification: Pending
+Next action: Begin Section 6 curriculum
+```
+
+Section 6 will continue the curriculum with debugging-focused C# console
+application work.
 
 ---
 
@@ -3622,10 +3653,19 @@ freecodecamp-csharp/
 │   │   │   └── create-csharp-methods-return-values/
 │   │   │       ├── Program.cs
 │   │   │       └── create-csharp-methods-return-values.csproj
-│   │   └── guided-projects/
-│   │       └── plan-petting-zoo-visit/
-│   │           ├── Program.cs
-│   │           └── plan-petting-zoo-visit.csproj
+│   │   ├── guided-projects/
+│   │   │   └── plan-petting-zoo-visit/
+│   │   │       ├── Program.cs
+│   │   │       └── plan-petting-zoo-visit.csproj
+│   │   ├── challenge-projects/
+│   │   │   └── create-mini-game/
+│   │   │       ├── Program.cs
+│   │   │       └── create-mini-game.csproj
+│   │   └── trophy/
+│   │       ├── README.md
+│   │       └── assets/
+│   │           ├── 1.PNG
+│   │           └── 2.PNG
 │   ├── debug-csharp-console-applications/
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
@@ -3648,11 +3688,12 @@ Section 4 contains five completed module projects, one completed guided
 project, one completed challenge project, and a verified Trophy directory.
 All seven Section 4 learning items are fully repository-verified.
 
-Section 5 currently contains three completed and fully repository-verified
-instructional modules plus one completed and repository-verified guided project.
-The latest project integrates method decomposition, parameters, return values,
-two-dimensional arrays, and method composition and is registered as solution
-project 31.
+Section 5 contains three completed instructional modules, one completed guided
+project, one completed challenge project, and verified Trophy evidence. All five
+Section 5 curriculum items are fully repository-verified. The final challenge
+adds an interactive mini-game built around a game loop, shared state, keyboard
+input, collision detection, state transitions, and rendering. The completed
+challenge is registered as solution project 32.
 
 ---
 
@@ -3683,7 +3724,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-31
+32
 ```
 
 List all projects registered in the solution:
@@ -3792,7 +3833,7 @@ curriculum/work-with-variable-data-in-csharp-console-applications/guided-project
 curriculum/work-with-variable-data-in-csharp-console-applications/challenge-projects/contoso-petfriends-challenge/contoso-petfriends-challenge.csproj
 ```
 
-### Projects from Section 5
+### Completed projects from Section 5
 
 ```text
 curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/write-first-csharp-method.csproj
@@ -3802,13 +3843,15 @@ curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-m
 curriculum/create-methods-in-csharp-console-applications/modules/create-csharp-methods-return-values/create-csharp-methods-return-values.csproj
 
 curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-petting-zoo-visit/plan-petting-zoo-visit.csproj
+
+curriculum/create-methods-in-csharp-console-applications/challenge-projects/create-mini-game/create-mini-game.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-methods-in-csharp-console-applications\guided-projects\plan-petting-zoo-visit\plan-petting-zoo-visit.csproj"
+  ".\curriculum\create-methods-in-csharp-console-applications\challenge-projects\create-mini-game\create-mini-game.csproj"
 ```
 
 ---
@@ -3818,60 +3861,65 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest fully completed section: Work with Variable Data in C# Console Applications
-Latest fully completed section progress: 7 / 7
-Current section: Create Methods in C# Console Applications
-Current section progress: 4 / 5
-Current section repository verification: 4 / 5
-Latest completed learning item: Guided Project — Plan a Petting Zoo Visit
-Latest project: plan-petting-zoo-visit
-Microsoft Learn units: 8 / 8
+Latest fully completed section: Create Methods in C# Console Applications
+Latest fully completed section progress: 5 / 5
+Latest fully completed section repository verification: 5 / 5
+Current section: Debug C# Console Applications
+Current section status: Not started
+Latest completed learning item: Challenge Project — Create a Mini-Game
+Latest project: create-mini-game
+Microsoft Learn units: 7 / 7
 Module assessment: Passed
-Achievement: Earned
+Learning-path assessments: All passed
+Achievements shown: 2
 Final organized source: Completed
 Professional source comments: Completed
 Application run: Succeeded
-Expected output: Verified
-School A — 6 groups: Verified
-School B — 3 groups: Verified
-School C — 2 groups: Verified
-Randomized animal assignments: Verified
-Optional group parameter: Verified
-2D group assignment return value: Verified
+Gameplay behavior: Verified
+Arrow-key movement: Verified
+Food rendering: Verified
+Food collision detection: Verified
+Normal player state: Verified
+Fast player state: Verified
+Frozen player state: Verified
+Fast horizontal movement step: 3
+Unsupported-key termination: Verified
+Terminal-resize termination: Verified
 Project registration: Verified
-Registered solution projects: 31
+Registered solution projects: 32
+Challenge project build: Succeeded in 0.9 seconds
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 3.4 seconds
+Full-solution build: Succeeded in 5.9 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 10, 2026
-Next curriculum item: Challenge Project — Create a Mini-Game
+Section 5 Trophy: Verified
+Verification date: August 11, 2026
+Next curriculum section: Debug C# Console Applications
 ```
 
 The latest evidence confirms that:
 
-- `plan-petting-zoo-visit` is registered as the thirty-first solution project;
-- the guided project has reached `8 / 8` Microsoft Learn units;
-- its module assessment is passed and achievement is earned;
+- `create-mini-game` is registered as the thirty-second solution project;
+- the Challenge Project reached `7 / 7` Microsoft Learn units;
+- its assessment passed and the learning-path completion page showed all
+  assessments passed with two achievements;
 - the final source is organized and professionally commented;
-- the application successfully randomizes the petting-zoo animal order;
-- School A is assigned six groups;
-- School B is assigned three groups;
-- School C is assigned two groups;
-- the optional `groups = 6` parameter behavior is verified;
-- `AssignGroup(...)` returns the required two-dimensional `string[,]` result;
-- `PrintGroup(...)` traverses the returned two-dimensional assignment;
-- `PlanSchoolVisit(...)` coordinates randomization, assignment, and display as
-  one reusable application workflow;
-- the project compiles successfully as part of the solution;
-- the complete thirty-one-project solution builds in `3.4 seconds`;
+- the application runs successfully;
+- arrow-key movement is implemented;
+- food placement and collision detection are implemented;
+- normal, fast, and frozen player states are implemented;
+- fast horizontal movement uses a step of `3`;
+- unsupported-key termination is implemented;
+- terminal-resize termination is implemented;
+- the challenge project builds successfully in `0.9 seconds`;
+- the complete thirty-two-project solution builds successfully in `5.9 seconds`;
 - the build reports zero compiler errors and zero compiler warnings;
-- Visual Studio reports no issues.
+- Visual Studio reports no issues;
+- Section 5 Trophy evidence is stored and verified.
 
-Section 5 is now in progress at `4 / 5`. The three instructional method modules
-and the guided project are complete. The next curriculum item is **Challenge
-Project — Create a Mini-Game**.
+Section 5 is fully complete at `5 / 5`. The current curriculum section is now
+**Debug C# Console Applications**.
 
 ---
 
@@ -3931,6 +3979,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
 - [Microsoft Learn — Guided Project: Plan a Petting Zoo Visit](https://learn.microsoft.com/training/modules/guided-project-visit-petting-zoo/)
+- [Microsoft Learn — Challenge Project: Create a Mini-Game](https://learn.microsoft.com/training/modules/challenge-project-create-mini-game/)
 - [Microsoft Learn — Choose the Correct Data Type in Your C# Code](https://learn.microsoft.com/training/modules/csharp-choose-data-type/)
 - [Microsoft Learn — Convert Data Types Using Casting and Conversion Techniques in C#](https://learn.microsoft.com/training/modules/csharp-convert-cast/)
 - [Microsoft Learn — Perform Operations on Arrays Using Helper Methods in C#](https://learn.microsoft.com/training/modules/csharp-arrays-operations/)
