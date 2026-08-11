@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-5%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-32-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-33-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -33,39 +33,33 @@ Latest fully completed section: Create Methods in C# Console Applications
 Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
-Current section status: Not started
-Current section learning progress: 0 / 0 recorded
-Current section repository-verified progress: Pending
-Latest completed learning item: Challenge Project — Create a Mini-Game
-Latest project: create-mini-game
+Current section status: In progress
+Current section learning progress: 1 / 6
+Current section repository-verified progress: 1 / 6
+Latest completed learning item: Review the Principles of Code Debugging and Exception Handling
+Latest project: review-code-debugging-exception-handling
 Latest learning item status: Completed
-Latest Microsoft Learn units: 7 / 7
+Latest Microsoft Learn units: 6 / 6
 Latest module assessment: Passed
-Latest learning-path assessments: All passed
-Latest achievements shown: 2
-Latest completion date: August 11, 2026
-Projects currently registered in solution: 32
+Latest Microsoft Learn achievement: Earned
+Latest XP: 1000
+Latest completion date: August 12, 2026
+Projects currently registered in solution: 33
 Latest organized source: Completed
 Professional source comments: Completed
-Final application run: Verified
-Final gameplay behavior: Verified
-Arrow-key movement: Verified
-Food rendering: Verified
-Food collision detection: Verified
-Normal player state: Verified
-Fast player state: Verified
-Frozen player state: Verified
-Fast horizontal movement step: 3
-Unsupported-key termination: Verified
-Terminal-resize termination: Verified
-Challenge project build: Succeeded in 0.9 seconds
+Testing example: Verified
+Zero-based array debugging example: Verified
+Debugger state example: Verified
+Exception handling example: Verified
+Handled FormatException flow: Verified
+Application continues after handled exception: Verified
+Module project build: Succeeded
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 5.9 seconds
+Latest full solution build: Succeeded in 4.5 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Section 5 Trophy: Verified
-Next curriculum section: Debug C# Console Applications
+Next curriculum item: Implement the Visual Studio Code Debugging Tools for C#
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -75,7 +69,7 @@ Next curriculum section: Debug C# Console Applications
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
 | 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
-| 6 | Debug C# Console Applications | Not started | Pending | Pending |
+| 6 | Debug C# Console Applications | 1 / 6 | 1 / 6 | In Progress |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
@@ -3554,14 +3548,110 @@ named methods
 ### 6. Debug C# Console Applications
 
 ```text
-Status: Not started
-Learning progress: Not started
-Repository verification: Pending
-Next action: Begin Section 6 curriculum
+Status: In Progress
+Learning progress: 1 / 6
+Repository-verified progress: 1 / 6
+Completed instructional modules: 1
+Current solution project count: 33
+Latest completed item: Review the Principles of Code Debugging and Exception Handling
+Microsoft Learn units: 6 / 6
+Module assessment: Passed
+Microsoft Learn achievement: Earned
+XP: 1000
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Application run: Verified
+Module project build: Succeeded
+Full solution build: Succeeded in 4.5 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date for Module 1: August 12, 2026
+Next module: Implement the Visual Studio Code Debugging Tools for C#
 ```
 
-Section 6 will continue the curriculum with debugging-focused C# console
-application work.
+Section 6 begins the debugging and exception-handling portion of the curriculum.
+
+The completed first module establishes the conceptual distinction between:
+
+```text
+Testing
+→ Does the program behave as expected?
+
+Debugging
+→ Why is the program behaving incorrectly?
+
+Exception handling
+→ How should the application respond to a runtime error?
+```
+
+The module covers:
+
+- developer responsibilities for testing, debugging, and exception handling;
+- functional and nonfunctional testing categories;
+- the role of unit testing in developer workflows;
+- isolating runtime issues and identifying root causes;
+- zero-based array indexing and `IndexOutOfRangeException`;
+- using debugger tools to control program execution;
+- observing runtime state, variables, and method parameters;
+- distinguishing build errors from runtime exceptions;
+- understanding exceptions as objects derived from `Exception`;
+- understanding how exceptions are thrown and caught;
+- using `try` and `catch` to manage runtime failures;
+- distinguishing a general software bug from a runtime exception.
+
+Project location:
+
+```text
+curriculum/debug-csharp-console-applications/
+└── modules/
+    └── review-code-debugging-exception-handling/
+        ├── Program.cs
+        └── review-code-debugging-exception-handling.csproj
+```
+
+The final study application preserves the module concepts as runnable examples:
+
+```text
+RunTestingExample()
+RunDebuggingExample()
+RunDebuggerStateExample()
+RunExceptionHandlingExample()
+```
+
+The debugging example documents the zero-based relationship:
+
+```text
+students.Length = 4
+Valid indexes   = 0, 1, 2, 3
+Last valid index = students.Length - 1
+```
+
+The exception-handling example intentionally attempts to parse invalid numeric
+text and catches the resulting `FormatException`:
+
+```csharp
+try
+{
+    int parsedNumber = int.Parse(userInput);
+    Console.WriteLine($"Parsed number: {parsedNumber}");
+}
+catch (FormatException exception)
+{
+    Console.WriteLine($"Exception type: {exception.GetType().Name}");
+    Console.WriteLine($"Message: {exception.Message}");
+}
+```
+
+Because the exception is handled, execution continues normally after the
+`catch` block.
+
+The module assessment was passed and the Microsoft Learn achievement was earned
+on August 12, 2026.
+
+[Open the Section 6 documentation](./curriculum/debug-csharp-console-applications/README.md)
+
+[Open the completed Module 1 source](./curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/)
 
 ---
 
@@ -3667,6 +3757,11 @@ freecodecamp-csharp/
 │   │           ├── 1.PNG
 │   │           └── 2.PNG
 │   ├── debug-csharp-console-applications/
+│   │   ├── README.md
+│   │   └── modules/
+│   │       └── review-code-debugging-exception-handling/
+│   │           ├── Program.cs
+│   │           └── review-code-debugging-exception-handling.csproj
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
 ├── freecodecamp-csharp.slnx
@@ -3694,6 +3789,10 @@ Section 5 curriculum items are fully repository-verified. The final challenge
 adds an interactive mini-game built around a game loop, shared state, keyboard
 input, collision detection, state transitions, and rendering. The completed
 challenge is registered as solution project 32.
+
+Section 6 currently contains one completed instructional module and its section
+documentation. The first debugging module is fully repository-verified and is
+registered as solution project 33.
 
 ---
 
@@ -3724,7 +3823,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-32
+33
 ```
 
 List all projects registered in the solution:
@@ -3847,15 +3946,20 @@ curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-pe
 curriculum/create-methods-in-csharp-console-applications/challenge-projects/create-mini-game/create-mini-game.csproj
 ```
 
+### Current projects from Section 6
+
+```text
+curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/review-code-debugging-exception-handling.csproj
+```
+
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\create-methods-in-csharp-console-applications\challenge-projects\create-mini-game\create-mini-game.csproj"
+  ".\curriculum\debug-csharp-console-applications\modules\review-code-debugging-exception-handling\review-code-debugging-exception-handling.csproj"
 ```
 
 ---
-
 
 
 ## Latest Repository Verification
@@ -3865,61 +3969,58 @@ Latest fully completed section: Create Methods in C# Console Applications
 Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
-Current section status: Not started
-Latest completed learning item: Challenge Project — Create a Mini-Game
-Latest project: create-mini-game
-Microsoft Learn units: 7 / 7
+Current section status: In progress
+Current section learning progress: 1 / 6
+Current section repository-verified progress: 1 / 6
+Latest completed learning item: Review the Principles of Code Debugging and Exception Handling
+Latest project: review-code-debugging-exception-handling
+Microsoft Learn units: 6 / 6
 Module assessment: Passed
-Learning-path assessments: All passed
-Achievements shown: 2
+Microsoft Learn achievement: Earned
+XP: 1000
 Final organized source: Completed
 Professional source comments: Completed
-Application run: Succeeded
-Gameplay behavior: Verified
-Arrow-key movement: Verified
-Food rendering: Verified
-Food collision detection: Verified
-Normal player state: Verified
-Fast player state: Verified
-Frozen player state: Verified
-Fast horizontal movement step: 3
-Unsupported-key termination: Verified
-Terminal-resize termination: Verified
+Testing example: Verified
+Zero-based array debugging example: Verified
+Debugger state example: Verified
+Exception handling example: Verified
+Handled FormatException flow: Verified
+Application continuation after exception: Verified
 Project registration: Verified
-Registered solution projects: 32
-Challenge project build: Succeeded in 0.9 seconds
+Registered solution projects: 33
+Module project build: Succeeded
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 5.9 seconds
+Full-solution build: Succeeded in 4.5 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Section 5 Trophy: Verified
-Verification date: August 11, 2026
-Next curriculum section: Debug C# Console Applications
+Verification date: August 12, 2026
+Next curriculum item: Implement the Visual Studio Code Debugging Tools for C#
 ```
 
 The latest evidence confirms that:
 
-- `create-mini-game` is registered as the thirty-second solution project;
-- the Challenge Project reached `7 / 7` Microsoft Learn units;
-- its assessment passed and the learning-path completion page showed all
-  assessments passed with two achievements;
+- `review-code-debugging-exception-handling` is registered as the thirty-third
+  solution project;
+- the module reached `6 / 6` Microsoft Learn units;
+- its module assessment passed;
+- the Microsoft Learn achievement was earned;
 - the final source is organized and professionally commented;
-- the application runs successfully;
-- arrow-key movement is implemented;
-- food placement and collision detection are implemented;
-- normal, fast, and frozen player states are implemented;
-- fast horizontal movement uses a step of `3`;
-- unsupported-key termination is implemented;
-- terminal-resize termination is implemented;
-- the challenge project builds successfully in `0.9 seconds`;
-- the complete thirty-two-project solution builds successfully in `5.9 seconds`;
+- the testing example verifies expected and actual results;
+- the debugging example correctly demonstrates zero-based array indexing;
+- the debugger-state example provides observable runtime values for breakpoint
+  and step-through practice;
+- the exception-handling example catches a `FormatException`;
+- application execution continues after the handled exception;
+- the module project builds successfully;
+- the complete thirty-three-project solution builds successfully in
+  `4.5 seconds`;
 - the build reports zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues;
-- Section 5 Trophy evidence is stored and verified.
+- Section 6 documentation has been created and updated.
 
-Section 5 is fully complete at `5 / 5`. The current curriculum section is now
-**Debug C# Console Applications**.
+Section 5 remains fully complete at `5 / 5`. Section 6 is now in progress at
+`1 / 6`, with its first module fully repository-verified.
 
 ---
 
@@ -3975,6 +4076,8 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 3](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-3/)
 - [Microsoft Learn — Get Started with C#, Part 4](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-4/)
 - [Microsoft Learn — Get Started with C#, Part 5](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-5/)
+- [Microsoft Learn — Get Started with C#, Part 6](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-6/)
+- [Microsoft Learn — Review the Principles of Code Debugging and Exception Handling](https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
