@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-5%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-33-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-34-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -34,32 +34,37 @@ Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
 Current section status: In progress
-Current section learning progress: 1 / 6
-Current section repository-verified progress: 1 / 6
-Latest completed learning item: Review the Principles of Code Debugging and Exception Handling
-Latest project: review-code-debugging-exception-handling
+Current section learning progress: 2 / 6
+Current section repository-verified progress: 2 / 6
+Latest completed learning item: Implement the Visual Studio Code Debugging Tools for C#
+Latest project: implement-vscode-debugging-tools
 Latest learning item status: Completed
-Latest Microsoft Learn units: 6 / 6
+Latest Microsoft Learn units: 12 / 12
 Latest module assessment: Passed
 Latest Microsoft Learn achievement: Earned
-Latest XP: 1000
-Latest completion date: August 12, 2026
-Projects currently registered in solution: 33
+Latest completion date: August 13, 2026
+Projects currently registered in solution: 34
 Latest organized source: Completed
 Professional source comments: Completed
-Testing example: Verified
-Zero-based array debugging example: Verified
-Debugger state example: Verified
-Exception handling example: Verified
-Handled FormatException flow: Verified
-Application continues after handled exception: Verified
-Module project build: Succeeded
+Debugger interface review: Verified
+Standard breakpoint workflow: Verified
+Conditional breakpoint workflow: Verified
+Hit count and Logpoint concepts: Documented
+VARIABLES inspection: Verified
+WATCH expression example: Verified
+CALL STACK example: Verified
+Launch configuration concepts: Documented
+Zero-based indexing debugger example: Verified
+Pass-by-value debugger challenge: Verified
+Controlled DivideByZeroException flow: Verified
+Module project run: Succeeded
+Module project build: Succeeded in 0.9 seconds
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 4.5 seconds
+Latest full solution build: Succeeded in 2.7 seconds
 Latest compiler errors: 0
 Latest compiler warnings: 0
 Latest IDE diagnostics: No issues found
-Next curriculum item: Implement the Visual Studio Code Debugging Tools for C#
+Next curriculum item: Implement Exception Handling in C# Console Applications
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -69,7 +74,7 @@ Next curriculum item: Implement the Visual Studio Code Debugging Tools for C#
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
 | 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
-| 6 | Debug C# Console Applications | 1 / 6 | 1 / 6 | In Progress |
+| 6 | Debug C# Console Applications | 2 / 6 | 2 / 6 | In Progress |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
@@ -3549,30 +3554,36 @@ named methods
 
 ```text
 Status: In Progress
-Learning progress: 1 / 6
-Repository-verified progress: 1 / 6
-Completed instructional modules: 1
-Current solution project count: 33
-Latest completed item: Review the Principles of Code Debugging and Exception Handling
-Microsoft Learn units: 6 / 6
+Learning progress: 2 / 6
+Repository-verified progress: 2 / 6
+Completed instructional modules: 2
+Current solution project count: 34
+Latest completed item: Implement the Visual Studio Code Debugging Tools for C#
+Microsoft Learn units: 12 / 12
 Module assessment: Passed
 Microsoft Learn achievement: Earned
-XP: 1000
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Application run: Verified
-Module project build: Succeeded
-Full solution build: Succeeded in 4.5 seconds
+Debugger interface review: Verified
+Standard breakpoint workflow: Verified
+Conditional breakpoint workflow: Verified
+VARIABLES and WATCH examples: Verified
+CALL STACK example: Verified
+Launch configuration concepts: Documented
+Pass-by-value debugger challenge: Verified
+Module project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.7 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date for Module 1: August 12, 2026
-Next module: Implement the Visual Studio Code Debugging Tools for C#
+Completion date for Module 2: August 13, 2026
+Next module: Implement Exception Handling in C# Console Applications
 ```
 
-Section 6 begins the debugging and exception-handling portion of the curriculum.
+Section 6 develops practical debugging and exception-handling skills for C# console applications.
 
-The completed first module establishes the conceptual distinction between:
+The first completed module establishes the conceptual distinction between:
 
 ```text
 Testing
@@ -3652,6 +3663,162 @@ on August 12, 2026.
 [Open the Section 6 documentation](./curriculum/debug-csharp-console-applications/README.md)
 
 [Open the completed Module 1 source](./curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/)
+
+---
+
+### Module 2 — Implement the Visual Studio Code Debugging Tools for C#
+
+```text
+Status: Completed
+Microsoft Learn units: 12 / 12
+Module assessment: Passed
+Microsoft Learn achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 34
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Local project run: Verified
+Project build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.7 seconds
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Completion date: August 13, 2026
+```
+
+This module turns the debugging concepts introduced in Module 1 into a practical
+runtime investigation workflow.
+
+Learning outcomes include:
+
+- understanding the Visual Studio Code `RUN AND DEBUG` interface;
+- using `VARIABLES`, `WATCH`, `CALL STACK`, and `BREAKPOINTS`;
+- controlling execution with Continue, Step Over, Step Into, Step Out, Restart,
+  and Stop;
+- setting standard breakpoints;
+- configuring conditional breakpoints;
+- understanding hit count breakpoints and Logpoints;
+- examining debugger launch configuration concepts;
+- understanding the roles of `launch.json` and `tasks.json`;
+- choosing an interactive terminal when `Console.ReadLine()` is required;
+- tracing zero-based indexing bugs through runtime state;
+- monitoring expressions with WATCH;
+- using CALL STACK to reconstruct method execution;
+- using debugger evidence to understand pass-by-value behavior.
+
+Project location:
+
+```text
+curriculum/debug-csharp-console-applications/
+└── modules/
+    └── implement-vscode-debugging-tools/
+        ├── Program.cs
+        └── implement-vscode-debugging-tools.csproj
+```
+
+The final repository source organizes the learning examples into focused
+methods:
+
+```text
+ReviewDebuggerInterface()
+DemonstrateGreetingBugFix()
+DemonstrateConditionalBreakpointScenario()
+DemonstrateVariableStateAndZeroBasedIndexing()
+DemonstrateWatchExpression()
+DemonstrateCallStack()
+DemonstratePassByValueChallenge()
+```
+
+The greeting exercise demonstrates:
+
+```text
+Indentation suggests intent.
+Execution flow proves behavior.
+```
+
+The conditional-breakpoint example can pause only when:
+
+```csharp
+products[index, 1] == "new"
+```
+
+The zero-based indexing example maps user-visible position `3` to array index
+`2`, producing the corrected sum:
+
+```text
+3 + 4 + 5 = 12
+```
+
+The WATCH example uses:
+
+```csharp
+(double)numerator / denominator > 5
+```
+
+The CALL STACK example follows:
+
+```text
+DemonstrateCallStack()
+        ↓
+StartCalculation()
+        ↓
+CalculateRatio()
+        ↓
+DivideValues()
+```
+
+The controlled `DivideByZeroException` is handled so the study application
+continues normally.
+
+The pass-by-value challenge confirms that changing a copied `int` parameter does
+not change the caller's original variable. The corrected approach explicitly
+returns and assigns the updated value.
+
+The organized source also resolves the earlier `CS1739` constructor error by
+using valid positional `Random` constructor arguments:
+
+```csharp
+Random random = new(42);
+Random random = new(123);
+```
+
+The fixed seeds make the debugger examples reproducible across runs.
+
+Run the completed Module 2 project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\debug-csharp-console-applications\modules\implement-vscode-debugging-tools\implement-vscode-debugging-tools.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\debug-csharp-console-applications\modules\implement-vscode-debugging-tools\implement-vscode-debugging-tools.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Module run: Succeeded
+Module build: Succeeded in 0.9 seconds
+Full solution build: Succeeded in 2.7 seconds
+Registered solution projects: 34
+Compiler errors: 0
+Compiler warnings: 0
+IDE diagnostics: No issues found
+Verification date: August 13, 2026
+```
+
+[Open the completed Module 2 source](./curriculum/debug-csharp-console-applications/modules/implement-vscode-debugging-tools/)
 
 ---
 
@@ -3759,9 +3926,12 @@ freecodecamp-csharp/
 │   ├── debug-csharp-console-applications/
 │   │   ├── README.md
 │   │   └── modules/
-│   │       └── review-code-debugging-exception-handling/
+│   │       ├── review-code-debugging-exception-handling/
+│   │       │   ├── Program.cs
+│   │       │   └── review-code-debugging-exception-handling.csproj
+│   │       └── implement-vscode-debugging-tools/
 │   │           ├── Program.cs
-│   │           └── review-code-debugging-exception-handling.csproj
+│   │           └── implement-vscode-debugging-tools.csproj
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
 ├── freecodecamp-csharp.slnx
@@ -3790,9 +3960,9 @@ adds an interactive mini-game built around a game loop, shared state, keyboard
 input, collision detection, state transitions, and rendering. The completed
 challenge is registered as solution project 32.
 
-Section 6 currently contains one completed instructional module and its section
-documentation. The first debugging module is fully repository-verified and is
-registered as solution project 33.
+Section 6 currently contains two completed instructional modules and its section
+documentation. Both debugging modules are fully repository-verified. Module 1
+is registered as solution project 33 and Module 2 as solution project 34.
 
 ---
 
@@ -3823,7 +3993,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-33
+34
 ```
 
 List all projects registered in the solution:
@@ -3950,13 +4120,15 @@ curriculum/create-methods-in-csharp-console-applications/challenge-projects/crea
 
 ```text
 curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/review-code-debugging-exception-handling.csproj
+
+curriculum/debug-csharp-console-applications/modules/implement-vscode-debugging-tools/implement-vscode-debugging-tools.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\debug-csharp-console-applications\modules\review-code-debugging-exception-handling\review-code-debugging-exception-handling.csproj"
+  ".\curriculum\debug-csharp-console-applications\modules\implement-vscode-debugging-tools\implement-vscode-debugging-tools.csproj"
 ```
 
 ---
@@ -3970,57 +4142,65 @@ Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
 Current section status: In progress
-Current section learning progress: 1 / 6
-Current section repository-verified progress: 1 / 6
-Latest completed learning item: Review the Principles of Code Debugging and Exception Handling
-Latest project: review-code-debugging-exception-handling
-Microsoft Learn units: 6 / 6
+Current section learning progress: 2 / 6
+Current section repository-verified progress: 2 / 6
+Latest completed learning item: Implement the Visual Studio Code Debugging Tools for C#
+Latest project: implement-vscode-debugging-tools
+Microsoft Learn units: 12 / 12
 Module assessment: Passed
 Microsoft Learn achievement: Earned
-XP: 1000
 Final organized source: Completed
 Professional source comments: Completed
-Testing example: Verified
-Zero-based array debugging example: Verified
-Debugger state example: Verified
-Exception handling example: Verified
-Handled FormatException flow: Verified
-Application continuation after exception: Verified
+Debugger interface review: Verified
+Standard breakpoint workflow: Verified
+Conditional breakpoint workflow: Verified
+Hit count breakpoint concept: Documented
+Logpoint concept: Documented
+VARIABLES inspection: Verified
+WATCH expression: Verified
+CALL STACK example: Verified
+Launch configuration concepts: Documented
+Zero-based indexing correction: Verified
+Pass-by-value debugger challenge: Verified
+Controlled DivideByZeroException flow: Verified
 Project registration: Verified
-Registered solution projects: 33
-Module project build: Succeeded
+Registered solution projects: 34
+Module project run: Succeeded
+Module project build: Succeeded in 0.9 seconds
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 4.5 seconds
+Full-solution build: Succeeded in 2.7 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 12, 2026
-Next curriculum item: Implement the Visual Studio Code Debugging Tools for C#
+Verification date: August 13, 2026
+Next curriculum item: Implement Exception Handling in C# Console Applications
 ```
 
 The latest evidence confirms that:
 
-- `review-code-debugging-exception-handling` is registered as the thirty-third
-  solution project;
-- the module reached `6 / 6` Microsoft Learn units;
+- `implement-vscode-debugging-tools` is registered as the thirty-fourth solution
+  project;
+- the module reached `12 / 12` Microsoft Learn units;
 - its module assessment passed;
 - the Microsoft Learn achievement was earned;
 - the final source is organized and professionally commented;
-- the testing example verifies expected and actual results;
-- the debugging example correctly demonstrates zero-based array indexing;
-- the debugger-state example provides observable runtime values for breakpoint
-  and step-through practice;
-- the exception-handling example catches a `FormatException`;
-- application execution continues after the handled exception;
-- the module project builds successfully;
-- the complete thirty-three-project solution builds successfully in
-  `4.5 seconds`;
+- standard and conditional breakpoint workflows are documented;
+- VARIABLES, WATCH, and CALL STACK examples are implemented;
+- launch configuration concepts are documented;
+- the zero-based indexing example produces the corrected sum of `12`;
+- the CALL STACK example uses a controlled `DivideByZeroException`;
+- the pass-by-value challenge demonstrates copied `int` parameter behavior;
+- the earlier `CS1739` errors were corrected;
+- the module project runs successfully;
+- the module project builds successfully in `0.9 seconds`;
+- the complete thirty-four-project solution builds successfully in
+  `2.7 seconds`;
 - the build reports zero compiler errors and zero compiler warnings;
 - Visual Studio reports no issues;
-- Section 6 documentation has been created and updated.
+- Section 6 documentation has been updated for Module 2.
 
 Section 5 remains fully complete at `5 / 5`. Section 6 is now in progress at
-`1 / 6`, with its first module fully repository-verified.
+`2 / 6`, with its first two modules fully repository-verified.
 
 ---
 
@@ -4078,6 +4258,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 5](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-5/)
 - [Microsoft Learn — Get Started with C#, Part 6](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-6/)
 - [Microsoft Learn — Review the Principles of Code Debugging and Exception Handling](https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/)
+- [Microsoft Learn — Implement the Visual Studio Code Debugging Tools for C#](https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
