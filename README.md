@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-5%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-34-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-35-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -34,37 +34,33 @@ Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
 Current section status: In progress
-Current section learning progress: 2 / 6
-Current section repository-verified progress: 2 / 6
-Latest completed learning item: Implement the Visual Studio Code Debugging Tools for C#
-Latest project: implement-vscode-debugging-tools
+Current section learning progress: 3 / 6
+Current section repository-verified progress: 3 / 6
+Latest completed learning item: Implement Exception Handling in C# Console Applications
+Latest project: implement-exception-handling
 Latest learning item status: Completed
-Latest Microsoft Learn units: 12 / 12
+Latest Microsoft Learn units: 11 / 11
 Latest module assessment: Passed
 Latest Microsoft Learn achievement: Earned
-Latest completion date: August 13, 2026
-Projects currently registered in solution: 34
+Latest completion date: August 14, 2026
+Projects currently registered in solution: 35
 Latest organized source: Completed
 Professional source comments: Completed
-Debugger interface review: Verified
-Standard breakpoint workflow: Verified
-Conditional breakpoint workflow: Verified
-Hit count and Logpoint concepts: Documented
-VARIABLES inspection: Verified
-WATCH expression example: Verified
-CALL STACK example: Verified
-Launch configuration concepts: Documented
-Zero-based indexing debugger example: Verified
-Pass-by-value debugger challenge: Verified
-Controlled DivideByZeroException flow: Verified
-Module project run: Succeeded
-Module project build: Succeeded in 0.9 seconds
+try-catch patterns: Verified
+try-finally pattern: Verified
+try-catch-finally pattern: Verified
+Common runtime exceptions: Documented and demonstrated
+Specific catch clauses: Verified
+Call stack unwinding: Documented and demonstrated
+Nearest compatible catch handler: Demonstrated
+Exception object properties: Documented and demonstrated
+checked overflow handling: Verified
+Independent try-catch challenge scenarios: Verified
+finally cleanup behavior: Verified
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 2.7 seconds
-Latest compiler errors: 0
-Latest compiler warnings: 0
+Latest full solution build: Succeeded in 3.8 seconds
 Latest IDE diagnostics: No issues found
-Next curriculum item: Implement Exception Handling in C# Console Applications
+Next curriculum item: Create and Throw Exceptions in C# Console Applications
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -74,7 +70,7 @@ Next curriculum item: Implement Exception Handling in C# Console Applications
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
 | 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
-| 6 | Debug C# Console Applications | 2 / 6 | 2 / 6 | In Progress |
+| 6 | Debug C# Console Applications | 3 / 6 | 3 / 6 | In Progress |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
@@ -3554,31 +3550,31 @@ named methods
 
 ```text
 Status: In Progress
-Learning progress: 2 / 6
-Repository-verified progress: 2 / 6
-Completed instructional modules: 2
-Current solution project count: 34
-Latest completed item: Implement the Visual Studio Code Debugging Tools for C#
-Microsoft Learn units: 12 / 12
+Learning progress: 3 / 6
+Repository-verified progress: 3 / 6
+Completed instructional modules: 3
+Current solution project count: 35
+Latest completed item: Implement Exception Handling in C# Console Applications
+Microsoft Learn units: 11 / 11
 Module assessment: Passed
 Microsoft Learn achievement: Earned
 Final organized Program.cs: Completed
 Professional source comments: Completed
-Application run: Verified
-Debugger interface review: Verified
-Standard breakpoint workflow: Verified
-Conditional breakpoint workflow: Verified
-VARIABLES and WATCH examples: Verified
-CALL STACK example: Verified
-Launch configuration concepts: Documented
-Pass-by-value debugger challenge: Verified
-Module project build: Succeeded in 0.9 seconds
-Full solution build: Succeeded in 2.7 seconds
-Compiler errors: 0
-Compiler warnings: 0
+try-catch patterns: Verified
+try-finally pattern: Verified
+try-catch-finally pattern: Verified
+Common runtime exceptions: Documented and demonstrated
+Specific catch clauses: Verified
+Call stack unwinding: Documented and demonstrated
+Nearest compatible catch handler: Demonstrated
+Exception object properties: Documented and demonstrated
+checked overflow handling: Verified
+Independent try-catch challenge scenarios: Verified
+finally cleanup behavior: Verified
+Full solution build: Succeeded in 3.8 seconds
 IDE diagnostics: No issues found
-Completion date for Module 2: August 13, 2026
-Next module: Implement Exception Handling in C# Console Applications
+Completion date for Module 3: August 14, 2026
+Next module: Create and Throw Exceptions in C# Console Applications
 ```
 
 Section 6 develops practical debugging and exception-handling skills for C# console applications.
@@ -3822,6 +3818,239 @@ Verification date: August 13, 2026
 
 ---
 
+
+### Module 3 — Implement Exception Handling in C# Console Applications
+
+```text
+Status: Completed
+Microsoft Learn units: 11 / 11
+Module assessment: Passed
+Microsoft Learn achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 35
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Final source length: 659 lines
+Full solution build: Succeeded in 3.8 seconds
+IDE diagnostics: No issues found
+Completion date: August 14, 2026
+```
+
+This module moves Section 6 from identifying runtime failures to implementing
+structured exception-handling behavior in C#.
+
+Learning outcomes include:
+
+- identifying common runtime exception scenarios;
+- understanding exceptions as objects derived from `System.Exception`;
+- using `try`, `catch`, and `finally`;
+- distinguishing `try-catch`, `try-finally`, and `try-catch-finally`;
+- understanding how the CLR searches for a compatible exception handler;
+- understanding call stack unwinding;
+- understanding that applicable `finally` blocks execute while protected scopes
+  are exited;
+- catching an exception closer to its source;
+- catching specific exception types instead of handling every failure broadly;
+- using multiple `catch` clauses;
+- using `checked` to make integral overflow observable as `OverflowException`;
+- separating independent operations into independent `try-catch` blocks when
+  processing should continue after one failure.
+
+Project location:
+
+```text
+curriculum/debug-csharp-console-applications/
+└── modules/
+    └── implement-exception-handling/
+        ├── Program.cs
+        └── implement-exception-handling.csproj
+```
+
+The final repository source organizes the lesson into focused demonstrations:
+
+```text
+DemonstrateExceptionHandlingPatterns()
+DemonstrateCommonRuntimeExceptions()
+DemonstrateCallStackUnwinding()
+DemonstrateNearestCatchHandler()
+DemonstrateExceptionProperties()
+DemonstrateSpecificCatchClauses()
+DemonstrateIndependentTryCatchBlocks()
+DemonstrateFinallyCleanup()
+```
+
+The project documents and demonstrates these common runtime exception types:
+
+```text
+ArrayTypeMismatchException
+DivideByZeroException
+FormatException
+IndexOutOfRangeException
+InvalidCastException
+NullReferenceException
+OverflowException
+```
+
+A central distinction in the module is integer versus floating-point
+division-by-zero behavior:
+
+```text
+int division by zero
+→ DivideByZeroException
+
+double division by zero
+→ IEEE 754 floating-point result such as Infinity or NaN
+```
+
+The call-stack example demonstrates exception propagation through:
+
+```text
+DemonstrateCallStackUnwinding()
+        ↓
+ProcessForPropagation()
+        ↓
+WriteMessageForPropagation()
+        ↓
+DivideByZeroException
+        ↓
+outer compatible catch
+```
+
+This illustrates the runtime search process:
+
+```text
+Exception thrown
+      ↓
+Compatible catch in current method?
+      │
+   ┌──┴──┐
+  yes    no
+   ↓      ↓
+handle   unwind to caller
+             ↓
+       repeat search
+```
+
+The local-handler example demonstrates the complementary rule:
+
+```text
+The nearest compatible handler wins.
+```
+
+Once `ProcessWithLocalHandler()` catches the `DivideByZeroException`, the outer
+handler is not used for that exception.
+
+The project also records useful members inherited from `System.Exception`,
+including:
+
+```text
+Data
+HelpLink
+HResult
+InnerException
+Message
+Source
+StackTrace
+TargetSite
+```
+
+The specific-catch example distinguishes parsing failures:
+
+```text
+"three"
+→ FormatException
+
+"9999999999"
+→ OverflowException
+
+"0"
+→ success
+
+"2"
+→ success
+```
+
+and places specific handlers before a general fallback:
+
+```csharp
+catch (FormatException)
+{
+    // Invalid numeric format.
+}
+catch (OverflowException)
+{
+    // Value outside Int32 range.
+}
+catch (Exception exception)
+{
+    // General fallback, intentionally last.
+}
+```
+
+The challenge section demonstrates why four independent runtime failures should
+not all be placed inside one `try` block when all four must be observed.
+
+The completed project isolates the scenarios into:
+
+```text
+DemonstrateCheckedOverflowChallenge()
+DemonstrateNullReferenceChallenge()
+DemonstrateIndexOutOfRangeChallenge()
+DemonstrateDivideByZeroChallenge()
+```
+
+Each method has its own `try-catch`, allowing the application to report every
+intentional failure and continue to the next independent demonstration.
+
+The final cleanup example uses `finally` to restore required state after an
+intentional `FormatException`:
+
+```csharp
+finally
+{
+    resourceIsOpen =
+        false;
+
+    Console.WriteLine(
+        "finally: resource state was cleaned up.");
+}
+```
+
+The final design principle is:
+
+```text
+Do not ask only:
+"Can this exception be caught?"
+
+Ask:
+"Does this layer know how to handle this exception correctly?"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Module assessment: Passed
+Microsoft Learn achievement: Earned
+Microsoft Learn units: 11 / 11
+Registered solution projects: 35
+Final organized source: Completed
+Professional source comments: Completed
+Full solution build: Succeeded in 3.8 seconds
+IDE diagnostics: No issues found
+Verification date: August 14, 2026
+```
+
+[Open the completed Module 3 source](./curriculum/debug-csharp-console-applications/modules/implement-exception-handling/)
+
+---
+
 ## Repository Structure
 
 ```text
@@ -3929,9 +4158,12 @@ freecodecamp-csharp/
 │   │       ├── review-code-debugging-exception-handling/
 │   │       │   ├── Program.cs
 │   │       │   └── review-code-debugging-exception-handling.csproj
-│   │       └── implement-vscode-debugging-tools/
+│   │       ├── implement-vscode-debugging-tools/
+│   │       │   ├── Program.cs
+│   │       │   └── implement-vscode-debugging-tools.csproj
+│   │       └── implement-exception-handling/
 │   │           ├── Program.cs
-│   │           └── implement-vscode-debugging-tools.csproj
+│   │           └── implement-exception-handling.csproj
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
 ├── freecodecamp-csharp.slnx
@@ -3960,9 +4192,10 @@ adds an interactive mini-game built around a game loop, shared state, keyboard
 input, collision detection, state transitions, and rendering. The completed
 challenge is registered as solution project 32.
 
-Section 6 currently contains two completed instructional modules and its section
-documentation. Both debugging modules are fully repository-verified. Module 1
-is registered as solution project 33 and Module 2 as solution project 34.
+Section 6 currently contains three completed instructional modules and its section
+documentation. All three modules are repository-verified. Module 1 is
+registered as solution project 33, Module 2 as solution project 34, and Module 3
+as solution project 35.
 
 ---
 
@@ -3993,7 +4226,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-34
+35
 ```
 
 List all projects registered in the solution:
@@ -4122,13 +4355,15 @@ curriculum/create-methods-in-csharp-console-applications/challenge-projects/crea
 curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/review-code-debugging-exception-handling.csproj
 
 curriculum/debug-csharp-console-applications/modules/implement-vscode-debugging-tools/implement-vscode-debugging-tools.csproj
+
+curriculum/debug-csharp-console-applications/modules/implement-exception-handling/implement-exception-handling.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\debug-csharp-console-applications\modules\implement-vscode-debugging-tools\implement-vscode-debugging-tools.csproj"
+  ".\curriculum\debug-csharp-console-applications\modules\implement-exception-handling\implement-exception-handling.csproj"
 ```
 
 ---
@@ -4142,65 +4377,59 @@ Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
 Current section status: In progress
-Current section learning progress: 2 / 6
-Current section repository-verified progress: 2 / 6
-Latest completed learning item: Implement the Visual Studio Code Debugging Tools for C#
-Latest project: implement-vscode-debugging-tools
-Microsoft Learn units: 12 / 12
+Current section learning progress: 3 / 6
+Current section repository-verified progress: 3 / 6
+Latest completed learning item: Implement Exception Handling in C# Console Applications
+Latest project: implement-exception-handling
+Microsoft Learn units: 11 / 11
 Module assessment: Passed
 Microsoft Learn achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
-Debugger interface review: Verified
-Standard breakpoint workflow: Verified
-Conditional breakpoint workflow: Verified
-Hit count breakpoint concept: Documented
-Logpoint concept: Documented
-VARIABLES inspection: Verified
-WATCH expression: Verified
-CALL STACK example: Verified
-Launch configuration concepts: Documented
-Zero-based indexing correction: Verified
-Pass-by-value debugger challenge: Verified
-Controlled DivideByZeroException flow: Verified
+try-catch patterns: Verified
+try-finally pattern: Verified
+try-catch-finally pattern: Verified
+Common runtime exceptions: Documented and demonstrated
+Specific catch clauses: Verified
+Call stack unwinding: Documented and demonstrated
+Nearest compatible catch handler: Demonstrated
+Exception object properties: Documented and demonstrated
+checked overflow handling: Verified
+Independent try-catch challenge scenarios: Verified
+finally cleanup behavior: Verified
 Project registration: Verified
-Registered solution projects: 34
-Module project run: Succeeded
-Module project build: Succeeded in 0.9 seconds
+Registered solution projects: 35
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 2.7 seconds
-Compiler errors: 0
-Compiler warnings: 0
+Full-solution build: Succeeded in 3.8 seconds
 IDE diagnostics: No issues found
-Verification date: August 13, 2026
-Next curriculum item: Implement Exception Handling in C# Console Applications
+Verification date: August 14, 2026
+Next curriculum item: Create and Throw Exceptions in C# Console Applications
 ```
 
 The latest evidence confirms that:
 
-- `implement-vscode-debugging-tools` is registered as the thirty-fourth solution
+- `implement-exception-handling` is registered as the thirty-fifth solution
   project;
-- the module reached `12 / 12` Microsoft Learn units;
+- the module reached `11 / 11` Microsoft Learn units;
 - its module assessment passed;
 - the Microsoft Learn achievement was earned;
 - the final source is organized and professionally commented;
-- standard and conditional breakpoint workflows are documented;
-- VARIABLES, WATCH, and CALL STACK examples are implemented;
-- launch configuration concepts are documented;
-- the zero-based indexing example produces the corrected sum of `12`;
-- the CALL STACK example uses a controlled `DivideByZeroException`;
-- the pass-by-value challenge demonstrates copied `int` parameter behavior;
-- the earlier `CS1739` errors were corrected;
-- the module project runs successfully;
-- the module project builds successfully in `0.9 seconds`;
-- the complete thirty-four-project solution builds successfully in
-  `2.7 seconds`;
-- the build reports zero compiler errors and zero compiler warnings;
+- `try-catch`, `try-finally`, and `try-catch-finally` patterns are documented;
+- common runtime exception categories are demonstrated;
+- specific `catch` clauses are used for known failure modes;
+- exception-object properties are inspected;
+- call stack unwinding and the nearest compatible handler are demonstrated;
+- integral overflow is demonstrated with `checked`;
+- independent exception scenarios are separated so all intended failures can be
+  handled and observed;
+- cleanup behavior is demonstrated with `finally`;
+- the complete thirty-five-project solution builds successfully in
+  `3.8 seconds`;
 - Visual Studio reports no issues;
-- Section 6 documentation has been updated for Module 2.
+- Section 6 documentation has been updated for Module 3.
 
 Section 5 remains fully complete at `5 / 5`. Section 6 is now in progress at
-`2 / 6`, with its first two modules fully repository-verified.
+`3 / 6 = 50.0%`, with its first three modules repository-verified.
 
 ---
 
@@ -4259,6 +4488,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Get Started with C#, Part 6](https://learn.microsoft.com/training/paths/get-started-c-sharp-part-6/)
 - [Microsoft Learn — Review the Principles of Code Debugging and Exception Handling](https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/)
 - [Microsoft Learn — Implement the Visual Studio Code Debugging Tools for C#](https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/)
+- [Microsoft Learn — Implement Exception Handling in C# Console Applications](https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)

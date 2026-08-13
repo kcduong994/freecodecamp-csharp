@@ -6,8 +6,8 @@
 ## Section Status
 
 **Status:** In Progress
-**Modules completed:** 2 / 6
-**Current solution project count:** 34
+**Modules completed:** 3 / 6
+**Current solution project count:** 35
 **Target framework:** .NET 10.0
 **Primary development environment:** Visual Studio
 **Section started:** 2026-08-12
@@ -24,7 +24,7 @@ The official Microsoft Learn learning path introduces debugging with Visual Stud
 |---|---|---|
 | 1 | Review the Principles of Code Debugging and Exception Handling | ✅ Completed |
 | 2 | Implement the Visual Studio Code Debugging Tools for C# | ✅ Completed |
-| 3 | Implement Exception Handling in C# Console Applications | ⏳ Not started |
+| 3 | Implement Exception Handling in C# Console Applications | ✅ Completed |
 | 4 | Create and Throw Exceptions in C# Console Applications | ⏳ Not started |
 | 5 | Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code | ⏳ Not started |
 | 6 | Challenge Project - Debug a C# Console Application Using Visual Studio Code | ⏳ Not started |
@@ -1717,20 +1717,1309 @@ Completion date:
 
 ---
 
-# Section 6 Progress After Module 2
+# Module 3 — Implement Exception Handling in C# Console Applications
+
+## Completion
+
+**Status:** ✅ Completed
+**Completed:** 2026-08-14
+**Units:** 11 / 11
+**Assessment:** Passed
+**Microsoft Learn Achievement:** Earned
+**Target framework:** .NET 10.0
+**Project registration in solution:** Verified
+**Solution project count:** 35
+**Final organized Program.cs:** Completed
+**Professional source comments:** Completed
+**Final source length:** 659 lines
+**Full solution build:** Succeeded in 3.8 seconds
+**IDE diagnostics:** No issues found
+
+### Project
+
+```text
+modules/implement-exception-handling/
+├── Program.cs
+└── implement-exception-handling.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+After adding this module, the solution increased from:
+
+```text
+34 projects
+```
+
+to:
+
+```text
+35 projects
+```
+
+---
+
+## Module Learning Objectives
+
+This module moves from identifying runtime failures to implementing structured
+exception-handling behavior in C#.
+
+The completed learning objectives include:
+
+1. examining common categories of runtime exceptions;
+2. reviewing common .NET exception types;
+3. understanding `try`, `catch`, and `finally`;
+4. understanding the exception-handling process used by the CLR;
+5. understanding call stack unwinding;
+6. catching exceptions at different levels of the call stack;
+7. inspecting properties exposed by exception objects;
+8. catching specific exception types;
+9. using multiple `catch` clauses when different failures require different
+   responses;
+10. using `checked` when integral overflow must generate an exception;
+11. separating independent failure scenarios so each exception can be handled.
+
+The repository implementation converts the lesson exercises into one stable
+study application that intentionally generates exceptions but catches every
+intentional failure so the program can continue running to completion.
+
+---
+
+# 1. Common Scenarios That Require Exception Handling
+
+Runtime exceptions often arise when an application interacts with data,
+external systems, or values that cannot be trusted completely.
+
+Common scenarios reviewed in this module include:
+
+```text
+User input
+Data processing and calculations
+File input/output
+Database operations
+Network communication
+Web services / REST APIs
+Third-party libraries
+Other external resources
+```
+
+The common theme is:
+
+```text
+Application expects something
+            ↓
+Runtime reality differs
+            ↓
+Operation fails
+            ↓
+Exception object is produced
+            ↓
+Application decides whether and how to handle it
+```
+
+Exception handling does not remove the underlying error condition. It provides
+a structured way for the application to respond to that condition.
+
+---
+
+# 2. `try`, `catch`, and `finally`
+
+C# exception handling is built around three core keywords.
+
+## `try`
+
+The `try` block contains guarded code that may fail.
+
+```csharp
+try
+{
+    // Code that may generate an exception.
+}
+```
+
+## `catch`
+
+The `catch` block contains the handler for a compatible exception.
+
+```csharp
+catch (FormatException exception)
+{
+    Console.WriteLine(exception.Message);
+}
+```
+
+## `finally`
+
+The `finally` block executes when control leaves the associated `try`
+statement, whether the protected code succeeds or fails.
+
+```csharp
+finally
+{
+    // Cleanup or required state restoration.
+}
+```
+
+Three common structural patterns are:
+
+```text
+try-catch
+
+try-finally
+
+try-catch-finally
+```
+
+The repository project demonstrates all three patterns.
+
+---
+
+# 3. `try-catch` Pattern
+
+A basic `try-catch` pattern protects code that may fail:
+
+```csharp
+try
+{
+    int numerator = 3000;
+    int denominator = 0;
+
+    Console.WriteLine(numerator / denominator);
+}
+catch (DivideByZeroException exception)
+{
+    Console.WriteLine(
+        $"Handled: {exception.GetType().Name}");
+}
+```
+
+Execution flow:
+
+```text
+try
+ ↓
+integer division by zero
+ ↓
+DivideByZeroException
+ ↓
+matching catch found
+ ↓
+handler executes
+ ↓
+program continues
+```
+
+The important distinction is that the exception still occurs. The handler
+changes what the application does after that failure occurs.
+
+---
+
+# 4. `try-finally` and Guaranteed Cleanup
+
+The repository includes a simple `try-finally` demonstration:
+
+```csharp
+bool cleanupCompleted = false;
+
+try
+{
+    Console.WriteLine(
+        "Protected operation completed.");
+}
+finally
+{
+    cleanupCompleted = true;
+
+    Console.WriteLine(
+        "Cleanup executed in finally.");
+}
+```
+
+The central idea is:
+
+```text
+Enter try
+   ↓
+success OR exception
+   ↓
+leave try statement
+   ↓
+finally executes
+```
+
+This makes `finally` useful for cleanup and required state restoration.
+
+Modern .NET code frequently uses `using` or `await using` for disposable
+resources, but `finally` remains fundamental because it explains the underlying
+guaranteed-cleanup behavior.
+
+---
+
+# 5. `try-catch-finally`
+
+The complete pattern combines guarded execution, exception handling, and
+cleanup:
+
+```csharp
+try
+{
+    _ = int.Parse(
+        "not-a-number");
+}
+catch (FormatException exception)
+{
+    Console.WriteLine(
+        $"Handled: {exception.GetType().Name}");
+}
+finally
+{
+    Console.WriteLine(
+        "Finalization executed.");
+}
+```
+
+Conceptually:
+
+```text
+try
+ ↓
+operation fails
+ ↓
+catch
+ ↓
+handle failure
+ ↓
+finally
+ ↓
+required cleanup
+ ↓
+continue
+```
+
+---
+
+# 6. Exceptions Are Objects
+
+Exceptions are represented as objects whose types ultimately derive from:
+
+```text
+System.Exception
+```
+
+For example, a simplified inheritance path is:
+
+```text
+Object
+  ↓
+Exception
+  ↓
+SystemException
+  ↓
+InvalidCastException
+```
+
+This distinction matters:
+
+```text
+Exception class
+    = definition of an exception type
+
+Exception object
+    = runtime instance containing details about one failure
+```
+
+Because an exception is an object, a `catch` clause can store it in a variable:
+
+```csharp
+catch (DivideByZeroException exception)
+{
+    Console.WriteLine(
+        exception.Message);
+}
+```
+
+---
+
+# 7. Important `Exception` Properties
+
+The module reviews properties inherited from `System.Exception`.
+
+| Property | Purpose |
+| --- | --- |
+| `Data` | Arbitrary key-value diagnostic data |
+| `HelpLink` | Optional URI/URL for additional help |
+| `HResult` | Numeric error identifier |
+| `InnerException` | Preserves a nested/underlying exception |
+| `Message` | Human-readable description of the error |
+| `Source` | Application/object associated with the error |
+| `StackTrace` | Execution path associated with the exception |
+| `TargetSite` | Method that threw the exception |
+
+The repository implementation inspects several of them:
+
+```csharp
+Console.WriteLine(
+    $"Type: {exception.GetType().FullName}");
+
+Console.WriteLine(
+    $"Message: {exception.Message}");
+
+Console.WriteLine(
+    $"HResult: {exception.HResult}");
+
+Console.WriteLine(
+    $"TargetSite: {exception.TargetSite?.Name ?? "<unknown>"}");
+
+Console.WriteLine(
+    $"StackTrace available: {exception.StackTrace is not null}");
+```
+
+The Microsoft Learn exercises focus especially on `Message` because it gives
+the application an immediate description of the failure.
+
+---
+
+# 8. Common Runtime Exception Types
+
+The module reviews several exceptions generated by failed runtime operations.
+
+## `ArrayTypeMismatchException`
+
+Occurs when an array cannot store an element because the runtime type is
+incompatible with the actual array type.
+
+Repository example:
+
+```csharp
+string[] names =
+[
+    "Dog",
+    "Cat",
+    "Fish"
+];
+
+object[] objects = names;
+
+objects[2] = 13;
+```
+
+Although the reference is viewed as `object[]`, the actual runtime array is
+still `string[]`, so storing an `int` is invalid.
+
+---
+
+## `DivideByZeroException`
+
+Integer division by zero throws:
+
+```text
+DivideByZeroException
+```
+
+Example:
+
+```csharp
+int numerator = 3000;
+int denominator = 0;
+
+_ = numerator / denominator;
+```
+
+An important contrast is floating-point arithmetic.
+
+```csharp
+double numerator = 3000.0;
+double denominator = 0.0;
+
+double result =
+    numerator /
+    denominator;
+```
+
+Floating-point division follows IEEE 754 behavior and can produce:
+
+```text
+Infinity
+-Infinity
+NaN
+```
+
+instead of throwing `DivideByZeroException`.
+
+---
+
+## `FormatException`
+
+Occurs when input has an invalid format for the requested conversion.
+
+```csharp
+string userValue =
+    "two";
+
+_ =
+    int.Parse(
+        userValue);
+```
+
+---
+
+## `IndexOutOfRangeException`
+
+Occurs when code accesses an array index outside its valid bounds.
+
+For:
+
+```csharp
+int[] values =
+[
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21
+];
+```
+
+valid indexes are:
+
+```text
+0 through 6
+```
+
+Therefore:
+
+```csharp
+values[values.Length]
+```
+
+means:
+
+```csharp
+values[7]
+```
+
+and causes `IndexOutOfRangeException`.
+
+---
+
+## `InvalidCastException`
+
+Occurs when an explicit runtime cast is invalid.
+
+```csharp
+object value =
+    "This is a string";
+
+_ =
+    (int)value;
+```
+
+The runtime object is a `string`, not an `int`.
+
+---
+
+## `NullReferenceException`
+
+Occurs when code attempts to access an instance member through a null
+reference.
+
+Repository demonstration:
+
+```csharp
+string? text =
+    null;
+
+_ =
+    text!.Length;
+```
+
+The null-forgiving operator `!` suppresses nullable static-analysis warnings in
+this intentional demonstration. It does **not** create an object and does
+**not** prevent the runtime exception.
+
+---
+
+## `OverflowException`
+
+Overflow checking depends on context.
+
+The repository explicitly uses:
+
+```csharp
+_ =
+    checked(
+        first +
+        second);
+```
+
+with:
+
+```csharp
+int first =
+    int.MaxValue;
+
+int second =
+    int.MaxValue;
+```
+
+The `checked` context causes integral overflow to generate:
+
+```text
+OverflowException
+```
+
+---
+
+# 9. Checked and Unchecked Integral Arithmetic
+
+Integral arithmetic is not always exception-producing by default.
+
+A `checked` context requests overflow checking:
+
+```csharp
+int result =
+    checked(
+        first +
+        second);
+```
+
+Conceptually:
+
+```text
+result fits target type?
+      │
+   ┌──┴──┐
+  yes    no
+   ↓      ↓
+assign  OverflowException
+```
+
+This is important when silent truncation or wraparound would make the
+application state unreliable.
+
+---
+
+# 10. Exception Search Process
+
+When an exception occurs, the CLR searches for the nearest compatible
+`catch` clause.
+
+The search begins where the exception was thrown.
+
+Conceptually:
+
+```text
+Exception thrown in Method C
+            ↓
+Method C has matching catch?
+      │
+   ┌──┴──┐
+  yes    no
+   ↓      ↓
+handle   caller Method B
+              ↓
+        matching catch?
+              ↓
+             ...
+```
+
+If no compatible `catch` exists anywhere in the call stack:
+
+```text
+Unhandled exception
+        ↓
+application terminates
+```
+
+---
+
+# 11. Call Stack Unwinding
+
+The module introduces the term:
+
+**call stack unwinding**
+
+The call stack can be visualized as method layers:
+
+```text
+Main / top-level statements
+          ↓
+      Process1()
+          ↓
+     WriteMessage()
+```
+
+When an exception is thrown inside `WriteMessage()` and that method cannot
+handle it, the runtime moves back through the calling methods until a
+compatible handler is found.
+
+Repository example:
+
+```text
+top-level statements
+        ↓
+DemonstrateCallStackUnwinding()
+        ↓
+ProcessForPropagation()
+        ↓
+WriteMessageForPropagation()
+        ↓
+DivideByZeroException
+```
+
+The two inner methods do not handle the exception, so the CLR unwinds back to
+the compatible handler in `DemonstrateCallStackUnwinding()`.
+
+This demonstrates that:
+
+```text
+throw location
+≠
+catch location
+```
+
+An exception may be caught several call-stack levels below the method where the
+failure occurred.
+
+---
+
+# 12. `finally` During Stack Unwinding
+
+A key detail from the exception search process is that applicable `finally`
+blocks execute before control reaches the selected `catch`.
+
+Conceptually:
+
+```text
+outer try
+  ↓
+inner try
+  ↓
+exception
+  ↓
+compatible outer catch identified
+  ↓
+inner finally executes
+  ↓
+control enters outer catch
+```
+
+Therefore `finally` participates in stack unwinding and helps guarantee cleanup
+as execution leaves protected scopes.
+
+---
+
+# 13. Catching an Exception Closer to Its Source
+
+The module challenge moves exception handling from the top-level statements
+into the intermediate method.
+
+Conceptually:
+
+```text
+Top level
+   ↓
+Process1()
+   ↓
+WriteMessage()
+   ↓
+exception
+```
+
+If `Process1()` contains:
+
+```csharp
+try
+{
+    WriteMessage();
+}
+catch (DivideByZeroException exception)
+{
+    Console.WriteLine(
+        "Exception caught in Process1");
+}
+```
+
+then `Process1()` is the nearest compatible handler.
+
+The outer handler is never executed for that exception.
+
+The repository preserves this idea through:
+
+```text
+ProcessWithLocalHandler()
+        ↓
+WriteMessageForLocalHandler()
+        ↓
+DivideByZeroException
+        ↓
+caught locally
+```
+
+The core rule is:
+
+```text
+The nearest compatible handler wins.
+```
+
+---
+
+# 14. Catch Specific Exception Types
+
+A bare catch:
+
+```csharp
+catch
+{
+}
+```
+
+can catch broadly but provides little type-specific intent.
+
+Likewise:
+
+```csharp
+catch (Exception exception)
+{
+}
+```
+
+is extremely broad.
+
+The module emphasizes a better default:
+
+> Catch the most specific exception type that the current layer knows how to
+> handle meaningfully.
+
+For example:
+
+```csharp
+catch (DivideByZeroException exception)
+{
+    Console.WriteLine(
+        exception.Message);
+}
+```
+
+This prevents a handler designed for divide-by-zero recovery from accidentally
+absorbing an unrelated runtime failure.
+
+---
+
+# 15. Multiple `catch` Clauses
+
+Different input values can fail for different reasons.
+
+The repository example uses:
+
+```csharp
+string[] inputValues =
+[
+    "three",
+    "9999999999",
+    "0",
+    "2"
+];
+```
+
+Parsing can produce different outcomes:
+
+```text
+"three"
+    ↓
+FormatException
+
+"9999999999"
+    ↓
+OverflowException
+
+"0"
+    ↓
+success
+
+"2"
+    ↓
+success
+```
+
+The handler structure is:
+
+```csharp
+try
+{
+    int number =
+        int.Parse(
+            inputValue);
+}
+catch (FormatException)
+{
+    // Invalid format.
+}
+catch (OverflowException)
+{
+    // Outside Int32 range.
+}
+catch (Exception exception)
+{
+    // General fallback, placed last.
+}
+```
+
+More specific handlers must appear before broader base-class handlers.
+
+---
+
+# 16. Why One `try` Block Does Not Catch Every Failure Sequentially
+
+A particularly important lesson from the challenge is that a single `try`
+block does **not** continue executing after an exception is caught elsewhere.
+
+Suppose one `try` contains:
+
+```text
+Operation A → OverflowException
+Operation B → NullReferenceException
+Operation C → IndexOutOfRangeException
+Operation D → DivideByZeroException
+```
+
+As soon as Operation A throws:
+
+```text
+Operation A throws
+      ↓
+leave try immediately
+      ↓
+matching catch executes
+      ↓
+Operations B, C, D are never reached
+```
+
+This is why the challenge's four independent failures need separate protected
+operations if the goal is to display all four error messages.
+
+---
+
+# 17. Independent `try-catch` Blocks
+
+The final repository project separates the four independent challenge
+scenarios:
+
+```text
+DemonstrateCheckedOverflowChallenge()
+DemonstrateNullReferenceChallenge()
+DemonstrateIndexOutOfRangeChallenge()
+DemonstrateDivideByZeroChallenge()
+```
+
+Each method has its own `try-catch`.
+
+This enables the program to produce all four handled failures:
+
+```text
+OverflowException
+NullReferenceException
+IndexOutOfRangeException
+DivideByZeroException
+```
+
+and then continue:
+
+```text
+Exiting independent-exception demonstration.
+```
+
+This structure should only be used when the operations are genuinely
+independent.
+
+If a later operation depends on an earlier operation succeeding, continuing
+after the first failure may be incorrect.
+
+---
+
+# 18. Dependent vs. Independent Operations
+
+Before deciding whether to catch and continue, ask:
+
+```text
+Did operation 1 fail?
+      ↓
+Does operation 2 depend on operation 1?
+      │
+   ┌──┴──┐
+  yes    no
+   ↓      ↓
+ stop    may continue
+```
+
+This is a design decision, not merely syntax.
+
+Exception handling should preserve application correctness, not just prevent
+the application from terminating.
+
+---
+
+# 19. Repository Implementation Structure
+
+The final `Program.cs` is organized into focused demonstration methods:
+
+```text
+DemonstrateExceptionHandlingPatterns()
+DemonstrateCommonRuntimeExceptions()
+DemonstrateCallStackUnwinding()
+DemonstrateNearestCatchHandler()
+DemonstrateExceptionProperties()
+DemonstrateSpecificCatchClauses()
+DemonstrateIndependentTryCatchBlocks()
+DemonstrateFinallyCleanup()
+```
+
+The common runtime exception examples are further separated into:
+
+```text
+DemonstrateArrayTypeMismatchException()
+DemonstrateDivideByZeroException()
+DemonstrateFormatException()
+DemonstrateIndexOutOfRangeException()
+DemonstrateInvalidCastException()
+DemonstrateNullReferenceException()
+DemonstrateOverflowException()
+```
+
+The final challenge examples are separated into:
+
+```text
+DemonstrateCheckedOverflowChallenge()
+DemonstrateNullReferenceChallenge()
+DemonstrateIndexOutOfRangeChallenge()
+DemonstrateDivideByZeroChallenge()
+```
+
+This structure makes the project easier to:
+
+```text
+read
+debug
+test manually
+maintain
+extend
+review later
+```
+
+---
+
+# 20. Repository Safety for Intentional Exceptions
+
+The project intentionally creates runtime failures for learning purposes.
+
+However, the executable repository version follows this rule:
+
+```text
+Intentional exception
+        ↓
+specific handler
+        ↓
+explain failure
+        ↓
+continue study program
+```
+
+As a result, the final project can demonstrate exception behavior without
+leaving the repository in a deliberately crashing state.
+
+The intentional `NullReferenceException` example also uses:
+
+```csharp
+text!.Length
+```
+
+only to suppress nullable analysis for the specific runtime demonstration.
+
+The comment in the source explicitly explains that `!` does not make the value
+non-null.
+
+---
+
+# 21. `finally` Cleanup Demonstration
+
+The final repository implementation includes explicit cleanup state:
+
+```csharp
+bool resourceIsOpen =
+    false;
+```
+
+The `try` simulates opening a resource:
+
+```csharp
+resourceIsOpen =
+    true;
+```
+
+The protected processing deliberately triggers a `FormatException`.
+
+The `finally` block restores the required state:
+
+```csharp
+finally
+{
+    resourceIsOpen =
+        false;
+
+    Console.WriteLine(
+        "finally: resource state was cleaned up.");
+}
+```
+
+The final state verifies:
+
+```text
+resourceIsOpen = false
+```
+
+This provides a concrete mental model for guaranteed cleanup.
+
+---
+
+# 22. Core Mental Model
+
+The complete exception-handling model from this module is:
+
+```text
+Potentially failing operation
+          ↓
+         try
+          ↓
+   exception occurs?
+      ┌───┴───┐
+     no      yes
+      ↓        ↓
+ continue   CLR searches
+             for nearest
+             compatible catch
+                ↓
+         unwind call stack
+          when necessary
+                ↓
+      applicable finally blocks
+             execute
+                ↓
+             catch
+                ↓
+       handle/report/recover
+                ↓
+             continue
+```
+
+The design question is not:
+
+```text
+"Can I catch this exception?"
+```
+
+The better question is:
+
+```text
+"Does this layer know how to handle this exception correctly?"
+```
+
+---
+
+# 23. Important Terminology
+
+## Exception handling
+
+**exception handling**
+`/ɪkˈsep.ʃən ˌhæn.dəl.ɪŋ/`
+
+Structured management of runtime exceptional conditions.
+
+## Call stack
+
+**call stack**
+`/ˈkɔːl stæk/`
+
+The runtime stack that records active method calls.
+
+## Stack unwinding
+
+**stack unwinding**
+`/stæk ʌnˈwaɪn.dɪŋ/`
+
+The process of moving backward through active method calls while searching for
+a compatible exception handler and leaving protected scopes.
+
+## Specific exception
+
+**specific exception**
+`/spəˈsɪf.ɪk ɪkˈsep.ʃən/`
+
+A particular derived exception type, such as `FormatException` or
+`DivideByZeroException`.
+
+## Checked context
+
+**checked context**
+`/tʃekt ˈkɒn.tekst/`
+
+An integral arithmetic context in which overflow is reported by an
+`OverflowException`.
+
+## Finally
+
+**finally**
+`/ˈfaɪ.nəl.i/`
+
+A block that executes when control leaves the associated `try` statement,
+commonly used for cleanup.
+
+---
+
+# 24. Runtime Command
+
+Run the module project from the repository root:
+
+```powershell
+dotnet run --project `
+    ".\curriculum\debug-csharp-console-applications\modules\implement-exception-handling\implement-exception-handling.csproj"
+```
+
+The organized project is designed to run through all demonstrations and finish
+with:
+
+```text
+Exception handling review completed.
+```
+
+---
+
+# 25. Build Verification
+
+## Module Project
+
+```powershell
+dotnet build `
+    ".\curriculum\debug-csharp-console-applications\modules\implement-exception-handling\implement-exception-handling.csproj"
+```
+
+## Full Solution
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified on:
+
+```text
+2026-08-14
+```
+
+Verified full-solution result:
+
+```text
+Build succeeded in 3.8 seconds
+```
+
+Solution project count:
+
+```text
+35 / 35 projects
+```
+
+Final IDE result:
+
+```text
+Visual Studio: No issues found
+```
+
+---
+
+# 26. Module Assessment and Achievement
+
+Microsoft Learn module:
+
+**Implement Exception Handling in C# Console Applications**
+
+Completion:
+
+```text
+11 / 11 units
+```
+
+Assessment result:
+
+```text
+Module assessment passed
+```
+
+Microsoft Learn Achievement:
+
+```text
+Earned
+```
+
+Completion date:
+
+```text
+2026-08-14
+```
+
+---
+
+# Module 3 Key Takeaways
+
+1. Exceptions provide a structured, type-safe mechanism for runtime failure
+   handling.
+2. `try` protects code that may fail.
+3. `catch` handles compatible exceptions.
+4. `finally` executes when control leaves the associated `try` statement and
+   is commonly used for cleanup.
+5. All .NET exception types ultimately derive from `System.Exception`.
+6. Exception objects expose useful diagnostic properties such as `Message`,
+   `StackTrace`, and `TargetSite`.
+7. The CLR searches for the nearest compatible exception handler.
+8. The CLR can unwind several method-call levels before finding a handler.
+9. Applicable `finally` blocks execute during stack unwinding before control
+   reaches the selected handler.
+10. Catch exception types as specifically as practical.
+11. A broad `catch (Exception)` should not replace handlers that understand
+    specific recoverable failures.
+12. `checked` can convert integral overflow into an `OverflowException`.
+13. Integer division by zero throws `DivideByZeroException`.
+14. Floating-point division by zero follows IEEE 754 behavior and can produce
+    infinity or NaN instead.
+15. The first exception in a `try` block immediately transfers control away
+    from the remaining statements in that block.
+16. Independent failing operations may need independent `try-catch` blocks if
+    processing should continue.
+17. Dependent processing should generally not continue when an earlier required
+    step fails.
+18. Exception handling should preserve application correctness, not merely hide
+    failures.
+
+---
+
+# Section 6 Progress After Module 3
 
 ```text
 Section: Debug C# Console Applications
-Modules completed: 2 / 6
-Learning progress: 33.3%
-Repository-verified modules: 2 / 6
-Registered solution projects: 34
-Latest completed module: Implement the Visual Studio Code Debugging Tools for C#
+Modules completed: 3 / 6
+Learning progress: 50.0%
+Repository-verified modules: 3 / 6
+Registered solution projects: 35
+Latest completed module: Implement Exception Handling in C# Console Applications
+Latest module units: 11 / 11
 Latest module assessment: Passed
 Latest Microsoft Learn Achievement: Earned
-Latest project run: Verified
-Latest project build: Succeeded
-Latest full solution build: Succeeded
+Latest organized Program.cs: Completed
+Latest professional source comments: Completed
+Latest full solution build: Succeeded in 3.8 seconds
 Latest IDE diagnostics: No issues found
 ```
 
@@ -1740,9 +3029,10 @@ Latest IDE diagnostics: No issues found
 
 Continue with:
 
-## Module 3 — Implement Exception Handling in C# Console Applications
+## Module 4 — Create and Throw Exceptions in C# Console Applications
 
-The next module continues Section 6 by moving from debugger-based investigation
-into structured runtime exception handling.
+The next module moves from handling exceptions generated by the runtime or
+libraries to deliberately creating and throwing exceptions from application
+code when business or validation rules require them.
 
 **Status:** ⏳ Not started

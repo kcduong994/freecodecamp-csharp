@@ -42,6 +42,7 @@
   </Folder>
   <Folder Name="/curriculum/debug-csharp-console-applications/" />
   <Folder Name="/curriculum/debug-csharp-console-applications/modules/">
+    <Project Path="curriculum/debug-csharp-console-applications/modules/implement-exception-handling/implement-exception-handling.csproj" />
     <Project Path="curriculum/debug-csharp-console-applications/modules/implement-vscode-debugging-tools/implement-vscode-debugging-tools.csproj" />
     <Project Path="curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/review-code-debugging-exception-handling.csproj" />
   </Folder>
