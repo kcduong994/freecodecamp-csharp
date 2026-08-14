@@ -5,7 +5,7 @@
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
 ![Sections](https://img.shields.io/badge/Sections_Completed-5%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-35-2563EB)
+![Projects](https://img.shields.io/badge/Solution_Projects-36-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -34,33 +34,30 @@ Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
 Current section status: In progress
-Current section learning progress: 3 / 6
-Current section repository-verified progress: 3 / 6
-Latest completed learning item: Implement Exception Handling in C# Console Applications
-Latest project: implement-exception-handling
+Current section learning progress: 4 / 6
+Current section repository-verified progress: 4 / 6
+Latest completed learning item: Create and Throw Exceptions in C# Console Applications
+Latest project: create-throw-exceptions
 Latest learning item status: Completed
-Latest Microsoft Learn units: 11 / 11
+Latest Microsoft Learn units: 7 / 7
 Latest module assessment: Passed
 Latest Microsoft Learn achievement: Earned
-Latest completion date: August 14, 2026
-Projects currently registered in solution: 35
+Projects currently registered in solution: 36
 Latest organized source: Completed
 Professional source comments: Completed
-try-catch patterns: Verified
-try-finally pattern: Verified
-try-catch-finally pattern: Verified
-Common runtime exceptions: Documented and demonstrated
-Specific catch clauses: Verified
-Call stack unwinding: Documented and demonstrated
-Nearest compatible catch handler: Demonstrated
-Exception object properties: Documented and demonstrated
-checked overflow handling: Verified
-Independent try-catch challenge scenarios: Verified
-finally cleanup behavior: Verified
+Exception object creation: Verified
+Specific exception selection: Documented and demonstrated
+Argument validation before calculation: Verified
+throw new exception flow: Verified
+throw rethrow behavior: Verified
+InnerException wrapping: Verified
+Method-contract validation: Documented and demonstrated
+Structured exception workflow challenge: Verified
+Debug.Assert distinction: Documented and demonstrated
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 3.8 seconds
+Latest full solution build: Succeeded in 2.8 seconds
 Latest IDE diagnostics: No issues found
-Next curriculum item: Create and Throw Exceptions in C# Console Applications
+Next curriculum item: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -70,7 +67,7 @@ Next curriculum item: Create and Throw Exceptions in C# Console Applications
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
 | 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
-| 6 | Debug C# Console Applications | 3 / 6 | 3 / 6 | In Progress |
+| 6 | Debug C# Console Applications | 4 / 6 | 4 / 6 | In Progress |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
@@ -91,7 +88,6 @@ Progress: 7 / 7
 Instructional modules: 4
 Guided projects: 2
 Trophy: Verified
-Completion date: July 17, 2026
 ```
 
 This section covers:
@@ -131,7 +127,6 @@ Item assessment: Passed
 Achievement: Earned
 freeCodeCamp section completion: Confirmed
 Microsoft Learn achievement: Earned
-Completion date: July 23, 2026
 Repository validation: Verified
 ```
 
@@ -145,7 +140,6 @@ Repository validation: Verified
 Status: Completed
 Module assessment: Passed
 Achievement: Earned
-Completion date: July 17, 2026
 ```
 
 This module focuses on the development environment and the basic .NET CLI
@@ -209,7 +203,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 18, 2026
 ```
 
 This module introduces reusable functionality from the .NET Class Library and
@@ -259,7 +252,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 19, 2026
 ```
 
 This module introduces decision-making logic that changes the execution path of
@@ -308,7 +300,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 20, 2026
 ```
 
 This module introduces arrays and sequence iteration in C#.
@@ -353,7 +344,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 21, 2026
 ```
 
 This module focuses on expressing program intent clearly so that source code is
@@ -407,7 +397,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 22, 2026
 ```
 
 This guided project integrates the concepts introduced throughout the current
@@ -516,7 +505,6 @@ Solution project count: 13
 Local project run: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 23, 2026
 ```
 
 This challenge project extends the Student Grading Application by separating the
@@ -586,7 +574,6 @@ The evidence confirms:
 - freeCodeCamp completion of **Create and Run Simple C# Console Applications**;
 - Microsoft Learn achievement for
   **Create and run simple C# console applications (Get started with C#, Part 2)**;
-- completion date: **July 23, 2026**.
 
 [View Section 2 Trophy documentation](./curriculum/create-and-run-simple-csharp-console-applications/trophy/README.md)
 
@@ -601,7 +588,6 @@ Challenge project output: Verified
 Challenge project build: Verified
 Full solution build: Verified
 Registered solution projects: 13
-Verification date: July 23, 2026
 ```
 
 The terminal output confirms that `student-grading-challenge` produced the
@@ -636,7 +622,6 @@ Full solution build: Verified
 Full solution build time: 2.6 seconds
 Build warnings: 0
 Build errors: 0
-Completion date: July 30, 2026
 ```
 
 Section 3 develops Boolean evaluation, branching, iteration, variable scope,
@@ -661,7 +646,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 24, 2026
 ```
 
 This module introduces Boolean expressions and demonstrates how `true` and
@@ -724,7 +708,6 @@ Local project run: Verified
 Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
-Completion date: July 25, 2026
 ```
 
 This module explains how C# code blocks control execution paths, variable
@@ -810,7 +793,6 @@ Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
 Solution project count: 16
-Completion date: July 26, 2026
 ```
 
 This module introduces the C# `switch` statement as a clear alternative to a
@@ -902,7 +884,6 @@ Module output: Verified
 Module build: Succeeded
 Full solution build: Succeeded
 Registered solution projects: 16
-Verification date: July 26, 2026
 ```
 
 ---
@@ -920,7 +901,6 @@ Project registration in solution: Verified
 Project build: Verified
 Full solution build: Verified
 Solution project count: 17
-Completion date: July 27, 2026
 ```
 
 This module introduces the C# `for` statement for repeating a code block with
@@ -1050,7 +1030,6 @@ Module output: Verified
 Module build: Succeeded
 Full solution build: Succeeded
 Registered solution projects: 17
-Verification date: July 27, 2026
 ```
 
 ---
@@ -1072,7 +1051,6 @@ Project build: Verified
 Project build time: 0.9 seconds
 Full solution build: Verified
 Full solution build time: 6.4 seconds
-Completion date: July 28, 2026
 ```
 
 This module extends C# iteration beyond `for` and `foreach`. It explains how
@@ -1263,7 +1241,6 @@ Interactive validation behavior: Verified
 Sentence-processing output: Verified
 Module build: Succeeded in 0.9 seconds
 Full solution build: Succeeded in 6.4 seconds
-Verification date: July 28, 2026
 ```
 
 ---
@@ -1285,7 +1262,6 @@ Project build: Verified
 Project build time: 0.9 seconds
 Full solution build: Verified
 Full solution build time: 8.1 seconds
-Completion date: July 29, 2026
 ```
 
 This guided project integrates the Section 3 control-flow concepts into
@@ -1415,7 +1391,6 @@ Exit handling: Verified
 Project build: Succeeded in 0.9 seconds
 Full solution build: Succeeded in 8.1 seconds
 Registered solution projects: 19
-Verification date: July 29, 2026
 ```
 
 The complete implementation of menu options 1 and 2 is present in the source.
@@ -1446,7 +1421,6 @@ Full solution build: Verified
 Full solution build time: 2.6 seconds
 Build warnings: 0
 Build errors: 0
-Completion date: July 30, 2026
 ```
 
 This challenge completes Section 3 by extending the **Contoso PetFriends**
@@ -1535,7 +1509,6 @@ Full solution build: Succeeded in 2.6 seconds
 Registered solution projects: 20
 Build warnings: 0
 Build errors: 0
-Verification date: July 30, 2026
 ```
 
 ---
@@ -1557,8 +1530,7 @@ The evidence records:
 
 - completion of **Add logic to C# console applications (Get started with C#,
   Part 3)** on Microsoft Learn;
-- the Microsoft Learn completion certificate issued to **Duong Kim Cuong** on
-  **30 July 2026**;
+- the Microsoft Learn completion certificate issued to **Duong Kim Cuong**;
 - successful freeCodeCamp verification of the Microsoft Learn Trophy named
   **Add Logic to C# Console Applications**.
 
@@ -1600,7 +1572,6 @@ Full solution build: Succeeded in 2.3 seconds
 Compiler errors: 0
 IDE diagnostics: No issues found
 Trophy evidence: Verified
-Completion date: August 6, 2026
 Next curriculum section: Create Methods in C# Console Applications
 ```
 
@@ -1636,7 +1607,6 @@ Project build time: 0.9 seconds
 Full solution build: Succeeded
 Full solution build time: 3.5 seconds
 IDE diagnostics: No issues found
-Completion date: July 31, 2026
 ```
 
 This module explains how C# represents data and how a developer selects a type
@@ -1715,7 +1685,6 @@ Full solution build: Succeeded in 3.5 seconds
 Registered solution projects after completion: 21
 Target framework: net10.0
 IDE diagnostics: No issues found
-Verification date: July 31, 2026
 ```
 
 ---
@@ -1738,7 +1707,6 @@ Project build time: 1.0 seconds
 Full solution build: Succeeded
 Full solution build time: 4.0 seconds
 IDE diagnostics: No issues found
-Completion date: August 1, 2026
 ```
 
 This module explains how to convert values between C# data types while
@@ -2134,7 +2102,6 @@ Full solution build: Succeeded in 4.0 seconds
 Registered solution projects: 22
 Target framework: net10.0
 IDE diagnostics: No issues found
-Verification date: August 1, 2026
 ```
 
 ---
@@ -2159,7 +2126,6 @@ Full solution build time: 2.2 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 2, 2026
 ```
 
 This module demonstrates how arrays and strings can be transformed using helper
@@ -2500,7 +2466,6 @@ Target framework: net10.0
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 2, 2026
 ```
 
 ---
@@ -2531,7 +2496,6 @@ Resolved compiler error: CS1503
 Addressed IDE suggestion: IDE0071
 Final module run after correction: Succeeded
 Full solution build after correction: Succeeded in 3.1 seconds
-Completion date: August 3, 2026
 ```
 
 This module explains how to convert numeric and textual values into readable,
@@ -2870,7 +2834,6 @@ Full solution build time: 4.0 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 4, 2026
 ```
 
 This module explains how to locate, extract, remove, and replace information
@@ -3140,7 +3103,6 @@ Target framework: net10.0
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 4, 2026
 ```
 
 ---
@@ -3166,7 +3128,6 @@ Full solution build: Succeeded
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 5, 2026
 ```
 
 This guided project integrates the five preceding Section 4 modules into a
@@ -3307,7 +3268,6 @@ Full solution build: Succeeded
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 5, 2026
 ```
 
 ---
@@ -3337,7 +3297,6 @@ Challenge project build: Succeeded
 Full solution build: Succeeded in 2.3 seconds
 Compiler errors: 0
 IDE diagnostics: No issues found
-Completion date: August 6, 2026
 ```
 
 The final Section 4 challenge extends the Contoso PetFriends search workflow
@@ -3437,7 +3396,6 @@ Challenge project build: Succeeded
 Full solution build: Succeeded in 2.3 seconds
 Compiler errors: 0
 IDE diagnostics: No issues found
-Verification date: August 6, 2026
 ```
 
 ---
@@ -3461,7 +3419,6 @@ The evidence confirms:
 - all learning-path module assessments passed;
 - the Challenge Project module assessment passed;
 - two achievements shown on the Microsoft Learn completion page;
-- completion date: **August 6, 2026**.
 
 [View Section 4 Trophy documentation](./curriculum/work-with-variable-data-in-csharp-console-applications/trophy/README.md)
 
@@ -3507,7 +3464,6 @@ Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
 Trophy: Verified
-Completion date: August 11, 2026
 Next section: Debug C# Console Applications
 ```
 
@@ -3550,36 +3506,33 @@ named methods
 
 ```text
 Status: In Progress
-Learning progress: 3 / 6
-Repository-verified progress: 3 / 6
-Completed instructional modules: 3
-Current solution project count: 35
-Latest completed item: Implement Exception Handling in C# Console Applications
-Microsoft Learn units: 11 / 11
+Learning progress: 4 / 6
+Repository-verified progress: 4 / 6
+Completed instructional modules: 4
+Current solution project count: 36
+Latest completed item: Create and Throw Exceptions in C# Console Applications
+Microsoft Learn units: 7 / 7
 Module assessment: Passed
 Microsoft Learn achievement: Earned
 Final organized Program.cs: Completed
 Professional source comments: Completed
-try-catch patterns: Verified
-try-finally pattern: Verified
-try-catch-finally pattern: Verified
-Common runtime exceptions: Documented and demonstrated
-Specific catch clauses: Verified
-Call stack unwinding: Documented and demonstrated
-Nearest compatible catch handler: Demonstrated
-Exception object properties: Documented and demonstrated
-checked overflow handling: Verified
-Independent try-catch challenge scenarios: Verified
-finally cleanup behavior: Verified
-Full solution build: Succeeded in 3.8 seconds
+Exception object creation: Verified
+Specific exception selection: Documented and demonstrated
+Argument validation before calculation: Verified
+throw new exception flow: Verified
+throw rethrow behavior: Verified
+InnerException wrapping: Verified
+Method-contract validation: Documented and demonstrated
+Structured exception workflow challenge: Verified
+Debug.Assert distinction: Documented and demonstrated
+Full solution build: Succeeded in 2.8 seconds
 IDE diagnostics: No issues found
-Completion date for Module 3: August 14, 2026
-Next module: Create and Throw Exceptions in C# Console Applications
+Next module: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
 ```
 
 Section 6 develops practical debugging and exception-handling skills for C# console applications.
 
-The first completed module establishes the conceptual distinction between:
+The completed Section 6 modules establish the progression from debugging fundamentals to structured exception handling and deliberate exception creation. The first module establishes the conceptual distinction between:
 
 ```text
 Testing
@@ -3653,8 +3606,7 @@ catch (FormatException exception)
 Because the exception is handled, execution continues normally after the
 `catch` block.
 
-The module assessment was passed and the Microsoft Learn achievement was earned
-on August 12, 2026.
+The module assessment was passed and the Microsoft Learn achievement was earned.
 
 [Open the Section 6 documentation](./curriculum/debug-csharp-console-applications/README.md)
 
@@ -3680,7 +3632,6 @@ Full solution build: Succeeded in 2.7 seconds
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Completion date: August 13, 2026
 ```
 
 This module turns the debugging concepts introduced in Module 1 into a practical
@@ -3811,7 +3762,6 @@ Registered solution projects: 34
 Compiler errors: 0
 Compiler warnings: 0
 IDE diagnostics: No issues found
-Verification date: August 13, 2026
 ```
 
 [Open the completed Module 2 source](./curriculum/debug-csharp-console-applications/modules/implement-vscode-debugging-tools/)
@@ -3834,7 +3784,6 @@ Professional source comments: Completed
 Final source length: 659 lines
 Full solution build: Succeeded in 3.8 seconds
 IDE diagnostics: No issues found
-Completion date: August 14, 2026
 ```
 
 This module moves Section 6 from identifying runtime failures to implementing
@@ -4044,10 +3993,254 @@ Final organized source: Completed
 Professional source comments: Completed
 Full solution build: Succeeded in 3.8 seconds
 IDE diagnostics: No issues found
-Verification date: August 14, 2026
 ```
 
 [Open the completed Module 3 source](./curriculum/debug-csharp-console-applications/modules/implement-exception-handling/)
+
+---
+
+
+### Module 4 — Create and Throw Exceptions in C# Console Applications
+
+```text
+Status: Completed
+Microsoft Learn units: 7 / 7
+Module assessment: Passed
+Microsoft Learn achievement: Earned
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 36
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Final source length: 724 lines
+Full solution build: Succeeded in 2.8 seconds
+IDE diagnostics: No issues found
+```
+
+This module extends exception handling from reacting to failures generated by
+.NET or library code to deliberately creating and throwing exceptions from
+application code.
+
+Learning outcomes include:
+
+- creating exception objects;
+- selecting the exception type that best represents a failure;
+- supplying useful custom exception messages;
+- adding non-sensitive diagnostic information through `Exception.Data`;
+- throwing exceptions with `throw`;
+- validating method arguments before performing invalid calculations;
+- using `ArgumentOutOfRangeException` for invalid range arguments;
+- catching exceptions at the call-stack level that can resolve them;
+- re-throwing the original exception with `throw;`;
+- wrapping an original exception through `InnerException`;
+- replacing status-string error flow with structured exception flow;
+- understanding why `Debug.Assert` is not a replacement for runtime exceptions.
+
+Project location:
+
+```text
+curriculum/debug-csharp-console-applications/
+└── modules/
+    └── create-throw-exceptions/
+        ├── Program.cs
+        └── create-throw-exceptions.csproj
+```
+
+The final source organizes the module into focused demonstrations:
+
+```text
+ReviewExceptionSelection()
+DemonstrateCustomizedExceptionObject()
+DemonstrateArgumentOutOfRangeValidation()
+DemonstrateBusinessProcessFormatException()
+DemonstrateRethrow()
+DemonstrateWrappedException()
+DemonstrateChallengeWorkflow()
+ReviewThrowingPractices()
+DemonstrateDebugAssert()
+```
+
+The module establishes a method-contract mental model:
+
+```text
+Method receives state/input
+          ↓
+Validate the contract
+          ↓
+Can the method complete correctly?
+     ┌────┴────┐
+    yes       no
+     ↓         ↓
+ continue   choose specific
+ execution   exception type
+                ↓
+          create exception
+                ↓
+              throw
+                ↓
+         stack propagation
+                ↓
+       appropriate handler
+```
+
+A representative argument-validation example is:
+
+```csharp
+if (lowerBound >= upperBound)
+{
+    throw new ArgumentOutOfRangeException(
+        nameof(upperBound),
+        "Upper bound must be greater than lower bound.");
+}
+```
+
+This reports the actual contract violation before a secondary calculation
+failure can occur.
+
+The project also demonstrates the difference between creating and throwing an
+exception:
+
+```text
+new ExceptionType(...)
+→ creates the exception object
+
+throw
+→ transfers control and begins exception propagation
+```
+
+A customized exception can carry additional diagnostic context:
+
+```csharp
+ArgumentException invalidArgumentException =
+    new(
+        "GraphData received data outside the expected range.",
+        nameof(data));
+
+invalidArgumentException.Data["Method"] =
+    nameof(GraphData);
+
+invalidArgumentException.Data["ExpectedRange"] =
+    "0..100";
+```
+
+The re-throw example uses:
+
+```csharp
+throw;
+```
+
+after partial handling.
+
+This preserves the original exception and its diagnostic information while
+allowing a higher layer to continue handling the same failure.
+
+The wrapping example uses:
+
+```csharp
+throw new ApplicationException(
+    "An error occurred in OperatingProcedureForWrapping.",
+    exception);
+```
+
+which creates:
+
+```text
+ApplicationException
+        │
+        └── InnerException
+                │
+                └── InvalidCastException
+```
+
+The outer exception adds higher-level operational context while
+`InnerException` preserves the underlying cause.
+
+The challenge replaces status-string error handling with typed exceptions.
+
+Call-stack responsibilities are:
+
+```text
+Top-level statements
+        ↓
+    Workflow1()
+        ↓
+     Process1()
+```
+
+`Process1()` throws:
+
+```text
+FormatException
+→ invalid integer format
+
+DivideByZeroException
+→ zero value is not allowed
+```
+
+`Workflow1()` catches and handles `FormatException`, allowing later workflow
+entries to continue.
+
+`DivideByZeroException` is intentionally not handled by `Workflow1()`, so it
+propagates to the top-level caller.
+
+This demonstrates that exception type affects control flow because only a
+compatible `catch` receives the thrown exception.
+
+The project also documents important practices to avoid:
+
+```text
+Do not use exceptions as ordinary branching logic.
+Do not return Exception objects as ordinary status values.
+Do not deliberately throw inappropriate framework exception types.
+Do not place sensitive information in exception messages.
+Do not confuse Debug.Assert with operational exception handling.
+```
+
+`Debug.Assert` is reserved for development-time invariants:
+
+```csharp
+Debug.Assert(
+    inventoryCount >= 0,
+    "Inventory count should never be negative.");
+```
+
+whereas runtime exceptions communicate operational failures that application
+code may need to catch, report, recover from, or propagate.
+
+Run the completed Module 4 project:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\debug-csharp-console-applications\modules\create-throw-exceptions\create-throw-exceptions.csproj"
+```
+
+Build the module:
+
+```powershell
+dotnet build `
+  ".\curriculum\debug-csharp-console-applications\modules\create-throw-exceptions\create-throw-exceptions.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Microsoft Learn units: 7 / 7
+Module assessment: Passed
+Microsoft Learn achievement: Earned
+Registered solution projects: 36
+Final organized source: Completed
+Professional source comments: Completed
+Full solution build: Succeeded in 2.8 seconds
+IDE diagnostics: No issues found
+```
+
+[Open the completed Module 4 source](./curriculum/debug-csharp-console-applications/modules/create-throw-exceptions/)
 
 ---
 
@@ -4161,9 +4354,12 @@ freecodecamp-csharp/
 │   │       ├── implement-vscode-debugging-tools/
 │   │       │   ├── Program.cs
 │   │       │   └── implement-vscode-debugging-tools.csproj
-│   │       └── implement-exception-handling/
+│   │       ├── implement-exception-handling/
+│   │       │   ├── Program.cs
+│   │       │   └── implement-exception-handling.csproj
+│   │       └── create-throw-exceptions/
 │   │           ├── Program.cs
-│   │           └── implement-exception-handling.csproj
+│   │           └── create-throw-exceptions.csproj
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
 ├── freecodecamp-csharp.slnx
@@ -4192,10 +4388,10 @@ adds an interactive mini-game built around a game loop, shared state, keyboard
 input, collision detection, state transitions, and rendering. The completed
 challenge is registered as solution project 32.
 
-Section 6 currently contains three completed instructional modules and its section
-documentation. All three modules are repository-verified. Module 1 is
-registered as solution project 33, Module 2 as solution project 34, and Module 3
-as solution project 35.
+Section 6 currently contains four completed instructional modules and its section
+documentation. All four modules are repository-verified. Module 1 is registered
+as solution project 33, Module 2 as solution project 34, Module 3 as solution
+project 35, and Module 4 as solution project 36.
 
 ---
 
@@ -4226,7 +4422,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-35
+36
 ```
 
 List all projects registered in the solution:
@@ -4357,13 +4553,15 @@ curriculum/debug-csharp-console-applications/modules/review-code-debugging-excep
 curriculum/debug-csharp-console-applications/modules/implement-vscode-debugging-tools/implement-vscode-debugging-tools.csproj
 
 curriculum/debug-csharp-console-applications/modules/implement-exception-handling/implement-exception-handling.csproj
+
+curriculum/debug-csharp-console-applications/modules/create-throw-exceptions/create-throw-exceptions.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\debug-csharp-console-applications\modules\implement-exception-handling\implement-exception-handling.csproj"
+  ".\curriculum\debug-csharp-console-applications\modules\create-throw-exceptions\create-throw-exceptions.csproj"
 ```
 
 ---
@@ -4377,59 +4575,56 @@ Latest fully completed section progress: 5 / 5
 Latest fully completed section repository verification: 5 / 5
 Current section: Debug C# Console Applications
 Current section status: In progress
-Current section learning progress: 3 / 6
-Current section repository-verified progress: 3 / 6
-Latest completed learning item: Implement Exception Handling in C# Console Applications
-Latest project: implement-exception-handling
-Microsoft Learn units: 11 / 11
+Current section learning progress: 4 / 6
+Current section repository-verified progress: 4 / 6
+Latest completed learning item: Create and Throw Exceptions in C# Console Applications
+Latest project: create-throw-exceptions
+Microsoft Learn units: 7 / 7
 Module assessment: Passed
 Microsoft Learn achievement: Earned
 Final organized source: Completed
 Professional source comments: Completed
-try-catch patterns: Verified
-try-finally pattern: Verified
-try-catch-finally pattern: Verified
-Common runtime exceptions: Documented and demonstrated
-Specific catch clauses: Verified
-Call stack unwinding: Documented and demonstrated
-Nearest compatible catch handler: Demonstrated
-Exception object properties: Documented and demonstrated
-checked overflow handling: Verified
-Independent try-catch challenge scenarios: Verified
-finally cleanup behavior: Verified
+Exception object creation: Verified
+Specific exception selection: Documented and demonstrated
+Argument validation before calculation: Verified
+throw new exception flow: Verified
+throw rethrow behavior: Verified
+InnerException wrapping: Verified
+Method-contract validation: Documented and demonstrated
+Structured exception workflow challenge: Verified
+Debug.Assert distinction: Documented and demonstrated
 Project registration: Verified
-Registered solution projects: 35
+Registered solution projects: 36
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 3.8 seconds
+Full-solution build: Succeeded in 2.8 seconds
 IDE diagnostics: No issues found
-Verification date: August 14, 2026
-Next curriculum item: Create and Throw Exceptions in C# Console Applications
+Next curriculum item: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
 ```
 
 The latest evidence confirms that:
 
-- `implement-exception-handling` is registered as the thirty-fifth solution
-  project;
-- the module reached `11 / 11` Microsoft Learn units;
+- `create-throw-exceptions` is registered as the thirty-sixth solution project;
+- the module reached `7 / 7` Microsoft Learn units;
 - its module assessment passed;
 - the Microsoft Learn achievement was earned;
 - the final source is organized and professionally commented;
-- `try-catch`, `try-finally`, and `try-catch-finally` patterns are documented;
-- common runtime exception categories are demonstrated;
-- specific `catch` clauses are used for known failure modes;
-- exception-object properties are inspected;
-- call stack unwinding and the nearest compatible handler are demonstrated;
-- integral overflow is demonstrated with `checked`;
-- independent exception scenarios are separated so all intended failures can be
-  handled and observed;
-- cleanup behavior is demonstrated with `finally`;
-- the complete thirty-five-project solution builds successfully in
-  `3.8 seconds`;
+- exception objects are created and customized with appropriate context;
+- application code selects specific exception types for validation failures;
+- argument validation occurs before invalid calculations are attempted;
+- deliberate `throw new ...` control flow is demonstrated;
+- `throw;` is used to re-throw the original exception after partial handling;
+- higher-level context is added with a wrapper exception while the underlying
+  exception is preserved through `InnerException`;
+- method contracts are used to decide when a method should fail explicitly;
+- the final challenge replaces status-string error flow with structured typed
+  exceptions;
+- `Debug.Assert` is documented separately from runtime exception handling;
+- the complete thirty-six-project solution builds successfully in `2.8 seconds`;
 - Visual Studio reports no issues;
-- Section 6 documentation has been updated for Module 3.
+- Section 6 documentation has been updated for Module 4.
 
 Section 5 remains fully complete at `5 / 5`. Section 6 is now in progress at
-`3 / 6 = 50.0%`, with its first three modules repository-verified.
+`4 / 6 = 66.7%`, with its first four modules repository-verified.
 
 ---
 
@@ -4489,6 +4684,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Review the Principles of Code Debugging and Exception Handling](https://learn.microsoft.com/training/modules/review-principles-code-debugging-exception-handling-c-sharp/)
 - [Microsoft Learn — Implement the Visual Studio Code Debugging Tools for C#](https://learn.microsoft.com/training/modules/implement-visual-studio-code-debugging-tools/)
 - [Microsoft Learn — Implement Exception Handling in C# Console Applications](https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/)
+- [Microsoft Learn — Create and Throw Exceptions in C# Console Applications](https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
