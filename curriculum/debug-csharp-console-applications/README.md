@@ -6,8 +6,8 @@
 ## Section Status
 
 **Status:** In Progress
-**Modules completed:** 4 / 6
-**Current solution project count:** 36
+**Modules completed:** 5 / 6
+**Current solution project count:** 37
 **Target framework:** .NET 10.0
 **Primary development environment:** Visual Studio
 
@@ -25,7 +25,7 @@ The official Microsoft Learn learning path introduces debugging with Visual Stud
 | 2 | Implement the Visual Studio Code Debugging Tools for C# | ✅ Completed |
 | 3 | Implement Exception Handling in C# Console Applications | ✅ Completed |
 | 4 | Create and Throw Exceptions in C# Console Applications | ✅ Completed |
-| 5 | Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code | ⏳ Not started |
+| 5 | Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code | ✅ Completed |
 | 6 | Challenge Project - Debug a C# Console Application Using Visual Studio Code | ⏳ Not started |
 
 ---
@@ -756,8 +756,6 @@ Microsoft Learn Achievement:
 ```text
 Earned
 ```
-
-2026-08-12
 ```
 
 ---
@@ -1662,8 +1660,6 @@ Microsoft Learn Achievement:
 ```text
 Earned
 ```
-
-2026-08-13
 ```
 
 ---
@@ -2938,8 +2934,6 @@ Microsoft Learn Achievement:
 ```text
 Earned
 ```
-
-2026-08-14
 ```
 
 ---
@@ -4033,21 +4027,936 @@ Earned
 
 ---
 
-# Section 6 Progress After Module 4
+# Module 5 — Guided Project: Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
+
+## Completion
+
+**Status:** ✅ Completed
+**Units:** 6 / 6
+**Assessment:** Passed
+**Microsoft Learn Achievement:** Earned
+**Target framework:** .NET 10.0
+**Project registration in solution:** Verified
+**Solution project count:** 37
+**Final organized Program.cs:** Completed
+**Professional source comments:** Completed
+**Final source length:** 491 lines
+**Guided project run:** Verified
+**Project build:** Succeeded
+**Full solution build:** Succeeded in 2.6 seconds
+**IDE diagnostics:** No issues found
+
+### Project
+
+```text
+guided-projects/debug-handle-exceptions/
+├── Program.cs
+└── debug-handle-exceptions.csproj
+```
+
+The project is registered in:
+
+```text
+freecodecamp-csharp.slnx
+```
+
+After adding this guided project, the solution increased from:
+
+```text
+36 projects
+```
+
+to:
+
+```text
+37 projects
+```
+
+---
+
+## Guided Project Learning Objectives
+
+This guided project combines the debugger and exception-handling concepts from
+the first four modules into one retail cash-register application.
+
+The completed objectives include:
+
+1. reviewing an existing C# console application;
+2. validating the cash-till logic with sample transaction data;
+3. using debugger evidence to isolate a logic defect;
+4. correcting an incorrect cash-till array index;
+5. adding a `try-catch` pattern around the transaction call;
+6. creating and throwing `InvalidOperationException` objects;
+7. converting `MakeChange()` from status-string return logic to `void`;
+8. using `Exception.Message` to report transaction failure details;
+9. verifying the guided-project application after the exception-handling
+   refactor;
+10. recognizing that additional logic defects intentionally remain for the
+    following challenge project.
+
+---
+
+# 1. Guided Project Scenario
+
+The application simulates a store checkout line.
+
+The cash register till contains four bill denominations:
+
+```text
+$1
+$5
+$10
+$20
+```
+
+Each transaction:
+
+```text
+customer purchase
+      ↓
+customer payment
+      ↓
+MakeChange()
+      ↓
+payment enters till
+      ↓
+change leaves till
+      ↓
+caller independently verifies till balance
+```
+
+The important design feature is the independent safety-check calculation.
+
+`MakeChange()` updates the real `cashTill` array, while the top-level statements
+maintain:
+
+```text
+registerCheckTillTotal
+```
+
+as a second source of truth.
+
+This makes it possible to detect a logic defect even when the console output
+appears reasonable.
+
+---
+
+# 2. Cash-Till Data Model
+
+The working till uses:
+
+```csharp
+int[] cashTill;
+```
+
+with the following index mapping:
+
+```text
+cashTill[0] -> $1 bills
+cashTill[1] -> $5 bills
+cashTill[2] -> $10 bills
+cashTill[3] -> $20 bills
+```
+
+This mapping becomes central to the debugging exercise.
+
+The starting till is configured from:
+
+```text
+$1  x 50 = $ 50
+$5  x 20 = $100
+$10 x 10 = $100
+$20 x  5 = $100
+```
+
+for a starting value of:
+
+```text
+$350
+```
+
+---
+
+# 3. Initial Verification with Sample Data
+
+The guided project first uses a fixed `testData` array.
+
+The goal is to verify that:
+
+```text
+actual till value
+=
+expected till value
+```
+
+for the known transaction sequence.
+
+This establishes a baseline before moving to randomly generated transactions.
+
+The project then switches to random transaction data to expose execution paths
+that the fixed sample does not always reveal.
+
+---
+
+# 4. Debugger Configuration and Interactive Console
+
+The original guided project uses:
+
+```csharp
+Console.Clear();
+Console.ReadLine();
+```
+
+These methods require an interactive console.
+
+In Visual Studio Code, the debugger therefore needs:
+
+```json
+"console": "integratedTerminal"
+```
+
+rather than the internal debug console.
+
+The key lesson is that debugger configuration affects runtime behavior.
+
+Conceptually:
+
+```text
+launch.json
+    ↓
+console selection
+    ↓
+runtime environment
+    ↓
+Console input/output support
+```
+
+---
+
+# 5. The Till-Balance Logic Bug
+
+Random transactions expose a discrepancy between:
+
+```text
+TillAmountSummary(cashTill)
+```
+
+and:
+
+```text
+registerCheckTillTotal
+```
+
+Debugger investigation shows that:
+
+```text
+customer payment reported correctly
+change reported correctly
+actual till short by $5
+```
+
+That evidence points toward the logic responsible for returning a five-dollar
+bill.
+
+The original code was:
+
+```csharp
+while ((changeNeeded > 4) && (cashTill[1] > 0))
+{
+    cashTill[2]--;
+    changeNeeded -= 5;
+    Console.WriteLine("\t A five");
+}
+```
+
+The condition correctly checks:
+
+```text
+cashTill[1]
+```
+
+which represents five-dollar bills.
+
+However, the loop body decrements:
+
+```text
+cashTill[2]
+```
+
+which represents ten-dollar bills.
+
+Therefore the program reports returning `$5` while actually removing `$10`
+from the internal till.
+
+The error is:
+
+```text
+intended denomination = $5
+actual array element   = $10
+difference             = $5
+```
+
+which explains the observed till shortage.
+
+---
+
+# 6. Correcting the Five-Dollar Index
+
+The corrected block is:
+
+```csharp
+while ((changeNeeded > 4) && (cashTill[1] > 0))
+{
+    cashTill[1]--;
+    changeNeeded -= 5;
+    Console.WriteLine("\t A five");
+}
+```
+
+The debugging lesson is:
+
+```text
+observed discrepancy
+       ↓
+inspect transaction evidence
+       ↓
+identify denomination involved
+       ↓
+inspect related array index
+       ↓
+correct internal state mutation
+```
+
+This is a useful example of a **logic bug that does not generate an exception**.
+
+The program still runs.
+
+The defect is discovered because the runtime state is wrong.
+
+---
+
+# 7. Adding Structured Exception Handling
+
+Before the exception-handling refactor, `MakeChange()` returned strings such as:
+
+```text
+transaction succeeded
+Not enough money provided.
+Can't make change...
+```
+
+The calling code then compared the returned status string.
+
+Conceptually:
+
+```text
+MakeChange()
+    ↓
+return status string
+    ↓
+caller compares text
+    ↓
+decide success/failure
+```
+
+The guided project replaces that approach with structured exception flow.
+
+New model:
+
+```text
+MakeChange()
+    │
+    ├── succeeds
+    │      ↓
+    │   normal return
+    │
+    └── cannot complete
+           ↓
+      throw exception
+```
+
+This separates:
+
+```text
+normal execution
+```
+
+from:
+
+```text
+exceptional failure
+```
+
+---
+
+# 8. `try-catch` in the Calling Application
+
+The top-level transaction code becomes:
+
+```csharp
+try
+{
+    MakeChange(
+        itemCost,
+        cashTill,
+        paymentTwenties,
+        paymentTens,
+        paymentFives,
+        paymentOnes);
+
+    Console.WriteLine(
+        "Transaction successfully completed.");
+
+    registerCheckTillTotal +=
+        itemCost;
+}
+catch (InvalidOperationException exception)
+{
+    Console.WriteLine(
+        $"Could not complete transaction: {exception.Message}");
+}
+```
+
+The caller catches only:
+
+```text
+InvalidOperationException
+```
+
+because that is the transaction failure type the application is currently
+prepared to handle.
+
+Unexpected exception types are not silently swallowed.
+
+---
+
+# 9. Underpayment Exception
+
+`MakeChange()` calculates:
+
+```csharp
+int changeNeeded =
+    amountPaid -
+    cost;
+```
+
+If:
+
+```text
+changeNeeded < 0
+```
+
+the customer has not paid enough.
+
+The method cannot complete the transaction.
+
+The guided project throws:
+
+```csharp
+throw new InvalidOperationException(
+    "InvalidOperationException: Not enough money provided to " +
+    "complete the transaction.");
+```
+
+Control flow:
+
+```text
+payment < cost
+     ↓
+MakeChange cannot complete
+     ↓
+InvalidOperationException
+     ↓
+caller catch
+     ↓
+display exception.Message
+```
+
+---
+
+# 10. Insufficient-Till Exception
+
+After the change-making loops finish, a positive value of:
+
+```text
+changeNeeded
+```
+
+means the till could not produce the required exact change.
+
+The guided project throws:
+
+```csharp
+throw new InvalidOperationException(
+    "InvalidOperationException: The till is unable to make the " +
+    "correct change.");
+```
+
+The caller handles the same exception type because both failures mean:
+
+```text
+the transaction cannot be completed under the current operating conditions
+```
+
+---
+
+# 11. Converting `MakeChange()` from `string` to `void`
+
+Before the refactor:
+
+```csharp
+static string MakeChange(...)
+```
+
+returned status text.
+
+After the refactor:
+
+```csharp
+static void MakeChange(...)
+```
+
+Success is represented by:
+
+```text
+normal method completion
+```
+
+Failure is represented by:
+
+```text
+exception propagation
+```
+
+This eliminates logic such as:
+
+```csharp
+if (transactionMessage == "transaction succeeded")
+{
+    ...
+}
+```
+
+and produces a clearer contract:
+
+```text
+MakeChange returns normally
+        =
+transaction completed according to the guided-project rules
+
+MakeChange throws
+        =
+transaction could not complete
+```
+
+---
+
+# 12. Exception Object Properties
+
+The catch block receives the thrown exception object:
+
+```csharp
+catch (InvalidOperationException exception)
+```
+
+and uses:
+
+```csharp
+exception.Message
+```
+
+to report the issue.
+
+This removes the need for separate transaction-status strings.
+
+The exception type communicates:
+
+```text
+what category of failure occurred
+```
+
+while `Message` communicates:
+
+```text
+the contextual explanation
+```
+
+---
+
+# 13. Expanded Verification Data
+
+The final verification exercise increases the random workload:
+
+```csharp
+int transactions = 40;
+```
+
+and expands the random item-cost range:
+
+```csharp
+valueGenerator.Next(
+    2,
+    50);
+```
+
+Because the upper bound is exclusive:
+
+```text
+generated costs = 2 through 49
+```
+
+This creates more opportunities to exercise:
+
+```text
+successful transactions
+underpayment
+insufficient change
+```
+
+---
+
+# 14. Expected Exception Messages
+
+A generated transaction may produce:
+
+```text
+Could not complete transaction:
+InvalidOperationException: Not enough money provided to complete the transaction.
+```
+
+or:
+
+```text
+Could not complete transaction:
+InvalidOperationException: The till is unable to make the correct change.
+```
+
+The exact transaction sequence varies because random data is used.
+
+The important verification is that both transaction-failure conditions are now
+communicated through exception handling rather than status-string comparisons.
+
+---
+
+# 15. Additional Logic Bugs Intentionally Remain
+
+The Microsoft Learn guided project explicitly states that the till can still
+become unbalanced after the exception-handling changes.
+
+The final repository run demonstrates that behavior.
+
+One observed run ended with:
+
+```text
+The till has 1200 dollars
+Expected till value: 833
+```
+
+after an `InvalidOperationException` reporting that the till could not make the
+required change.
+
+This does **not** mean the guided project is incomplete.
+
+Instead, it is evidence for the next learning task:
+
+```text
+Guided Project
+    ↓
+fix specified bug
+add exception handling
+    ↓
+remaining imbalance still observable
+    ↓
+Challenge Project
+    ↓
+find and correct remaining logic defects
+```
+
+The repository intentionally preserves this guided-project state instead of
+pre-solving the following challenge.
+
+---
+
+# 16. Repository Implementation Structure
+
+The final guided-project `Program.cs` is organized into these areas:
+
+```text
+Application configuration
+Cash-till model
+Daily starting cash
+Fixed test data
+Till initialization
+Transaction generator
+Transaction processing
+Structured exception handling
+Exit behavior
+LoadTillEachMorning()
+MakeChange()
+LogTillStatus()
+TillAmountSummary()
+```
+
+The final source keeps the original application architecture while adding
+detailed educational comments around the debugging and exception-handling
+changes.
+
+---
+
+# 17. Repository Safety and Scope Control
+
+The repository version follows an important learning rule:
+
+```text
+fix only what this guided project teaches
+```
+
+Therefore:
+
+```text
+five-dollar index bug
+→ fixed
+
+try-catch flow
+→ implemented
+
+underpayment exception
+→ implemented
+
+insufficient-till exception
+→ implemented
+
+remaining cash-balance defects
+→ intentionally preserved for Module 6
+```
+
+This avoids turning the guided project into the solution for the next challenge.
+
+---
+
+# 18. Core Mental Model
+
+The complete guided-project flow is:
+
+```text
+Known application
+      ↓
+review code
+      ↓
+run sample data
+      ↓
+establish baseline
+      ↓
+run random data
+      ↓
+observe mismatch
+      ↓
+debug runtime state
+      ↓
+find cashTill index bug
+      ↓
+fix logic
+      ↓
+replace status strings
+with exceptions
+      ↓
+MakeChange throws
+      ↓
+caller catches
+      ↓
+verify behavior
+      ↓
+observe remaining defects
+      ↓
+prepare for Challenge Project
+```
+
+---
+
+# 19. Important Terminology
+
+## Guided project
+
+**guided project**
+`/ˈɡaɪ.dɪd ˈprɒdʒ.ekt/`
+
+A structured practical exercise completed through step-by-step guidance.
+
+## Cash till
+
+**cash till**
+`/ˈkæʃ tɪl/`
+
+The cash compartment or register inventory used during retail transactions.
+
+## Logic bug
+
+**logic bug**
+`/ˈlɒdʒ.ɪk bʌɡ/`
+
+A defect where the program executes but produces incorrect state or behavior.
+
+## Safety check
+
+**safety check**
+`/ˈseɪf.ti tʃek/`
+
+An independent verification used to detect whether another calculation or state
+transition is incorrect.
+
+## Transaction
+
+**transaction**
+`/trænˈzæk.ʃən/`
+
+A business operation such as a customer purchase and payment.
+
+## Underpayment
+
+**underpayment**
+`/ˌʌn.dəˈpeɪ.mənt/`
+
+Payment that is less than the amount required.
+
+## Insufficient
+
+**insufficient**
+`/ˌɪn.səˈfɪʃ.ənt/`
+
+Not enough to satisfy a requirement.
+
+---
+
+# 20. Runtime Command
+
+Run the guided project from the repository root:
+
+```powershell
+dotnet run --project `
+    ".\curriculum\debug-csharp-console-applications\guided-projects\debug-handle-exceptions\debug-handle-exceptions.csproj"
+```
+
+The final project uses random transactions when:
+
+```csharp
+useTestData = false;
+```
+
+so exact output varies between runs.
+
+---
+
+# 21. Build Verification
+
+## Guided Project
+
+```powershell
+dotnet build `
+    ".\curriculum\debug-csharp-console-applications\guided-projects\debug-handle-exceptions\debug-handle-exceptions.csproj"
+```
+
+Verified result:
+
+```text
+Build succeeded
+```
+
+## Full Solution
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified full-solution result:
+
+```text
+Build succeeded in 2.6 seconds
+```
+
+Solution project count:
+
+```text
+37 / 37 projects
+```
+
+Final IDE result:
+
+```text
+Visual Studio: No issues found
+```
+
+---
+
+# 22. Assessment and Achievement
+
+Microsoft Learn guided project:
+
+**Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code**
+
+Completion:
+
+```text
+6 / 6 units
+```
+
+Assessment result:
+
+```text
+Module assessment passed
+```
+
+Microsoft Learn Achievement:
+
+```text
+Earned
+```
+
+---
+
+# Module 5 Key Takeaways
+
+1. A logic bug can corrupt application state without generating an exception.
+2. Independent verification data can expose incorrect internal state.
+3. Randomized input can reveal code paths that a small fixed data set misses.
+4. Debugger evidence is more reliable than guessing from source appearance.
+5. Array-index meaning must remain consistent with the data model.
+6. `cashTill[1]` represents five-dollar bills in this application.
+7. The original five-dollar loop incorrectly decremented `cashTill[2]`.
+8. Correcting the index restores the intended denomination update.
+9. Transaction failures are better represented by structured exceptions than
+   by comparing status strings.
+10. `MakeChange()` can use normal return for success and exceptions for failure.
+11. `InvalidOperationException` represents the transaction failures introduced
+    by this guided project.
+12. The caller should catch only exception types it knows how to handle.
+13. `Exception.Message` provides contextual failure information.
+14. Converting `MakeChange()` from `string` to `void` simplifies the method
+    contract.
+15. A successful guided project does not imply that all application bugs are
+    fixed.
+16. The remaining till imbalance is intentionally preserved for the challenge
+    project.
+17. Debugging and exception handling are complementary skills: debugging finds
+    defects, while exception handling manages runtime failure conditions.
+
+---
+
+# Section 6 Progress After Module 5
 
 ```text
 Section: Debug C# Console Applications
-Modules completed: 4 / 6
-Learning progress: 66.7%
-Repository-verified modules: 4 / 6
-Registered solution projects: 36
-Latest completed module: Create and Throw Exceptions in C# Console Applications
-Latest module units: 7 / 7
+Modules completed: 5 / 6
+Learning progress: 83.3%
+Repository-verified modules: 5 / 6
+Registered solution projects: 37
+Latest completed module: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
+Latest module units: 6 / 6
 Latest module assessment: Passed
 Latest Microsoft Learn Achievement: Earned
 Latest organized Program.cs: Completed
 Latest professional source comments: Completed
-Latest full solution build: Succeeded in 2.8 seconds
+Latest guided-project run: Verified
+Latest full solution build: Succeeded in 2.6 seconds
 Latest IDE diagnostics: No issues found
 ```
 
@@ -4057,9 +4966,11 @@ Latest IDE diagnostics: No issues found
 
 Continue with:
 
-## Module 5 — Guided Project: Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
+## Module 6 — Challenge Project: Debug a C# Console Application Using Visual Studio Code
 
-The next module combines the debugger and exception-handling concepts from the
-first four modules in a guided application.
+This is the final module in Section 6.
+
+The challenge continues from the guided-project cash-register application and
+focuses on locating and correcting the remaining logic defects.
 
 **Status:** ⏳ Not started

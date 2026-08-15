@@ -41,6 +41,9 @@
     <Project Path="curriculum/create-methods-in-csharp-console-applications/modules/write-first-csharp-method/write-first-csharp-method.csproj" />
   </Folder>
   <Folder Name="/curriculum/debug-csharp-console-applications/" />
+  <Folder Name="/curriculum/debug-csharp-console-applications/guided-projects/">
+    <Project Path="curriculum/debug-csharp-console-applications/guided-projects/debug-handle-exceptions/debug-handle-exceptions.csproj" />
+  </Folder>
   <Folder Name="/curriculum/debug-csharp-console-applications/modules/">
     <Project Path="curriculum/debug-csharp-console-applications/modules/create-throw-exceptions/create-throw-exceptions.csproj" />
     <Project Path="curriculum/debug-csharp-console-applications/modules/implement-exception-handling/implement-exception-handling.csproj" />
