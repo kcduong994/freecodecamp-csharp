@@ -4,8 +4,8 @@
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
 ![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Sections](https://img.shields.io/badge/Sections_Completed-5%2F7-16A34A)
-![Projects](https://img.shields.io/badge/Solution_Projects-37-2563EB)
+![Sections](https://img.shields.io/badge/Sections_Completed-6%2F7-16A34A)
+![Projects](https://img.shields.io/badge/Solution_Projects-38-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
 This repository documents my progress through the
@@ -28,36 +28,38 @@ It is maintained as a structured learning curriculum containing:
 
 ```text
 Certification status: In progress
-Curriculum sections completed: 5 / 7
-Latest fully completed section: Create Methods in C# Console Applications
-Latest fully completed section progress: 5 / 5
-Latest fully completed section repository verification: 5 / 5
-Current section: Debug C# Console Applications
-Current section status: In progress
-Current section learning progress: 5 / 6
-Current section repository-verified progress: 5 / 6
-Latest completed learning item: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
-Latest project: debug-handle-exceptions
+Curriculum sections completed: 6 / 7
+Latest fully completed section: Debug C# Console Applications
+Latest fully completed section progress: 6 / 6
+Latest fully completed section repository verification: 6 / 6
+Current curriculum item: Foundational C# with Microsoft Certification Exam
+Current curriculum item status: Not started
+Latest completed learning item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
+Latest project: debug-csharp-console-application
 Latest learning item status: Completed
 Latest Microsoft Learn units: 6 / 6
 Latest module assessment: Passed
-Latest Microsoft Learn achievement: Earned
-Projects currently registered in solution: 37
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Projects currently registered in solution: 38
 Latest organized source: Completed
 Professional source comments: Completed
-Cash-till data model: Documented and verified
-Fixed and randomized transaction verification: Completed
-Debugger-guided logic investigation: Completed
-Five-dollar cashTill indexing bug: Corrected
-try-catch transaction flow: Implemented
-InvalidOperationException flow: Implemented
-MakeChange string-to-void refactor: Completed
-Exception.Message reporting: Verified
-Remaining till-balance defects: Intentionally preserved for Challenge Project
+Randomized transaction simulation: 100 attempts
+Random item-cost range: 2 through 49
+Cash-till state-consistency defect: Corrected
+Failed-transaction state preservation: Implemented
+Transaction staging: Implemented
+Commit-on-success behavior: Implemented
+Underpayment InvalidOperationException path: Verified
+Insufficient-change InvalidOperationException path: Verified
+Reported till equals expected till: Verified
+Latest observed till value: 1281 dollars
+Latest expected till value: 1281 dollars
 Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 2.6 seconds
+Latest full solution build: Succeeded in 3.2 seconds
 Latest IDE diagnostics: No issues found
-Next curriculum item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
+Section 6 Trophy evidence: Verified
+Next curriculum item: Foundational C# with Microsoft Certification Exam
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -67,7 +69,7 @@ Next curriculum item: Challenge Project - Debug a C# Console Application Using V
 | 3 | Add Logic to C# Console Applications | 7 / 7 | Verified | Completed |
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
 | 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
-| 6 | Debug C# Console Applications | 5 / 6 | 5 / 6 | In Progress |
+| 6 | Debug C# Console Applications | 6 / 6 | Verified | Completed |
 | 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
 
 A curriculum item reaches learning completion after its official Microsoft Learn
@@ -3500,21 +3502,23 @@ named methods
 
 ---
 
-## Current Section
+## Completed Section
 
 ### 6. Debug C# Console Applications
 
 ```text
-Status: In Progress
-Learning progress: 5 / 6
-Repository-verified progress: 5 / 6
+Status: Completed
+Learning progress: 6 / 6
+Repository-verified progress: 6 / 6
 Completed instructional modules: 4
 Completed guided projects: 1
-Current solution project count: 37
-Latest completed item: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
+Completed challenge projects: 1
+Latest completed item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
 Microsoft Learn units: 6 / 6
 Module assessment: Passed
-Microsoft Learn achievement: Earned
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Solution project count: 38
 Final organized Program.cs: Completed
 Professional source comments: Completed
 Cash-till data model: Documented and verified
@@ -3526,15 +3530,27 @@ try-catch transaction flow: Implemented
 InvalidOperationException flow: Implemented
 MakeChange string-to-void refactor: Completed
 Exception.Message reporting: Verified
-Remaining till-balance defects: Intentionally preserved for Challenge Project
-Full solution build: Succeeded in 2.6 seconds
+100 randomized challenge transactions: Verified
+Random item-cost range 2 through 49: Verified
+Failed-transaction state preservation: Implemented
+Transaction staging: Implemented
+Commit-on-success behavior: Implemented
+Reported till equals expected till: Verified
+Latest observed till value: 1281 dollars
+Latest expected till value: 1281 dollars
+Full solution build: Succeeded in 3.2 seconds
 IDE diagnostics: No issues found
-Next module: Challenge Project - Debug a C# Console Application Using Visual Studio Code
+Trophy evidence: Verified
+Next curriculum item: Foundational C# with Microsoft Certification Exam
 ```
 
 Section 6 develops practical debugging and exception-handling skills for C# console applications.
 
-The completed Section 6 work establishes the progression from debugging fundamentals to structured exception handling, deliberate exception creation, and a guided debugging project that combines those skills in one cash-register application. The first module establishes the conceptual distinction between:
+The completed section establishes the progression from debugging fundamentals
+to debugger-driven runtime investigation, structured exception handling,
+deliberate exception creation, a guided debugging project, and a final
+state-consistency challenge built around a cash-register simulation. The first
+module establishes the conceptual distinction between:
 
 ```text
 Testing
@@ -4434,6 +4450,299 @@ IDE diagnostics: No issues found
 
 ---
 
+### Challenge Project — Debug a C# Console Application Using Visual Studio Code
+
+```text
+Status: Completed
+Microsoft Learn units: 6 / 6
+Module assessment: Passed
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
+Target framework: net10.0
+Project registration in solution: Verified
+Solution project count: 38
+Final organized Program.cs: Completed
+Professional source comments: Completed
+Random transaction mode: Enabled
+Random item-cost range: 2 through 49
+Attempted transactions: 100
+Underpayment exception path: Verified
+Insufficient-change exception path: Verified
+Failed-transaction state preservation: Implemented
+Transaction staging: Implemented
+Commit-on-success behavior: Implemented
+Reported till equals expected till: Verified
+Observed final reported till: 1281 dollars
+Observed final expected till: 1281 dollars
+Challenge project run: Verified
+Full solution build: Succeeded in 3.2 seconds
+IDE diagnostics: No issues found
+```
+
+The final Section 6 challenge extends the cash-register application from the
+Guided Project and requires the remaining logic defect to be isolated using the
+debugger rather than by following step-by-step repair instructions.
+
+Project location:
+
+```text
+curriculum/debug-csharp-console-applications/
+└── challenge-projects/
+    └── debug-csharp-console-application/
+        ├── Program.cs
+        └── debug-csharp-console-application.csproj
+```
+
+The final simulation is configured to:
+
+```text
+useTestData = false
+transactions = 100
+itemCost = Random.Next(2, 50)
+```
+
+Because the upper bound supplied to `Random.Next()` is exclusive, the generated
+item-cost range is:
+
+```text
+2 through 49
+```
+
+The transaction report must exercise both expected failure paths:
+
+```text
+InvalidOperationException
+→ Not enough money provided to complete the transaction.
+
+InvalidOperationException
+→ The till is unable to make change for the cash provided.
+```
+
+The central challenge defect is a shared-state consistency problem.
+
+The starter transaction logic modifies the real `cashTill` before it knows
+whether the transaction can finish successfully:
+
+```text
+receive customer payment
+        ↓
+mutate cashTill
+        ↓
+attempt to prepare exact change
+        ↓
+transaction fails
+        ↓
+throw InvalidOperationException
+        ↓
+partial cashTill mutations remain
+```
+
+The independent expected value:
+
+```text
+registerCheckTillTotal
+```
+
+is not increased when the transaction fails, so the two state models diverge:
+
+```text
+actual cashTill value
+        ≠
+expected till value
+```
+
+The corrected implementation stages the transaction in local values:
+
+```csharp
+int availableTwenties =
+    cashTill[3] +
+    twenties;
+
+int availableTens =
+    cashTill[2] +
+    tens;
+
+int availableFives =
+    cashTill[1] +
+    fives;
+
+int availableOnes =
+    cashTill[0] +
+    ones;
+```
+
+All change-making operations are performed against those temporary values.
+
+The real till is committed only after the complete transaction succeeds:
+
+```csharp
+cashTill[0] =
+    availableOnes;
+
+cashTill[1] =
+    availableFives;
+
+cashTill[2] =
+    availableTens;
+
+cashTill[3] =
+    availableTwenties;
+```
+
+The resulting control model is:
+
+```text
+current till
+    ↓
+stage customer payment locally
+    ↓
+stage returned change locally
+    ↓
+can the transaction complete exactly?
+        ┌───────────────┴───────────────┐
+       yes                              no
+        ↓                                ↓
+commit staged state             throw exception
+to cashTill                     discard staged state
+        ↓                                ↓
+expected total increases        expected total unchanged
+        └───────────────┬────────────────┘
+                        ↓
+              actual state remains valid
+```
+
+This gives `MakeChange()` transaction-like behavior from the caller's
+perspective:
+
+```text
+success
+→ all intended state changes are committed
+
+failure
+→ shared till state remains unchanged
+```
+
+The caller remains responsible for increasing the independent expected balance
+only after `MakeChange()` returns normally:
+
+```csharp
+try
+{
+    MakeChange(
+        itemCost,
+        cashTill,
+        paymentTwenties,
+        paymentTens,
+        paymentFives,
+        paymentOnes);
+
+    registerCheckTillTotal +=
+        itemCost;
+}
+catch (InvalidOperationException exception)
+{
+    Console.WriteLine(
+        $"Could not complete transaction: {exception.Message}");
+}
+```
+
+The completed challenge demonstrates:
+
+- reproducing a defect with a larger randomized data set;
+- comparing reported state with an independent expected-state calculation;
+- using debugger tools to identify the point where the two state models diverge;
+- distinguishing an exception symptom from the underlying logic defect;
+- protecting shared state from partially completed operations;
+- staging state in local variables;
+- committing state only after validation succeeds;
+- preserving state automatically when an exception interrupts the operation;
+- combining debugger investigation with structured exception handling;
+- validating both successful and failed transaction paths across 100 attempts.
+
+One verified run ended with:
+
+```text
+The till has 1281 dollars
+Expected till value: 1281
+```
+
+Because the application uses randomized transaction costs, the final absolute
+amount can vary between runs. The required invariant is:
+
+```text
+reported till value
+        =
+expected till value
+```
+
+Run the completed challenge:
+
+```powershell
+dotnet run --project `
+  ".\curriculum\debug-csharp-console-applications\challenge-projects\debug-csharp-console-application\debug-csharp-console-application.csproj"
+```
+
+Build the challenge:
+
+```powershell
+dotnet build `
+  ".\curriculum\debug-csharp-console-applications\challenge-projects\debug-csharp-console-application\debug-csharp-console-application.csproj"
+```
+
+Build the complete solution:
+
+```powershell
+dotnet build .\freecodecamp-csharp.slnx
+```
+
+Verified results:
+
+```text
+Challenge project registration: Verified
+Registered solution projects: 38
+Challenge project run: Succeeded
+100 randomized transactions: Verified
+Random item-cost range 2 through 49: Verified
+Both InvalidOperationException paths: Verified
+Failed-transaction state preservation: Verified
+Reported till equals expected till: Verified
+Full solution build: Succeeded in 3.2 seconds
+IDE diagnostics: No issues found
+```
+
+[Open the completed Challenge Project source](./curriculum/debug-csharp-console-applications/challenge-projects/debug-csharp-console-application/)
+
+---
+
+### Section 6 Trophy and Achievement Evidence
+
+Completion evidence is stored under:
+
+```text
+curriculum/debug-csharp-console-applications/
+└── trophy/
+    ├── README.md
+    └── assets/
+        ├── 1.PNG
+        └── 2.PNG
+```
+
+The evidence confirms:
+
+- completion of **Debug C# Console Applications**;
+- all Section 6 learning-path module assessments passed;
+- the final Challenge Project module assessment passed;
+- two achievements shown on the Microsoft Learn completion page;
+- repository verification of all six Section 6 curriculum items.
+
+[View Section 6 Trophy documentation](./curriculum/debug-csharp-console-applications/trophy/README.md)
+
+[View the Section 6 completion certificate](./curriculum/debug-csharp-console-applications/trophy/assets/1.PNG)
+
+[View the Microsoft Learn achievement evidence](./curriculum/debug-csharp-console-applications/trophy/assets/2.PNG)
+
+---
+
 ## Repository Structure
 
 ```text
@@ -4550,10 +4859,19 @@ freecodecamp-csharp/
 │   │   │   └── create-throw-exceptions/
 │   │   │       ├── Program.cs
 │   │   │       └── create-throw-exceptions.csproj
-│   │   └── guided-projects/
-│   │       └── debug-handle-exceptions/
-│   │           ├── Program.cs
-│   │           └── debug-handle-exceptions.csproj
+│   │   ├── guided-projects/
+│   │   │   └── debug-handle-exceptions/
+│   │   │       ├── Program.cs
+│   │   │       └── debug-handle-exceptions.csproj
+│   │   ├── challenge-projects/
+│   │   │   └── debug-csharp-console-application/
+│   │   │       ├── Program.cs
+│   │   │       └── debug-csharp-console-application.csproj
+│   │   └── trophy/
+│   │       ├── README.md
+│   │       └── assets/
+│   │           ├── 1.PNG
+│   │           └── 2.PNG
 │   └── foundational-csharp-with-microsoft-certification-exam/
 ├── CSHARP_REVIEW.md
 ├── freecodecamp-csharp.slnx
@@ -4582,12 +4900,12 @@ adds an interactive mini-game built around a game loop, shared state, keyboard
 input, collision detection, state transitions, and rendering. The completed
 challenge is registered as solution project 32.
 
-Section 6 currently contains four completed instructional modules, one completed
-guided project, and its section documentation. All five completed learning items
-are repository-verified. Module 1 is registered as solution project 33, Module 2
-as solution project 34, Module 3 as solution project 35, Module 4 as solution
-project 36, and the guided project `debug-handle-exceptions` as solution project
-37.
+Section 6 contains four completed instructional modules, one completed guided
+project, one completed challenge project, and verified Trophy evidence. All six
+Section 6 learning items are fully repository-verified. Module 1 is registered
+as solution project 33, Module 2 as project 34, Module 3 as project 35, Module 4
+as project 36, the guided project `debug-handle-exceptions` as project 37, and
+the final challenge `debug-csharp-console-application` as project 38.
 
 ---
 
@@ -4618,7 +4936,7 @@ freecodecamp-csharp.slnx
 Projects currently registered:
 
 ```text
-37
+38
 ```
 
 List all projects registered in the solution:
@@ -4741,7 +5059,7 @@ curriculum/create-methods-in-csharp-console-applications/guided-projects/plan-pe
 curriculum/create-methods-in-csharp-console-applications/challenge-projects/create-mini-game/create-mini-game.csproj
 ```
 
-### Current projects from Section 6
+### Completed projects from Section 6
 
 ```text
 curriculum/debug-csharp-console-applications/modules/review-code-debugging-exception-handling/review-code-debugging-exception-handling.csproj
@@ -4753,13 +5071,15 @@ curriculum/debug-csharp-console-applications/modules/implement-exception-handlin
 curriculum/debug-csharp-console-applications/modules/create-throw-exceptions/create-throw-exceptions.csproj
 
 curriculum/debug-csharp-console-applications/guided-projects/debug-handle-exceptions/debug-handle-exceptions.csproj
+
+curriculum/debug-csharp-console-applications/challenge-projects/debug-csharp-console-application/debug-csharp-console-application.csproj
 ```
 
 Run the latest completed learning project from the repository root:
 
 ```powershell
 dotnet run --project `
-  ".\curriculum\debug-csharp-console-applications\guided-projects\debug-handle-exceptions\debug-handle-exceptions.csproj"
+  ".\curriculum\debug-csharp-console-applications\challenge-projects\debug-csharp-console-application\debug-csharp-console-application.csproj"
 ```
 
 ---
@@ -4768,64 +5088,71 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest fully completed section: Create Methods in C# Console Applications
-Latest fully completed section progress: 5 / 5
-Latest fully completed section repository verification: 5 / 5
-Current section: Debug C# Console Applications
-Current section status: In progress
-Current section learning progress: 5 / 6
-Current section repository-verified progress: 5 / 6
-Latest completed learning item: Guided Project - Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code
-Latest project: debug-handle-exceptions
+Latest fully completed section: Debug C# Console Applications
+Latest fully completed section progress: 6 / 6
+Latest fully completed section repository verification: 6 / 6
+Certification status: In progress
+Current curriculum item: Foundational C# with Microsoft Certification Exam
+Current curriculum item status: Not started
+Latest completed learning item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
+Latest project: debug-csharp-console-application
 Microsoft Learn units: 6 / 6
 Module assessment: Passed
-Microsoft Learn achievement: Earned
+Learning-path assessments: All passed
+Achievements shown on completion page: 2
 Final organized source: Completed
 Professional source comments: Completed
-Cash-till data model: Documented and verified
-Fixed-data verification: Completed
-Randomized transaction verification: Completed
-Debugger-guided logic investigation: Completed
-Five-dollar cashTill indexing bug: Corrected
-try-catch transaction flow: Implemented
-InvalidOperationException flow: Implemented
-MakeChange string-to-void refactor: Completed
-Exception.Message reporting: Verified
-Remaining till-balance defects: Intentionally preserved for Challenge Project
+Randomized transaction mode: Enabled
+Attempted transactions: 100
+Random item-cost range: 2 through 49
+Underpayment InvalidOperationException path: Verified
+Insufficient-change InvalidOperationException path: Verified
+Failed-transaction shared-state corruption: Corrected
+Transaction staging: Implemented
+Commit-on-success behavior: Implemented
+Reported till equals expected till: Verified
+Observed final reported till: 1281 dollars
+Observed final expected till: 1281 dollars
 Project registration: Verified
-Registered solution projects: 37
+Registered solution projects: 38
 Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 2.6 seconds
+Full-solution build: Succeeded in 3.2 seconds
 IDE diagnostics: No issues found
-Next curriculum item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
+Section 6 Trophy evidence: Verified
+Next curriculum item: Foundational C# with Microsoft Certification Exam
 ```
 
 The latest evidence confirms that:
 
-- `debug-handle-exceptions` is registered as the thirty-seventh solution project;
-- the guided project reached `6 / 6` Microsoft Learn units;
-- its assessment passed;
-- the Microsoft Learn achievement was earned;
+- `debug-csharp-console-application` is registered as the thirty-eighth solution
+  project;
+- the final Challenge Project reached `6 / 6` Microsoft Learn units;
+- its module assessment passed;
+- all Section 6 learning-path assessments passed;
+- the Microsoft Learn completion page shows two achievements;
 - the final source is organized and professionally commented;
-- the cash-till denomination mapping is documented explicitly;
-- fixed sample data and randomized transaction paths were used to verify runtime
-  behavior;
-- debugger evidence isolated the five-dollar indexing defect;
-- the incorrect `cashTill[2]--` mutation was corrected to `cashTill[1]--`;
-- transaction failure flow now uses `try-catch`;
-- underpayment and insufficient-change cases use `InvalidOperationException`;
-- `MakeChange()` was refactored from string-status returns to normal `void`
-  completion plus exception-based failure flow;
-- `Exception.Message` is used to communicate transaction failure details;
-- remaining till-balance defects are deliberately preserved for the final
-  Challenge Project rather than solved ahead of the curriculum;
-- the complete thirty-seven-project solution builds successfully in `2.6 seconds`;
+- the challenge runs 100 randomly priced transaction attempts;
+- random `itemCost` values are generated from `2` through `49`;
+- both required `InvalidOperationException` transaction-failure paths are
+  exercised;
+- the remaining challenge defect was identified as premature mutation of shared
+  `cashTill` state;
+- the corrected `MakeChange()` stages payment and change in local variables;
+- failed transactions now leave the real till unchanged;
+- successful transactions commit staged values only after exact change is known
+  to be possible;
+- the independent expected balance remains synchronized with the real till;
+- one verified randomized run finished at `1281` reported dollars and `1281`
+  expected dollars;
+- the complete thirty-eight-project solution builds successfully in `3.2
+  seconds`;
 - Visual Studio reports no issues;
-- Section 6 documentation has been updated through the Guided Project.
+- Section 6 Trophy evidence has been added;
+- Section 6 is fully completed and repository-verified at `6 / 6 = 100%`.
 
-Section 5 remains fully complete at `5 / 5`. Section 6 is now in progress at
-`5 / 6 = 83.3%`, with four instructional modules and one guided project fully
-repository-verified.
+The repository now contains six fully completed curriculum sections. The only
+remaining curriculum item shown in this repository roadmap is the
+**Foundational C# with Microsoft Certification Exam**.
 
 ---
 
@@ -4887,6 +5214,7 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Implement Exception Handling in C# Console Applications](https://learn.microsoft.com/training/modules/implement-exception-handling-c-sharp/)
 - [Microsoft Learn — Create and Throw Exceptions in C# Console Applications](https://learn.microsoft.com/training/modules/create-throw-exceptions-c-sharp/)
 - [Microsoft Learn — Guided Project: Debug and Handle Exceptions in a C# Console Application Using Visual Studio Code](https://learn.microsoft.com/training/modules/guided-project-debug-handle-exceptions-c-sharp-console-application/)
+- [Microsoft Learn — Challenge Project: Debug a C# Console Application Using Visual Studio Code](https://learn.microsoft.com/training/modules/challenge-project-debug-c-sharp-console-application/)
 - [Microsoft Learn — Write Your First C# Method](https://learn.microsoft.com/training/modules/write-first-c-sharp-method/)
 - [Microsoft Learn — Create C# Methods with Parameters](https://learn.microsoft.com/training/modules/create-c-sharp-methods-parameters/)
 - [Microsoft Learn — Create C# Methods That Return Values](https://learn.microsoft.com/training/modules/create-c-sharp-methods-return-values/)
