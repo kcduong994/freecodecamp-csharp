@@ -3,14 +3,15 @@
 ![C#](https://img.shields.io/badge/C%23-Learning-512BD4?logo=csharp&logoColor=white)
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet&logoColor=white)
 ![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-Curriculum-0A0A23?logo=freecodecamp)
-![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B)
-![Sections](https://img.shields.io/badge/Sections_Completed-6%2F7-16A34A)
+![Status](https://img.shields.io/badge/Status-Completed-16A34A)
+![Sections](https://img.shields.io/badge/Sections_Completed-7%2F7-16A34A)
+![Certification](https://img.shields.io/badge/Certification-Foundational_C%23_with_Microsoft-0078D4)
+![Exam](https://img.shields.io/badge/Exam-96.3%25-2563EB)
 ![Projects](https://img.shields.io/badge/Solution_Projects-38-2563EB)
 ![Build](https://img.shields.io/badge/Full_Solution_Build-Passing-16A34A)
 
-This repository documents my progress through the
-**Foundational C# with Microsoft Certification** curriculum delivered through
-freeCodeCamp and Microsoft Learn.
+This repository documents my completed **Foundational C# with Microsoft**
+learning and certification journey through freeCodeCamp and Microsoft Learn.
 
 It is maintained as a structured learning curriculum containing:
 
@@ -20,46 +21,34 @@ It is maintained as a structured learning curriculum containing:
 - section Trophy evidence;
 - independently written technical notes;
 - buildable source code;
-- progress and completion records.
+- progress and completion records;
+- final certification evidence;
+- a beginner-first C# review handbook.
 
 ---
 
-## Current Progress
+## Completion Status
 
 ```text
-Certification status: In progress
-Curriculum sections completed: 6 / 7
-Latest fully completed section: Debug C# Console Applications
-Latest fully completed section progress: 6 / 6
-Latest fully completed section repository verification: 6 / 6
-Current curriculum item: Foundational C# with Microsoft Certification Exam
-Current curriculum item status: Not started
-Latest completed learning item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
-Latest project: debug-csharp-console-application
-Latest learning item status: Completed
-Latest Microsoft Learn units: 6 / 6
-Latest module assessment: Passed
+Certification status: Completed
+Curriculum sections completed: 7 / 7
+Foundational C# with Microsoft certification: Earned
+Certification exam: Passed
+Exam score: 77 / 80
+Exam percentage: 96.3%
+Exam duration: 1:22:11
+Certification claim: Completed
+Credential verification: Public URL available
+Credential URL: https://freecodecamp.org/certification/duongkimcuong/foundational-c-sharp-with-microsoft
+Curriculum learning paths: Completed
 Learning-path assessments: All passed
-Achievements shown on completion page: 2
-Projects currently registered in solution: 38
-Latest organized source: Completed
+Final curriculum project: debug-csharp-console-application
+Projects registered in solution: 38
+C# review handbook: Completed
 Professional source comments: Completed
-Randomized transaction simulation: 100 attempts
-Random item-cost range: 2 through 49
-Cash-till state-consistency defect: Corrected
-Failed-transaction state preservation: Implemented
-Transaction staging: Implemented
-Commit-on-success behavior: Implemented
-Underpayment InvalidOperationException path: Verified
-Insufficient-change InvalidOperationException path: Verified
-Reported till equals expected till: Verified
-Latest observed till value: 1281 dollars
-Latest expected till value: 1281 dollars
-Project compilation in full solution: Succeeded
-Latest full solution build: Succeeded in 3.2 seconds
-Latest IDE diagnostics: No issues found
-Section 6 Trophy evidence: Verified
-Next curriculum item: Foundational C# with Microsoft Certification Exam
+Last code-bearing full solution build: Succeeded in 3.2 seconds
+Last IDE diagnostics: No issues found
+Certification evidence directory: Added
 ```
 
 | No. | Curriculum section | Learning progress | Repository verification | Status |
@@ -70,13 +59,17 @@ Next curriculum item: Foundational C# with Microsoft Certification Exam
 | 4 | Work with Variable Data in C# Console Applications | 7 / 7 | Verified | Completed |
 | 5 | Create Methods in C# Console Applications | 5 / 5 | Verified | Completed |
 | 6 | Debug C# Console Applications | 6 / 6 | Verified | Completed |
-| 7 | Foundational C# with Microsoft Certification Exam | Not started | Pending | Pending |
+| 7 | Foundational C# with Microsoft Certification Exam | Passed | Certificate verified | Completed |
 
-A curriculum item reaches learning completion after its official Microsoft Learn
-units and assessment have been completed. It reaches full repository
-verification after its final source has run successfully, its project has
-compiled successfully, the complete solution has built successfully, and the
-associated documentation has been updated.
+For project-based curriculum sections, repository verification requires the
+associated source to run successfully, the project to be registered when
+applicable, the complete solution to build successfully, and the documentation
+to be updated.
+
+For the certification exam, completion is verified by the exam result and the
+publicly claimable certification credential rather than by an additional
+solution project.
+
 
 ---
 
@@ -4743,6 +4736,97 @@ The evidence confirms:
 
 ---
 
+## Completed Certification
+
+### 7. Foundational C# with Microsoft Certification Exam
+
+```text
+Status: Completed
+Exam result: Passed
+Correct answers: 77 / 80
+Score: 96.3%
+Exam duration: 1:22:11
+Certification: Foundational C# with Microsoft
+Credential type: Developer Certification
+Certification claim: Completed
+Credential verification: Public
+Solution project count: 38
+Additional solution project required: No
+```
+
+The final certification exam closes the learning path after the six
+project-oriented C# sections.
+
+The exam result confirms:
+
+```text
+77 correct answers out of 80
+        ↓
+96.3% correct
+        ↓
+exam passed
+        ↓
+certification claimed
+```
+
+The certification itself is:
+
+```text
+Foundational C# with Microsoft
+Developer Certification
+```
+
+The public credential can be verified at:
+
+```text
+https://freecodecamp.org/certification/duongkimcuong/foundational-c-sharp-with-microsoft
+```
+
+Certification evidence is stored separately from executable projects because
+the exam does not introduce another `.csproj` file.
+
+Recommended evidence structure:
+
+```text
+curriculum/foundational-csharp-with-microsoft-certification-exam/
+├── README.md
+└── assets/
+    ├── certificate.png
+    └── exam-results.png
+```
+
+The certification checkpoint verifies three different things:
+
+```text
+Learning
+→ all curriculum sections completed
+
+Assessment
+→ final certification exam passed
+
+Credential
+→ certification successfully claimed and publicly verifiable
+```
+
+This keeps the repository model clean:
+
+```text
+Sections 1–6
+→ executable learning projects + section evidence
+
+Section 7
+→ exam result + certification evidence
+
+CSHARP_REVIEW.md
+→ concept-focused long-term review handbook
+```
+
+[Open the certification record](./curriculum/foundational-csharp-with-microsoft-certification-exam/README.md)
+
+[Verify the public credential](https://freecodecamp.org/certification/duongkimcuong/foundational-c-sharp-with-microsoft)
+
+---
+
 ## Repository Structure
 
 ```text
@@ -4873,6 +4957,10 @@ freecodecamp-csharp/
 │   │           ├── 1.PNG
 │   │           └── 2.PNG
 │   └── foundational-csharp-with-microsoft-certification-exam/
+│       ├── README.md
+│       └── assets/
+│           ├── certificate.png
+│           └── exam-results.png
 ├── CSHARP_REVIEW.md
 ├── freecodecamp-csharp.slnx
 ├── .gitignore
@@ -5088,94 +5176,99 @@ dotnet run --project `
 ## Latest Repository Verification
 
 ```text
-Latest fully completed section: Debug C# Console Applications
-Latest fully completed section progress: 6 / 6
-Latest fully completed section repository verification: 6 / 6
-Certification status: In progress
-Current curriculum item: Foundational C# with Microsoft Certification Exam
-Current curriculum item status: Not started
-Latest completed learning item: Challenge Project - Debug a C# Console Application Using Visual Studio Code
-Latest project: debug-csharp-console-application
-Microsoft Learn units: 6 / 6
-Module assessment: Passed
-Learning-path assessments: All passed
-Achievements shown on completion page: 2
-Final organized source: Completed
-Professional source comments: Completed
-Randomized transaction mode: Enabled
-Attempted transactions: 100
-Random item-cost range: 2 through 49
-Underpayment InvalidOperationException path: Verified
-Insufficient-change InvalidOperationException path: Verified
-Failed-transaction shared-state corruption: Corrected
-Transaction staging: Implemented
-Commit-on-success behavior: Implemented
-Reported till equals expected till: Verified
-Observed final reported till: 1281 dollars
-Observed final expected till: 1281 dollars
-Project registration: Verified
+Curriculum status: Completed
+Curriculum sections completed: 7 / 7
+Certification status: Completed
+Certification exam: Passed
+Correct answers: 77 / 80
+Exam percentage: 96.3%
+Exam duration: 1:22:11
+Certification claim: Completed
+Public credential: Verified
+Credential URL: https://freecodecamp.org/certification/duongkimcuong/foundational-c-sharp-with-microsoft
+Latest code-bearing section: Debug C# Console Applications
+Latest executable project: debug-csharp-console-application
 Registered solution projects: 38
-Project compilation in full solution: Succeeded
-Full-solution build: Succeeded in 3.2 seconds
-IDE diagnostics: No issues found
-Section 6 Trophy evidence: Verified
-Next curriculum item: Foundational C# with Microsoft Certification Exam
+C# review handbook: Completed
+Professional source comments: Completed
+Last full-solution build: Succeeded in 3.2 seconds
+Last IDE diagnostics: No issues found
+Next learning track: Back-End Development and APIs Certification
+Repository boundary: New learning track will use a separate repository
 ```
 
-The latest evidence confirms that:
+The final repository checkpoint confirms that:
 
-- `debug-csharp-console-application` is registered as the thirty-eighth solution
-  project;
-- the final Challenge Project reached `6 / 6` Microsoft Learn units;
-- its module assessment passed;
-- all Section 6 learning-path assessments passed;
-- the Microsoft Learn completion page shows two achievements;
-- the final source is organized and professionally commented;
-- the challenge runs 100 randomly priced transaction attempts;
-- random `itemCost` values are generated from `2` through `49`;
-- both required `InvalidOperationException` transaction-failure paths are
-  exercised;
-- the remaining challenge defect was identified as premature mutation of shared
-  `cashTill` state;
-- the corrected `MakeChange()` stages payment and change in local variables;
-- failed transactions now leave the real till unchanged;
-- successful transactions commit staged values only after exact change is known
-  to be possible;
-- the independent expected balance remains synchronized with the real till;
-- one verified randomized run finished at `1281` reported dollars and `1281`
-  expected dollars;
-- the complete thirty-eight-project solution builds successfully in `3.2
-  seconds`;
-- Visual Studio reports no issues;
-- Section 6 Trophy evidence has been added;
-- Section 6 is fully completed and repository-verified at `6 / 6 = 100%`.
+- all seven curriculum stages are complete;
+- all six project-oriented C# sections are repository-verified;
+- the final certification exam was passed with `77 / 80`, or `96.3%`;
+- the certification was successfully claimed;
+- the public verification URL is recorded in the repository;
+- no additional `.csproj` is created for the certification exam;
+- the solution remains at thirty-eight executable projects;
+- the final C# review handbook is maintained independently in
+  `CSHARP_REVIEW.md`;
+- certification evidence is separated from executable source code;
+- the repository can now be treated as a completed C# learning and
+  certification archive;
+- the next Back-End Development and APIs learning track can begin in a clean,
+  separate repository without changing the identity of this C# repository.
 
-The repository now contains six fully completed curriculum sections. The only
-remaining curriculum item shown in this repository roadmap is the
-**Foundational C# with Microsoft Certification Exam**.
+The last code-bearing verification remains the completed Section 6 checkpoint:
+the thirty-eight-project solution built successfully in `3.2 seconds` and
+Visual Studio reported no issues.
+
 
 ---
 
 ## Review Notes
 
-Independent review notes are maintained in:
+The repository-wide C# concept handbook is maintained in:
 
-[CSHARP_REVIEW.md](./CSHARP_REVIEW.md)
+[**CSHARP_REVIEW.md**](./CSHARP_REVIEW.md)
 
-These notes may include:
+Unlike the curriculum README files, the review handbook is organized by concept
+rather than lesson order.
 
-- syntax summaries;
-- compiler errors;
-- invalid examples used for learning;
-- corrected code;
-- implementation reasoning;
-- comparisons between beginner and later refactored solutions.
+It is designed to answer questions such as:
+
+```text
+What does this C# concept mean?
+Why does it exist?
+How do I write it?
+How do I read it?
+What mistake usually happens here?
+How does this connect to the rest of C#?
+```
+
+The handbook covers the complete foundational arc from first principles through
+variables, strings, operators, branching, arrays, loops, scope, methods,
+debugging, exceptions, compiler errors, logic bugs, .NET CLI usage, reusable
+patterns, and a final quick-reference section.
+
+This separation keeps the documentation responsibilities clear:
+
+```text
+Root README
+→ repository identity, curriculum completion, certification, navigation
+
+Section README files
+→ lesson/project documentation and verification evidence
+
+Program.cs
+→ runnable learning implementations with source comments
+
+CSHARP_REVIEW.md
+→ long-term concept review and quick reference
+```
+
 
 ---
 
 ## Documentation Standard
 
-A curriculum item is considered complete in this repository only when:
+A project-oriented curriculum item is considered complete in this repository
+only when:
 
 1. the official lesson units have been completed;
 2. the associated assessment has been passed;
@@ -5188,15 +5281,28 @@ A curriculum item is considered complete in this repository only when:
 9. relevant evidence has been stored;
 10. the Git diff has been reviewed before commit.
 
+The certification exam uses a different completion rule because it does not
+produce another executable project. It is considered complete when:
+
+1. the exam is passed;
+2. the result is recorded;
+3. the certification is claimed;
+4. the public credential is available;
+5. certification evidence is stored;
+6. the root repository status is updated.
+
 This structure keeps the repository useful for:
 
-- certification preparation;
-- long-term review;
+- certification evidence;
+- long-term C# review;
 - relearning;
 - debugging practice;
 - portfolio evidence;
 - progressive refactoring;
-- tracking conceptual development.
+- tracking conceptual development;
+- preserving a clean boundary between the completed C# track and future
+  learning repositories.
+
 
 ---
 
@@ -5227,6 +5333,10 @@ This structure keeps the repository useful for:
 - [Microsoft Learn — Modify the Content of Strings Using Built-In String Data Type Methods in C#](https://learn.microsoft.com/training/modules/csharp-modify-content/)
 - [Microsoft Learn — Guided Project: Work with Variable Data in C#](https://learn.microsoft.com/training/modules/guided-project-work-variable-data-c-sharp/)
 - [Microsoft Learn — Challenge Project: Work with Variable Data in C#](https://learn.microsoft.com/training/modules/challenge-project-work-variable-data-c-sharp/)
+
+### Certification Credential
+
+- [Public certification credential — Foundational C# with Microsoft](https://freecodecamp.org/certification/duongkimcuong/foundational-c-sharp-with-microsoft)
 
 ---
 
